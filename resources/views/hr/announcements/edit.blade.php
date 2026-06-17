@@ -1,0 +1,1 @@
+@extends('hr.announcements.create')

@@ -1,0 +1,19 @@
+@import 'tailwindcss';
+@import './faculty-panel.css';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* ── Brand Colours ─────────────────────────────── */
+    --color-primary: #f97316;
+    /* orange-500 */
+    --color-primary-dark: #ea6c0a;
+    /* orange-600 */
+    --color-primary-light: #fed7aa;
+    /* orange-200 */
+}

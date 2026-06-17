@@ -1,0 +1,91 @@
+# Laravel Dependencies
+/vendor
+/node_modules
+
+# Environment Files
+.env
+.env.*
+!.env.example
+
+# Application Keys / Secrets
+auth.json
+
+# Build Files
+/public/build
+/public/hot
+/public/mix-manifest.json
+
+# Storage Symlink
+/public/storage
+
+# Laravel Storage
+/storage/*.key
+/storage/logs/*
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/testing/*
+/storage/framework/views/*
+/storage/debugbar/*
+
+# Keep Framework Structure
+!/storage/framework/cache/.gitignore
+!/storage/framework/sessions/.gitignore
+!/storage/framework/testing/.gitignore
+!/storage/framework/views/.gitignore
+
+# Bootstrap Cache
+/bootstrap/cache/*.php
+!/bootstrap/cache/.gitignore
+
+# Logs
+*.log
+storage/logs/*.log
+
+# Testing
+.phpunit.result.cache
+coverage/
+
+# IDE
+/.idea
+/.vscode
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Composer
+composer.phar
+
+# NPM / Yarn
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local Databases
+*.sqlite
+
+# Temporary Files
+*.tmp
+*.temp
+
+# Backup Files
+*.bak
+*.backup
+
+# Laravel Pint
+.pint.cache
+
+# Rector
+.rector-cache
+
+# PHPStan
+.phpstan.cache
+
+# Pest
+.pest.cache
+
+# Misc
+*.swp
+*.swo

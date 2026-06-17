@@ -1,0 +1,405 @@
+/* Topper's Hope — unified date & month pickers (orange theme) */
+
+.th-picker {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.th-picker-native {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+.th-picker-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #0f172a;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    text-align: left;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.04);
+}
+
+.th-picker-trigger:hover {
+    border-color: #fdba74;
+}
+
+.th-picker-trigger:focus {
+    outline: none;
+    border-color: #f97316;
+    box-shadow: 0 0 0 3px rgb(249 115 22 / 0.15);
+}
+
+.th-picker-trigger.is-placeholder {
+    color: #94a3b8;
+}
+
+.th-picker-trigger svg {
+    flex-shrink: 0;
+    color: #64748b;
+}
+
+.th-picker-popover {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    z-index: 120;
+    min-width: 280px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    box-shadow: 0 12px 32px rgb(15 23 42 / 0.12);
+    padding: 0.75rem;
+    display: none;
+}
+
+.th-picker.is-open .th-picker-popover {
+    display: block;
+}
+
+.th-picker-popover.th-picker-popover--align-right {
+    left: auto;
+    right: 0;
+}
+
+/* Month picker */
+.th-picker-year-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0.25rem 0.75rem;
+    margin: -0.25rem -0.25rem 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    background: #f8fafc;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.th-picker-year-label {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.th-picker-month-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.375rem;
+    max-height: 220px;
+    overflow-y: auto;
+    padding: 0.25rem 0;
+}
+
+.th-picker-month {
+    padding: 0.5rem 0.25rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #334155;
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+
+.th-picker-month:hover {
+    background: #fff7ed;
+    color: #ea580c;
+}
+
+.th-picker-month.is-selected {
+    background: #f97316;
+    color: #fff;
+    border-color: #0f172a;
+}
+
+.th-picker-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+.th-picker-footer button {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #f97316;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
+}
+
+.th-picker-footer button:hover {
+    background: #fff7ed;
+    color: #ea580c;
+}
+
+/* Date calendar */
+.th-picker-cal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    gap: 0.5rem;
+}
+
+.th-picker-cal-title {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.th-picker-title-part {
+    font: inherit;
+    font-weight: 700;
+    color: #0f172a;
+    background: transparent;
+    border: none;
+    border-radius: 0.375rem;
+    padding: 0.125rem 0.375rem;
+    cursor: pointer;
+    transition: background 0.12s, color 0.12s;
+}
+
+.th-picker-title-part:hover {
+    background: #fff7ed;
+    color: #ea580c;
+}
+
+.th-picker-title-part.is-active {
+    background: #fff7ed;
+    color: #ea580c;
+}
+
+.th-picker-title-sep {
+    color: #94a3b8;
+    font-weight: 500;
+    user-select: none;
+}
+
+.th-picker-cal-body--months .th-picker-weekdays,
+.th-picker-cal-body--months .th-picker-days,
+.th-picker-cal-body--years .th-picker-weekdays,
+.th-picker-cal-body--years .th-picker-days {
+    display: none;
+}
+
+.th-picker-year-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.375rem;
+    padding: 0.25rem 0;
+}
+
+.th-picker-year {
+    padding: 0.5rem 0.25rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #334155;
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+
+.th-picker-year:hover {
+    background: #fff7ed;
+    color: #ea580c;
+}
+
+.th-picker-year.is-selected {
+    background: #f97316;
+    color: #fff;
+    border-color: #0f172a;
+}
+
+.th-picker-year.is-current {
+    box-shadow: inset 0 0 0 2px #fed7aa;
+}
+
+.th-picker-cal-body--months .th-picker-inline-month-grid,
+.th-picker-cal-body--days .th-picker-inline-month-grid,
+.th-picker-cal-body--days .th-picker-year-grid,
+.th-picker-cal-body--months .th-picker-year-grid {
+    display: none;
+}
+
+.th-picker-cal-body--months .th-picker-inline-month-grid {
+    display: grid;
+}
+
+.th-picker-cal-body--years .th-picker-year-grid {
+    display: grid;
+}
+
+.th-picker-inline-month-grid {
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.375rem;
+    padding: 0.25rem 0;
+}
+
+.th-picker-nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    color: #64748b;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1;
+    transition: all 0.12s;
+}
+
+.th-picker-nav-btn:hover {
+    border-color: #cbd5e1;
+    color: #334155;
+}
+
+.th-picker-nav-btn--accent {
+    background: #f97316;
+    border-color: #f97316;
+    color: #fff;
+}
+
+.th-picker-nav-btn--accent:hover {
+    background: #ea580c;
+    border-color: #ea580c;
+    color: #fff;
+}
+
+.th-picker-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    margin-bottom: 0.25rem;
+}
+
+.th-picker-weekday {
+    text-align: center;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: #94a3b8;
+    padding: 0.25rem 0;
+}
+
+.th-picker-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.th-picker-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: #334155;
+    background: transparent;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.12s, color 0.12s;
+}
+
+.th-picker-day:hover:not(:disabled) {
+    background: #fff7ed;
+    color: #ea580c;
+}
+
+.th-picker-day.is-other-month {
+    color: #cbd5e1;
+}
+
+.th-picker-day.is-selected {
+    background: #f97316;
+    color: #fff;
+    font-weight: 700;
+}
+
+.th-picker-day.is-today:not(.is-selected) {
+    box-shadow: inset 0 0 0 2px #fed7aa;
+}
+
+.th-picker-day:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+/* Datetime: time row */
+.th-picker-time-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+.th-picker-time-row label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #64748b;
+    white-space: nowrap;
+}
+
+.th-picker-time-row input[type="time"] {
+    flex: 1;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    color: #0f172a;
+}
+
+.th-picker-time-row input[type="time"]:focus {
+    outline: none;
+    border-color: #f97316;
+    box-shadow: 0 0 0 3px rgb(249 115 22 / 0.15);
+}
+
+/* Inline / compact triggers inherit parent width */
+.th-picker--inline {
+    width: auto;
+    display: inline-block;
+}
+
+.th-picker--inline .th-picker-trigger {
+    width: auto;
+    min-width: 10rem;
+}

@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Models\HR;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class EmployeeContact extends Model
+{
+    use HasFactory;
+
+    protected $table = 'employee_contact';
+    protected $guarded = [];
+
+    public function employee()
+    {
+        return $this->belongsTo(Employee::class);
+    }
+}
