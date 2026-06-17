@@ -1,53 +1,44 @@
 # Laravel Dependencies
-/vendor
-/node_modules
+laravel_core/vendor/
+node_modules/
 
 # Environment Files
-.env
-.env.*
-!.env.example
+laravel_core/.env
+laravel_core/.env.*
 
 # Application Keys / Secrets
-auth.json
+laravel_core/auth.json
 
 # Build Files
-/public/build
-/public/hot
-/public/mix-manifest.json
+public_html/build/
+public_html/hot
+public_html/mix-manifest.json
 
 # Storage Symlink
-/public/storage
+public_html/storage
 
 # Laravel Storage
-/storage/*.key
-/storage/logs/*
-/storage/framework/cache/*
-/storage/framework/sessions/*
-/storage/framework/testing/*
-/storage/framework/views/*
-/storage/debugbar/*
-
-# Keep Framework Structure
-!/storage/framework/cache/.gitignore
-!/storage/framework/sessions/.gitignore
-!/storage/framework/testing/.gitignore
-!/storage/framework/views/.gitignore
+laravel_core/storage/*.key
+laravel_core/storage/logs/*
+laravel_core/storage/framework/cache/*
+laravel_core/storage/framework/sessions/*
+laravel_core/storage/framework/testing/*
+laravel_core/storage/framework/views/*
+laravel_core/storage/debugbar/*
 
 # Bootstrap Cache
-/bootstrap/cache/*.php
-!/bootstrap/cache/.gitignore
+laravel_core/bootstrap/cache/*.php
 
 # Logs
 *.log
-storage/logs/*.log
 
 # Testing
 .phpunit.result.cache
 coverage/
 
 # IDE
-/.idea
-/.vscode
+.idea/
+.vscode/
 
 # Operating System Files
 .DS_Store
