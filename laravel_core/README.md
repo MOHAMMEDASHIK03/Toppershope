@@ -6,13 +6,13 @@ Laravel web application for Topper's Hope (courses, faculty, payments, HR, and r
 
 ## Prerequisites
 
-| Tool | Version | Purpose |
-|------|---------|---------|
-| **PHP** | 8.2+ | Laravel backend |
-| **Composer** | Latest | PHP dependencies |
-| **Node.js** | 18+ (LTS) | Frontend (Vite) |
-| **npm** | With Node.js | JS dependencies |
-| **MySQL** | 5.7+ or 8.x | Database (sessions & cache use DB locally) |
+| Tool         | Version      | Purpose                                    |
+| ------------ | ------------ | ------------------------------------------ |
+| **PHP**      | 8.2+         | Laravel backend                            |
+| **Composer** | Latest       | PHP dependencies                           |
+| **Node.js**  | 18+ (LTS)    | Frontend (Vite)                            |
+| **npm**      | With Node.js | JS dependencies                            |
+| **MySQL**    | 5.7+ or 8.x  | Database (sessions & cache use DB locally) |
 
 **PHP extensions:** `pdo_mysql`, `mbstring`, `openssl`, `tokenizer`, `xml`, `ctype`, `json`, `bcmath`, `fileinfo`
 
@@ -54,9 +54,9 @@ Follow **Running the application** below if you prefer manual control.
 
 Password for all seeded accounts: **`Admin@123`** (override with `ADMIN_SEED_PASSWORD` in `.env` before seeding).
 
-| Panel | URL | Email |
-|-------|-----|-------|
-| Super Admin | `/admin/login` | `admin@toppershope.com` |
+| Panel        | URL              | Email                         |
+| ------------ | ---------------- | ----------------------------- |
+| Super Admin  | `/admin/login`   | `admin@toppershope.com`       |
 | Faculty Head | `/faculty/login` | `facultyHead@toppershope.com` |
 
 Other panel users (HR, faculty, ads, admission) are created from **Admin → HR Users** or **HR → Employees → Panel Access**.
@@ -158,11 +158,11 @@ INFO  The [public/storage] link has been connected to [storage/app/public].
 
 That message usually means one of these:
 
-| Cause | Fix |
-|-------|-----|
-| `storage/app/public` missing | Ensure the folder exists (clone should include it). If not: `mkdir storage\app\public` |
-| `public\storage` already exists as a **normal folder** (not a link) | Delete it, then link again (see below) |
-| Symlinks blocked | Enable **Developer Mode** (Settings → System → For developers), **or** run PowerShell **as Administrator** |
+| Cause                                                               | Fix                                                                                                        |
+| ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `storage/app/public` missing                                        | Ensure the folder exists (clone should include it). If not: `mkdir storage\app\public`                     |
+| `public\storage` already exists as a **normal folder** (not a link) | Delete it, then link again (see below)                                                                     |
+| Symlinks blocked                                                    | Enable **Developer Mode** (Settings → System → For developers), **or** run PowerShell **as Administrator** |
 
 **PowerShell fix (run from project root):**
 
@@ -223,43 +223,43 @@ php artisan queue:work
 
 ## Command reference
 
-| Step | Command |
-|------|---------|
-| PHP packages | `composer install` |
-| JS packages | `npm install` |
-| Full local setup | `composer run setup` |
-| App key | `php artisan key:generate` |
-| Database | `php artisan migrate` |
-| Seed admin + faculty head | `php artisan db:seed` |
-| Public storage link | `php artisan storage:link` |
-| Build assets | `npm run build` |
-| Dev assets | `npm run dev` |
-| Web server | `php artisan serve` |
-| All-in-one dev | `composer run dev` |
+| Step                      | Command                    |
+| ------------------------- | -------------------------- |
+| PHP packages              | `composer install`         |
+| JS packages               | `npm install`              |
+| Full local setup          | `composer run setup`       |
+| App key                   | `php artisan key:generate` |
+| Database                  | `php artisan migrate`      |
+| Seed admin + faculty head | `php artisan db:seed`      |
+| Public storage link       | `php artisan storage:link` |
+| Build assets              | `npm run build`            |
+| Dev assets                | `npm run dev`              |
+| Web server                | `php artisan serve`        |
+| All-in-one dev            | `composer run dev`         |
 
 ---
 
 ## Troubleshooting
 
-| Problem | What to do |
-|---------|------------|
-| `Connection refused` (MySQL) | Start MySQL; check `DB_HOST` / `DB_PORT` |
-| `Access denied` (database) | Fix `DB_USERNAME` / `DB_PASSWORD` in `.env` |
-| `No application encryption key` | `php artisan key:generate` |
-| Styles / JS missing | `npm run build` or `npm run dev` |
-| Config stuck after `.env` change | `php artisan config:clear` |
-| **`storage:link` — "The system cannot find the path specified"** | See [Windows storage:link fix](#windows-storagelink-fails) above |
-| Uploads / images 404 | Fix `public/storage` symlink, then `php artisan storage:link` |
-| Session / cache errors | MySQL must be running (`SESSION_DRIVER` and `CACHE_STORE` use database) |
-| `migrate` fails on empty DB | Create the database first (`CREATE DATABASE ...`) |
+| Problem                                                          | What to do                                                              |
+| ---------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `Connection refused` (MySQL)                                     | Start MySQL; check `DB_HOST` / `DB_PORT`                                |
+| `Access denied` (database)                                       | Fix `DB_USERNAME` / `DB_PASSWORD` in `.env`                             |
+| `No application encryption key`                                  | `php artisan key:generate`                                              |
+| Styles / JS missing                                              | `npm run build` or `npm run dev`                                        |
+| Config stuck after `.env` change                                 | `php artisan config:clear`                                              |
+| **`storage:link` — "The system cannot find the path specified"** | See [Windows storage:link fix](#windows-storagelink-fails) above        |
+| Uploads / images 404                                             | Fix `public/storage` symlink, then `php artisan storage:link`           |
+| Session / cache errors                                           | MySQL must be running (`SESSION_DRIVER` and `CACHE_STORE` use database) |
+| `migrate` fails on empty DB                                      | Create the database first (`CREATE DATABASE ...`)                       |
 
 ---
 
 ## Local vs production
 
-| Environment | Use |
-|-------------|-----|
-| **Local** | `.env` with `APP_ENV=local`, local DB, test Razorpay keys |
+| Environment    | Use                                                         |
+| -------------- | ----------------------------------------------------------- |
+| **Local**      | `.env` with `APP_ENV=local`, local DB, test Razorpay keys   |
 | **Production** | Copy production `.env` on the server only — never commit it |
 
 Never commit `.env` to git.
@@ -276,3 +276,7 @@ Never commit `.env` to git.
 ## License
 
 Based on [Laravel](https://laravel.com) (MIT license).
+
+## Deployment Test
+
+GitHub deployment test - 17 June 2026
