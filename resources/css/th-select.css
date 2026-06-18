@@ -180,3 +180,86 @@
     border-color: #e2e8f0;
     box-shadow: none;
 }
+
+/* ─── Dark mode ──────────────────────────────────────────────────────────── */
+html.dark .th-select-trigger {
+    color: #e4e4e7;
+    background: #141418;
+    border-color: #2a2a32;
+    box-shadow: none;
+}
+
+html.dark .th-select-trigger:hover {
+    background: #18181c;
+    border-color: #3f3f48;
+}
+
+html.dark .th-select.is-open .th-select-trigger,
+html.dark .th-select-trigger:focus-visible {
+    background: #18181c;
+    border-color: #9f7aea;
+    box-shadow: 0 0 0 3px rgba(159, 122, 234, 0.2);
+}
+
+html.dark .th-select-value.is-placeholder {
+    color: #71717a;
+}
+
+html.dark .th-select-chevron {
+    color: #a1a1aa;
+}
+
+html.dark .th-select.is-open .th-select-chevron {
+    color: #c4b5fd;
+}
+
+html.dark .th-select-dropdown {
+    background: #18181c;
+    border-color: #2a2a32;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+html.dark .th-select-search-wrap {
+    background: #141418;
+    border-color: #2a2a32;
+}
+
+html.dark .th-select-search {
+    color: #f4f4f5;
+    background-color: #1f1f24;
+    border-color: #2a2a32;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2371717a' viewBox='0 0 256 256'%3E%3Cpath d='M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z'/%3E%3C/svg%3E");
+}
+
+html.dark .th-select-search:focus {
+    border-color: #9f7aea;
+    box-shadow: 0 0 0 2px rgba(159, 122, 234, 0.2);
+}
+
+html.dark .th-select-option {
+    color: #d4d4d8;
+}
+
+html.dark .th-select-option:hover,
+html.dark .th-select-option.is-focused {
+    background: rgba(119, 35, 214, 0.15);
+    color: #c4b5fd;
+}
+
+html.dark .th-select-option.is-selected {
+    background: rgba(119, 35, 214, 0.25);
+    color: #ddd6fe;
+}
+
+html.dark .th-select-empty {
+    color: #71717a;
+}
+
+html.dark .th-select.is-disabled .th-select-trigger {
+    background: #141418;
+    opacity: 0.55;
+}
+
+html.dark .th-select.is-disabled .th-select-trigger:hover {
+    border-color: #2a2a32;
+}

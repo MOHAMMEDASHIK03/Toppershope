@@ -51,12 +51,12 @@
     <?php echo $__env->yieldPushContent('panel-extra-styles'); ?>
     <?php echo $__env->yieldPushContent('styles'); ?>
 </head>
-<body class="h-full overflow-hidden bg-white dark:bg-[#0F0F12] text-gray-900 dark:text-white flex">
+<body class="h-full overflow-hidden bg-white dark:bg-[#0a0a0c] text-gray-900 dark:text-zinc-100 flex">
 
     <div id="sidebar-backdrop" class="fixed inset-0 bg-gray-900/40 z-40 hidden lg:hidden" onclick="toggleMobileSidebar()"></div>
 
     <aside id="sidebar"
-           class="panel-sidebar fixed lg:sticky top-0 h-screen z-50 flex flex-col bg-white dark:bg-[#17171C] border-r border-gray-200 dark:border-[#2D2D35] -translate-x-full lg:translate-x-0 shrink-0">
+           class="panel-sidebar fixed lg:sticky top-0 h-screen z-50 flex flex-col bg-white dark:bg-[#111114] border-r border-gray-200 dark:border-[#2a2a32] -translate-x-full lg:translate-x-0 shrink-0">
 
         <div class="sidebar-brand-row px-3 py-3 min-h-[4.5rem] flex items-center gap-2.5 border-b border-gray-100 dark:border-[#2D2D35] shrink-0">
             <div class="sidebar-brand-logo shrink-0" aria-hidden="true">
@@ -145,7 +145,7 @@
     </aside>
 
     <div class="flex-1 flex flex-col min-w-0 min-h-0 h-full overflow-hidden">
-        <header class="panel-header h-14 bg-white dark:bg-[#17171C] border-b border-gray-200 dark:border-[#2D2D35] flex items-center justify-between px-4 sm:px-6 shrink-0 sticky top-0 z-30">
+        <header class="panel-header h-14 bg-white dark:bg-[#111114] border-b border-gray-200 dark:border-[#2a2a32] flex items-center justify-between px-4 sm:px-6 shrink-0 sticky top-0 z-30">
             <div class="flex items-center gap-3 min-w-0">
                 <button type="button" onclick="toggleMobileSidebar()" class="lg:hidden p-2 -ml-1 text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg" aria-label="Open menu">
                     <i class="ph ph-list text-xl"></i>

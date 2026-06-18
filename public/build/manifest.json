@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-Co9lxzkB.css",
+    "file": "assets/app-CtT32Q9-.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -9,7 +9,7 @@
     ]
   },
   "resources/js/app.js": {
-    "file": "assets/app-DZrLXsHe.js",
+    "file": "assets/app-xHCha1Ye.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -19,21 +19,21 @@
     ]
   },
   "resources/js/th-pickers.js": {
-    "file": "assets/th-pickers-C8JFqmxN.js",
+    "file": "assets/th-pickers-Cw9bbzuS.js",
     "name": "th-pickers",
     "src": "resources/js/th-pickers.js",
     "isEntry": true,
     "css": [
-      "assets/th-pickers-CdaK3cCs.css"
+      "assets/th-pickers-BHkpg_zU.css"
     ]
   },
   "resources/js/th-select.js": {
-    "file": "assets/th-select-BSUjaahP.js",
+    "file": "assets/th-select-D2k_5Fwt.js",
     "name": "th-select",
     "src": "resources/js/th-select.js",
     "isEntry": true,
     "css": [
-      "assets/th-select-efFSKO2n.css"
+      "assets/th-select-Dw8LHdn4.css"
     ]
   }
 }

@@ -13,7 +13,7 @@
 ])
 
 @php
-    $inputClass = 'w-full rounded-xl border border-gray-200 dark:border-[#2D2D35] bg-gray-50 dark:bg-[#17171C] px-4 py-2.5 text-sm text-gray-900 dark:text-white placeholder:text-gray-400 focus:bg-white dark:focus:bg-[#1E1E24] focus:ring-4 focus:ring-primary-600/15 focus:border-primary-600 transition-all outline-none [&>option]:text-gray-900';
+    $inputClass = 'w-full rounded-xl border border-gray-200 dark:border-[#2a2a32] bg-gray-50 dark:bg-[#141418] px-4 py-2.5 text-sm text-gray-900 dark:text-zinc-100 placeholder:text-gray-400 dark:placeholder:text-zinc-500 focus:bg-white dark:focus:bg-[#18181c] focus:ring-4 focus:ring-primary-600/15 focus:border-primary-600 transition-all outline-none [&>option]:text-gray-900 dark:[&>option]:text-zinc-100 dark:[&>option]:bg-[#18181c]';
     $labelClass = 'block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1.5';
     $id = $attributes->get('id', $name);
     $hasError = $errors->has($name);

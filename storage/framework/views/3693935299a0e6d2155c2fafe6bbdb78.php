@@ -34,7 +34,7 @@ foreach ($attributes->all() as $__key => $__value) {
 
 unset($__defined_vars, $__key, $__value); ?>
 
-<div <?php echo e($attributes->merge(['class' => 'bg-white dark:bg-[#1E1E24] border border-gray-200 dark:border-[#2D2D35] rounded-xl shadow-sm overflow-hidden'])); ?>>
+<div <?php echo e($attributes->merge(['class' => 'bg-white dark:bg-[#18181c] border border-gray-200 dark:border-[#2a2a32] rounded-xl shadow-sm dark:shadow-none overflow-hidden'])); ?>>
     <?php if($title || isset($header)): ?>
         <div class="px-5 py-4 border-b border-gray-100 dark:border-[#2D2D35] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <?php if($title): ?>

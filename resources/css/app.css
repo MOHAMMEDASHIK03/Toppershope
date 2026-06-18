@@ -1,5 +1,9 @@
 @import './design-tokens.css';
 @import 'tailwindcss';
+
+/* Class-based dark mode (matches th-theme.js toggling html.dark) */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @import './theme.css';
 @import './panel.css';
 @import './th-select.css';

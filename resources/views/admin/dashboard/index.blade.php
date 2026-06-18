@@ -15,7 +15,7 @@
 
 {{-- Financial overview --}}
 <div class="mb-2">
-    <h2 class="text-sm font-semibold text-slate-700">Financial overview</h2>
+    <h2 class="text-sm font-semibold text-slate-700 dark:text-zinc-300">Financial overview</h2>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
     <x-admin.stat-card label="Total revenue (all time)" :value="'₹' . number_format($totalIncome, 2)" accent="emerald"
@@ -31,8 +31,8 @@
 {{-- Recent transactions --}}
 <x-admin.card>
     <x-slot:header>
-        <h3 class="font-semibold text-slate-900">Recent financial events</h3>
-        <select class="text-sm border border-slate-200 rounded-lg px-3 py-1.5 text-slate-700 bg-white focus:ring-2 focus:ring-primary-600/15 focus:border-primary-600 outline-none">
+        <h3 class="font-semibold text-slate-900 dark:text-zinc-100">Recent financial events</h3>
+        <select class="text-sm border border-slate-200 dark:border-[#2a2a32] rounded-lg px-3 py-1.5 text-slate-700 dark:text-zinc-300 bg-white dark:bg-[#141418] focus:ring-2 focus:ring-primary-600/15 focus:border-primary-600 outline-none">
             <option>All transactions</option>
             <option>Course sales only</option>
             <option>Payroll only</option>
@@ -40,24 +40,24 @@
         </select>
     </x-slot:header>
 
-    <form action="{{ route('admin.expenses.store') }}" method="POST" class="mb-6 p-4 bg-slate-50 border border-slate-200 rounded-xl">
+    <form action="{{ route('admin.expenses.store') }}" method="POST" class="mb-6 p-4 bg-slate-50 dark:bg-[#141418] border border-slate-200 dark:border-[#2a2a32] rounded-xl">
         @csrf
         <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-3">Quick log expense</p>
         <div class="flex flex-col md:flex-row gap-3 items-end">
             <div class="flex-1 w-full">
-                <label class="block text-xs font-medium text-slate-600 mb-1">Title</label>
+                <label class="block text-xs font-medium text-slate-600 dark:text-zinc-400 mb-1">Title</label>
                 <input type="text" name="title" required placeholder="e.g. Server hosting"
-                    class="w-full px-3 py-2 text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary-600/15 focus:border-primary-600 outline-none">
+                    class="w-full px-3 py-2 text-sm border border-slate-200 dark:border-[#2a2a32] rounded-lg bg-white dark:bg-[#141418] text-slate-900 dark:text-zinc-100 placeholder:text-slate-400 dark:placeholder:text-zinc-500 focus:ring-2 focus:ring-primary-600/15 focus:border-primary-600 outline-none">
             </div>
             <div class="w-full md:w-32">
-                <label class="block text-xs font-medium text-slate-600 mb-1">Amount (₹)</label>
+                <label class="block text-xs font-medium text-slate-600 dark:text-zinc-400 mb-1">Amount (₹)</label>
                 <input type="number" step="0.01" name="amount" required placeholder="0.00"
-                    class="w-full px-3 py-2 text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary-600/15 focus:border-primary-600 outline-none">
+                    class="w-full px-3 py-2 text-sm border border-slate-200 dark:border-[#2a2a32] rounded-lg bg-white dark:bg-[#141418] text-slate-900 dark:text-zinc-100 placeholder:text-slate-400 dark:placeholder:text-zinc-500 focus:ring-2 focus:ring-primary-600/15 focus:border-primary-600 outline-none">
             </div>
             <div class="w-full md:w-40">
-                <label class="block text-xs font-medium text-slate-600 mb-1">Date</label>
+                <label class="block text-xs font-medium text-slate-600 dark:text-zinc-400 mb-1">Date</label>
                 <input type="date" name="expense_date" required value="{{ date('Y-m-d') }}"
-                    class="w-full px-3 py-2 text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary-600/15 focus:border-primary-600 outline-none">
+                    class="w-full px-3 py-2 text-sm border border-slate-200 dark:border-[#2a2a32] rounded-lg bg-white dark:bg-[#141418] text-slate-900 dark:text-zinc-100 focus:ring-2 focus:ring-primary-600/15 focus:border-primary-600 outline-none dark:[color-scheme:dark]">
             </div>
             <button type="submit" class="btn-primary h-[38px] w-full md:w-auto whitespace-nowrap">
                 <i class="ph ph-plus"></i> Log expense
