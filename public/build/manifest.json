@@ -1,0 +1,39 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app--Ju3xc0v.css",
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "name": "app",
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-DuDiHndk.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "imports": [
+      "resources/js/th-pickers.js",
+      "resources/js/th-select.js"
+    ]
+  },
+  "resources/js/th-pickers.js": {
+    "file": "assets/th-pickers-K9bcnBtt.js",
+    "name": "th-pickers",
+    "src": "resources/js/th-pickers.js",
+    "isEntry": true,
+    "css": [
+      "assets/th-pickers-C5RbAWLj.css"
+    ]
+  },
+  "resources/js/th-select.js": {
+    "file": "assets/th-select-C8CGMmZ3.js",
+    "name": "th-select",
+    "src": "resources/js/th-select.js",
+    "isEntry": true,
+    "css": [
+      "assets/th-select-D71XmmuI.css"
+    ]
+  }
+}

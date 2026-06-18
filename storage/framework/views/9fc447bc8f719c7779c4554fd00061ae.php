@@ -1,0 +1,550 @@
+<?php $attributes ??= new \Illuminate\View\ComponentAttributeBag;
+
+$__newAttributes = [];
+$__propNames = \Illuminate\View\ComponentAttributeBag::extractPropNames(([
+    'course',
+    'categories',
+    'backHref',
+    'backLabel' => 'Back to courses',
+    'formAction',
+    'batchStoreUrl',
+    'batchUpdateUrlPrefix',
+    'extendedBatches' => false,
+]));
+
+foreach ($attributes->all() as $__key => $__value) {
+    if (in_array($__key, $__propNames)) {
+        $$__key = $$__key ?? $__value;
+    } else {
+        $__newAttributes[$__key] = $__value;
+    }
+}
+
+$attributes = new \Illuminate\View\ComponentAttributeBag($__newAttributes);
+
+unset($__propNames);
+unset($__newAttributes);
+
+foreach (array_filter(([
+    'course',
+    'categories',
+    'backHref',
+    'backLabel' => 'Back to courses',
+    'formAction',
+    'batchStoreUrl',
+    'batchUpdateUrlPrefix',
+    'extendedBatches' => false,
+]), 'is_string', ARRAY_FILTER_USE_KEY) as $__key => $__value) {
+    $$__key = $$__key ?? $__value;
+}
+
+$__defined_vars = get_defined_vars();
+
+foreach ($attributes->all() as $__key => $__value) {
+    if (array_key_exists($__key, $__defined_vars)) unset($$__key);
+}
+
+unset($__defined_vars, $__key, $__value); ?>
+
+<div x-data="megaConfig({
+    whatYouLearn: <?php echo e($course->what_you_learn ? json_encode(is_string($course->what_you_learn) ? json_decode($course->what_you_learn) : $course->what_you_learn) : '[]'); ?>,
+    includes: <?php echo e($course->includes ? json_encode(is_string($course->includes) ? json_decode($course->includes) : $course->includes) : '[]'); ?>,
+    faculty: <?php echo e($course->faculty ? json_encode(is_string($course->faculty) ? json_decode($course->faculty) : $course->faculty) : '[]'); ?>,
+    isPublished: <?php echo e($course->is_published ? 'true' : 'false'); ?>,
+    extendedBatches: <?php echo e($extendedBatches ? 'true' : 'false'); ?>,
+    batchUpdatePrefix: <?php echo \Illuminate\Support\Js::from(rtrim($batchUpdateUrlPrefix, '/') . '/')->toHtml() ?>,
+    batchStoreUrl: <?php echo \Illuminate\Support\Js::from($batchStoreUrl)->toHtml() ?>,
+    categoryId: <?php echo \Illuminate\Support\Js::from($course->category_id)->toHtml() ?>,
+})" class="pb-12 max-w-6xl">
+
+    <a href="<?php echo e($backHref); ?>" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-500 hover:text-orange-600 transition-colors mb-5">
+        <i class="ph-bold ph-arrow-left"></i>
+        <?php echo e($backLabel); ?>
+
+    </a>
+
+    <div class="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+            <h2 class="text-2xl font-bold tracking-tight text-slate-900 flex items-center gap-3 flex-wrap">
+                <?php echo e($course->name); ?>
+
+                <span x-show="isPublished" x-cloak class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wide bg-orange-50 text-orange-700 border border-orange-200">Published</span>
+                <span x-show="!isPublished" x-cloak class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wide bg-amber-50 text-amber-700 border border-amber-200">Draft</span>
+            </h2>
+            <p class="text-sm text-slate-500 mt-1">Manage landing page details, instructors, and batches.</p>
+        </div>
+        <div class="flex flex-wrap items-center gap-3">
+            <div class="flex items-center gap-3 px-4 py-2.5 bg-white border border-slate-200 rounded-xl shadow-sm">
+                <div class="text-right">
+                    <p class="text-xs font-bold text-slate-900 leading-none" x-text="isPublished ? 'Published' : 'Draft'"></p>
+                    <p class="text-[10px] text-slate-500" x-text="isPublished ? 'Visible to students' : 'Hidden from public'"></p>
+                </div>
+                <button type="button"
+                    role="switch"
+                    :aria-checked="isPublished"
+                    :aria-label="isPublished ? 'Published — visible to students' : 'Draft — hidden from public'"
+                    @click="isPublished = !isPublished; $refs.mainForm.querySelector('[name=is_published_toggle]').value = isPublished ? '1' : '0'"
+                    :class="{ 'is-on': isPublished }"
+                    class="admin-toggle">
+                    <span class="admin-toggle__thumb" aria-hidden="true"></span>
+                </button>
+            </div>
+            <a href="<?php echo e(route('course.detail', $course->slug)); ?>" target="_blank" class="btn-secondary">
+                <i class="ph-bold ph-eye"></i> Preview
+            </a>
+            <button type="button" @click="$refs.mainForm.submit()" class="btn-primary px-5 py-2.5 rounded-xl shadow-sm">
+                <i class="ph-bold ph-floppy-disk"></i> Save changes
+            </button>
+        </div>
+    </div>
+
+    <div class="flex items-center border-b border-slate-200 mb-6 overflow-x-auto">
+        <template x-for="tab in tabs" :key="tab.id">
+            <button type="button" @click="activeTab = tab.id"
+                    :class="activeTab === tab.id ? 'admin-tab-active' : 'admin-tab'"
+                    class="whitespace-nowrap py-4 px-5 border-b-2 font-bold text-sm transition-colors">
+                <span x-text="tab.name"></span>
+            </button>
+        </template>
+    </div>
+
+    <form x-ref="mainForm" action="<?php echo e($formAction); ?>" method="POST" enctype="multipart/form-data">
+        <?php echo csrf_field(); ?>
+        <?php echo method_field('PUT'); ?>
+
+        <input type="hidden" name="what_you_learn" :value="JSON.stringify(whatYouLearn)">
+        <input type="hidden" name="includes" :value="JSON.stringify(includes)">
+        <input type="hidden" name="faculty_json" :value="JSON.stringify(faculty)">
+        <input type="hidden" name="is_published_toggle" :value="isPublished ? '1' : '0'">
+
+        <?php if($errors->any()): ?>
+            <div class="mb-6 bg-rose-50 border border-rose-200 rounded-xl px-5 py-3.5 text-rose-700 font-semibold text-sm space-y-1">
+                <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <p><?php echo e($error); ?></p>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </div>
+        <?php endif; ?>
+
+        <div x-show="activeTab === 'basic'" x-cloak class="space-y-6">
+            <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+                <h3 class="text-base font-bold text-slate-900 border-b border-slate-100 pb-4 mb-6">Core Product Identity</h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-1.5">Course title (public name) <span class="text-rose-500">*</span></label>
+                        <input type="text" name="title" value="<?php echo e($course->name); ?>" required class="admin-input">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-1.5">Category</label>
+                        <input type="text"
+                            value="<?php echo e($course->category?->name ?? '—'); ?><?php echo e($course->subcategory ? ' · ' . $course->subcategory->name : ''); ?>"
+                            disabled
+                            class="w-full rounded-xl border border-slate-200 bg-slate-100 text-slate-600 py-2.5 px-4 text-sm cursor-not-allowed">
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-1.5">Short card description <span class="text-rose-500">*</span></label>
+                    <textarea name="description" required rows="2" class="admin-input resize-none"><?php echo e($course->description); ?></textarea>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-1.5">Full about description (landing page)</label>
+                    <textarea name="about" rows="5" class="admin-input resize-none"><?php echo e($course->about); ?></textarea>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-1.5">Language</label>
+                        <input type="text" name="language" value="<?php echo e($course->language ?? 'English'); ?>" class="admin-input">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-1.5">Estimated duration</label>
+                        <input type="text" name="duration" value="<?php echo e($course->duration); ?>" placeholder="e.g. 12 Months" class="admin-input">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div x-show="activeTab === 'landing'" x-cloak style="display:none;" class="space-y-6">
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+                <div class="p-5 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-50/80">
+                    <div>
+                        <h3 class="font-bold text-slate-900">What You'll Learn</h3>
+                        <p class="text-xs text-slate-500 mt-0.5">Grid items shown below the course description.</p>
+                    </div>
+                    <button type="button" @click="addWhatYouLearn()" class="btn-primary text-sm py-1.5 px-3 rounded-lg">
+                        <i class="ph-bold ph-plus"></i> Add Point
+                    </button>
+                </div>
+                <div class="p-5 space-y-3">
+                    <template x-for="(item, index) in whatYouLearn" :key="index">
+                        <div class="flex items-center gap-3 group">
+                            <i class="ph-fill ph-check-circle text-orange-500 shrink-0 text-lg"></i>
+                            <input type="text" x-model="whatYouLearn[index]" placeholder="e.g. Master concepts of Newton's Laws" class="flex-1 admin-input text-sm">
+                            <button type="button" @click="whatYouLearn.splice(index, 1)" class="p-2 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors">
+                                <i class="ph-bold ph-trash"></i>
+                            </button>
+                        </div>
+                    </template>
+                    <p x-show="whatYouLearn.length === 0" class="text-center py-8 text-slate-500 text-sm">No learning points added yet.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm">
+                <div class="p-5 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-50/80 rounded-t-2xl">
+                    <div>
+                        <h3 class="font-bold text-slate-900">This Course Includes</h3>
+                        <p class="text-xs text-slate-500 mt-0.5">Feature list using emoji icons.</p>
+                    </div>
+                    <button type="button" @click="addInclude()" class="btn-primary text-sm py-1.5 px-3 rounded-lg">
+                        <i class="ph-bold ph-plus"></i> Add Feature
+                    </button>
+                </div>
+                <div class="p-5 space-y-3">
+                    <template x-for="(inc, index) in includes" :key="index">
+                        <div class="flex items-center gap-3">
+                            <!-- Emoji Picker Dropdown -->
+                            <div class="relative shrink-0" x-data="{ pickerOpen: false }">
+                                <button type="button" @click="pickerOpen = !pickerOpen" @click.outside="pickerOpen = false" class="w-10 h-10 rounded-lg bg-orange-50 border border-orange-100 flex items-center justify-center text-lg transition-colors hover:bg-orange-100 focus:ring-2 focus:ring-orange-300">
+                                    <span x-text="inc.icon || '📦'"></span>
+                                </button>
+                                
+                                <div x-show="pickerOpen" style="display: none;" class="absolute top-12 left-0 z-50 shadow-xl rounded-xl border border-slate-200 bg-white overflow-hidden">
+                                    <emoji-picker @emoji-click="inc.icon = $event.detail.unicode; pickerOpen = false" class="light"></emoji-picker>
+                                </div>
+                            </div>
+                            
+                            <input type="text" x-model="inc.text" placeholder="Description (e.g. 50+ Hours of Video Content)" class="flex-1 admin-input text-sm">
+                            
+                            <button type="button" @click="includes.splice(index, 1)" class="p-2 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors shrink-0">
+                                <i class="ph-bold ph-trash"></i>
+                            </button>
+                        </div>
+                    </template>
+                    <p x-show="includes.length === 0" class="text-center py-8 text-slate-500 text-sm">No features added yet.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+                <h3 class="font-bold text-slate-900 border-b border-slate-100 pb-4 mb-5">Media &amp; settings</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Syllabus PDF</label>
+                        <div class="border-2 border-dashed border-slate-200 rounded-xl p-4 hover:border-orange-300 transition-colors">
+                            <input type="file" name="syllabus_pdf" accept="application/pdf" class="block w-full text-sm text-slate-600 file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-orange-50 file:text-orange-700 hover:file:bg-orange-100">
+                        </div>
+                        <?php if($course->syllabus_pdf_path): ?>
+                            <p class="mt-2 text-xs text-orange-600 font-semibold flex items-center gap-1">
+                                <i class="ph-fill ph-check-circle"></i> Active: <?php echo e(basename($course->syllabus_pdf_path)); ?>
+
+                            </p>
+                        <?php endif; ?>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Custom hero image</label>
+                        <div class="border-2 border-dashed border-slate-200 rounded-xl p-4 hover:border-orange-300 transition-colors">
+                            <input type="file" name="hero_image" accept="image/*" class="block w-full text-sm text-slate-600 file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-orange-50 file:text-orange-700 hover:file:bg-orange-100">
+                        </div>
+                        <?php if($course->hero_image): ?>
+                            <p class="mt-2 text-xs text-orange-600 font-semibold flex items-center gap-1">
+                                <i class="ph-fill ph-check-circle"></i> Custom image active.
+                            </p>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div x-show="activeTab === 'faculty'" x-cloak style="display:none;" class="space-y-6">
+            <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <h3 class="text-base font-bold text-slate-900">Teaching faculty</h3>
+                    <p class="text-sm text-slate-500 mt-1">Instructor profiles shown on the public landing page.</p>
+                </div>
+                <button type="button" @click="addFaculty()" class="btn-primary text-sm py-2.5 px-4 rounded-xl">
+                    <i class="ph-bold ph-plus"></i> Add profile
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <template x-for="(fac, index) in faculty" :key="index">
+                    <div class="bg-white border border-slate-200 rounded-2xl shadow-sm relative p-5 hover:shadow-md transition-shadow">
+                        <button type="button" @click="faculty.splice(index, 1)" class="absolute top-3 right-3 w-8 h-8 flex items-center justify-center bg-white border border-slate-200 rounded-lg text-slate-400 hover:text-rose-600 hover:border-rose-200 shadow-sm transition-colors z-10">
+                            <i class="ph-bold ph-trash text-sm"></i>
+                        </button>
+                        <div class="space-y-3 pr-6">
+                            <input type="text" x-model="fac.name" placeholder="Full name" class="admin-input text-sm font-semibold">
+                            <input type="text" x-model="fac.designation" placeholder="Designation" class="admin-input text-sm">
+                            <div class="grid grid-cols-2 gap-2">
+                                <input type="text" x-model="fac.subject" placeholder="Subject" class="admin-input text-sm">
+                                <input type="text" x-model="fac.experience" placeholder="Experience" class="admin-input text-sm">
+                            </div>
+                            <input type="text" x-model="fac.students" placeholder="Students taught" class="admin-input text-sm">
+                        </div>
+                    </div>
+                </template>
+                <div x-show="faculty.length === 0" class="col-span-full py-12 text-center text-slate-500 border-2 border-dashed border-slate-200 rounded-2xl bg-white">
+                    <i class="ph-fill ph-chalkboard-teacher text-4xl text-slate-300 mb-2"></i>
+                    <p class="text-sm font-semibold text-slate-600">No faculty designated yet.</p>
+                </div>
+            </div>
+        </div>
+
+        <div x-show="activeTab === 'batches'" x-cloak style="display:none;" class="space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <h3 class="text-lg font-bold text-slate-900">Batches &amp; cohorts</h3>
+                    <p class="text-sm text-slate-500">Students enroll into individual batches derived from this master course.</p>
+                </div>
+                <button type="button" @click="showBatchModal = true" class="btn-primary text-sm py-2.5 px-4 rounded-xl">
+                    <i class="ph-bold ph-plus"></i> Create batch
+                </button>
+            </div>
+
+            <div class="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
+                <?php if($course->batches->isEmpty()): ?>
+                    <div class="p-12 text-center">
+                        <i class="ph-fill ph-users-three text-5xl text-slate-300 mb-3"></i>
+                        <p class="text-sm font-semibold text-slate-600">No batches created yet.</p>
+                        <button type="button" @click="showBatchModal = true" class="mt-4 btn-primary text-sm">
+                            <i class="ph-bold ph-plus"></i> Create first batch
+                        </button>
+                    </div>
+                <?php else: ?>
+                    <div class="panel-table-wrap">
+                        <table class="admin-table w-full text-left">
+                            <thead>
+                                <tr>
+                                    <th>Batch name</th>
+                                    <th>Price</th>
+                                    <th class="text-center">Seats</th>
+                                    <?php if($extendedBatches): ?>
+                                        <th class="text-center">Mode</th>
+                                    <?php endif; ?>
+                                    <th class="text-center">Status</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php $__currentLoopData = $course->batches; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $batch): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <tr>
+                                        <td>
+                                            <p class="font-semibold text-slate-800"><?php echo e($batch->name); ?></p>
+                                            <?php if($batch->start_date): ?>
+                                                <p class="text-xs text-slate-500">Starts <?php echo e($batch->start_date->format('M d, Y')); ?></p>
+                                            <?php endif; ?>
+                                        </td>
+                                        <td>
+                                            <p class="font-semibold text-slate-800">₹<?php echo e(number_format($batch->price)); ?></p>
+                                            <?php if($batch->original_price && $batch->original_price > $batch->price): ?>
+                                                <p class="text-xs text-slate-400 line-through">₹<?php echo e(number_format($batch->original_price)); ?></p>
+                                            <?php endif; ?>
+                                        </td>
+                                        <td class="text-center text-slate-600"><?php echo e($batch->filled_seats); ?> / <?php echo e($batch->total_seats); ?></td>
+                                        <?php if($extendedBatches): ?>
+                                            <td class="text-center">
+                                                <span class="inline-flex px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide bg-orange-50 text-orange-700 border border-orange-200"><?php echo e($batch->mode ?? '—'); ?></span>
+                                            </td>
+                                        <?php endif; ?>
+                                        <td class="text-center">
+                                            <?php if($batch->status === 'active'): ?>
+                                                <span class="inline-flex px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide bg-sky-50 text-sky-700 border border-sky-200">Active</span>
+                                            <?php elseif($batch->status === 'filling_fast'): ?>
+                                                <span class="inline-flex px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide bg-amber-50 text-amber-700 border border-amber-200">Filling fast</span>
+                                            <?php else: ?>
+                                                <span class="inline-flex px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide bg-slate-100 text-slate-600 border border-slate-200"><?php echo e(str_replace('_', ' ', $batch->status)); ?></span>
+                                            <?php endif; ?>
+                                        </td>
+                                        <td class="text-right">
+                                            <button type="button" @click="openEditBatch(<?php echo \Illuminate\Support\Js::from($batch)->toHtml() ?>)" class="text-orange-600 hover:text-orange-700 font-semibold text-sm">Edit</button>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </tbody>
+                        </table>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+    </form>
+
+    <div x-show="showBatchModal" x-cloak style="display:none;" class="fixed inset-0 z-50 overflow-y-auto">
+        <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+            <div class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm transition-opacity" @click="closeBatchModal()"></div>
+            
+            <div class="relative bg-white border border-slate-200 rounded-2xl shadow-xl w-full max-w-xl z-10 text-left overflow-visible sm:my-8" @click.stop>
+                <div class="p-5 border-b border-slate-100 flex justify-between items-center bg-slate-50/80 rounded-t-2xl">
+                    <h3 class="text-slate-900 font-bold text-lg" x-text="editingBatchId ? 'Edit batch' : 'Create batch'"></h3>
+                    <button type="button" @click="closeBatchModal()" class="w-9 h-9 flex items-center justify-center rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors" aria-label="Close">
+                        <i class="ph-bold ph-x text-lg"></i>
+                    </button>
+                </div>
+                <form :action="editingBatchId ? batchUpdatePrefix + editingBatchId : batchStoreUrl" method="POST">
+                    <?php echo csrf_field(); ?>
+                    <template x-if="editingBatchId">
+                        <input type="hidden" name="_method" value="PUT">
+                    </template>
+                    <div class="p-6 grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div class="sm:col-span-2">
+                            <label class="block text-xs font-bold uppercase tracking-wide text-slate-500 mb-1.5">Batch name <span class="text-rose-500">*</span></label>
+                            <input type="text" name="name" x-model="batchForm.name" required class="admin-input">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wide text-slate-500 mb-1.5">Price (₹) <span class="text-rose-500">*</span></label>
+                            <input type="number" name="price" x-model="batchForm.price" required class="admin-input">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wide text-slate-500 mb-1.5">MRP / original (₹)</label>
+                            <input type="number" name="original_price" x-model="batchForm.original_price" class="admin-input">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wide text-slate-500 mb-1.5">Total seats <span class="text-rose-500">*</span></label>
+                            <input type="number" name="total_seats" x-model="batchForm.total_seats" required class="admin-input">
+                        </div>
+                        <?php if($extendedBatches): ?>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wide text-slate-500 mb-1.5">Start date</label>
+                                <input type="date" name="start_date" x-model="batchForm.start_date" class="admin-input">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wide text-slate-500 mb-1.5">Mode</label>
+                                <select name="mode" x-model="batchForm.mode" class="admin-input">
+                                    <option value="Online Live">Online Live</option>
+                                    <option value="Offline">Offline / Classroom</option>
+                                    <option value="Hybrid">Hybrid</option>
+                                    <option value="Recorded">Self-Paced / Recorded</option>
+                                </select>
+                            </div>
+                        <?php endif; ?>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wide text-slate-500 mb-1.5">Status</label>
+                            <select name="status" x-model="batchForm.status" class="admin-input">
+                                <option value="active">Active</option>
+                                <option value="filling_fast">Filling fast</option>
+                                <option value="closed">Closed</option>
+                            </select>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <?php if (isset($component)) { $__componentOriginalbf3030983295dc989f62e6c4f1719d92 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginalbf3030983295dc989f62e6c4f1719d92 = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.category-fields','data' => ['categories' => $categories,'categoryId' => $course->category_id,'subcategoryRequired' => true,'inputClass' => 'admin-input']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('category-fields'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes(['categories' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($categories),'category-id' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($course->category_id),'subcategory-required' => true,'input-class' => 'admin-input']); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginalbf3030983295dc989f62e6c4f1719d92)): ?>
+<?php $attributes = $__attributesOriginalbf3030983295dc989f62e6c4f1719d92; ?>
+<?php unset($__attributesOriginalbf3030983295dc989f62e6c4f1719d92); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalbf3030983295dc989f62e6c4f1719d92)): ?>
+<?php $component = $__componentOriginalbf3030983295dc989f62e6c4f1719d92; ?>
+<?php unset($__componentOriginalbf3030983295dc989f62e6c4f1719d92); ?>
+<?php endif; ?>
+                        </div>
+                        <?php if($extendedBatches): ?>
+                            <div class="sm:col-span-2">
+                                <label class="flex items-start sm:items-center gap-3 cursor-pointer p-4 bg-amber-50 border border-amber-200 rounded-xl hover:bg-amber-100 transition-colors">
+                                    <input type="checkbox" name="is_upcoming" :checked="batchForm.is_upcoming" @change="batchForm.is_upcoming = $event.target.checked" class="rounded mt-0.5 sm:mt-0 w-5 h-5 text-orange-500 focus:ring-orange-400 border-amber-300">
+                                    <div>
+                                        <p class="text-sm font-bold text-amber-900">Mark as &quot;Coming soon&quot;</p>
+                                        <p class="text-xs text-amber-700 mt-0.5">Shows in upcoming batches; students can register interest instead of enrolling.</p>
+                                    </div>
+                                </label>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="p-5 border-t border-slate-100 bg-slate-50/50 flex flex-col-reverse sm:flex-row gap-3 rounded-b-2xl">
+                        <button type="button" @click="closeBatchModal()" class="flex-1 btn-secondary justify-center py-2.5">Cancel</button>
+                        <button type="submit" class="flex-1 btn-primary justify-center py-2.5 rounded-xl">Save batch</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php if (! $__env->hasRenderedOnce('7748270e-fde5-439d-8b2c-33a95f5cf22a')): $__env->markAsRenderedOnce('7748270e-fde5-439d-8b2c-33a95f5cf22a'); ?>
+<?php $__env->startPush('scripts'); ?>
+<script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@1/index.js"></script>
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('megaConfig', (config) => ({
+            activeTab: 'basic',
+            tabs: [
+                { id: 'basic',   name: 'Basic Info' },
+                { id: 'landing', name: 'Landing Page' },
+                { id: 'faculty', name: 'Faculty Displays' },
+                { id: 'batches', name: 'Batches & Pricing' },
+            ],
+            isPublished: config.isPublished,
+            whatYouLearn: config.whatYouLearn || [],
+            includes:     config.includes     || [],
+            faculty:      config.faculty      || [],
+            extendedBatches: config.extendedBatches || false,
+            batchUpdatePrefix: config.batchUpdatePrefix,
+            batchStoreUrl: config.batchStoreUrl,
+            categoryId: config.categoryId,
+            showBatchModal: false,
+            editingBatchId: null,
+            batchForm: {
+                name: '',
+                price: '',
+                original_price: '',
+                total_seats: 100,
+                status: 'active',
+                category_id: config.categoryId,
+                subcategory_id: '',
+                mode: 'Online Live',
+                start_date: '',
+                is_upcoming: false,
+            },
+
+            addWhatYouLearn() { this.whatYouLearn.push(''); },
+            addInclude()      { this.includes.push({ icon: '📦', text: '' }); },
+            addFaculty()      { this.faculty.push({ name: '', designation: '', subject: '', experience: '', students: '' }); },
+
+            openEditBatch(batch) {
+                this.editingBatchId = batch.id;
+                this.batchForm = {
+                    name: batch.name,
+                    price: batch.price,
+                    original_price: batch.original_price || '',
+                    total_seats: batch.total_seats,
+                    status: batch.status || 'active',
+                    category_id: batch.category_id || this.categoryId,
+                    subcategory_id: batch.subcategory_id || '',
+                    mode: batch.mode || 'Online Live',
+                    start_date: batch.start_date ? String(batch.start_date).substring(0, 10) : '',
+                    is_upcoming: Boolean(batch.is_upcoming),
+                };
+                this.showBatchModal = true;
+            },
+
+            closeBatchModal() {
+                this.showBatchModal = false;
+                this.editingBatchId = null;
+                this.batchForm = {
+                    name: '',
+                    price: '',
+                    original_price: '',
+                    total_seats: 100,
+                    status: 'active',
+                    category_id: this.categoryId,
+                    subcategory_id: '',
+                    mode: 'Online Live',
+                    start_date: '',
+                    is_upcoming: false,
+                };
+            },
+        }));
+    });
+</script>
+<?php $__env->stopPush(); ?>
+<?php endif; ?>
+<?php /**PATH D:\Lama Projects\toppershope-website\resources\views/components/academic/mega-course-configurator.blade.php ENDPATH**/ ?>
