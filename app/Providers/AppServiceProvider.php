@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
     {
         // Tell Laravel where the public folder is inside Hostinger's environment
         // Automatically checks if public_html exists to prevent local artisan serve from crashing
-        if (is_dir(base_path('../public_html'))) {
+        if (is_dir(base_path('../public_html')) && file_exists(base_path('../public_html/index.php'))) {
             $this->app->usePublicPath(base_path('../public_html'));
         }
 
