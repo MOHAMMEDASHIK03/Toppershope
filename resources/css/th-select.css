@@ -48,8 +48,8 @@
 .th-select.is-open .th-select-trigger,
 .th-select-trigger:focus-visible {
     background: #fff;
-    border-color: #f97316;
-    box-shadow: 0 0 0 3px rgb(249 115 22 / 0.15);
+    border-color: #7723D6;
+    box-shadow: 0 0 0 3px rgb(119 35 214 / 0.15);
     outline: none;
 }
 
@@ -74,7 +74,7 @@
 
 .th-select.is-open .th-select-chevron {
     transform: rotate(180deg);
-    color: #f97316;
+    color: #7723D6;
 }
 
 .th-select-dropdown {
@@ -123,8 +123,8 @@
 }
 
 .th-select-search:focus {
-    border-color: #f97316;
-    box-shadow: 0 0 0 2px rgb(249 115 22 / 0.12);
+    border-color: #7723D6;
+    box-shadow: 0 0 0 2px rgb(119 35 214 / 0.12);
 }
 
 .th-select-list {
@@ -147,13 +147,13 @@
 
 .th-select-option:hover,
 .th-select-option.is-focused {
-    background: #fff7ed;
-    color: #c2410c;
+    background: #F5F0FF;
+    color: #6B21C8;
 }
 
 .th-select-option.is-selected {
-    background: #ffedd5;
-    color: #ea580c;
+    background: #E9D8FD;
+    color: #6B21C8;
     font-weight: 600;
 }
 

@@ -12,8 +12,8 @@
 <!-- ===== PREMIUM HERO SECTION ===== -->
 <section id="careers-hero" class="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-white border-b border-slate-100">
     <!-- Fluid background glow spheres -->
-    <div class="absolute -top-28 -left-16 w-80 h-80 rounded-full bg-blue-100/60 blur-3xl pointer-events-none"></div>
-    <div class="absolute -bottom-24 right-0 w-96 h-96 rounded-full bg-indigo-100/60 blur-3xl pointer-events-none"></div>
+    <div class="absolute -top-28 -left-16 w-80 h-80 rounded-full bg-primary-100/60 blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-24 right-0 w-96 h-96 rounded-full bg-primary-100/60 blur-3xl pointer-events-none"></div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 text-center">
         <span id="hero-badge" class="inline-flex items-center gap-2 bg-white border border-slate-200 text-primary text-xs font-extrabold px-4 py-2 rounded-full uppercase tracking-widest mb-6 shadow-sm">
@@ -23,7 +23,7 @@
         
         <h1 id="hero-title" class="text-4xl sm:text-5xl md:text-7xl font-black text-slate-900 leading-tight mb-6">
             Build the Future of <br>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-indigo-600 to-violet-600">EdTech Mentorship</span>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-600 to-primary-600">EdTech Mentorship</span>
         </h1>
         
         <p id="hero-sub" class="text-slate-600 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-8 font-medium">
@@ -31,7 +31,7 @@
         </p>
 
         <div id="hero-btns" class="flex flex-wrap gap-4 justify-center">
-            <a href="#open-positions" class="px-8 py-4 bg-primary hover:bg-blue-700 text-white font-extrabold rounded-xl transition-all shadow-[0_8px_24px_rgba(27,42,255,0.3)]">
+            <a href="#open-positions" class="px-8 py-4 bg-primary hover:bg-primary-700 text-white font-extrabold rounded-xl transition-all shadow-[0_8px_24px_rgba(27,42,255,0.3)]">
                 Explore Open Roles &darr;
             </a>
             <a href="{{ route('about') }}" class="px-8 py-4 bg-white border border-slate-200 hover:border-slate-300 text-slate-700 font-bold rounded-xl transition-all">
@@ -52,7 +52,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 gsap-stagger-parent">
             <!-- Perk 1 -->
             <div class="gsap-stagger-child bg-white p-8 rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
-                <div class="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center mb-6 border border-indigo-100">
+                <div class="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center mb-6 border border-primary-100">
                     <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
                 </div>
                 <h3 class="text-xl font-bold text-slate-900 mb-3">100% Remote &amp; Flexible</h3>
@@ -61,15 +61,15 @@
             <!-- Perk 2 -->
             <div class="gsap-stagger-child bg-white p-8 rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
                 <div class="w-12 h-12 bg-violet-50 rounded-xl flex items-center justify-center mb-6 border border-violet-100">
-                    <svg class="w-6 h-6 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 </div>
                 <h3 class="text-xl font-bold text-slate-900 mb-3">Competitive Compensation</h3>
                 <p class="text-slate-500 text-sm leading-relaxed">We respect top talent and pay competitive industry rates alongside comprehensive health benefits and annual bonuses.</p>
             </div>
             <!-- Perk 3 -->
             <div class="gsap-stagger-child bg-white p-8 rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
-                <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-6 border border-emerald-100">
-                    <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                <div class="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center mb-6 border border-emerald-100">
+                    <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
                 </div>
                 <h3 class="text-xl font-bold text-slate-900 mb-3">Continuous Learning</h3>
                 <p class="text-slate-500 text-sm leading-relaxed">We support your personal development with generous budgets for books, professional courses, and tech gear.</p>
@@ -119,14 +119,14 @@
                 <!-- Main detail column -->
                 <div class="space-y-3 max-w-2xl">
                     <div class="flex flex-wrap items-center gap-3">
-                        <span class="px-3 py-1 bg-blue-50 border border-blue-100 text-primary rounded-full text-[11px] font-black uppercase tracking-wider">
+                        <span class="px-3 py-1 bg-primary-50 border border-primary-100 text-primary rounded-full text-[11px] font-black uppercase tracking-wider">
                             {{ $job->department->name ?? 'General' }}
                         </span>
                         <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-[11px] font-black uppercase tracking-wider capitalize">
                             {{ $job->employment_type }}
                         </span>
                         @if($job->vacancies > 1)
-                        <span class="px-3 py-1 bg-orange-50 border border-orange-100 text-orange-600 rounded-full text-[11px] font-black uppercase tracking-wider">
+                        <span class="px-3 py-1 bg-primary-50 border border-primary-100 text-primary-700 rounded-full text-[11px] font-black uppercase tracking-wider">
                             {{ $job->vacancies }} Openings
                         </span>
                         @endif
@@ -161,7 +161,7 @@
             @empty
             <!-- Gorgeous Animated Empty State -->
             <div class="border-2 border-dashed border-slate-200 bg-slate-50/50 rounded-3xl p-12 text-center max-w-xl mx-auto flex flex-col items-center justify-center shadow-inner">
-                <div class="w-20 h-20 bg-blue-50 border border-blue-100 text-primary rounded-full flex items-center justify-center mb-6 shadow-sm animate-bounce">
+                <div class="w-20 h-20 bg-primary-50 border border-primary-100 text-primary rounded-full flex items-center justify-center mb-6 shadow-sm animate-bounce">
                     <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
                 </div>
                 <h3 class="text-2xl font-black text-slate-800 mb-2">No Openings Right Now</h3>

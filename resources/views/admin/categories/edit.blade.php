@@ -8,7 +8,7 @@
     $isFaculty = str_contains($layoutView ?? '', 'faculty');
     $btnPrimary = $isFaculty
         ? 'bg-primary hover:bg-primary/90 focus:ring-primary'
-        : 'btn-primary focus:ring-orange-500';
+        : 'btn-primary focus:ring-primary-500';
     $inputClass = 'w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-900 focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary';
 @endphp
 
@@ -70,7 +70,7 @@
                                     </form>
                                     <div class="flex items-center gap-3">
                                         <div class="w-9 h-9 rounded-lg bg-violet-50 border border-violet-100 flex items-center justify-center shrink-0">
-                                            <i class="ph-fill ph-list-bullets text-violet-600"></i>
+                                            <i class="ph-fill ph-list-bullets text-primary-600"></i>
                                         </div>
                                         <input form="sub-form-{{ $sub->id }}" type="text" name="name" value="{{ $sub->name }}" required class="{{ $inputClass }}" placeholder="Name">
                                     </div>
@@ -86,7 +86,7 @@
                                 </td>
                                 <td class="py-3 px-6 text-right">
                                     <div class="flex items-center justify-end gap-2">
-                                        <button form="sub-form-{{ $sub->id }}" type="submit" class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-orange-600 hover:bg-orange-50 transition-colors" title="Save subcategory">
+                                        <button form="sub-form-{{ $sub->id }}" type="submit" class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-primary-700 hover:bg-primary-50 transition-colors" title="Save subcategory">
                                             <i class="ph-bold ph-floppy-disk text-lg"></i>
                                         </button>
                                         <form action="{{ route($routePrefix . '.subcategories.destroy', [$category, $sub]) }}" method="POST" class="inline" onsubmit="return confirm('Delete subcategory “{{ $sub->name }}”?');">

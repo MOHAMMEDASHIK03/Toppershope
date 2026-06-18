@@ -21,7 +21,7 @@
 
 <div id="th-toast-root-placeholder" hidden aria-hidden="true"></div>
 
-<?php if (! $__env->hasRenderedOnce('43a5af0a-6ebb-4b42-bd7b-c6e5e4b1799d')): $__env->markAsRenderedOnce('43a5af0a-6ebb-4b42-bd7b-c6e5e4b1799d'); ?>
+<?php if (! $__env->hasRenderedOnce('9801d8ab-a10e-4527-ac53-ae66414f578b')): $__env->markAsRenderedOnce('9801d8ab-a10e-4527-ac53-ae66414f578b'); ?>
 <?php $__env->startPush('scripts'); ?>
 <script>
 (function () {
@@ -42,7 +42,7 @@
             border: 'border-rose-200',   
             titleColor: 'text-rose-900',   
             textColor: 'text-rose-800',
-            closeHover: 'text-rose-600 hover:text-rose-800 hover:bg-rose-100'
+            closeHover: 'text-primary-600 hover:text-rose-800 hover:bg-rose-100'
         },
         warning: { 
             title: 'Warning', 
@@ -60,7 +60,7 @@
             border: 'border-sky-200',    
             titleColor: 'text-sky-900',    
             textColor: 'text-sky-800',
-            closeHover: 'text-sky-600 hover:text-sky-800 hover:bg-sky-100'
+            closeHover: 'text-primary-500 hover:text-sky-800 hover:bg-sky-100'
         },
     };
 

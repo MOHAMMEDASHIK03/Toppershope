@@ -18,7 +18,7 @@
 <div class="max-w-4xl">
     <div class="flex items-end justify-between mb-6 gap-4 flex-wrap">
         <div>
-            <p class="text-sm font-bold text-emerald-600 uppercase tracking-wider">{{ $chapter->subject->name }}</p>
+            <p class="text-sm font-bold text-primary-600 uppercase tracking-wider">{{ $chapter->subject->name }}</p>
             <h2 class="text-2xl font-bold text-slate-900 mt-1">{{ $chapter->name }}</h2>
         </div>
         <span class="px-3 py-1 bg-emerald-100 text-emerald-700 font-bold text-xs rounded-full">FREE PREVIEW</span>
@@ -44,10 +44,10 @@
 
                     <div x-show="open" class="px-6 py-4 space-y-3">
                         @forelse($unit->videos as $video)
-                            <a href="{{ $video->video_url }}" target="_blank" rel="noopener noreferrer" class="flex items-start gap-3 p-3 rounded-lg border border-slate-100 hover:border-indigo-300 hover:bg-indigo-50 transition group">
-                                <div class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-500 font-bold text-lg flex items-center justify-center shrink-0">▶</div>
+                            <a href="{{ $video->video_url }}" target="_blank" rel="noopener noreferrer" class="flex items-start gap-3 p-3 rounded-lg border border-slate-100 hover:border-primary-300 hover:bg-primary-50 transition group">
+                                <div class="w-10 h-10 rounded-lg bg-primary-100 text-primary-500 font-bold text-lg flex items-center justify-center shrink-0">▶</div>
                                 <div class="flex-1">
-                                    <p class="font-semibold text-slate-800 group-hover:text-indigo-700 text-sm leading-tight">{{ $video->title }}</p>
+                                    <p class="font-semibold text-slate-800 group-hover:text-primary-700 text-sm leading-tight">{{ $video->title }}</p>
                                     <p class="text-xs text-slate-400 mt-0.5">{{ $video->duration_minutes }} mins</p>
                                 </div>
                             </a>
@@ -67,7 +67,7 @@
 
                         @forelse($unit->quizzes as $quiz)
                             <div class="flex items-start gap-3 p-3 rounded-lg border border-slate-100 bg-slate-50 opacity-80">
-                                <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-500 font-bold text-lg flex items-center justify-center shrink-0">✍️</div>
+                                <div class="w-10 h-10 rounded-lg bg-emerald-100 text-primary-500 font-bold text-lg flex items-center justify-center shrink-0">✍️</div>
                                 <div class="flex-1">
                                     <p class="font-semibold text-slate-800 text-sm leading-tight">
                                         {{ $quiz->title }}

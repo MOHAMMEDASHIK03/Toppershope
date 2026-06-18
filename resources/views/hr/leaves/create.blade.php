@@ -30,8 +30,8 @@
             @foreach($leaveTypes as $type)
                 <label class="cursor-pointer">
                     <input type="radio" name="leave_type_id" value="{{ $type->id }}" class="peer sr-only" {{ old('leave_type_id') == $type->id ? 'checked' : '' }} required>
-                    <div class="p-4 rounded-xl border-2 peer-checked:border-indigo-600 peer-checked:bg-orange-50 border-slate-200 bg-white transition-all text-left group hover:border-indigo-200">
-                        <span class="block text-sm font-bold group-hover:text-orange-600 peer-checked:text-indigo-700 text-slate-700 mb-1">{{ $type->name }}</span>
+                    <div class="p-4 rounded-xl border-2 peer-checked:border-primary-600 peer-checked:bg-primary-50 border-slate-200 bg-white transition-all text-left group hover:border-primary-200">
+                        <span class="block text-sm font-bold group-hover:text-primary-700 peer-checked:text-primary-700 text-slate-700 mb-1">{{ $type->name }}</span>
                         <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{{ $type->days_allowed }} days allowed</span>
                     </div>
                 </label>
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const requested = Math.round((endD - startD) / 86400000) + 1;
         if (requested > allowed) {
             hint.textContent = `Only ${daySpan(allowed)} allowed for this leave type. You selected ${requested} day(s).`;
-            hint.className = 'text-xs text-rose-600 font-semibold mt-1';
+            hint.className = 'text-xs text-primary-600 font-semibold mt-1';
         } else {
             hint.textContent = `${requested} of ${allowed} allowed day(s) selected.`;
             hint.className = 'text-xs text-slate-500 mt-1';

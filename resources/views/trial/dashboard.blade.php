@@ -20,7 +20,7 @@
             <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
                 <div class="flex items-start justify-between mb-4">
                     <div>
-                        <p class="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-1">{{ $subject->name }}</p>
+                        <p class="text-xs font-bold text-primary-600 uppercase tracking-wider mb-1">{{ $subject->name }}</p>
                         <h3 class="font-bold text-slate-900 text-lg leading-tight">{{ $chapter?->name ?? 'No Chapters Yet' }}</h3>
                     </div>
                     <span class="text-2xl opacity-80">
@@ -41,7 +41,7 @@
                         <span>✍️ {{ $qCount }} Quizzes</span>
                     </div>
                     <a href="{{ route('trial.content.chapter', $chapter->id) }}"
-                       class="block w-full text-center py-2.5 bg-emerald-50 text-emerald-700 font-semibold rounded-lg border border-emerald-200 hover:bg-emerald-100 transition text-sm">
+                       class="block w-full text-center py-2.5 bg-primary-50 text-emerald-700 font-semibold rounded-lg border border-emerald-200 hover:bg-emerald-100 transition text-sm">
                         Start Learning First Chapter →
                     </a>
                 @else

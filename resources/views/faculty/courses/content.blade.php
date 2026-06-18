@@ -89,8 +89,8 @@
                                                     {{ $unit->name }}
                                                 </span>
                                                 <div class="flex gap-1 text-[10px]">
-                                                    <span class="bg-orange-50 text-orange-600 px-1 rounded flex items-center"><i class="ph-fill ph-video-camera mr-0.5"></i> {{ $unit->videos->count() }}</span>
-                                                    <span class="bg-orange-50 text-orange-600 px-1 rounded flex items-center"><i class="ph-fill ph-file-pdf mr-0.5"></i> {{ $unit->notes->count() }}</span>
+                                                    <span class="bg-primary-50 text-primary-700 px-1 rounded flex items-center"><i class="ph-fill ph-video-camera mr-0.5"></i> {{ $unit->videos->count() }}</span>
+                                                    <span class="bg-primary-50 text-primary-700 px-1 rounded flex items-center"><i class="ph-fill ph-file-pdf mr-0.5"></i> {{ $unit->notes->count() }}</span>
                                                 </div>
                                             </div>
                                         @empty
@@ -135,10 +135,10 @@
                     
                     <!-- Upload Tabs -->
                     <div class="flex bg-slate-100 p-1 rounded-lg">
-                        <button @click="uploadType = 'video'" class="px-3 py-1.5 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5" :class="uploadType === 'video' ? 'bg-white text-orange-600 shadow-sm' : 'text-slate-500 hover:text-slate-700'">
+                        <button @click="uploadType = 'video'" class="px-3 py-1.5 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5" :class="uploadType === 'video' ? 'bg-white text-primary-700 shadow-sm' : 'text-slate-500 hover:text-slate-700'">
                             <i class="ph-fill ph-video-camera"></i> Videos
                         </button>
-                        <button @click="uploadType = 'note'" class="px-3 py-1.5 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5" :class="uploadType === 'note' ? 'bg-white text-orange-600 shadow-sm' : 'text-slate-500 hover:text-slate-700'">
+                        <button @click="uploadType = 'note'" class="px-3 py-1.5 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5" :class="uploadType === 'note' ? 'bg-white text-primary-700 shadow-sm' : 'text-slate-500 hover:text-slate-700'">
                             <i class="ph-fill ph-file-pdf"></i> PDF Notes
                         </button>
                     </div>
@@ -214,7 +214,7 @@
                                     </div>
                                 </div>
                                 <div class="flex justify-end">
-                                    <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-5 rounded-lg shadow-sm shadow-orange-500/20 transition-all text-sm">Save Video</button>
+                                    <button type="submit" class="bg-primary-500 hover:bg-primary-700 text-white font-bold py-2 px-5 rounded-lg shadow-sm shadow-primary-500/20 transition-all text-sm">Save Video</button>
                                 </div>
                             </form>
                         </div>
@@ -243,7 +243,7 @@
                                                         @if($video->video_path)
                                                             <span class="bg-green-100 text-green-700 text-[9px] px-1.5 py-0.5 rounded font-bold uppercase">File</span>
                                                         @else
-                                                            <span class="bg-blue-100 text-blue-700 text-[9px] px-1.5 py-0.5 rounded font-bold uppercase">Link</span>
+                                                            <span class="bg-primary-100 text-primary-700 text-[9px] px-1.5 py-0.5 rounded font-bold uppercase">Link</span>
                                                         @endif
                                                     </div>
                                                     <p class="text-xs text-slate-500 mt-1 line-clamp-2">{{ $video->description ?? 'No description provided.' }}</p>
@@ -273,27 +273,27 @@
 
                     <!-- PDF NOTES SECTION -->
                     <div x-show="uploadType === 'note'" style="display: none;">
-                         <div class="bg-white border border-orange-100 shadow-sm rounded-xl p-5 mb-6">
-                            <h4 class="font-bold text-slate-800 text-sm mb-4 flex items-center gap-2"><i class="ph-fill ph-file-arrow-up text-orange-500"></i> Upload Topic Notes</h4>
+                         <div class="bg-white border border-primary-100 shadow-sm rounded-xl p-5 mb-6">
+                            <h4 class="font-bold text-slate-800 text-sm mb-4 flex items-center gap-2"><i class="ph-fill ph-file-arrow-up text-primary-500"></i> Upload Topic Notes</h4>
                             
                             <form :action="`/faculty/course/{{ $course->id }}/units/${selectedUnit}/notes`" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="grid grid-cols-1 gap-4 mb-4">
                                     <div class="col-span-1">
                                         <label class="block text-xs font-bold text-slate-700 mb-1">Notes Document Title</label>
-                                        <input type="text" name="title" required placeholder="e.g. Chapter 1 Summary PDF" class="w-full text-sm bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-colors">
+                                        <input type="text" name="title" required placeholder="e.g. Chapter 1 Summary PDF" class="w-full text-sm bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-primary-600/15 focus:border-primary-500 transition-colors">
                                     </div>
                                     <div class="col-span-1">
                                         <label class="block text-xs font-bold text-slate-700 mb-1">Description (Max 300 Chars)</label>
-                                        <textarea name="description" maxlength="300" rows="2" placeholder="Brief summary of the document..." class="w-full text-sm bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-colors resize-none"></textarea>
+                                        <textarea name="description" maxlength="300" rows="2" placeholder="Brief summary of the document..." class="w-full text-sm bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-primary-600/15 focus:border-primary-500 transition-colors resize-none"></textarea>
                                     </div>
                                     <div class="col-span-1">
                                         <label class="block text-xs font-bold text-slate-700 mb-1">PDF File (Max 10MB)</label>
-                                        <input type="file" name="file" accept=".pdf" required class="w-full text-sm bg-slate-50 border border-slate-200 rounded-lg px-3 py-1.5 outline-none file:mr-4 file:py-1 file:px-3 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-orange-50 file:text-orange-700 hover:file:bg-orange-100 transition-colors">
+                                        <input type="file" name="file" accept=".pdf" required class="w-full text-sm bg-slate-50 border border-slate-200 rounded-lg px-3 py-1.5 outline-none file:mr-4 file:py-1 file:px-3 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-primary-50 file:text-primary-700 hover:file:bg-primary-100 transition-colors">
                                     </div>
                                 </div>
                                 <div class="flex justify-end">
-                                    <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-5 rounded-lg shadow-sm shadow-orange-500/20 transition-all text-sm">Upload PDF</button>
+                                    <button type="submit" class="bg-primary-500 hover:bg-primary-700 text-white font-bold py-2 px-5 rounded-lg shadow-sm shadow-primary-500/20 transition-all text-sm">Upload PDF</button>
                                 </div>
                             </form>
                         </div>

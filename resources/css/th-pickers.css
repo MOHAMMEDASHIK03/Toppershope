@@ -1,4 +1,4 @@
-/* Topper's Hope — unified date & month pickers (orange theme) */
+/* Topper's Hope — unified date & month pickers (purple theme) */
 
 .th-picker {
     position: relative;
@@ -40,13 +40,13 @@
 }
 
 .th-picker-trigger:hover {
-    border-color: #fdba74;
+    border-color: #D6BCFA;
 }
 
 .th-picker-trigger:focus {
     outline: none;
-    border-color: #f97316;
-    box-shadow: 0 0 0 3px rgb(249 115 22 / 0.15);
+    border-color: #7723D6;
+    box-shadow: 0 0 0 3px rgb(119 35 214 / 0.15);
 }
 
 .th-picker-trigger.is-placeholder {
@@ -121,12 +121,12 @@
 }
 
 .th-picker-month:hover {
-    background: #fff7ed;
-    color: #ea580c;
+    background: #F5F0FF;
+    color: #6B21C8;
 }
 
 .th-picker-month.is-selected {
-    background: #f97316;
+    background: #7723D6;
     color: #fff;
     border-color: #0f172a;
 }
@@ -143,7 +143,7 @@
 .th-picker-footer button {
     font-size: 0.8125rem;
     font-weight: 600;
-    color: #f97316;
+    color: #7723D6;
     background: none;
     border: none;
     cursor: pointer;
@@ -152,8 +152,8 @@
 }
 
 .th-picker-footer button:hover {
-    background: #fff7ed;
-    color: #ea580c;
+    background: #F5F0FF;
+    color: #6B21C8;
 }
 
 /* Date calendar */
@@ -189,13 +189,13 @@
 }
 
 .th-picker-title-part:hover {
-    background: #fff7ed;
-    color: #ea580c;
+    background: #F5F0FF;
+    color: #6B21C8;
 }
 
 .th-picker-title-part.is-active {
-    background: #fff7ed;
-    color: #ea580c;
+    background: #F5F0FF;
+    color: #6B21C8;
 }
 
 .th-picker-title-sep {
@@ -231,18 +231,18 @@
 }
 
 .th-picker-year:hover {
-    background: #fff7ed;
-    color: #ea580c;
+    background: #F5F0FF;
+    color: #6B21C8;
 }
 
 .th-picker-year.is-selected {
-    background: #f97316;
+    background: #7723D6;
     color: #fff;
     border-color: #0f172a;
 }
 
 .th-picker-year.is-current {
-    box-shadow: inset 0 0 0 2px #fed7aa;
+    box-shadow: inset 0 0 0 2px #E9D8FD;
 }
 
 .th-picker-cal-body--months .th-picker-inline-month-grid,
@@ -289,14 +289,14 @@
 }
 
 .th-picker-nav-btn--accent {
-    background: #f97316;
-    border-color: #f97316;
+    background: #7723D6;
+    border-color: #7723D6;
     color: #fff;
 }
 
 .th-picker-nav-btn--accent:hover {
-    background: #ea580c;
-    border-color: #ea580c;
+    background: #6B21C8;
+    border-color: #6B21C8;
     color: #fff;
 }
 
@@ -338,8 +338,8 @@
 }
 
 .th-picker-day:hover:not(:disabled) {
-    background: #fff7ed;
-    color: #ea580c;
+    background: #F5F0FF;
+    color: #6B21C8;
 }
 
 .th-picker-day.is-other-month {
@@ -347,13 +347,13 @@
 }
 
 .th-picker-day.is-selected {
-    background: #f97316;
+    background: #7723D6;
     color: #fff;
     font-weight: 700;
 }
 
 .th-picker-day.is-today:not(.is-selected) {
-    box-shadow: inset 0 0 0 2px #fed7aa;
+    box-shadow: inset 0 0 0 2px #E9D8FD;
 }
 
 .th-picker-day:disabled {
@@ -389,8 +389,8 @@
 
 .th-picker-time-row input[type="time"]:focus {
     outline: none;
-    border-color: #f97316;
-    box-shadow: 0 0 0 3px rgb(249 115 22 / 0.15);
+    border-color: #7723D6;
+    box-shadow: 0 0 0 3px rgb(119 35 214 / 0.15);
 }
 
 /* Inline / compact triggers inherit parent width */

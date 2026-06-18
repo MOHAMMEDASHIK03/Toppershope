@@ -4,7 +4,7 @@
 
         <div class="payslip-doc__header">
             <div class="payslip-doc__header-left">
-                <div class="payslip-doc__logo">TH</div>
+                <img src="{{ asset('images/brand/logo-icon.png') }}" alt="Topper's Hope" class="payslip-doc__logo" style="width:56px;height:56px;object-fit:contain;border-radius:8px;">
                 <h1 class="payslip-doc__company-name">{{ strtoupper($payslip->company['company_name']) }}</h1>
                 <p class="payslip-doc__company-tag">{{ $payslip->company['company_tagline'] }}</p>
                 <div class="payslip-doc__company-meta">

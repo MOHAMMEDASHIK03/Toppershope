@@ -88,7 +88,7 @@
                                                     {{ $unit->name }}
                                                 </span>
                                                 <div class="flex gap-1 text-[10px]">
-                                                    <span class="bg-orange-50 text-orange-600 px-1 rounded flex items-center font-semibold"><i class="ph-fill ph-exam mr-0.5"></i> {{ $unit->quizzes->count() }} Quizzes</span>
+                                                    <span class="bg-primary-50 text-primary-700 px-1 rounded flex items-center font-semibold"><i class="ph-fill ph-exam mr-0.5"></i> {{ $unit->quizzes->count() }} Quizzes</span>
                                                 </div>
                                             </div>
                                         @empty
@@ -166,7 +166,7 @@
                                 </div>
                             </div>
                             <div class="flex justify-end">
-                                <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-5 rounded-lg shadow-sm shadow-orange-500/20 transition-all text-sm">Create Quiz</button>
+                                <button type="submit" class="bg-primary-500 hover:bg-primary-700 text-white font-bold py-2 px-5 rounded-lg shadow-sm shadow-primary-500/20 transition-all text-sm">Create Quiz</button>
                             </div>
                         </form>
                     </div>
@@ -195,13 +195,13 @@
                                                 <p class="text-slate-500 mb-4 line-clamp-2">{{ $quiz->description ?? 'No description.' }}</p>
                                                 
                                                 <div class="flex items-center gap-4 text-xs font-semibold text-slate-500">
-                                                    <span class="flex items-center gap-1 bg-slate-50 px-2 py-1 rounded border border-slate-100"><i class="ph-fill ph-squares-four text-indigo-400"></i> {{ $quiz->sections->count() }} Sections</span>
-                                                    <span class="flex items-center gap-1 bg-slate-50 px-2 py-1 rounded border border-slate-100"><i class="ph-fill ph-question text-orange-400"></i> {{ $quiz->sections->flatMap->questions->count() }} Questions</span>
+                                                    <span class="flex items-center gap-1 bg-slate-50 px-2 py-1 rounded border border-slate-100"><i class="ph-fill ph-squares-four text-primary-400"></i> {{ $quiz->sections->count() }} Sections</span>
+                                                    <span class="flex items-center gap-1 bg-slate-50 px-2 py-1 rounded border border-slate-100"><i class="ph-fill ph-question text-primary-500"></i> {{ $quiz->sections->flatMap->questions->count() }} Questions</span>
                                                 </div>
                                             </div>
 
                                             <div class="flex flex-row sm:flex-col justify-end sm:justify-center items-center gap-2 border-t sm:border-t-0 sm:border-l border-slate-100 pt-4 sm:pt-0 sm:pl-5">
-                                                <a href="{{ route('faculty.courses.quizzes.builder', [$course->id, $quiz->id]) }}" class="bg-orange-50 text-indigo-700 hover:bg-orange-100 font-bold px-4 py-2 rounded-lg text-xs w-full text-center transition-colors flex items-center justify-center gap-1.5 shadow-sm shadow-indigo-100/50">
+                                                <a href="{{ route('faculty.courses.quizzes.builder', [$course->id, $quiz->id]) }}" class="bg-primary-50 text-primary-700 hover:bg-primary-100 font-bold px-4 py-2 rounded-lg text-xs w-full text-center transition-colors flex items-center justify-center gap-1.5 shadow-sm shadow-primary-100/50">
                                                     <i class="ph-bold ph-pencil-simple"></i> Build & Edit
                                                 </a>
                                                 <form action="{{ route('faculty.courses.quizzes.destroy', [$course->id, $quiz->id]) }}" method="POST" onsubmit="return confirm('Are you sure you want to permanently delete this quiz and all its questions?');" class="w-full">

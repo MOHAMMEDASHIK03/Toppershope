@@ -17,15 +17,15 @@
                 <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wide mb-1.5">Search Title</label>
                 <div class="flex gap-2">
                     <input type="text" name="search" value="{{ $search ?? '' }}" placeholder="Search tests..."
-                        class="flex-1 px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 placeholder:text-slate-500 outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500">
-                    <button type="submit" class="px-5 py-2.5 btn-primary text-white text-sm font-bold rounded-xl transition-all shadow-lg shadow-orange-500/10">Search</button>
+                        class="flex-1 px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 placeholder:text-slate-500 outline-none focus:ring-2 focus:ring-primary-600/15 focus:border-primary-500">
+                    <button type="submit" class="px-5 py-2.5 btn-primary text-white text-sm font-bold rounded-xl transition-all shadow-lg shadow-primary-500/10">Search</button>
                 </div>
             </div>
 
             {{-- Course/Batch/Subject/Chapter/Unit Filters --}}
             <div>
                 <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wide mb-1.5">Course</label>
-                <select name="course_id" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-600 outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 appearance-none cursor-pointer" onchange="resetDownstream('course'); document.getElementById('filterForm').submit();">
+                <select name="course_id" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-600 outline-none focus:ring-2 focus:ring-primary-600/15 focus:border-primary-500 appearance-none cursor-pointer" onchange="resetDownstream('course'); document.getElementById('filterForm').submit();">
                     <option value="">All Courses</option>
                     @foreach($filterCourses as $fc)
                         <option value="{{ $fc->id }}" {{ $courseId == $fc->id ? 'selected' : '' }}>{{ $fc->name }}</option>
@@ -35,7 +35,7 @@
 
             <div>
                 <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wide mb-1.5">Batch</label>
-                <select name="batch_id" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-600 outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 appearance-none cursor-pointer" onchange="document.getElementById('filterForm').submit();" {{ !$courseId ? 'disabled' : '' }}>
+                <select name="batch_id" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-600 outline-none focus:ring-2 focus:ring-primary-600/15 focus:border-primary-500 appearance-none cursor-pointer" onchange="document.getElementById('filterForm').submit();" {{ !$courseId ? 'disabled' : '' }}>
                     <option value="">All Batches</option>
                     @foreach($filterBatches as $fb)
                         <option value="{{ $fb->id }}" {{ $batchId == $fb->id ? 'selected' : '' }}>{{ $fb->name }}</option>
@@ -45,7 +45,7 @@
 
             <div>
                 <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wide mb-1.5">Subject</label>
-                <select name="subject_id" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-600 outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 appearance-none cursor-pointer" onchange="resetDownstream('subject'); document.getElementById('filterForm').submit();" {{ !$courseId ? 'disabled' : '' }}>
+                <select name="subject_id" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-600 outline-none focus:ring-2 focus:ring-primary-600/15 focus:border-primary-500 appearance-none cursor-pointer" onchange="resetDownstream('subject'); document.getElementById('filterForm').submit();" {{ !$courseId ? 'disabled' : '' }}>
                     <option value="">All Subjects</option>
                     @foreach($filterSubjects as $fs)
                         <option value="{{ $fs->id }}" {{ $subjectId == $fs->id ? 'selected' : '' }}>{{ $fs->name }}</option>
@@ -55,14 +55,14 @@
 
             <div>
                 <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-wide mb-1.5">Chapter / Unit</label>
-                <select name="chapter_id" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-600 outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 appearance-none cursor-pointer mb-2" onchange="resetDownstream('chapter'); document.getElementById('filterForm').submit();" {{ !$subjectId ? 'disabled' : '' }}>
+                <select name="chapter_id" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-600 outline-none focus:ring-2 focus:ring-primary-600/15 focus:border-primary-500 appearance-none cursor-pointer mb-2" onchange="resetDownstream('chapter'); document.getElementById('filterForm').submit();" {{ !$subjectId ? 'disabled' : '' }}>
                     <option value="">All Chapters</option>
                     @foreach($filterChapters as $fch)
                         <option value="{{ $fch->id }}" {{ $chapterId == $fch->id ? 'selected' : '' }}>{{ $fch->name }}</option>
                     @endforeach
                 </select>
                 @if($chapterId)
-                    <select name="unit_id" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-600 outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 appearance-none cursor-pointer mt-2" onchange="document.getElementById('filterForm').submit();">
+                    <select name="unit_id" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-600 outline-none focus:ring-2 focus:ring-primary-600/15 focus:border-primary-500 appearance-none cursor-pointer mt-2" onchange="document.getElementById('filterForm').submit();">
                         <option value="">All Units</option>
                         @foreach($filterUnits as $fu)
                             <option value="{{ $fu->id }}" {{ $unitId == $fu->id ? 'selected' : '' }}>{{ $fu->name }}</option>
@@ -76,12 +76,12 @@
         @if($courseId || $batchId || $subjectId || $chapterId || $unitId || $search)
             <div class="flex flex-wrap items-center gap-2 pt-4 border-t border-slate-200">
                 <span class="text-xs text-slate-500">Active Filters:</span>
-                @if($search) <span class="px-2 py-1 bg-orange-50 text-indigo-700 text-[10px] font-bold rounded border border-indigo-500/20">Title: {{ $search }}</span> @endif
-                @if($courseId) <span class="px-2 py-1 bg-orange-50 text-indigo-700 text-[10px] font-bold rounded border border-indigo-500/20">Course Selected</span> @endif
-                @if($batchId) <span class="px-2 py-1 bg-purple-500/10 text-purple-400 text-[10px] font-bold rounded border border-purple-500/20">Batch Selected</span> @endif
-                @if($subjectId) <span class="px-2 py-1 bg-emerald-50 text-emerald-700 text-[10px] font-bold rounded border border-emerald-200">Subject Selected</span> @endif
-                @if($chapterId) <span class="px-2 py-1 bg-emerald-50 text-emerald-700 text-[10px] font-bold rounded border border-emerald-200">Chapter Selected</span> @endif
-                @if($unitId) <span class="px-2 py-1 bg-emerald-50 text-emerald-700 text-[10px] font-bold rounded border border-emerald-200">Unit Selected</span> @endif
+                @if($search) <span class="px-2 py-1 bg-primary-50 text-primary-700 text-[10px] font-bold rounded border border-primary-500/20">Title: {{ $search }}</span> @endif
+                @if($courseId) <span class="px-2 py-1 bg-primary-50 text-primary-700 text-[10px] font-bold rounded border border-primary-500/20">Course Selected</span> @endif
+                @if($batchId) <span class="px-2 py-1 bg-primary-500/10 text-primary-400 text-[10px] font-bold rounded border border-primary-500/20">Batch Selected</span> @endif
+                @if($subjectId) <span class="px-2 py-1 bg-primary-50 text-emerald-700 text-[10px] font-bold rounded border border-emerald-200">Subject Selected</span> @endif
+                @if($chapterId) <span class="px-2 py-1 bg-primary-50 text-emerald-700 text-[10px] font-bold rounded border border-emerald-200">Chapter Selected</span> @endif
+                @if($unitId) <span class="px-2 py-1 bg-primary-50 text-emerald-700 text-[10px] font-bold rounded border border-emerald-200">Unit Selected</span> @endif
                 <a href="{{ route('student.quizzes') }}" class="text-xs text-rose-400 hover:text-rose-300 ml-2">Clear All</a>
             </div>
         @endif
@@ -113,7 +113,7 @@ function resetDownstream(level) {
                 $bestScore = $attemptData->best_score ?? 0;
                 $totalMarks = $quiz->sections->sum(fn($s) => $s->marks_per_question * $s->questions->count());
             @endphp
-            <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-5 hover:border-orange-200 transition-all">
+            <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-5 hover:border-primary-200 transition-all">
                 <div class="flex items-start justify-between mb-3">
                     <div>
                         <h3 class="font-semibold text-slate-900 text-sm">{{ $quiz->title }}</h3>
@@ -122,7 +122,7 @@ function resetDownstream(level) {
                         @endif
                     </div>
                     @if($totalAttempts > 0)
-                        <span class="px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-700 text-[10px] font-bold">{{ $totalAttempts }} attempt{{ $totalAttempts > 1 ? 's' : '' }}</span>
+                        <span class="px-2 py-0.5 rounded-md bg-primary-50 text-emerald-700 text-[10px] font-bold">{{ $totalAttempts }} attempt{{ $totalAttempts > 1 ? 's' : '' }}</span>
                     @else
                         <span class="px-2 py-0.5 rounded-md bg-amber-500/10 text-amber-400 text-[10px] font-bold">Not Attempted</span>
                     @endif
@@ -150,17 +150,17 @@ function resetDownstream(level) {
                             <span class="text-emerald-400 font-bold">{{ max(0, $bestScore) }}/{{ $totalMarks }}</span>
                         </div>
                         <div class="w-full h-1.5 rounded-full bg-slate-100">
-                            <div class="h-full rounded-full bg-gradient-to-r from-emerald-500 to-teal-500" style="width: {{ min(100, max(0, $bestScore) / $totalMarks * 100) }}%"></div>
+                            <div class="h-full rounded-full bg-gradient-to-r from-primary-500 to-primary-500" style="width: {{ min(100, max(0, $bestScore) / $totalMarks * 100) }}%"></div>
                         </div>
                     </div>
                 @endif
 
                 <div class="flex gap-2">
-                    <a href="{{ route('student.quiz.show', $quiz->id) }}" class="flex-1 text-center px-4 py-2.5 rounded-xl btn-primary text-white text-xs font-bold  transition-all shadow-lg shadow-orange-500/10">
+                    <a href="{{ route('student.quiz.show', $quiz->id) }}" class="flex-1 text-center px-4 py-2.5 rounded-xl btn-primary text-white text-xs font-bold  transition-all shadow-lg shadow-primary-500/10">
                         {{ $totalAttempts > 0 ? 'Retake Quiz' : 'Start Quiz' }}
                     </a>
                     @if($totalAttempts > 0)
-                        <a href="{{ route('student.quiz.show', $quiz->id) }}#attempts" class="px-4 py-2.5 rounded-xl bg-slate-100 text-orange-600 text-xs font-bold hover:bg-slate-200 transition-all">
+                        <a href="{{ route('student.quiz.show', $quiz->id) }}#attempts" class="px-4 py-2.5 rounded-xl bg-slate-100 text-primary-700 text-xs font-bold hover:bg-slate-200 transition-all">
                             History
                         </a>
                     @endif

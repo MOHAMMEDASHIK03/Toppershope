@@ -8,7 +8,7 @@
         <h2 class="text-xl font-bold text-slate-800">Performance Reviews</h2>
         <p class="text-sm font-medium text-slate-500 mt-1">Track and evaluate employee parameters over time</p>
     </div>
-    <a href="{{ route('hr.performance-reviews.create') }}" class="px-4 py-2.5 btn-primary font-semibold rounded-xl text-sm shadow-sm hover:bg-orange-600 focus:ring-4 focus:ring-orange-100 transition-colors inline-flex items-center gap-2 shrink-0">
+    <a href="{{ route('hr.performance-reviews.create') }}" class="px-4 py-2.5 btn-primary font-semibold rounded-xl text-sm shadow-sm hover:bg-primary-700 focus:ring-4 focus:ring-primary-100 transition-colors inline-flex items-center gap-2 shrink-0">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg>
         Submit Review
     </a>
@@ -53,8 +53,8 @@
                 <div class="min-w-0">
                     <span class="panel-list__cell-label">Status</span>
                     @if($review->status === 'published')
-                        <span class="panel-list-status-pill bg-emerald-50 border border-emerald-100 text-emerald-700 capitalize">
-                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span> {{ $review->status }}
+                        <span class="panel-list-status-pill bg-primary-50 border border-emerald-100 text-emerald-700 capitalize">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary-500 shrink-0"></span> {{ $review->status }}
                         </span>
                     @elseif($review->status === 'draft')
                         <span class="panel-list-status-pill bg-amber-50 border border-amber-100 text-amber-700 capitalize">
@@ -62,7 +62,7 @@
                         </span>
                     @elseif($review->status === 'acknowledged')
                         <span class="panel-list-status-pill bg-sky-50 border border-sky-100 text-sky-700 capitalize">
-                            <span class="w-1.5 h-1.5 rounded-full bg-sky-500 shrink-0"></span> {{ $review->status }}
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary-500 shrink-0"></span> {{ $review->status }}
                         </span>
                     @else
                         <span class="panel-list-status-pill bg-slate-100 border border-slate-200 text-slate-600 capitalize">
@@ -78,7 +78,7 @@
         @empty
             <div class="px-6 py-12 text-center text-slate-500 font-medium text-sm">
                 No performance reviews submitted yet.<br>
-                <a href="{{ route('hr.performance-reviews.create') }}" class="text-orange-600 hover:underline mt-2 inline-block">Create the first review</a>
+                <a href="{{ route('hr.performance-reviews.create') }}" class="text-primary-700 hover:underline mt-2 inline-block">Create the first review</a>
             </div>
         @endforelse
     </div>

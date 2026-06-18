@@ -36,9 +36,9 @@ unset($__defined_vars, $__key, $__value); ?>
 
 <div class="mb-6 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
     <div>
-        <h1 class="text-2xl font-bold text-slate-900 tracking-tight"><?php echo e($title); ?></h1>
+        <h1 class="text-2xl font-bold text-gray-900 dark:text-white tracking-tight"><?php echo e($title); ?></h1>
         <?php if($subtitle): ?>
-            <p class="text-sm text-slate-500 mt-1"><?php echo e($subtitle); ?></p>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1"><?php echo e($subtitle); ?></p>
         <?php endif; ?>
     </div>
     <?php if(isset($actions)): ?>

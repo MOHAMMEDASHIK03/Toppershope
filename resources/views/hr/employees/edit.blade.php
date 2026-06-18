@@ -33,7 +33,7 @@
         <div class="flex items-center gap-3">
             <button @click="if(tab > 1) tab--" class="px-4 py-2 bg-white border border-slate-200 text-slate-600 font-bold rounded-lg text-sm hover:bg-slate-50 transition-colors">Previous</button>
             <button @click="if(tab < 10) tab++" class="px-4 py-2 bg-white border border-slate-200 text-slate-600 font-bold rounded-lg text-sm hover:bg-slate-50 transition-colors">Next Section</button>
-            <button type="submit" form="employeeForm" class="px-6 py-2 btn-primary font-bold rounded-lg text-sm shadow-sm hover:bg-orange-600 transition-colors">Update Employee</button>
+            <button type="submit" form="employeeForm" class="px-6 py-2 btn-primary font-bold rounded-lg text-sm shadow-sm hover:bg-primary-700 transition-colors">Update Employee</button>
         </div>
     </div>
 
@@ -57,7 +57,7 @@
         <div class="w-full md:w-64 shrink-0 bg-white border border-slate-100 rounded-2xl p-2 shadow-sm sticky top-6">
             <template x-for="t in tabs" :key="t.id">
                 <button type="button" @click="tab = t.id"
-                        :class="tab === t.id ? 'bg-orange-50 text-indigo-700 font-bold' : 'text-slate-500 hover:bg-slate-50 hover:text-slate-700'"
+                        :class="tab === t.id ? 'bg-primary-50 text-primary-700 font-bold' : 'text-slate-500 hover:bg-slate-50 hover:text-slate-700'"
                         class="w-full text-left px-4 py-3 rounded-xl text-sm transition-colors flex items-center justify-between mb-1">
                     <span x-text="t.name"></span>
                     <svg x-show="tab === t.id" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></svg>
@@ -79,25 +79,25 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2">First Name <span class="text-rose-500">*</span></label>
-                        <input type="text" name="first_name" value="{{ old('first_name', $employee->first_name) }}" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-600/20 focus:border-indigo-600 outline-none text-slate-900 font-medium">
+                        <label class="block text-sm font-bold text-slate-700 mb-2">First Name <span class="text-primary-500">*</span></label>
+                        <input type="text" name="first_name" value="{{ old('first_name', $employee->first_name) }}" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary-600/20 focus:border-primary-600 outline-none text-slate-900 font-medium">
                     </div>
                     <div>
                         <label class="block text-sm font-bold text-slate-700 mb-2">Middle Name</label>
-                        <input type="text" name="middle_name" value="{{ old('middle_name', $employee->middle_name) }}" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-600/20 focus:border-indigo-600 outline-none text-slate-900 font-medium">
+                        <input type="text" name="middle_name" value="{{ old('middle_name', $employee->middle_name) }}" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary-600/20 focus:border-primary-600 outline-none text-slate-900 font-medium">
                     </div>
                     <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2">Last Name <span class="text-rose-500">*</span></label>
-                        <input type="text" name="last_name" value="{{ old('last_name', $employee->last_name) }}" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-600/20 focus:border-indigo-600 outline-none text-slate-900 font-medium">
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Last Name <span class="text-primary-500">*</span></label>
+                        <input type="text" name="last_name" value="{{ old('last_name', $employee->last_name) }}" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary-600/20 focus:border-primary-600 outline-none text-slate-900 font-medium">
                     </div>
                     
                     <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2">Email Address <span class="text-rose-500">*</span></label>
-                        <input type="email" name="email" value="{{ old('email', $employee->email) }}" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-600/20 focus:border-indigo-600 outline-none text-slate-900 font-medium">
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Email Address <span class="text-primary-500">*</span></label>
+                        <input type="email" name="email" value="{{ old('email', $employee->email) }}" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary-600/20 focus:border-primary-600 outline-none text-slate-900 font-medium">
                     </div>
                     <div>
                         <label class="block text-sm font-bold text-slate-700 mb-2">Official Email</label>
-                        <input type="email" name="official_email" value="{{ old('official_email', $employee->official_email) }}" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-600/20 focus:border-indigo-600 outline-none text-slate-900 font-medium">
+                        <input type="email" name="official_email" value="{{ old('official_email', $employee->official_email) }}" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary-600/20 focus:border-primary-600 outline-none text-slate-900 font-medium">
                     </div>
                     <div>
                         <label class="block text-sm font-bold text-slate-700 mb-2">Date of Birth</label>
@@ -192,7 +192,7 @@
                         <div class="flex items-center justify-between mb-4">
                             <h4 class="text-sm font-black uppercase text-slate-400">Current Address</h4>
                             <label class="flex items-center gap-2 text-sm font-medium text-slate-600 cursor-pointer">
-                                <input type="checkbox" name="same_as_permanent" x-model="sameAsPermanent" value="1" class="rounded text-orange-600 focus:ring-orange-500">
+                                <input type="checkbox" name="same_as_permanent" x-model="sameAsPermanent" value="1" class="rounded text-primary-700 focus:ring-primary-500">
                                 Same as permanent
                             </label>
                         </div>
@@ -267,7 +267,7 @@
                     />
 
                     <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-1.5">Joining Date <span class="text-rose-500">*</span></label>
+                        <label class="block text-sm font-bold text-slate-700 mb-1.5">Joining Date <span class="text-primary-500">*</span></label>
                         <input type="date" name="joining_date" value="{{ old('joining_date', $employee->joining_date?->format('Y-m-d')) }}" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 outline-none font-medium">
                     </div>
                     <div x-show="employeeType === 'probation'" x-transition>
@@ -284,7 +284,7 @@
                         <input type="text" name="work_location" value="{{ old('work_location', $employee->work_location) }}" placeholder="e.g. On-site, Remote" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 outline-none font-medium">
                     </div>
                     <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-1.5">Office Branch <span class="text-rose-500">*</span></label>
+                        <label class="block text-sm font-bold text-slate-700 mb-1.5">Office Branch <span class="text-primary-500">*</span></label>
                         <select name="branch_id" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 outline-none font-medium appearance-none">
                             <option value="">Select Branch</option>
                             @foreach($branches as $b)
@@ -318,31 +318,31 @@
                         </label>
                         <label class="cursor-pointer">
                             <input type="radio" x-model="panelAccess" name="panel_access" value="hr" class="peer sr-only">
-                            <div class="px-3 py-3 rounded-xl border-2 peer-checked:border-rose-500 peer-checked:bg-rose-50 border-slate-200 bg-white text-center transition-all">
+                            <div class="px-3 py-3 rounded-xl border-2 peer-checked:border-primary-500 peer-checked:bg-rose-50 border-slate-200 bg-white text-center transition-all">
                                 <span class="block text-sm font-bold peer-checked:text-rose-700 text-slate-600">HR Panel</span>
                             </div>
                         </label>
                         <label class="cursor-pointer">
                             <input type="radio" x-model="panelAccess" name="panel_access" value="faculty" class="peer sr-only">
-                            <div class="px-3 py-3 rounded-xl border-2 peer-checked:border-indigo-500 peer-checked:bg-orange-50 border-slate-200 bg-white text-center transition-all">
-                                <span class="block text-sm font-bold peer-checked:text-indigo-700 text-slate-600">Faculty</span>
+                            <div class="px-3 py-3 rounded-xl border-2 peer-checked:border-primary-500 peer-checked:bg-primary-50 border-slate-200 bg-white text-center transition-all">
+                                <span class="block text-sm font-bold peer-checked:text-primary-700 text-slate-600">Faculty</span>
                             </div>
                         </label>
                         <label class="cursor-pointer">
                             <input type="radio" x-model="panelAccess" name="panel_access" value="faculty_head" class="peer sr-only">
-                            <div class="px-3 py-3 rounded-xl border-2 peer-checked:border-orange-500 peer-checked:bg-orange-50 border-slate-200 bg-white text-center transition-all">
-                                <span class="block text-sm font-bold peer-checked:text-orange-700 text-slate-600">Faculty Head</span>
+                            <div class="px-3 py-3 rounded-xl border-2 peer-checked:border-primary-500 peer-checked:bg-primary-50 border-slate-200 bg-white text-center transition-all">
+                                <span class="block text-sm font-bold peer-checked:text-primary-700 text-slate-600">Faculty Head</span>
                             </div>
                         </label>
                         <label class="cursor-pointer">
                             <input type="radio" x-model="panelAccess" name="panel_access" value="ads" class="peer sr-only">
-                            <div class="px-3 py-3 rounded-xl border-2 peer-checked:border-blue-500 peer-checked:bg-orange-50 border-slate-200 bg-white text-center transition-all">
-                                <span class="block text-sm font-bold peer-checked:text-blue-700 text-slate-600">Ads Panel</span>
+                            <div class="px-3 py-3 rounded-xl border-2 peer-checked:border-primary-500 peer-checked:bg-primary-50 border-slate-200 bg-white text-center transition-all">
+                                <span class="block text-sm font-bold peer-checked:text-primary-700 text-slate-600">Ads Panel</span>
                             </div>
                         </label>
                         <label class="cursor-pointer">
                             <input type="radio" x-model="panelAccess" name="panel_access" value="admission" class="peer sr-only">
-                            <div class="px-3 py-3 rounded-xl border-2 peer-checked:border-emerald-500 peer-checked:bg-emerald-50 border-slate-200 bg-white text-center transition-all">
+                            <div class="px-3 py-3 rounded-xl border-2 peer-checked:border-primary-500 peer-checked:bg-primary-50 border-slate-200 bg-white text-center transition-all">
                                 <span class="block text-sm font-bold peer-checked:text-emerald-700 text-slate-600">Admission</span>
                             </div>
                         </label>
@@ -350,20 +350,20 @@
                 </div>
 
                 @if(!$employee->account_type)
-                <div x-show="panelAccess !== 'none'" x-transition class="bg-orange-50/50 rounded-xl p-5 border border-indigo-100">
-                    <p class="text-sm text-indigo-800 font-medium mb-4">
+                <div x-show="panelAccess !== 'none'" x-transition class="bg-primary-50/50 rounded-xl p-5 border border-primary-100">
+                    <p class="text-sm text-primary-800 font-medium mb-4">
                         A user account will be created automatically in the selected module using the employee's email address.
                     </p>
                     <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-1.5">Initial Account Password <span class="text-rose-500" x-show="panelAccess !== 'none'">*</span></label>
+                        <label class="block text-sm font-bold text-slate-700 mb-1.5">Initial Account Password <span class="text-primary-500" x-show="panelAccess !== 'none'">*</span></label>
                         <input type="text" name="panel_password" x-bind:required="panelAccess !== 'none'"
-                               class="w-full md:w-1/2 px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:border-indigo-600 outline-none text-slate-900 font-medium"
+                               class="w-full md:w-1/2 px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:border-primary-600 outline-none text-slate-900 font-medium"
                                placeholder="Set initial password">
                     </div>
                 </div>
                 @else
-                <div class="bg-indigo-50/50 rounded-xl p-5 border border-indigo-100 mt-4">
-                    <p class="text-sm text-indigo-800 font-medium">
+                <div class="bg-primary-50/50 rounded-xl p-5 border border-primary-100 mt-4">
+                    <p class="text-sm text-primary-800 font-medium">
                         This employee already has system access. To change their password, go to the "Reset Password" tab.
                     </p>
                 </div>
@@ -374,7 +374,7 @@
             <div x-show="tab === 6" x-transition.opacity style="display: none;">
                 <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-6">
                     <h3 class="text-lg font-bold text-slate-800">Education Details</h3>
-                    <button type="button" @click="addEducation()" class="text-sm font-bold text-orange-600 hover:text-indigo-700">+ Add Row</button>
+                    <button type="button" @click="addEducation()" class="text-sm font-bold text-primary-700 hover:text-primary-700">+ Add Row</button>
                 </div>
                 
                 <div class="space-y-4">
@@ -387,7 +387,7 @@
                                 <input type="number" x-bind:name="'education['+index+'][graduation_year]'" :value="edu.graduation_year ?? ''" placeholder="Year" class="px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm outline-none focus:ring-2 font-medium">
                                 <input type="text" x-bind:name="'education['+index+'][grade]'" :value="edu.grade ?? edu.grade_cgpa ?? ''" placeholder="Grade / CGPA" class="px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm outline-none focus:ring-2 font-medium">
                             </div>
-                            <button type="button" @click="removeEducation(edu.id)" class="text-rose-500 p-2 hover:bg-rose-50 rounded-lg shrink-0 mt-0.5">
+                            <button type="button" @click="removeEducation(edu.id)" class="text-primary-500 p-2 hover:bg-rose-50 rounded-lg shrink-0 mt-0.5">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"/></svg>
                             </button>
                         </div>
@@ -399,7 +399,7 @@
             <div x-show="tab === 7" x-transition.opacity style="display: none;">
                 <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-6">
                     <h3 class="text-lg font-bold text-slate-800">Skills & Certifications</h3>
-                    <button type="button" @click="addSkill()" class="text-sm font-bold text-orange-600 hover:text-indigo-700">+ Add Row</button>
+                    <button type="button" @click="addSkill()" class="text-sm font-bold text-primary-700 hover:text-primary-700">+ Add Row</button>
                 </div>
 
                 <div class="space-y-4">
@@ -420,7 +420,7 @@
                                     <option value="Expert" :selected="(skill.level ?? skill.proficiency_level) === 'Expert'">Expert</option>
                                 </select>
                             </div>
-                            <button type="button" @click="removeSkill(skill.id)" class="text-rose-500 p-2 hover:bg-rose-50 rounded-lg shrink-0 mt-0.5">
+                            <button type="button" @click="removeSkill(skill.id)" class="text-primary-500 p-2 hover:bg-rose-50 rounded-lg shrink-0 mt-0.5">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"/></svg>
                             </button>
                         </div>
@@ -468,7 +468,7 @@
             <div x-show="tab === 9" x-transition.opacity style="display: none;">
                 <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-6">
                     <h3 class="text-lg font-bold text-slate-800">Company Assets (Initial Assignment)</h3>
-                    <button type="button" @click="addAsset()" class="text-sm font-bold text-orange-600 hover:text-indigo-700">+ Add Row</button>
+                    <button type="button" @click="addAsset()" class="text-sm font-bold text-primary-700 hover:text-primary-700">+ Add Row</button>
                 </div>
                 
                 <div class="space-y-4 mb-8">
@@ -479,7 +479,7 @@
                                 <input type="text" x-bind:name="'assets['+index+'][asset_serial]'" :value="asset.asset_serial ?? ''" placeholder="Serial # or Identifier" class="px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm outline-none focus:ring-2 font-medium">
                                 <input type="date" x-bind:name="'assets['+index+'][assigned_date]'" :value="asset.assigned_date ? String(asset.assigned_date).substring(0, 10) : ''" class="px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm outline-none focus:ring-2 font-medium">
                             </div>
-                            <button type="button" @click="removeAsset(asset.id)" class="text-rose-500 p-2 hover:bg-rose-50 rounded-lg shrink-0 mt-0.5">
+                            <button type="button" @click="removeAsset(asset.id)" class="text-primary-500 p-2 hover:bg-rose-50 rounded-lg shrink-0 mt-0.5">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"/></svg>
                             </button>
                         </div>
@@ -505,8 +505,8 @@
                     </div>
 
                     <div class="max-w-md">
-                        <label class="block text-sm font-bold text-slate-700 mb-2">New Password <span class="text-rose-500">*</span></label>
-                        <input type="text" name="new_panel_password" placeholder="Enter new password" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-600/20 focus:border-indigo-600 outline-none font-medium text-slate-900 mb-2">
+                        <label class="block text-sm font-bold text-slate-700 mb-2">New Password <span class="text-primary-500">*</span></label>
+                        <input type="text" name="new_panel_password" placeholder="Enter new password" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary-600/20 focus:border-primary-600 outline-none font-medium text-slate-900 mb-2">
                         <p class="text-xs font-medium text-slate-500">Leaving this field empty will keep the current password unchanged.</p>
                     </div>
                 @else

@@ -10,7 +10,7 @@
     <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
         <div class="flex items-center justify-between mb-2">
             <h3 class="text-sm font-semibold text-slate-500">Master Courses</h3>
-            <div class="w-8 h-8 rounded-lg bg-orange-50 text-orange-600 flex items-center justify-center">
+            <div class="w-8 h-8 rounded-lg bg-primary-50 text-primary-700 flex items-center justify-center">
                 <i class="ph-bold ph-books text-lg"></i>
             </div>
         </div>
@@ -21,7 +21,7 @@
     <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
         <div class="flex items-center justify-between mb-2">
             <h3 class="text-sm font-semibold text-slate-500">Total Batches</h3>
-            <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center">
+            <div class="w-8 h-8 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center">
                 <i class="ph-bold ph-users-three text-lg"></i>
             </div>
         </div>
@@ -43,7 +43,7 @@
     <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
         <div class="flex items-center justify-between mb-2">
             <h3 class="text-sm font-semibold text-slate-500">Enrollments</h3>
-            <div class="w-8 h-8 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center">
+            <div class="w-8 h-8 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center">
                 <i class="ph-bold ph-graduation-cap text-lg"></i>
             </div>
         </div>
@@ -58,7 +58,7 @@
     <div class="lg:col-span-2 bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden flex flex-col">
         <div class="px-6 py-5 border-b border-slate-100 flex items-center justify-between shrink-0">
             <h3 class="font-bold text-slate-900">Recently Added Batches</h3>
-            <a href="#" class="text-sm font-semibold text-primary hover:text-orange-600 transition-colors">View All</a>
+            <a href="#" class="text-sm font-semibold text-primary hover:text-primary-700 transition-colors">View All</a>
         </div>
         <div class="flex-1 panel-table-wrap">
             <table class="panel-table w-full text-left text-sm text-slate-600">
@@ -98,8 +98,8 @@
     <div class="bg-white border border-slate-200 rounded-2xl shadow-sm p-6">
         <h3 class="font-bold text-slate-900 mb-4">Quick Actions</h3>
         <div class="space-y-3">
-            <a href="#" class="flex items-center p-3 border border-slate-100 rounded-xl hover:border-primary/30 hover:bg-orange-50 transition-colors group">
-                <div class="w-10 h-10 rounded-lg bg-orange-100 text-primary flex items-center justify-center mr-3 group-hover:bg-primary group-hover:text-white transition-colors">
+            <a href="#" class="flex items-center p-3 border border-slate-100 rounded-xl hover:border-primary/30 hover:bg-primary-50 transition-colors group">
+                <div class="w-10 h-10 rounded-lg bg-primary-100 text-primary flex items-center justify-center mr-3 group-hover:bg-primary group-hover:text-white transition-colors">
                     <i class="ph-bold ph-plus"></i>
                 </div>
                 <div>
@@ -108,12 +108,12 @@
                 </div>
             </a>
             
-            <a href="#" class="flex items-center p-3 border border-slate-100 rounded-xl hover:border-blue-200 hover:bg-orange-50 transition-colors group">
-                <div class="w-10 h-10 rounded-lg bg-blue-100 text-orange-600 flex items-center justify-center mr-3 group-hover:bg-orange-500 group-hover:text-white transition-colors">
+            <a href="#" class="flex items-center p-3 border border-slate-100 rounded-xl hover:border-primary-200 hover:bg-primary-50 transition-colors group">
+                <div class="w-10 h-10 rounded-lg bg-primary-100 text-primary-700 flex items-center justify-center mr-3 group-hover:bg-primary-500 group-hover:text-white transition-colors">
                     <i class="ph-bold ph-users-three"></i>
                 </div>
                 <div>
-                    <h4 class="text-sm font-bold text-slate-900 group-hover:text-orange-600 transition-colors">Launch New Batch</h4>
+                    <h4 class="text-sm font-bold text-slate-900 group-hover:text-primary-700 transition-colors">Launch New Batch</h4>
                     <p class="text-xs text-slate-500">Start enrollment for a course</p>
                 </div>
             </a>

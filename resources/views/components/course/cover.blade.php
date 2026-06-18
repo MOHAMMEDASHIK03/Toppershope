@@ -9,13 +9,13 @@
     $initial = strtoupper(mb_substr(trim($course->name ?: 'C'), 0, 1));
 
     $palettes = [
-        ['from' => 'from-orange-400', 'to' => 'to-rose-500', 'text' => 'text-white'],
-        ['from' => 'from-sky-400', 'to' => 'to-blue-600', 'text' => 'text-white'],
-        ['from' => 'from-emerald-400', 'to' => 'to-teal-600', 'text' => 'text-white'],
-        ['from' => 'from-violet-400', 'to' => 'to-purple-600', 'text' => 'text-white'],
-        ['from' => 'from-amber-400', 'to' => 'to-orange-500', 'text' => 'text-white'],
-        ['from' => 'from-pink-400', 'to' => 'to-fuchsia-600', 'text' => 'text-white'],
-        ['from' => 'from-cyan-400', 'to' => 'to-indigo-500', 'text' => 'text-white'],
+        ['from' => 'from-primary-500', 'to' => 'to-primary-500', 'text' => 'text-white'],
+        ['from' => 'from-sky-400', 'to' => 'to-primary-600', 'text' => 'text-white'],
+        ['from' => 'from-emerald-400', 'to' => 'to-primary-600', 'text' => 'text-white'],
+        ['from' => 'from-violet-400', 'to' => 'to-primary-600', 'text' => 'text-white'],
+        ['from' => 'from-amber-400', 'to' => 'to-primary-500', 'text' => 'text-white'],
+        ['from' => 'from-primary-400', 'to' => 'to-primary-600', 'text' => 'text-white'],
+        ['from' => 'from-primary-400', 'to' => 'to-primary-500', 'text' => 'text-white'],
         ['from' => 'from-lime-500', 'to' => 'to-green-600', 'text' => 'text-white'],
     ];
     $palette = $palettes[abs((int) ($course->id ?? crc32($course->name ?? ''))) % count($palettes)];

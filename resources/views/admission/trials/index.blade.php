@@ -41,7 +41,7 @@
                                 <p class="font-bold text-slate-800 leading-tight">
                                     {{ $trial->name }}
                                     @if($trial->contact)
-                                    <a href="{{ route('admission.contacts.show', $trial->contact) }}" class="text-indigo-500 hover:underline">↗</a>
+                                    <a href="{{ route('admission.contacts.show', $trial->contact) }}" class="text-primary-500 hover:underline">↗</a>
                                     @endif
                                 </p>
                                 <p class="text-xs text-slate-400 font-mono">{{ $trial->phone ?? $trial->email }}</p>

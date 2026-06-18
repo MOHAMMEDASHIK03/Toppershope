@@ -60,7 +60,7 @@
     @if($search)
         <p class="text-sm text-slate-500">
             Showing results for <span class="font-semibold text-slate-700">&ldquo;{{ $search }}&rdquo;</span>
-            <a href="{{ route('student.catalog', array_filter(['category' => $categorySlug, 'subcategory' => $subcategorySlug])) }}" class="text-orange-600 font-semibold hover:text-orange-700 ml-2">Clear search</a>
+            <a href="{{ route('student.catalog', array_filter(['category' => $categorySlug, 'subcategory' => $subcategorySlug])) }}" class="text-primary-700 font-semibold hover:text-primary-700 ml-2">Clear search</a>
         </p>
     @endif
 
@@ -68,17 +68,17 @@
     @if($courses->count() > 0)
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             @foreach($courses as $course)
-                <article class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden hover:border-orange-200 hover:shadow-md transition-all group flex flex-col">
-                    <a href="{{ route('student.catalog.show', $course->slug) }}" class="block h-40 bg-gradient-to-br from-orange-50 to-amber-50 relative overflow-hidden">
+                <article class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden hover:border-primary-200 hover:shadow-md transition-all group flex flex-col">
+                    <a href="{{ route('student.catalog.show', $course->slug) }}" class="block h-40 bg-gradient-to-br from-primary-50 to-amber-50 relative overflow-hidden">
                         @if($course->thumbnail)
                             <img src="{{ asset('storage/' . $course->thumbnail) }}" alt="{{ $course->name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                         @else
                             <div class="w-full h-full flex items-center justify-center">
-                                <span class="text-4xl font-bold text-orange-200">{{ strtoupper(substr($course->name, 0, 2)) }}</span>
+                                <span class="text-4xl font-bold text-primary-200">{{ strtoupper(substr($course->name, 0, 2)) }}</span>
                             </div>
                         @endif
                         @if($course->category)
-                            <span class="absolute top-3 left-3 px-2 py-0.5 rounded-md bg-white/95 text-[10px] font-semibold text-orange-700 border border-orange-100 shadow-sm uppercase">
+                            <span class="absolute top-3 left-3 px-2 py-0.5 rounded-md bg-white/95 text-[10px] font-semibold text-primary-700 border border-primary-100 shadow-sm uppercase">
                                 {{ $course->category->name }}
                             </span>
                         @endif
@@ -91,7 +91,7 @@
 
                     <div class="p-5 flex flex-col flex-1">
                         <a href="{{ route('student.catalog.show', $course->slug) }}" class="block">
-                            <h3 class="font-semibold text-slate-900 text-base leading-snug group-hover:text-orange-600 transition-colors">{{ $course->name }}</h3>
+                            <h3 class="font-semibold text-slate-900 text-base leading-snug group-hover:text-primary-700 transition-colors">{{ $course->name }}</h3>
                         </a>
                         @if($course->description)
                             <p class="text-xs text-slate-500 line-clamp-2 mt-2 flex-1">{{ $course->description }}</p>
@@ -109,9 +109,9 @@
                             @if($course->batches_count > 0)
                                 @php $minPrice = $course->batches->min('price'); @endphp
                                 @if($minPrice)
-                                    <span class="text-emerald-600 font-bold text-sm tabular-nums">₹{{ number_format($minPrice) }}</span>
+                                    <span class="text-primary-600 font-bold text-sm tabular-nums">₹{{ number_format($minPrice) }}</span>
                                 @else
-                                    <span class="text-emerald-600 font-semibold text-xs">Free</span>
+                                    <span class="text-primary-600 font-semibold text-xs">Free</span>
                                 @endif
                             @endif
                         </div>

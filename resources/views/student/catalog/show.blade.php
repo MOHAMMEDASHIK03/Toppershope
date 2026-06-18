@@ -5,7 +5,7 @@
 @section('content')
 <div class="max-w-6xl mx-auto">
     <nav class="flex items-center gap-2 text-sm text-slate-500 mb-6">
-        <a href="{{ route('student.catalog') }}" class="hover:text-orange-600 font-medium transition-colors">Courses</a>
+        <a href="{{ route('student.catalog') }}" class="hover:text-primary-700 font-medium transition-colors">Courses</a>
         <i class="ph ph-caret-right text-xs"></i>
         <span class="text-slate-700 font-medium truncate">{{ $course->name }}</span>
     </nav>
@@ -13,16 +13,16 @@
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div class="lg:col-span-2 space-y-6">
             <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
-                <div class="h-52 bg-gradient-to-br from-orange-50 to-amber-50 relative">
+                <div class="h-52 bg-gradient-to-br from-primary-50 to-amber-50 relative">
                     @if($course->hero_image || $course->thumbnail)
                         <img src="{{ asset('storage/' . ($course->hero_image ?? $course->thumbnail)) }}" alt="{{ $course->name }}" class="w-full h-full object-cover">
                     @else
                         <div class="w-full h-full flex items-center justify-center">
-                            <span class="text-5xl font-bold text-orange-200">{{ strtoupper(substr($course->name, 0, 2)) }}</span>
+                            <span class="text-5xl font-bold text-primary-200">{{ strtoupper(substr($course->name, 0, 2)) }}</span>
                         </div>
                     @endif
                     @if($course->category)
-                        <span class="absolute top-4 left-4 px-2.5 py-1 rounded-md bg-white/95 text-xs font-semibold text-orange-700 border border-orange-100 uppercase">{{ $course->category->name }}</span>
+                        <span class="absolute top-4 left-4 px-2.5 py-1 rounded-md bg-white/95 text-xs font-semibold text-primary-700 border border-primary-100 uppercase">{{ $course->category->name }}</span>
                     @endif
                 </div>
                 <div class="p-6">
@@ -44,7 +44,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                         @foreach($course->what_you_learn as $item)
                             <div class="flex items-start gap-2.5">
-                                <i class="ph-fill ph-check-circle text-emerald-500 mt-0.5 shrink-0"></i>
+                                <i class="ph-fill ph-check-circle text-primary-500 mt-0.5 shrink-0"></i>
                                 <span class="text-sm text-slate-700">{{ $item }}</span>
                             </div>
                         @endforeach
@@ -64,7 +64,7 @@
                                 </div>
                                 @foreach($subject->chapters as $ch)
                                     <div class="px-4 py-2 border-t border-slate-100 text-xs text-slate-600 flex items-center gap-2">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-orange-400 shrink-0"></span>
+                                        <span class="w-1.5 h-1.5 rounded-full bg-primary-500 shrink-0"></span>
                                         {{ $ch->name }}
                                         <span class="ml-auto text-slate-400">{{ $ch->units->count() }} topics</span>
                                     </div>
@@ -104,7 +104,7 @@
                                 <span>{{ $batch->seats_remaining }} left</span>
                             </div>
                             <div class="h-1.5 rounded-full bg-slate-100 overflow-hidden">
-                                <div class="h-full rounded-full {{ $batch->fill_percent > 80 ? 'bg-rose-500' : ($batch->fill_percent > 50 ? 'bg-amber-500' : 'bg-emerald-500') }}"
+                                <div class="h-full rounded-full {{ $batch->fill_percent > 80 ? 'bg-primary-500' : ($batch->fill_percent > 50 ? 'bg-amber-500' : 'bg-primary-500') }}"
                                      style="width: {{ $batch->fill_percent }}%"></div>
                             </div>
                         </div>

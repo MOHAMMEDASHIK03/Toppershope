@@ -26,7 +26,7 @@
 
     <div class="pt-4 border-t border-slate-100 space-y-4">
         <div>
-            <p class="text-xs font-bold text-orange-600 uppercase tracking-wide">Target scope (optional)</p>
+            <p class="text-xs font-bold text-primary-700 uppercase tracking-wide">Target scope (optional)</p>
             <p class="text-xs text-slate-500 mt-1">Leave blank to apply company-wide.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">

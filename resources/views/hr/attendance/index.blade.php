@@ -10,8 +10,8 @@
     </div>
     
     <form action="{{ route('hr.attendance.index') }}" method="GET" class="flex gap-3">
-        <input type="date" name="date" value="{{ $date }}" class="px-4 py-2 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-600/20 focus:border-indigo-600 outline-none font-medium text-slate-700 text-sm shadow-sm" onchange="this.form.submit()">
-        <button type="submit" class="px-4 py-2 bg-orange-50 text-indigo-700 font-bold rounded-xl text-sm shadow-sm hover:bg-orange-100 transition-colors">
+        <input type="date" name="date" value="{{ $date }}" class="px-4 py-2 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary-600/20 focus:border-primary-600 outline-none font-medium text-slate-700 text-sm shadow-sm" onchange="this.form.submit()">
+        <button type="submit" class="px-4 py-2 bg-primary-50 text-primary-700 font-bold rounded-xl text-sm shadow-sm hover:bg-primary-100 transition-colors">
             Filter
         </button>
     </form>
@@ -56,7 +56,7 @@
                         <input type="hidden" name="date" value="{{ $date }}">
                         
                         <td class="px-4 py-3">
-                            <select name="status" x-model="status" class="w-full px-2 py-1.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-indigo-600/20 focus:border-indigo-600 outline-none font-semibold text-slate-700 text-xs">
+                            <select name="status" x-model="status" class="w-full px-2 py-1.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary-600/20 focus:border-primary-600 outline-none font-semibold text-slate-700 text-xs">
                                 <option value="present">Present</option>
                                 <option value="absent">Absent</option>
                                 <option value="half_day">Half Day</option>
@@ -71,7 +71,7 @@
                             </div>
                             
                             <div x-show="status !== 'absent' && status !== 'on_leave'" x-transition class="flex flex-col sm:flex-row items-start sm:items-center gap-2">
-                                <select x-model="timeMode" class="px-2 py-1.5 bg-slate-100 border border-slate-200 rounded-lg text-slate-700 text-xs font-bold focus:ring-2 focus:ring-indigo-600/20 focus:border-indigo-600 outline-none shrink-0 w-28">
+                                <select x-model="timeMode" class="px-2 py-1.5 bg-slate-100 border border-slate-200 rounded-lg text-slate-700 text-xs font-bold focus:ring-2 focus:ring-primary-600/20 focus:border-primary-600 outline-none shrink-0 w-28">
                                     <option value="check_in">Check In</option>
                                     <option value="check_out">Check Out</option>
                                 </select>
@@ -82,23 +82,23 @@
                                            value="{{ $att ? ($att->check_in ? \Carbon\Carbon::parse($att->check_in)->format('H:i') : '') : '09:00' }}"
                                            x-show="timeMode === 'check_in'"
                                            :disabled="timeMode !== 'check_in'"
-                                           class="w-28 sm:w-32 px-2 py-1 bg-slate-50 border border-slate-200 rounded-md focus:border-indigo-600 outline-none font-semibold text-slate-700 text-xs">
+                                           class="w-28 sm:w-32 px-2 py-1 bg-slate-50 border border-slate-200 rounded-md focus:border-primary-600 outline-none font-semibold text-slate-700 text-xs">
                                     
                                     <!-- Check Out -->
                                     <input type="time" name="check_out" 
                                            value="{{ $att ? ($att->check_out ? \Carbon\Carbon::parse($att->check_out)->format('H:i') : '') : '18:00' }}"
                                            x-show="timeMode === 'check_out'"
                                            :disabled="timeMode !== 'check_out'"
-                                           class="w-28 sm:w-32 px-2 py-1 bg-slate-50 border border-slate-200 rounded-md focus:border-indigo-600 outline-none font-semibold text-slate-700 text-xs">
+                                           class="w-28 sm:w-32 px-2 py-1 bg-slate-50 border border-slate-200 rounded-md focus:border-primary-600 outline-none font-semibold text-slate-700 text-xs">
                                 </div>
                             </div>
                         </td>
                         
                         <td class="px-4 py-3">
                             <div class="flex items-center gap-2">
-                                <input type="text" name="notes" value="{{ $att->notes ?? '' }}" placeholder="Reason..." class="flex-1 min-w-[80px] px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-md focus:border-indigo-600 outline-none font-medium text-slate-700 text-xs placeholder:text-slate-400">
+                                <input type="text" name="notes" value="{{ $att->notes ?? '' }}" placeholder="Reason..." class="flex-1 min-w-[80px] px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-md focus:border-primary-600 outline-none font-medium text-slate-700 text-xs placeholder:text-slate-400">
                                 
-                                <button type="submit" class="p-1.5 {{ $att ? 'bg-emerald-50 text-emerald-600 hover:bg-emerald-100' : 'bg-orange-50 text-orange-600 hover:bg-orange-100' }} rounded-md font-bold transition-colors shrink-0" title="Save Attendance">
+                                <button type="submit" class="p-1.5 {{ $att ? 'bg-primary-50 text-primary-600 hover:bg-emerald-100' : 'bg-primary-50 text-primary-700 hover:bg-primary-100' }} rounded-md font-bold transition-colors shrink-0" title="Save Attendance">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>
                                 </button>
                                 <a href="{{ route('hr.attendance.report', $emp->id) }}" class="p-1.5 bg-slate-50 text-slate-600 hover:bg-slate-100 rounded-md font-bold transition-colors shrink-0" title="View Report">

@@ -88,7 +88,7 @@
                         <p class="text-[10px] text-slate-500 font-bold uppercase">Skipped</p>
                     </div>
                     <div class="bg-slate-50 rounded-xl p-3 text-center">
-                        <p class="text-lg font-black text-orange-600">{{ $totalQuestions }}</p>
+                        <p class="text-lg font-black text-primary-700">{{ $totalQuestions }}</p>
                         <p class="text-[10px] text-slate-500 font-bold uppercase">Total</p>
                     </div>
                 </div>
@@ -135,7 +135,7 @@
         @foreach($quiz->sections as $section)
             @if($quiz->sections->count() > 1)
                 <div class="mb-4 mt-6 first:mt-0">
-                    <h4 class="text-xs font-bold text-orange-600 uppercase tracking-wide border-b border-indigo-500/10 pb-2">{{ $section->name }}</h4>
+                    <h4 class="text-xs font-bold text-primary-700 uppercase tracking-wide border-b border-primary-500/10 pb-2">{{ $section->name }}</h4>
                 </div>
             @endif
 
@@ -148,14 +148,14 @@
                     $isSkipped = !$userAnswer;
                 @endphp
 
-                <div class="mb-5 p-4 rounded-xl border {{ $isSkipped ? 'border-slate-200 bg-slate-100/20' : ($isCorrect ? 'border-emerald-200 bg-emerald-500/5' : 'border-rose-500/20 bg-rose-500/5') }}">
+                <div class="mb-5 p-4 rounded-xl border {{ $isSkipped ? 'border-slate-200 bg-slate-100/20' : ($isCorrect ? 'border-emerald-200 bg-primary-500/5' : 'border-primary-500/20 bg-primary-500/5') }}">
                     <div class="flex items-center gap-3 mb-3">
                         <span class="inline-flex items-center justify-center w-7 h-7 rounded-lg text-[11px] font-black
-                            {{ $isSkipped ? 'bg-slate-100 text-slate-400' : ($isCorrect ? 'bg-emerald-500/20 text-emerald-400' : 'bg-rose-500/20 text-rose-400') }}">
+                            {{ $isSkipped ? 'bg-slate-100 text-slate-400' : ($isCorrect ? 'bg-primary-500/20 text-emerald-400' : 'bg-primary-500/20 text-rose-400') }}">
                             {{ $globalQ }}
                         </span>
                         <span class="text-xs font-bold px-2 py-0.5 rounded-md
-                            {{ $isSkipped ? 'bg-amber-500/10 text-amber-400' : ($isCorrect ? 'bg-emerald-50 text-emerald-700' : 'bg-rose-500/10 text-rose-400') }}">
+                            {{ $isSkipped ? 'bg-amber-500/10 text-amber-400' : ($isCorrect ? 'bg-primary-50 text-emerald-700' : 'bg-primary-500/10 text-rose-400') }}">
                             {{ $isSkipped ? 'Skipped' : ($isCorrect ? '+ ' . $section->marks_per_question : '− ' . $section->negative_marks_per_question) }}
                         </span>
                     </div>
@@ -173,8 +173,8 @@
                                 $optLabel = chr(65 + $oIdx);
                             @endphp
                             <div class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm
-                                @if($isCorrectOpt) bg-emerald-500/10 border border-emerald-200
-                                @elseif($isUserChoice && !$isCorrectOpt) bg-rose-500/10 border border-rose-500/20
+                                @if($isCorrectOpt) bg-primary-500/10 border border-emerald-200
+                                @elseif($isUserChoice && !$isCorrectOpt) bg-primary-500/10 border border-primary-500/20
                                 @else bg-slate-100/30 border border-transparent
                                 @endif">
                                 <span class="text-xs font-bold {{ $isCorrectOpt ? 'text-emerald-400' : ($isUserChoice ? 'text-rose-400' : 'text-slate-500') }}">

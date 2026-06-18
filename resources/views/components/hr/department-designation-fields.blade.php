@@ -41,7 +41,7 @@
 
     <div class="dd-field">
         <label class="{{ $labelClass }}" for="{{ $fieldId }}-department">
-            Department @if($required)<span class="text-rose-500">*</span>@endif
+            Department @if($required)<span class="text-primary-500">*</span>@endif
         </label>
         <select
             id="{{ $fieldId }}-department"
@@ -58,7 +58,7 @@
 
     <div class="dd-field">
         <label class="{{ $labelClass }}" for="{{ $fieldId }}-designation">
-            Designation @if($required)<span class="text-rose-500">*</span>@endif
+            Designation @if($required)<span class="text-primary-500">*</span>@endif
         </label>
         <select
             id="{{ $fieldId }}-designation"

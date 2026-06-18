@@ -17,7 +17,7 @@
         <button
             type="submit"
             @if($formId) form="{{ $formId }}" @endif
-            class="btn-primary px-5 py-2.5 rounded-xl font-bold text-sm focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 {{ $stacked ? 'w-full' : '' }}"
+            class="btn-primary px-5 py-2.5 rounded-xl font-bold text-sm focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 {{ $stacked ? 'w-full' : '' }}"
         >
             {{ $submitLabel }}
         </button>

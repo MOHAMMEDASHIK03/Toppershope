@@ -51,8 +51,8 @@
         <!-- Add Subject Form -->
         <form action="{{ route('faculty.courses.subjects.store', $course->id) }}" method="POST" class="flex items-center gap-2">
             @csrf
-            <input type="text" name="name" placeholder="New Subject Name" required class="text-sm bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 focus:ring-1 focus:ring-orange-500 focus:border-orange-500 outline-none transition-colors">
-            <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg shadow-sm shadow-orange-500/20 transition-all text-sm flex items-center">
+            <input type="text" name="name" placeholder="New Subject Name" required class="text-sm bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 focus:ring-1 focus:ring-primary-500 focus:border-primary-500 outline-none transition-colors">
+            <button type="submit" class="bg-primary-500 hover:bg-primary-700 text-white font-bold py-2 px-4 rounded-lg shadow-sm shadow-primary-500/20 transition-all text-sm flex items-center">
                 <i class="ph-bold ph-plus mr-1.5"></i> Add Subject
             </button>
         </form>
@@ -93,8 +93,8 @@
                         <div class="mb-4">
                             <form action="{{ route('faculty.courses.chapters.store', [$course->id, $subject->id]) }}" method="POST" class="flex items-center gap-2">
                                 @csrf
-                                <input type="text" name="name" placeholder="New Chapter Name" required class="text-sm bg-white border border-slate-300 rounded-lg px-3 py-1.5 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 outline-none w-64">
-                                <button type="submit" class="bg-orange-50 hover:bg-blue-100 text-orange-600 font-bold py-1.5 px-3 rounded-lg border border-blue-200 transition-colors text-xs flex items-center">
+                                <input type="text" name="name" placeholder="New Chapter Name" required class="text-sm bg-white border border-slate-300 rounded-lg px-3 py-1.5 focus:ring-1 focus:ring-primary-500 focus:border-primary-500 outline-none w-64">
+                                <button type="submit" class="bg-primary-50 hover:bg-primary-100 text-primary-700 font-bold py-1.5 px-3 rounded-lg border border-primary-200 transition-colors text-xs flex items-center">
                                     <i class="ph-bold ph-plus mr-1"></i> Add Chapter
                                 </button>
                             </form>
@@ -111,7 +111,7 @@
                                             <div class="flex items-center gap-3">
                                                 <i class="ph-bold ph-caret-down transition-transform duration-200 text-slate-300 text-sm" :class="chapOpen ? 'rotate-0' : '-rotate-90'"></i>
                                                 <h5 class="font-bold text-slate-700 text-sm flex items-center gap-2">
-                                                    <span class="w-5 h-5 rounded bg-blue-100 text-orange-600 flex items-center justify-center text-[10px]">C</span>
+                                                    <span class="w-5 h-5 rounded bg-primary-100 text-primary-700 flex items-center justify-center text-[10px]">C</span>
                                                     {{ $chapter->name }}
                                                 </h5>
                                                 <span class="text-[10px] text-slate-400 font-medium pl-2">{{ $chapter->units->count() }} Units</span>
@@ -131,8 +131,8 @@
                                             <div class="mb-3">
                                                 <form action="{{ route('faculty.courses.units.store', [$course->id, $subject->id, $chapter->id]) }}" method="POST" class="flex items-center gap-2">
                                                     @csrf
-                                                    <input type="text" name="name" placeholder="New Unit (Topic) Name" required class="text-xs bg-white border border-slate-300 rounded px-2 py-1 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 outline-none w-56">
-                                                    <button type="submit" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-600 font-bold py-1 px-2 rounded border border-emerald-200 transition-colors text-[10px] flex items-center">
+                                                    <input type="text" name="name" placeholder="New Unit (Topic) Name" required class="text-xs bg-white border border-slate-300 rounded px-2 py-1 focus:ring-1 focus:ring-primary-500 focus:border-primary-500 outline-none w-56">
+                                                    <button type="submit" class="bg-primary-50 hover:bg-emerald-100 text-primary-600 font-bold py-1 px-2 rounded border border-emerald-200 transition-colors text-[10px] flex items-center">
                                                         <i class="ph-bold ph-plus mr-1"></i> Add Unit
                                                     </button>
                                                 </form>
@@ -151,9 +151,9 @@
                                                             </div>
                                                             <div class="flex items-center gap-3">
                                                                 <div class="flex gap-1.5 text-xs text-slate-400 font-medium mr-2">
-                                                                    <div class="bg-orange-50 text-orange-600 px-1.5 py-0.5 rounded flex items-center gap-1" title="Videos"><i class="ph-fill ph-video-camera"></i> {{ $unit->videos->count() }}</div>
-                                                                    <div class="bg-orange-50 text-orange-600 px-1.5 py-0.5 rounded flex items-center gap-1" title="Notes"><i class="ph-fill ph-file-pdf"></i> {{ $unit->notes->count() }}</div>
-                                                                    <div class="bg-purple-50 text-purple-600 px-1.5 py-0.5 rounded flex items-center gap-1" title="Quizzes"><i class="ph-fill ph-game-controller"></i> {{ $unit->quizzes->count() }}</div>
+                                                                    <div class="bg-primary-50 text-primary-700 px-1.5 py-0.5 rounded flex items-center gap-1" title="Videos"><i class="ph-fill ph-video-camera"></i> {{ $unit->videos->count() }}</div>
+                                                                    <div class="bg-primary-50 text-primary-700 px-1.5 py-0.5 rounded flex items-center gap-1" title="Notes"><i class="ph-fill ph-file-pdf"></i> {{ $unit->notes->count() }}</div>
+                                                                    <div class="bg-primary-50 text-primary-600 px-1.5 py-0.5 rounded flex items-center gap-1" title="Quizzes"><i class="ph-fill ph-game-controller"></i> {{ $unit->quizzes->count() }}</div>
                                                                 </div>
 
                                                                 <form action="{{ route('faculty.courses.units.destroy', [$course->id, $subject->id, $chapter->id, $unit->id]) }}" method="POST">

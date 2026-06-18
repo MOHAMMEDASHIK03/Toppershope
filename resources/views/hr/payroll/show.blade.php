@@ -90,7 +90,7 @@
         @csrf
         @method('PUT')
         <input type="hidden" name="status" value="paid">
-        <button type="submit" class="px-6 py-2.5 bg-emerald-600 text-white font-semibold rounded-lg text-sm hover:bg-emerald-700 transition-colors">
+        <button type="submit" class="px-6 py-2.5 bg-primary-600 text-white font-semibold rounded-lg text-sm hover:bg-emerald-700 transition-colors">
             Mark as Paid
         </button>
     </form>

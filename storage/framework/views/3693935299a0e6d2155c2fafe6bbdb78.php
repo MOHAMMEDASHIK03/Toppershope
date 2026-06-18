@@ -34,11 +34,11 @@ foreach ($attributes->all() as $__key => $__value) {
 
 unset($__defined_vars, $__key, $__value); ?>
 
-<div <?php echo e($attributes->merge(['class' => 'bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden'])); ?>>
+<div <?php echo e($attributes->merge(['class' => 'bg-white dark:bg-[#1E1E24] border border-gray-200 dark:border-[#2D2D35] rounded-xl shadow-sm overflow-hidden'])); ?>>
     <?php if($title || isset($header)): ?>
-        <div class="px-5 py-4 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        <div class="px-5 py-4 border-b border-gray-100 dark:border-[#2D2D35] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <?php if($title): ?>
-                <h3 class="font-semibold text-slate-900"><?php echo e($title); ?></h3>
+                <h3 class="font-semibold text-gray-900 dark:text-white"><?php echo e($title); ?></h3>
             <?php endif; ?>
             <?php if(isset($header)): ?>
                 <?php echo e($header); ?>

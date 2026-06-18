@@ -10,7 +10,7 @@
 <?php $component->withAttributes(['page-title' => 'Admin Sign In','heading' => 'Admin Console','subtitle' => 'Sign in with your super admin credentials.','form-action' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(route('admin.login')),'accent' => 'orange']); ?>
      <?php $__env->slot('afterForm', null, []); ?> 
         <p class="text-center mt-5 text-sm text-slate-500">
-            <a href="<?php echo e(route('admin.password.forgot')); ?>" class="font-semibold text-orange-600 hover:text-orange-700">Forgot password?</a>
+            <a href="<?php echo e(route('admin.password.forgot')); ?>" class="font-semibold text-primary-700 hover:text-primary-700">Forgot password?</a>
         </p>
      <?php $__env->endSlot(); ?>
  <?php echo $__env->renderComponent(); ?>

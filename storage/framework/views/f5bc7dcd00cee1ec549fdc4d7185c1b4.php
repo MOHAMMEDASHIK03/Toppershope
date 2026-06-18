@@ -60,7 +60,7 @@
                             </td>
                             <td class="text-slate-600"><?php echo e($course->category?->name ?? '—'); ?></td>
                             <td class="text-right whitespace-nowrap">
-                                <a href="<?php echo e(route('admin.courses.edit', $course->id)); ?>" class="text-orange-600 hover:text-indigo-800 font-semibold text-sm mr-2">Edit</a>
+                                <a href="<?php echo e(route('admin.courses.edit', $course->id)); ?>" class="text-primary-700 hover:text-primary-800 font-semibold text-sm mr-2">Edit</a>
                                 <span class="px-2 py-1 bg-slate-100 text-slate-600 rounded-lg text-xs font-semibold"><?php echo e($course->batches_count); ?> batches</span>
                             </td>
                         </tr>

@@ -3,11 +3,11 @@
     'padding' => true,
 ])
 
-<div {{ $attributes->merge(['class' => 'bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden']) }}>
+<div {{ $attributes->merge(['class' => 'bg-white dark:bg-[#1E1E24] border border-gray-200 dark:border-[#2D2D35] rounded-xl shadow-sm overflow-hidden']) }}>
     @if($title || isset($header))
-        <div class="px-5 py-4 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        <div class="px-5 py-4 border-b border-gray-100 dark:border-[#2D2D35] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             @if($title)
-                <h3 class="font-semibold text-slate-900">{{ $title }}</h3>
+                <h3 class="font-semibold text-gray-900 dark:text-white">{{ $title }}</h3>
             @endif
             @isset($header)
                 {{ $header }}

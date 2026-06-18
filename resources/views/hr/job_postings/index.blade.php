@@ -44,7 +44,7 @@
         justify-content: center;
         border-radius: 0.75rem;
         background: #fff7ed;
-        color: #ea580c;
+        color: #6B21C8;
         border: 1px solid #ffedd5;
     }
     .job-card--open .job-card__icon { background: #ecfdf5; color: #059669; border-color: #a7f3d0; }
@@ -99,7 +99,7 @@
         transition: all 0.15s;
     }
     .job-card__edit:hover {
-        color: #ea580c;
+        color: #6B21C8;
         background: #fff7ed;
         border-color: #fed7aa;
     }
@@ -185,7 +185,7 @@
     .job-card__stat-link {
         font-size: 0.75rem;
         font-weight: 700;
-        color: #ea580c;
+        color: #6B21C8;
         text-decoration: none;
     }
     .job-card__stat-link:hover { text-decoration: underline; }
@@ -233,11 +233,11 @@
     }
     .job-card__btn--primary {
         color: #fff;
-        background: #f97316;
-        border: 1px solid #ea580c;
+        background: #7723D6;
+        border: 1px solid #6B21C8;
         box-shadow: 0 2px 8px rgb(249 115 22 / 0.25);
     }
-    .job-card__btn--primary:hover { background: #ea580c; color: #fff; }
+    .job-card__btn--primary:hover { background: #6B21C8; color: #fff; }
 
     @media (max-width: 640px) {
         .job-card__actions { opacity: 1; transform: none; }
@@ -265,7 +265,7 @@
         <a href="{{ route('hr.job-applications.index') }}" class="btn-secondary px-4 py-2.5 rounded-xl text-sm shadow-sm">
             View applications
         </a>
-        <a href="{{ route('hr.job-postings.create') }}" class="px-4 py-2.5 btn-primary font-semibold rounded-xl text-sm shadow-sm hover:bg-orange-600 focus:ring-4 focus:ring-orange-100 transition-colors inline-flex items-center gap-2">
+        <a href="{{ route('hr.job-postings.create') }}" class="px-4 py-2.5 btn-primary font-semibold rounded-xl text-sm shadow-sm hover:bg-primary-700 focus:ring-4 focus:ring-primary-100 transition-colors inline-flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg>
             Create posting
         </a>
@@ -278,11 +278,11 @@
             $openCount = $postings->where('status', 'open')->count();
             $totalApplicants = $postings->sum('applications_count');
         @endphp
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-100 text-xs font-bold text-emerald-700">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-50 border border-emerald-100 text-xs font-bold text-emerald-700">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary-500"></span>
             {{ $openCount }} active {{ Str::plural('posting', $openCount) }}
         </div>
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-50 border border-orange-100 text-xs font-bold text-orange-700">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary-50 border border-primary-100 text-xs font-bold text-primary-700">
             {{ $totalApplicants }} total {{ Str::plural('applicant', $totalApplicants) }}
         </div>
     </div>
@@ -293,7 +293,7 @@
         <x-hr.job-posting-card :job="$job" />
     @empty
         <div class="job-empty">
-            <div class="w-16 h-16 mx-auto bg-orange-50 text-orange-500 rounded-2xl flex items-center justify-center mb-4 border border-orange-100">
+            <div class="w-16 h-16 mx-auto bg-primary-50 text-primary-500 rounded-2xl flex items-center justify-center mb-4 border border-primary-100">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V96H216v40Z"/></svg>
             </div>
             <h3 class="text-lg font-bold text-slate-800 mb-1">No job postings yet</h3>

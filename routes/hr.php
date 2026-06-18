@@ -14,6 +14,13 @@ Route::match(['get', 'post'], '/logout', [AuthController::class, 'logout'])->nam
 
 // HR Protected Routes
 Route::middleware(['auth:hr', 'hr'])->group(function () {
+    Route::get('/profile', [\App\Http\Controllers\Panel\ProfileController::class, 'show'])
+        ->defaults('panelKey', 'hr')
+        ->name('profile');
+    Route::put('/profile', [\App\Http\Controllers\Panel\ProfileController::class, 'update'])
+        ->defaults('panelKey', 'hr')
+        ->name('profile.update');
+
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     
     // Organization

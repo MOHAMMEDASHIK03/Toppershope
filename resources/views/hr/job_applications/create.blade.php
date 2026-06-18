@@ -12,16 +12,16 @@
     />
 
     @if(isset($jobApplication))
-        <div class="mb-6 bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-100 rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div class="mb-6 bg-gradient-to-r from-primary-50 to-amber-50 border border-primary-100 rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
-                <p class="text-[10px] font-bold uppercase text-orange-600 tracking-widest mb-1">Candidacy for</p>
+                <p class="text-[10px] font-bold uppercase text-primary-700 tracking-widest mb-1">Candidacy for</p>
                 <p class="font-bold text-slate-900 text-lg">{{ $jobApplication->jobPosting?->title ?? 'N/A' }}</p>
                 <p class="text-sm text-slate-600 capitalize">{{ str_replace('-', ' ', $jobApplication->jobPosting?->employment_type ?? '—') }} · {{ $jobApplication->jobPosting?->location ?? '—' }}</p>
             </div>
             <div class="sm:text-right shrink-0">
                 <p class="text-[10px] font-bold uppercase text-slate-400 tracking-widest mb-1">Applied</p>
                 <p class="font-bold text-slate-800">{{ $jobApplication->created_at->format('M d, Y') }}</p>
-                <p class="text-xs text-orange-600 font-medium">{{ $jobApplication->created_at->diffForHumans() }}</p>
+                <p class="text-xs text-primary-700 font-medium">{{ $jobApplication->created_at->diffForHumans() }}</p>
             </div>
         </div>
     @endif
@@ -30,7 +30,7 @@
 
         <div class="xl:col-span-2">
             <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8">
-                <h3 class="text-xs font-bold uppercase tracking-wide text-orange-600 mb-5 pb-3 border-b border-slate-100">Candidate information</h3>
+                <h3 class="text-xs font-bold uppercase tracking-wide text-primary-700 mb-5 pb-3 border-b border-slate-100">Candidate information</h3>
 
                 <form id="app-form" action="{{ isset($jobApplication) ? route('hr.job-applications.update', $jobApplication) : route('hr.job-applications.store') }}" method="POST">
                     @csrf
@@ -55,25 +55,25 @@
                             <div class="md:col-span-2">
                                 <label class="block text-sm font-bold text-slate-700 mb-1.5">Full Name <span class="text-red-500">*</span></label>
                                 <input type="text" name="applicant_name" value="{{ old('applicant_name', $jobApplication->applicant_name ?? '') }}" required {{ isset($jobApplication) ? 'readonly' : '' }}
-                                       class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-600/20 focus:border-indigo-600 outline-none transition-all font-medium text-slate-900">
+                                       class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary-600/20 focus:border-primary-600 outline-none transition-all font-medium text-slate-900">
                             </div>
 
                             <div>
                                 <label class="block text-sm font-bold text-slate-700 mb-1.5">Email Contact <span class="text-red-500">*</span></label>
                                 <input type="email" name="email" value="{{ old('email', $jobApplication->email ?? '') }}" required {{ isset($jobApplication) ? 'readonly' : '' }}
-                                       class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-600/20 focus:border-indigo-600 outline-none transition-all font-medium text-slate-900">
+                                       class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary-600/20 focus:border-primary-600 outline-none transition-all font-medium text-slate-900">
                             </div>
 
                             <div>
                                 <label class="block text-sm font-bold text-slate-700 mb-1.5">Phone <span class="text-red-500">*</span></label>
                                 <input type="text" name="phone" value="{{ old('phone', $jobApplication->phone ?? '') }}" required {{ isset($jobApplication) ? 'readonly' : '' }}
-                                       class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-600/20 focus:border-indigo-600 outline-none transition-all font-medium text-slate-900">
+                                       class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary-600/20 focus:border-primary-600 outline-none transition-all font-medium text-slate-900">
                             </div>
                             
                             <div class="md:col-span-2">
                                 <label class="block text-sm font-bold text-slate-700 mb-1.5">Cover Letter / Pitch</label>
                                 <textarea name="cover_letter" rows="5" {{ isset($jobApplication) ? 'readonly' : '' }}
-                                          class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-600/20 focus:border-indigo-600 outline-none transition-all font-medium text-slate-900 placeholder:text-slate-400">{{ old('cover_letter', $jobApplication->cover_letter ?? '') }}</textarea>
+                                          class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary-600/20 focus:border-primary-600 outline-none transition-all font-medium text-slate-900 placeholder:text-slate-400">{{ old('cover_letter', $jobApplication->cover_letter ?? '') }}</textarea>
                             </div>
                         </div>
 
@@ -87,12 +87,12 @@
                             <div class="flex flex-wrap gap-2">
                                 @php
                                     $statuses = [
-                                        'applied' => ['lbl' => 'Applied', 'col' => 'text-blue-700 focus:ring-blue-600', 'bg' => 'hover:border-blue-300'],
-                                        'shortlisted' => ['lbl' => 'Shortlisted', 'col' => 'text-purple-700 focus:ring-purple-600', 'bg' => 'hover:border-purple-300'],
-                                        'interviewed' => ['lbl' => 'Interviewed', 'col' => 'text-indigo-700 focus:ring-indigo-600', 'bg' => 'hover:border-indigo-300'],
+                                        'applied' => ['lbl' => 'Applied', 'col' => 'text-primary-700 focus:ring-primary-600', 'bg' => 'hover:border-primary-300'],
+                                        'shortlisted' => ['lbl' => 'Shortlisted', 'col' => 'text-primary-700 focus:ring-primary-600', 'bg' => 'hover:border-primary-300'],
+                                        'interviewed' => ['lbl' => 'Interviewed', 'col' => 'text-primary-700 focus:ring-primary-600', 'bg' => 'hover:border-primary-300'],
                                         'offered' => ['lbl' => 'Offered', 'col' => 'text-amber-700 focus:ring-amber-600', 'bg' => 'hover:border-amber-300'],
-                                        'hired' => ['lbl' => 'Hired', 'col' => 'text-emerald-700 focus:ring-emerald-600', 'bg' => 'hover:border-emerald-300'],
-                                        'rejected' => ['lbl' => 'Rejected', 'col' => 'text-rose-700 focus:ring-rose-600', 'bg' => 'hover:border-rose-300'],
+                                        'hired' => ['lbl' => 'Hired', 'col' => 'text-emerald-700 focus:ring-primary-600', 'bg' => 'hover:border-emerald-300'],
+                                        'rejected' => ['lbl' => 'Rejected', 'col' => 'text-rose-700 focus:ring-primary-600', 'bg' => 'hover:border-rose-300'],
                                     ];
                                 @endphp
                                 
@@ -119,15 +119,15 @@
 
         @if(isset($jobApplication))
         <div class="space-y-6 xl:sticky xl:top-6">
-            <div class="bg-gradient-to-br from-orange-500 to-amber-500 rounded-2xl p-6 text-white shadow-md">
-                <p class="text-[10px] uppercase font-bold tracking-widest text-orange-100 mb-1">Candidate file</p>
+            <div class="bg-gradient-to-br from-primary-600 to-primary-700 rounded-2xl p-6 text-white shadow-md">
+                <p class="text-[10px] uppercase font-bold tracking-widest text-primary-100 mb-1">Candidate file</p>
                 <h3 class="font-bold text-lg mb-4">Resume / CV</h3>
                 @if($jobApplication->resume_path)
-                    <a href="{{ Storage::url($jobApplication->resume_path) }}" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 py-3 bg-white text-orange-700 font-bold rounded-xl hover:bg-orange-50 transition-colors text-sm">
+                    <a href="{{ Storage::url($jobApplication->resume_path) }}" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 py-3 bg-white text-primary-700 font-bold rounded-xl hover:bg-primary-50 transition-colors text-sm">
                         View / download resume
                     </a>
                 @else
-                    <p class="text-sm text-orange-100/90 py-3 text-center bg-white/10 rounded-xl">No resume uploaded</p>
+                    <p class="text-sm text-primary-100/90 py-3 text-center bg-white/10 rounded-xl">No resume uploaded</p>
                 @endif
             </div>
 
@@ -139,7 +139,7 @@
                         <div class="border border-slate-200 bg-slate-50 rounded-xl p-4">
                             <div class="flex items-start justify-between gap-2 mb-2">
                                 <div class="min-w-0">
-                                    <p class="text-[10px] font-bold uppercase text-orange-600 mb-0.5">Round {{ $loop->iteration }}</p>
+                                    <p class="text-[10px] font-bold uppercase text-primary-700 mb-0.5">Round {{ $loop->iteration }}</p>
                                     <p class="font-bold text-slate-800 text-sm">{{ $interview->formattedSchedule() }}</p>
                                 </div>
                                 <form action="{{ route('hr.interviews.update', $interview) }}" method="POST" class="shrink-0">
@@ -153,7 +153,7 @@
                                 </form>
                             </div>
                             @if($interview->location_or_link)
-                                <a href="{{ $interview->location_or_link }}" target="_blank" rel="noopener" class="text-xs font-semibold text-orange-600 hover:underline block truncate mb-1">Meeting link ↗</a>
+                                <a href="{{ $interview->location_or_link }}" target="_blank" rel="noopener" class="text-xs font-semibold text-primary-700 hover:underline block truncate mb-1">Meeting link ↗</a>
                             @endif
                             @if($interview->feedback)
                                 <p class="text-xs text-slate-500 line-clamp-2">{{ $interview->feedback }}</p>
@@ -164,10 +164,10 @@
                     @endforelse
                 </div>
 
-                <form action="{{ route('hr.interviews.store') }}" method="POST" class="rounded-xl border border-orange-200 bg-orange-50/60 p-4">
+                <form action="{{ route('hr.interviews.store') }}" method="POST" class="rounded-xl border border-primary-200 bg-primary-50/60 p-4">
                     @csrf
                     <input type="hidden" name="job_application_id" value="{{ $jobApplication->id }}">
-                    <p class="text-xs font-bold uppercase text-orange-800 mb-3 tracking-wide">Schedule new session</p>
+                    <p class="text-xs font-bold uppercase text-primary-800 mb-3 tracking-wide">Schedule new session</p>
 
                     <div class="space-y-3">
                         <div>
@@ -183,7 +183,7 @@
                         </div>
 
                         <details class="group">
-                            <summary class="text-xs font-semibold text-orange-700 cursor-pointer list-none flex items-center gap-1">
+                            <summary class="text-xs font-semibold text-primary-700 cursor-pointer list-none flex items-center gap-1">
                                 <span class="group-open:rotate-90 transition-transform">›</span>
                                 Add specific time (optional)
                             </summary>

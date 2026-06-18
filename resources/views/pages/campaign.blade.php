@@ -12,13 +12,13 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        *, body { font-family: 'Plus Jakarta Sans', sans-serif; box-sizing: border-box; margin:0; padding:0; }
+        *, body { font-family: 'Inter', 'Segoe UI', Roboto, sans-serif; box-sizing: border-box; margin:0; padding:0; }
         :root {
-            --c-primary:   {{ $campaign->primary_color   ?: '#1B2AFF' }};
-            --c-secondary: {{ $campaign->secondary_color ?: '#7B61FF' }};
-            --c-accent:    {{ $campaign->accent_color    ?: '#00D2FF' }};
-            --c-bg:        {{ $campaign->bg_color        ?: '#0a0a1a' }};
-            --c-text:      {{ $campaign->text_color      ?: '#ffffff' }};
+            --c-primary:   #7723D6;
+            --c-secondary: #9F7AEA;
+            --c-accent:    #B794F4;
+            --c-bg:        #0F0F12;
+            --c-text:      #ffffff;
         }
         body { background: var(--c-bg); color: var(--c-text); min-height: 100vh; }
 

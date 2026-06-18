@@ -25,7 +25,7 @@
                 
                 <div class="flex flex-col sm:flex-row gap-6 mb-8 group">
                     <div class="w-full sm:w-48 h-32 rounded-xl bg-gray-50 overflow-hidden flex-shrink-0 relative border border-gray-200">
-                         <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center">
+                         <div class="absolute inset-0 bg-gradient-to-br from-primary-50 to-primary-50 flex items-center justify-center">
                             <svg class="w-10 h-10 text-primary/40 group-hover:scale-110 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"></path><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path></svg>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
             <!-- Trust Indicators -->
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
                <div class="bg-white p-4 rounded-xl text-center border border-gray-200 shadow-sm">
-                   <div class="w-10 h-10 mx-auto bg-blue-50 rounded-full flex items-center justify-center mb-2">
+                   <div class="w-10 h-10 mx-auto bg-primary-50 rounded-full flex items-center justify-center mb-2">
                        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                    </div>
                    <span class="text-xs text-gray-600 font-bold">100% Risk Free</span>
@@ -73,8 +73,8 @@
                    <span class="text-xs text-gray-600 font-bold">Secure Payment</span>
                </div>
                <div class="bg-white p-4 rounded-xl text-center border border-gray-200 shadow-sm">
-                   <div class="w-10 h-10 mx-auto bg-purple-50 rounded-full flex items-center justify-center mb-2">
-                       <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                   <div class="w-10 h-10 mx-auto bg-primary-50 rounded-full flex items-center justify-center mb-2">
+                       <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                    </div>
                    <span class="text-xs text-gray-600 font-bold">Instant Access</span>
                </div>
@@ -89,7 +89,7 @@
 
         <!-- Checkout Actions Sidebar -->
         <div class="space-y-6">
-            <div class="light-card p-6 lg:p-8 bg-blue-50/30 border-primary/20">
+            <div class="light-card p-6 lg:p-8 bg-primary-50/30 border-primary/20">
                 <h3 class="text-xl font-bold text-gray-900 mb-6">Account Details</h3>
                 
                 <div class="space-y-5 mb-8">
@@ -111,7 +111,7 @@
                     Enrollment gives you full access to all live classes, recordings, DPPs, and tests for this batch.
                 </div>
 
-                <button id="rzp-button1" class="w-full flex justify-center items-center py-4 px-4 rounded-xl text-base font-black text-white bg-primary hover:bg-blue-700 transition-all shadow-md hover:shadow-lg">
+                <button id="rzp-button1" class="w-full flex justify-center items-center py-4 px-4 rounded-xl text-base font-black text-white bg-primary hover:bg-primary-700 transition-all shadow-md hover:shadow-lg">
                     <span class="relative flex items-center gap-2" id="pay-btn-text">
                         Pay ₹{{ number_format($batch->price, 2) }} securely
                         <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
@@ -195,7 +195,7 @@
                     "contact": "{{ addslashes(Auth::user()->phone) }}"
                 },
                 "theme": {
-                    "color": "#1B2AFF"
+                    "color": "#7723D6"
                 }
             };
             var rzp1 = new Razorpay(options);

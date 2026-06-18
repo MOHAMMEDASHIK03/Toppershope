@@ -8,7 +8,7 @@
     $isFaculty = str_contains($layoutView ?? '', 'faculty');
     $btnPrimary = $isFaculty
         ? 'bg-primary hover:bg-primary/90 focus:ring-primary'
-        : 'btn-primary focus:ring-orange-500';
+        : 'btn-primary focus:ring-primary-500';
 @endphp
 
 <div>
@@ -63,7 +63,7 @@
                         <tr class="hover:bg-slate-50/50 transition-colors">
                             <td class="py-4 px-4 sm:px-6">
                                 <div class="flex items-center gap-3 min-w-0">
-                                    <div class="w-10 h-10 rounded-lg bg-orange-50 border border-orange-100 flex items-center justify-center shrink-0">
+                                    <div class="w-10 h-10 rounded-lg bg-primary-50 border border-primary-100 flex items-center justify-center shrink-0">
                                         <i class="ph-fill ph-tag text-xl text-primary"></i>
                                     </div>
                                     <p class="font-bold text-slate-800 truncate">{{ $category->name }}</p>
@@ -90,7 +90,7 @@
                                     <a href="{{ route('category.show', $category->slug) }}" target="_blank" class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors" title="View public page">
                                         <i class="ph-bold ph-arrow-square-out text-lg"></i>
                                     </a>
-                                    <a href="{{ route($routePrefix . '.edit', $category) }}" class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-orange-600 hover:bg-orange-50 transition-colors" title="Edit category & subcategories">
+                                    <a href="{{ route($routePrefix . '.edit', $category) }}" class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-primary-700 hover:bg-primary-50 transition-colors" title="Edit category & subcategories">
                                         <i class="ph-bold ph-pencil-simple text-lg"></i>
                                     </a>
                                     <form action="{{ route($routePrefix . '.destroy', $category) }}" method="POST" class="inline" onsubmit="return confirm('Delete this category? Subcategories must be removed first.');">

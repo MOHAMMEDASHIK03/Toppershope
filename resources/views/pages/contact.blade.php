@@ -11,7 +11,7 @@
 
 <!-- ===== PREMIUM HERO ===== -->
 <section id="contact-hero" class="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-white border-b border-slate-100">
-    <div class="absolute -top-20 -left-20 w-72 h-72 rounded-full bg-blue-100/70 blur-3xl pointer-events-none"></div>
+    <div class="absolute -top-20 -left-20 w-72 h-72 rounded-full bg-primary-100/70 blur-3xl pointer-events-none"></div>
     <div class="absolute -bottom-24 right-0 w-80 h-80 rounded-full bg-violet-100/60 blur-3xl pointer-events-none"></div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24 flex flex-col md:flex-row items-center gap-10">
@@ -19,13 +19,13 @@
             <span id="hero-badge" class="inline-flex items-center bg-white border border-slate-200 text-primary text-xs font-extrabold px-4 py-2 rounded-full uppercase tracking-widest mb-6">We're Here for You</span>
             <h1 id="hero-title" class="text-4xl md:text-6xl font-black text-slate-900 leading-tight mb-5">
                 Talk to Our
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-violet-600">Support Team</span>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-600">Support Team</span>
             </h1>
             <p id="hero-sub" class="text-slate-600 text-lg leading-relaxed max-w-xl">
                 Get quick help for admissions, payments, batches, and technical issues from our student success team.
             </p>
             <div id="hero-btns" class="mt-8 flex flex-wrap gap-3">
-                <a href="tel:+917012276177" class="px-7 py-3 bg-primary hover:bg-blue-700 text-white font-bold rounded-xl transition-all shadow-[0_8px_24px_rgba(37,99,235,0.28)] flex items-center gap-2">
+                <a href="tel:+917012276177" class="px-7 py-3 bg-primary hover:bg-primary-700 text-white font-bold rounded-xl transition-all shadow-[0_8px_24px_rgba(37,99,235,0.28)] flex items-center gap-2">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                     Call Now
                 </a>
@@ -63,7 +63,7 @@
             <div class="lg:col-span-8 gsap-reveal">
                 <!-- Accent border heading -->
                 <div class="flex items-stretch gap-4 mb-8">
-                    <div class="w-1.5 rounded-full bg-gradient-to-b from-primary to-purple-500 shrink-0"></div>
+                    <div class="w-1.5 rounded-full bg-gradient-to-b from-primary to-primary-500 shrink-0"></div>
                     <h2 class="text-4xl md:text-5xl font-black text-gray-900">
                         <span class="text-primary">Send Us</span> a Message
                     </h2>
@@ -114,7 +114,7 @@
                         <textarea required rows="5" placeholder="Describe your query in detail..."
                                   class="w-full px-4 py-3.5 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-gray-900 placeholder-gray-400 bg-gray-50 hover:bg-white resize-none"></textarea>
                     </div>
-                    <button type="submit" class="w-full sm:w-auto px-10 py-4 bg-primary hover:bg-blue-700 text-white font-black rounded-xl transition-all shadow-[0_4px_14px_rgba(27,42,255,0.39)] hover:shadow-[0_6px_20px_rgba(27,42,255,0.5)] flex items-center gap-2 text-lg">
+                    <button type="submit" class="w-full sm:w-auto px-10 py-4 bg-primary hover:bg-primary-700 text-white font-black rounded-xl transition-all shadow-[0_4px_14px_rgba(119,35,214,0.39)] hover:shadow-[0_6px_20px_rgba(119,35,214,0.5)] flex items-center gap-2 text-lg">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
                         Send Message
                     </button>
@@ -129,42 +129,42 @@
             <!-- Right: Contact Info Sticky Card -->
             <div class="lg:col-span-4 gsap-reveal lg:sticky lg:top-28 space-y-6">
                 <!-- Main Contact Card -->
-                <div class="relative bg-gradient-to-br from-primary via-[#2233ff] to-[#7B61FF] rounded-3xl p-8 text-white shadow-2xl overflow-hidden">
+                <div class="relative bg-gradient-to-br from-primary via-[#2233ff] to-primary-800 rounded-3xl p-8 text-white shadow-2xl overflow-hidden">
                     <div class="absolute -top-8 -right-8 w-40 h-40 rounded-full bg-white/5 border border-white/10"></div>
                     <div class="absolute -bottom-10 -left-10 w-56 h-56 rounded-full bg-white/5 border border-white/10"></div>
                     <div class="relative z-10">
                         <h3 class="text-2xl font-black mb-1">Contact<br>Information</h3>
-                        <p class="text-blue-200 text-sm mb-5 leading-relaxed">No question should be left without an answer. Contact us now.</p>
+                        <p class="text-primary-200 text-sm mb-5 leading-relaxed">No question should be left without an answer. Contact us now.</p>
                         <div class="w-full h-px bg-white/20 mb-5"></div>
                         <ul class="space-y-4 mb-6">
                             <li class="flex items-start gap-4">
                                 <div class="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
                                     <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                                 </div>
-                                <div><p class="text-xs text-blue-200 uppercase tracking-wide">Location</p><p class="font-bold text-white text-sm">Coimbatore, Tamil Nadu 641406</p></div>
+                                <div><p class="text-xs text-primary-200 uppercase tracking-wide">Location</p><p class="font-bold text-white text-sm">Coimbatore, Tamil Nadu 641406</p></div>
                             </li>
                             <li class="flex items-start gap-4">
                                 <div class="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
                                     <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                                 </div>
                                 <div>
-                                    <p class="text-xs text-blue-200 uppercase tracking-wide">Phone Numbers</p>
-                                    <a href="tel:+917012276177" class="block font-bold text-white text-sm hover:text-cyan-200 transition-colors">+91 70122 76177</a>
-                                    <a href="tel:+918075098177" class="block font-bold text-white text-sm hover:text-cyan-200 transition-colors">+91 80750 98177</a>
-                                    <a href="tel:+917639276646" class="block font-bold text-white text-sm hover:text-cyan-200 transition-colors">+91 76392 76646</a>
+                                    <p class="text-xs text-primary-200 uppercase tracking-wide">Phone Numbers</p>
+                                    <a href="tel:+917012276177" class="block font-bold text-white text-sm hover:text-primary-200 transition-colors">+91 70122 76177</a>
+                                    <a href="tel:+918075098177" class="block font-bold text-white text-sm hover:text-primary-200 transition-colors">+91 80750 98177</a>
+                                    <a href="tel:+917639276646" class="block font-bold text-white text-sm hover:text-primary-200 transition-colors">+91 76392 76646</a>
                                 </div>
                             </li>
                             <li class="flex items-start gap-4">
                                 <div class="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
                                     <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                                 </div>
-                                <div><p class="text-xs text-blue-200 uppercase tracking-wide">Email</p><a href="mailto:support@toppershope.com" class="font-bold text-white text-sm hover:text-cyan-200 transition-colors">support@toppershope.com</a></div>
+                                <div><p class="text-xs text-primary-200 uppercase tracking-wide">Email</p><a href="mailto:support@toppershope.com" class="font-bold text-white text-sm hover:text-primary-200 transition-colors">support@toppershope.com</a></div>
                             </li>
                             <li class="flex items-start gap-4">
                                 <div class="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
                                     <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                 </div>
-                                <div><p class="text-xs text-blue-200 uppercase tracking-wide">Working Hours</p><p class="font-bold text-white text-sm">Mon – Sat: 9 AM – 9 PM IST</p></div>
+                                <div><p class="text-xs text-primary-200 uppercase tracking-wide">Working Hours</p><p class="font-bold text-white text-sm">Mon – Sat: 9 AM – 9 PM IST</p></div>
                             </li>
                         </ul>
                         <div class="w-full h-px bg-white/20 mb-5"></div>
@@ -217,7 +217,7 @@
         <h2 class="text-3xl font-black text-white mb-4">Looking for quick answers?</h2>
         <p class="text-gray-400 mb-8">Check our FAQ page — we've answered the most common questions there.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="{{ route('faq') }}" class="px-10 py-4 bg-primary hover:bg-blue-700 text-white font-black rounded-xl transition-all shadow-xl">Browse FAQs</a>
+            <a href="{{ route('faq') }}" class="px-10 py-4 bg-primary hover:bg-primary-700 text-white font-black rounded-xl transition-all shadow-xl">Browse FAQs</a>
             <a href="{{ route('about') }}" class="px-10 py-4 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold rounded-xl transition-all">About Us</a>
         </div>
     </div>

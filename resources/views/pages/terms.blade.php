@@ -9,7 +9,7 @@
 
 {{-- ===== HERO ===== --}}
 <section class="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-white border-b border-slate-100 py-20 md:py-24">
-    <div class="absolute -top-20 left-1/4 w-72 h-72 bg-blue-100/70 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -top-20 left-1/4 w-72 h-72 bg-primary-100/70 rounded-full blur-3xl pointer-events-none"></div>
     <div class="absolute -bottom-20 right-1/4 w-80 h-80 bg-violet-100/60 rounded-full blur-3xl pointer-events-none"></div>
 
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -19,7 +19,7 @@
         </div>
         <h1 id="hero-title" class="text-4xl md:text-6xl font-black text-slate-900 leading-tight mb-5">
             Terms &amp;
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-violet-600">Conditions</span>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-600">Conditions</span>
         </h1>
         <p id="hero-sub" class="text-lg text-slate-600 max-w-2xl mx-auto mb-5">
             Review the terms that govern usage of our platform, classes, content, and related services.
@@ -132,8 +132,8 @@
             @foreach($sections as $s)
             <div class="terms-section bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow p-8">
                 <div class="flex items-center gap-3 mb-5">
-                    <span class="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center">
-                        <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="{{ $s['icon'] }}"></path></svg>
+                    <span class="w-10 h-10 rounded-xl bg-primary-50 border border-primary-100 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="{{ $s['icon'] }}"></path></svg>
                     </span>
                     <h2 class="text-xl font-bold text-gray-900">{{ $s['title'] }}</h2>
                 </div>
@@ -145,7 +145,7 @@
         </div>
 
         <div class="mt-12 text-center">
-            <a href="{{ route('privacy') }}" class="inline-flex items-center gap-2 text-primary font-semibold hover:text-blue-700 transition-colors">
+            <a href="{{ route('privacy') }}" class="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-700 transition-colors">
                 Read our Privacy Policy
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </a>

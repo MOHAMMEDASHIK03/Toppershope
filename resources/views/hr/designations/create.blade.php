@@ -28,7 +28,7 @@
     <x-form.field label="Description" name="description" type="textarea" :value="$designation->description ?? null" rows="3" placeholder="Brief description of this role's responsibilities" />
 
     <div class="flex items-center gap-3">
-        <input type="checkbox" name="is_active" id="is_active" value="1" class="w-5 h-5 text-orange-600 border-slate-300 rounded focus:ring-orange-500" {{ old('is_active', $designation->is_active ?? true) ? 'checked' : '' }}>
+        <input type="checkbox" name="is_active" id="is_active" value="1" class="w-5 h-5 text-primary-700 border-slate-300 rounded focus:ring-primary-500" {{ old('is_active', $designation->is_active ?? true) ? 'checked' : '' }}>
         <label for="is_active" class="text-sm font-semibold text-slate-700 cursor-pointer">Active designation</label>
     </div>
 </x-create-form-layout>

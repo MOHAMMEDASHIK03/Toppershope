@@ -9,7 +9,7 @@
             <p class="text-gray-400">Manage student leads, offline registrations, and enrollment tracking.</p>
         </div>
         <div>
-            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-bold bg-purple-500/20 text-purple-500 border border-purple-500/30">
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-bold bg-primary-500/20 text-primary-500 border border-primary-500/30">
                 Admissions Team
             </span>
         </div>
@@ -93,7 +93,7 @@
                 <div class="p-4 rounded-xl border border-white/5 bg-black/30">
                     <div class="flex justify-between items-start mb-2">
                         <div class="font-bold text-gray-200">Sneha Patel</div>
-                        <span class="text-xs text-blue-400">Inquiry Form</span>
+                        <span class="text-xs text-primary-400">Inquiry Form</span>
                     </div>
                     <div class="text-sm text-primary mb-3 font-mono">+91 99887 76655</div>
                     <div class="flex gap-2">

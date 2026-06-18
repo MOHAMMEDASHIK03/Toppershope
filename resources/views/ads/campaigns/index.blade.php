@@ -6,7 +6,7 @@
 <div class="py-4">
     <div class="flex items-center justify-between mb-6">
         <p class="text-slate-500 text-sm">{{ $campaigns->total() }} campaign(s) total</p>
-        <a href="{{ route('ads.campaigns.create') }}" class="inline-flex items-center gap-2 px-5 py-2.5 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl transition shadow-md shadow-orange-500/25 text-sm">
+        <a href="{{ route('ads.campaigns.create') }}" class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary-500 hover:bg-primary-700 text-white font-bold rounded-xl transition shadow-md shadow-primary-500/25 text-sm">
             <i class="ph-bold ph-plus text-base"></i> New Campaign
         </a>
     </div>
@@ -16,7 +16,7 @@
         <div class="py-20 text-center">
             <i class="ph-fill ph-megaphone text-5xl text-slate-200 mb-3 block"></i>
             <p class="font-bold text-slate-600">No campaigns yet</p>
-            <a href="{{ route('ads.campaigns.create') }}" class="mt-4 inline-block px-5 py-2 bg-orange-500 text-white font-bold rounded-xl text-sm">Create First Campaign →</a>
+            <a href="{{ route('ads.campaigns.create') }}" class="mt-4 inline-block px-5 py-2 bg-primary-500 text-white font-bold rounded-xl text-sm">Create First Campaign →</a>
         </div>
         @else
         <div class="panel-table-wrap">
@@ -43,7 +43,7 @@
                             </div>
                         </td>
                         <td class="px-4 py-4">
-                            <a href="{{ $c->publicUrl() }}" target="_blank" class="text-orange-500 font-mono text-xs hover:underline flex items-center gap-1">
+                            <a href="{{ $c->publicUrl() }}" target="_blank" class="text-primary-500 font-mono text-xs hover:underline flex items-center gap-1">
                                 /c/{{ $c->slug }} <i class="ph-bold ph-arrow-square-out"></i>
                             </a>
                         </td>
@@ -60,10 +60,10 @@
                         </td>
                         <td class="px-4 py-4 text-right">
                             <div class="flex items-center justify-end gap-2">
-                                <a href="{{ $c->publicUrl() }}" target="_blank" class="p-2 text-slate-400 hover:text-orange-500 hover:bg-orange-50 rounded-lg transition" title="View Live">
+                                <a href="{{ $c->publicUrl() }}" target="_blank" class="p-2 text-slate-400 hover:text-primary-500 hover:bg-primary-50 rounded-lg transition" title="View Live">
                                     <i class="ph-bold ph-eye text-base"></i>
                                 </a>
-                                <a href="{{ route('ads.campaigns.edit', $c) }}" class="p-2 text-slate-400 hover:text-blue-500 hover:bg-orange-50 rounded-lg transition" title="Edit">
+                                <a href="{{ route('ads.campaigns.edit', $c) }}" class="p-2 text-slate-400 hover:text-primary-500 hover:bg-primary-50 rounded-lg transition" title="Edit">
                                     <i class="ph-bold ph-pencil text-base"></i>
                                 </a>
                                 <form method="POST" action="{{ route('ads.campaigns.destroy', $c) }}" onsubmit="return confirm('Delete this campaign?')">

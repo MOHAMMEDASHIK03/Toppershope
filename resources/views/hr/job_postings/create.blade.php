@@ -34,7 +34,7 @@
 >
     <div class="space-y-8">
         <div>
-            <h3 class="text-xs font-bold text-orange-600 uppercase tracking-wide mb-4 pb-2 border-b border-slate-100">Basic details</h3>
+            <h3 class="text-xs font-bold text-primary-700 uppercase tracking-wide mb-4 pb-2 border-b border-slate-100">Basic details</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <x-form.field
                     label="Job title"
@@ -78,7 +78,7 @@
         </div>
 
         <div>
-            <h3 class="text-xs font-bold text-orange-600 uppercase tracking-wide mb-4 pb-2 border-b border-slate-100">Role information</h3>
+            <h3 class="text-xs font-bold text-primary-700 uppercase tracking-wide mb-4 pb-2 border-b border-slate-100">Role information</h3>
             <div class="space-y-5">
                 <x-form.field
                     label="Job description"

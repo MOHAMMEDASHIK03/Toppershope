@@ -115,6 +115,13 @@ Route::prefix('faculty')->name('faculty.')->group(function () {
     Route::match(['get', 'post'], '/logout', [FacultyAuthController::class, 'logout'])->name('logout');
 
     Route::middleware(['faculty'])->group(function () {
+        Route::get('/profile', [\App\Http\Controllers\Panel\ProfileController::class, 'show'])
+            ->defaults('panelKey', 'faculty')
+            ->name('profile');
+        Route::put('/profile', [\App\Http\Controllers\Panel\ProfileController::class, 'update'])
+            ->defaults('panelKey', 'faculty')
+            ->name('profile.update');
+
         Route::get('/dashboard', [FacultyDashboardController::class, 'index'])->name('dashboard');
 
         // My assigned courses — for both faculty and faculty_head
@@ -238,6 +245,13 @@ Route::prefix('ads')->name('ads.')->group(function () {
 
     // Protected panel
     Route::middleware(['ads'])->group(function () {
+        Route::get('/profile', [\App\Http\Controllers\Panel\ProfileController::class, 'show'])
+            ->defaults('panelKey', 'ads')
+            ->name('profile');
+        Route::put('/profile', [\App\Http\Controllers\Panel\ProfileController::class, 'update'])
+            ->defaults('panelKey', 'ads')
+            ->name('profile.update');
+
         Route::get('/dashboard', [AdsDashboardController::class, 'index'])->name('dashboard');
 
         // Campaigns
@@ -278,6 +292,13 @@ Route::prefix('admission')->name('admission.')->group(function () {
 
     // Protected panel
     Route::middleware([\App\Http\Middleware\EnsureAdmissionUser::class])->group(function () {
+        Route::get('/profile', [\App\Http\Controllers\Panel\ProfileController::class, 'show'])
+            ->defaults('panelKey', 'admission')
+            ->name('profile');
+        Route::put('/profile', [\App\Http\Controllers\Panel\ProfileController::class, 'update'])
+            ->defaults('panelKey', 'admission')
+            ->name('profile.update');
+
         Route::get('/dashboard', [AdmissionDashboardController::class, 'index'])->name('dashboard');
 
         // Contacts (CRM)
@@ -311,6 +332,13 @@ Route::prefix('trial')->name('trial.')->group(function () {
 
     // Protected trial area
     Route::middleware([\App\Http\Middleware\EnsureTrialStudent::class])->group(function () {
+        Route::get('/profile', [\App\Http\Controllers\Panel\ProfileController::class, 'show'])
+            ->defaults('panelKey', 'trial')
+            ->name('profile');
+        Route::put('/profile', [\App\Http\Controllers\Panel\ProfileController::class, 'update'])
+            ->defaults('panelKey', 'trial')
+            ->name('profile.update');
+
         Route::get('/dashboard', [TrialDashboardController::class, 'index'])->name('dashboard');
         Route::get('/content/chapter/{chapter}', [\App\Http\Controllers\Trial\ContentController::class, 'showChapter'])->name('content.chapter');
     });

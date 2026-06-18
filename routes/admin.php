@@ -23,6 +23,13 @@ Route::match(['get', 'post'], '/logout', [AuthController::class, 'logout'])->nam
 
 // Protected Admin Routes
 Route::middleware(\App\Http\Middleware\EnsureAdminUser::class)->group(function () {
+    Route::get('/profile', [\App\Http\Controllers\Panel\ProfileController::class, 'show'])
+        ->defaults('panelKey', 'admin')
+        ->name('profile');
+    Route::put('/profile', [\App\Http\Controllers\Panel\ProfileController::class, 'update'])
+        ->defaults('panelKey', 'admin')
+        ->name('profile.update');
+
     // Dashboard & Revenue
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::post('/dashboard/expenses', [DashboardController::class, 'storeExpense'])->name('expenses.store');

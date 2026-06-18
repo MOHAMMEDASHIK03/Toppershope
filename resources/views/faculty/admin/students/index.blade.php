@@ -9,8 +9,8 @@
     {{-- ===== STAT CARDS ===== --}}
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 flex items-center gap-4">
-            <div class="w-11 h-11 rounded-xl bg-blue-100 flex items-center justify-center shrink-0">
-                <i class="ph-fill ph-student text-2xl text-orange-600"></i>
+            <div class="w-11 h-11 rounded-xl bg-primary-100 flex items-center justify-center shrink-0">
+                <i class="ph-fill ph-student text-2xl text-primary-700"></i>
             </div>
             <div>
                 <p class="text-2xl font-black text-slate-800">{{ number_format($totalStudents) }}</p>
@@ -19,7 +19,7 @@
         </div>
         <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 flex items-center gap-4">
             <div class="w-11 h-11 rounded-xl bg-emerald-100 flex items-center justify-center shrink-0">
-                <i class="ph-fill ph-check-circle text-2xl text-emerald-600"></i>
+                <i class="ph-fill ph-check-circle text-2xl text-primary-600"></i>
             </div>
             <div>
                 <p class="text-2xl font-black text-slate-800">{{ number_format($activeCount) }}</p>
@@ -27,8 +27,8 @@
             </div>
         </div>
         <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 flex items-center gap-4">
-            <div class="w-11 h-11 rounded-xl bg-orange-100 flex items-center justify-center shrink-0">
-                <i class="ph-fill ph-users-three text-2xl text-orange-600"></i>
+            <div class="w-11 h-11 rounded-xl bg-primary-100 flex items-center justify-center shrink-0">
+                <i class="ph-fill ph-users-three text-2xl text-primary-700"></i>
             </div>
             <div>
                 <p class="text-2xl font-black text-slate-800">{{ number_format($totalBatches) }}</p>
@@ -158,7 +158,7 @@
                         {{-- Student --}}
                         <td class="py-4 px-6">
                             <div class="flex items-center gap-3">
-                                <div class="w-9 h-9 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center text-white font-black text-sm shrink-0">
+                                <div class="w-9 h-9 rounded-full bg-gradient-to-br from-primary-400 to-primary-500 flex items-center justify-center text-white font-black text-sm shrink-0">
                                     {{ strtoupper(substr($enrollment->user->name, 0, 1)) }}
                                 </div>
                                 <div class="min-w-0">
@@ -177,7 +177,7 @@
                             <div>
                                 <p class="text-sm font-semibold text-slate-700 leading-tight">{{ $enrollment->batch->course->name }}</p>
                                 @if($enrollment->batch->course->category)
-                                <span class="inline-block mt-0.5 text-[10px] font-bold bg-orange-50 text-orange-600 px-1.5 py-0.5 rounded-full">{{ $enrollment->batch->course->category->name }}</span>
+                                <span class="inline-block mt-0.5 text-[10px] font-bold bg-primary-50 text-primary-700 px-1.5 py-0.5 rounded-full">{{ $enrollment->batch->course->category->name }}</span>
                                 @endif
                             </div>
                             @else
@@ -200,7 +200,7 @@
                         {{-- Mode --}}
                         <td class="py-4 px-4 text-center">
                             @if($enrollment->batch?->mode)
-                            <span class="inline-flex items-center px-2 py-1 rounded-md text-[10px] font-bold bg-orange-50 text-indigo-700 border border-indigo-100 whitespace-nowrap">
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-[10px] font-bold bg-primary-50 text-primary-700 border border-primary-100 whitespace-nowrap">
                                 {{ $enrollment->batch->mode }}
                             </span>
                             @endif
@@ -215,8 +215,8 @@
                         {{-- Status --}}
                         <td class="py-4 px-4 text-center">
                             @if($enrollment->status === 'active')
-                                <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-black uppercase bg-emerald-50 text-emerald-700 border border-emerald-200">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Active
+                                <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-black uppercase bg-primary-50 text-emerald-700 border border-emerald-200">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-primary-500 animate-pulse"></span> Active
                                 </span>
                             @elseif($enrollment->status === 'expired')
                                 <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-black uppercase bg-slate-50 text-slate-500 border border-slate-200">

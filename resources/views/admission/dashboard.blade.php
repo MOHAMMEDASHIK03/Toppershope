@@ -29,10 +29,10 @@
                 ['label' => 'Need Follow-up',  'value' => $stats['needs_followup'],  'color' => 'red',    'icon' => '🔔'],
             ];
             $palettes = [
-                'indigo' => ['bg-orange-50', 'text-indigo-700', 'text-indigo-400'],
-                'orange' => ['bg-orange-50', 'text-orange-700', 'text-orange-400'],
-                'blue'   => ['bg-orange-50',   'text-blue-700',   'text-blue-400'],
-                'green'  => ['bg-emerald-50','text-emerald-7 00','text-emerald-400'],
+                'indigo' => ['bg-primary-50', 'text-primary-700', 'text-primary-400'],
+                'orange' => ['bg-primary-50', 'text-primary-700', 'text-primary-500'],
+                'blue'   => ['bg-primary-50',   'text-primary-700',   'text-primary-400'],
+                'green'  => ['bg-primary-50','text-emerald-7 00','text-emerald-400'],
                 'amber'  => ['bg-amber-50',  'text-amber-700',  'text-amber-400'],
                 'red'    => ['bg-red-50',    'text-red-700',    'text-red-400'],
             ];
@@ -55,7 +55,7 @@
         <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
             <div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between">
                 <h2 class="font-black text-slate-900 text-sm">Recent Contacts</h2>
-                <a href="{{ route('admission.contacts.index') }}" class="text-xs text-indigo-500 font-bold hover:text-indigo-700">View all</a>
+                <a href="{{ route('admission.contacts.index') }}" class="text-xs text-primary-500 font-bold hover:text-primary-700">View all</a>
             </div>
             <div class="divide-y divide-slate-100">
                 @forelse($recentContacts as $c)
@@ -66,7 +66,7 @@
                         {{ strtoupper(substr($c->display_name, 0, 1)) }}
                     </div>
                     <div class="flex-1 min-w-0">
-                        <p class="font-bold text-slate-800 text-sm truncate group-hover:text-orange-600">{{ $c->display_name }}</p>
+                        <p class="font-bold text-slate-800 text-sm truncate group-hover:text-primary-700">{{ $c->display_name }}</p>
                         <p class="text-xs text-slate-400 truncate">{{ $c->display_email }}</p>
                     </div>
                     <div class="flex flex-col items-end gap-1 shrink-0">
@@ -88,7 +88,7 @@
         <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
             <div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between">
                 <h2 class="font-black text-slate-900 text-sm">Trials Expiring Soon</h2>
-                <a href="{{ route('admission.trials.index') }}" class="text-xs text-indigo-500 font-bold hover:text-indigo-700">View all</a>
+                <a href="{{ route('admission.trials.index') }}" class="text-xs text-primary-500 font-bold hover:text-primary-700">View all</a>
             </div>
             <div class="divide-y divide-slate-100">
                 @forelse($expiringTrials as $t)
@@ -121,13 +121,13 @@
         <div class="flex gap-3 ml-auto flex-wrap">
             <form method="POST" action="{{ route('admission.sync.ad-leads') }}">
                 @csrf
-                <button type="submit" class="px-4 py-2 bg-orange-500 text-white text-xs font-black rounded-xl hover:bg-orange-500 transition">
+                <button type="submit" class="px-4 py-2 bg-primary-500 text-white text-xs font-black rounded-xl hover:bg-primary-500 transition">
                     Sync Ad Leads
                 </button>
             </form>
             <form method="POST" action="{{ route('admission.sync.users') }}">
                 @csrf
-                <button type="submit" class="px-4 py-2 bg-orange-500 text-white text-xs font-black rounded-xl hover:bg-orange-500 transition">
+                <button type="submit" class="px-4 py-2 bg-primary-500 text-white text-xs font-black rounded-xl hover:bg-primary-500 transition">
                     Sync Users
                 </button>
             </form>

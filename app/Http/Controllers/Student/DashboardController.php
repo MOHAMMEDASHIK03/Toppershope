@@ -39,30 +39,4 @@ class DashboardController extends Controller
             'totalCourses', 'totalQuizzes', 'avgScore'
         ));
     }
-
-    public function profile()
-    {
-        $user = Auth::user();
-        return view('student.profile', compact('user'));
-    }
-
-    public function updateProfile(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'phone' => 'nullable|string|max:20',
-            'target_exam' => 'nullable|string|max:50',
-        ]);
-
-        $user = Auth::user();
-        $user->update([
-            'name' => $request->name,
-            'phone' => $request->phone,
-            'target_exam' => $request->filled('target_exam')
-                ? strtolower($request->string('target_exam')->toString())
-                : null,
-        ]);
-
-        return back()->with('success', 'Profile updated successfully.');
-    }
 }

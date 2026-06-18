@@ -45,7 +45,7 @@
                             <tr class="hover:bg-slate-50/50 transition-colors">
                                 <td class="py-4 px-6">
                                     <div class="flex items-center gap-3">
-                                        <div class="w-10 h-10 rounded-lg bg-orange-50 border border-indigo-100 flex items-center justify-center shrink-0">
+                                        <div class="w-10 h-10 rounded-lg bg-primary-50 border border-primary-100 flex items-center justify-center shrink-0">
                                             <i class="ph-fill ph-book-open-text text-xl text-primary"></i>
                                         </div>
                                         <div>
@@ -60,7 +60,7 @@
                                     </span>
                                 </td>
                                 <td class="py-4 px-6 text-center">
-                                    <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-orange-50 text-orange-800 border border-orange-200">
+                                    <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-primary-50 text-primary-800 border border-primary-200">
                                         {{ $course->subcategory?->name ?? '—' }}
                                     </span>
                                 </td>
@@ -78,14 +78,14 @@
                                 </td>
                                 <td class="py-4 px-6 text-center">
                                     @if($course->is_published)
-                                        <span class="bg-orange-50 text-orange-700 border border-orange-200 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide">Published</span>
+                                        <span class="bg-primary-50 text-primary-700 border border-primary-200 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide">Published</span>
                                     @else
                                         <span class="bg-amber-50 text-amber-700 border border-amber-200 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide">Draft</span>
                                     @endif
                                 </td>
                                 <td class="py-4 px-6 text-right">
                                     <div class="flex items-center justify-end gap-2">
-                                        <a href="{{ route('faculty.head.courses.edit', $course->id) }}" class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-orange-600 hover:bg-orange-50 transition-colors" title="Manage Master Course">
+                                        <a href="{{ route('faculty.head.courses.edit', $course->id) }}" class="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-primary-700 hover:bg-primary-50 transition-colors" title="Manage Master Course">
                                             <i class="ph-bold ph-pencil-simple text-lg"></i>
                                         </a>
                                         <form action="{{ route('faculty.head.courses.destroy', $course->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this course? This action will cascade deletions.');" class="inline">
@@ -171,7 +171,7 @@
                         >
                             Cancel
                         </button>
-                        <button type="submit" class="btn-primary px-5 py-2.5 rounded-xl text-sm font-semibold focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">
+                        <button type="submit" class="btn-primary px-5 py-2.5 rounded-xl text-sm font-semibold focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
                             <i class="ph-bold ph-plus-circle"></i>
                             Create course
                         </button>

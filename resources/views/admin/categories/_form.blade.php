@@ -40,7 +40,7 @@
         </div>
         <div>
             <label class="{{ $labelClass }}">Hero gradient classes</label>
-            <input type="text" name="landing_meta[hero_bg]" value="{{ $meta['hero_bg'] ?? '' }}" placeholder="from-blue-50 to-indigo-50" class="{{ $inputClass }}">
+            <input type="text" name="landing_meta[hero_bg]" value="{{ $meta['hero_bg'] ?? '' }}" placeholder="from-primary-50 to-primary-50" class="{{ $inputClass }}">
         </div>
         <div>
             <label class="{{ $labelClass }}">Icon URL</label>

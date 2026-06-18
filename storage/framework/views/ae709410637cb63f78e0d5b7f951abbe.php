@@ -7,7 +7,7 @@ $__propNames = \Illuminate\View\ComponentAttributeBag::extractPropNames(([
     'hint' => null,
     'trend' => null,
     'trendUp' => true,
-    'accent' => 'slate',
+    'accent' => 'primary',
 ]));
 
 foreach ($attributes->all() as $__key => $__value) {
@@ -29,7 +29,7 @@ foreach (array_filter(([
     'hint' => null,
     'trend' => null,
     'trendUp' => true,
-    'accent' => 'slate',
+    'accent' => 'primary',
 ]), 'is_string', ARRAY_FILTER_USE_KEY) as $__key => $__value) {
     $$__key = $$__key ?? $__value;
 }
@@ -44,22 +44,28 @@ unset($__defined_vars, $__key, $__value); ?>
 
 <?php
     $accentMap = [
-        'slate' => 'text-slate-900',
-        'indigo' => 'text-indigo-600',
-        'emerald' => 'text-emerald-600',
-        'sky' => 'text-sky-600',
-        'violet' => 'text-violet-600',
-        'rose' => 'text-rose-600',
-        'amber' => 'text-amber-600',
+        'primary' => 'text-primary-600 dark:text-primary-400',
+        'slate' => 'text-gray-900 dark:text-white',
+        'p50' => 'text-primary-500',
+        'p60' => 'text-primary-600',
+        'p70' => 'text-primary-700',
+        'p80' => 'text-primary-800',
+        /* legacy aliases */
+        'indigo' => 'text-primary-600',
+        'emerald' => 'text-primary-500',
+        'sky' => 'text-primary-400',
+        'violet' => 'text-primary-700',
+        'rose' => 'text-primary-800',
+        'amber' => 'text-primary-600',
     ];
-    $valueClass = $accentMap[$accent] ?? $accentMap['slate'];
+    $valueClass = $accentMap[$accent] ?? $accentMap['primary'];
 ?>
 
-<div <?php echo e($attributes->merge(['class' => 'bg-white border border-slate-200 rounded-xl p-5 shadow-sm'])); ?>>
-    <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide"><?php echo e($label); ?></p>
+<div <?php echo e($attributes->merge(['class' => 'bg-white dark:bg-[#1E1E24] border border-gray-200 dark:border-[#2D2D35] rounded-xl p-5 shadow-sm'])); ?>>
+    <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide"><?php echo e($label); ?></p>
     <p class="text-3xl font-bold <?php echo e($valueClass); ?> mt-2 tabular-nums"><?php echo e($value); ?></p>
     <?php if($trend !== null): ?>
-        <p class="text-xs font-semibold mt-2 flex items-center gap-1 <?php echo e($trendUp ? 'text-emerald-600' : 'text-rose-600'); ?>">
+        <p class="text-xs font-semibold mt-2 flex items-center gap-1 <?php echo e($trendUp ? 'text-green-600' : 'text-red-600'); ?>">
             <?php if($trendUp): ?>
                 <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 256 256"><path d="M205.66,117.66a8,8,0,0,1-11.32,0L136,59.31V216a8,8,0,0,1-16,0V59.31L61.66,117.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0l72,72A8,8,0,0,1,205.66,117.66Z"/></svg>
             <?php else: ?>
@@ -69,7 +75,7 @@ unset($__defined_vars, $__key, $__value); ?>
 
         </p>
     <?php elseif($hint): ?>
-        <p class="text-xs text-slate-500 mt-2"><?php echo e($hint); ?></p>
+        <p class="text-xs text-gray-500 dark:text-gray-400 mt-2"><?php echo e($hint); ?></p>
     <?php endif; ?>
 </div>
 <?php /**PATH D:\Lama Projects\Toppershope\resources\views/components/admin/stat-card.blade.php ENDPATH**/ ?>

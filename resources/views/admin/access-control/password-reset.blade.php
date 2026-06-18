@@ -10,7 +10,7 @@
         'HR' => 'bg-rose-50 text-rose-700 border-rose-200',
         'Ads' => 'bg-sky-50 text-sky-700 border-sky-200',
         'Admission' => 'bg-amber-50 text-amber-800 border-amber-200',
-        'Faculty' => 'bg-emerald-50 text-emerald-700 border-emerald-200',
+        'Faculty' => 'bg-primary-50 text-emerald-700 border-emerald-200',
     ];
 @endphp
 
@@ -21,7 +21,7 @@
             <span class="px-2 py-0.5 rounded-full bg-rose-50 text-rose-700 border border-rose-200">HR</span>
             <span class="px-2 py-0.5 rounded-full bg-sky-50 text-sky-700 border border-sky-200">Ads</span>
             <span class="px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200">Admission</span>
-            <span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">Faculty</span>
+            <span class="px-2 py-0.5 rounded-full bg-primary-50 text-emerald-700 border border-emerald-200">Faculty</span>
         </div>
     </x-slot:header>
 
@@ -50,9 +50,9 @@
                         <td class="text-slate-600 text-sm capitalize">{{ str_replace('_', ' ', $user->role) }}</td>
                         <td>
                             @if($user->is_active)
-                                <span class="text-emerald-600 text-xs font-semibold">● Active</span>
+                                <span class="text-primary-600 text-xs font-semibold">● Active</span>
                             @else
-                                <span class="text-rose-600 text-xs font-semibold">● Inactive</span>
+                                <span class="text-primary-600 text-xs font-semibold">● Inactive</span>
                             @endif
                         </td>
                         <td class="text-right">
@@ -70,9 +70,9 @@
                                 <div class="flex-1 w-full">
                                     <label class="block text-xs font-medium text-slate-600 mb-1">New password for {{ $user->name }}</label>
                                     <input type="text" name="new_password" required minlength="6" placeholder="Min 6 characters"
-                                        class="w-full px-3 py-2 text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-orange-500/20 focus:border-indigo-500 outline-none">
+                                        class="w-full px-3 py-2 text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary-600/15 focus:border-primary-600 outline-none">
                                 </div>
-                                <button type="submit" class="px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white text-sm font-semibold rounded-lg whitespace-nowrap">
+                                <button type="submit" class="px-4 py-2 bg-primary-600 hover:bg-rose-700 text-white text-sm font-semibold rounded-lg whitespace-nowrap">
                                     Force reset
                                 </button>
                             </form>

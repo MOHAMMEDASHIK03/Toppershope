@@ -8,7 +8,7 @@
         <h2 class="text-xl font-bold text-slate-800">Key Performance Indicators</h2>
         <p class="text-sm font-medium text-slate-500 mt-1">Manage performance evaluation criteria</p>
     </div>
-    <a href="{{ route('hr.kpis.create') }}" class="px-4 py-2.5 btn-primary font-semibold rounded-xl text-sm shadow-sm hover:bg-orange-600 focus:ring-4 focus:ring-orange-100 transition-colors inline-flex items-center gap-2 shrink-0">
+    <a href="{{ route('hr.kpis.create') }}" class="px-4 py-2.5 btn-primary font-semibold rounded-xl text-sm shadow-sm hover:bg-primary-700 focus:ring-4 focus:ring-primary-100 transition-colors inline-flex items-center gap-2 shrink-0">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg>
         Add KPI
     </a>
@@ -39,7 +39,7 @@
                     @if($kpi->department_id)
                         <p class="text-sm font-semibold text-slate-700" title="{{ $kpi->department?->name }}">{{ $kpi->department?->name ?? '—' }}</p>
                     @else
-                        <p class="text-xs font-bold text-orange-600">All departments</p>
+                        <p class="text-xs font-bold text-primary-700">All departments</p>
                     @endif
                 </div>
                 <div class="panel-list__cell--clip min-w-0">
@@ -47,7 +47,7 @@
                     @if($kpi->designation_id)
                         <p class="text-sm font-semibold text-slate-700" title="{{ $kpi->designation?->name }}">{{ $kpi->designation?->name ?? '—' }}</p>
                     @elseif(!$kpi->department_id)
-                        <p class="text-xs font-bold text-orange-600">All roles</p>
+                        <p class="text-xs font-bold text-primary-700">All roles</p>
                     @else
                         <p class="text-sm text-slate-500">All roles</p>
                     @endif
@@ -60,7 +60,7 @@
         @empty
             <div class="px-6 py-12 text-center text-slate-500 font-medium text-sm">
                 No KPIs defined.<br>
-                <a href="{{ route('hr.kpis.create') }}" class="text-orange-600 hover:underline mt-2 inline-block">Create the first KPI</a>
+                <a href="{{ route('hr.kpis.create') }}" class="text-primary-700 hover:underline mt-2 inline-block">Create the first KPI</a>
             </div>
         @endforelse
     </div>

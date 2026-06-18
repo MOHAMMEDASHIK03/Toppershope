@@ -9,7 +9,7 @@
             <p class="text-gray-400">Manage course content, assessments, and student performance.</p>
         </div>
         <div>
-            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-bold bg-blue-500/20 text-blue-500 border border-blue-500/30">
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-bold bg-primary-500/20 text-primary-500 border border-primary-500/30">
                 Course Instructor
             </span>
         </div>

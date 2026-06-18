@@ -17,7 +17,7 @@
                     <!-- Fake circular progress using conic gradient -->
                     @php 
                         $percentage = max(0, min(100, ($attempt->score / max($quiz->total_marks, 1)) * 100));
-                        $color = $percentage > 70 ? '#22c55e' : ($percentage > 40 ? '#00E0FF' : '#ef4444');
+                        $color = $percentage > 70 ? '#22c55e' : ($percentage > 40 ? '#9F7AEA' : '#ef4444');
                     @endphp
                     <div class="absolute inset-[-8px] rounded-full z-0" style="background: conic-gradient({{ $color }} {{ $percentage }}%, transparent 0);"></div>
                     <div class="absolute inset-[2px] rounded-full bg-background z-10"></div>

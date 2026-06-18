@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Panel\ProfileController;
 use App\Http\Controllers\Student\DashboardController;
 use App\Http\Controllers\Student\CatalogController;
 use App\Http\Controllers\Student\MyCoursesController;
@@ -21,8 +22,8 @@ Route::prefix('student')->name('student.')->middleware(['auth'])->group(function
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     // Profile
-    Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
-    Route::put('/profile', [DashboardController::class, 'updateProfile'])->name('profile.update');
+    Route::get('/profile', [ProfileController::class, 'show'])->defaults('panelKey', 'student')->name('profile');
+    Route::put('/profile', [ProfileController::class, 'update'])->defaults('panelKey', 'student')->name('profile.update');
 
     // Course Catalog (Browse & Filter)
     Route::get('/courses', [CatalogController::class, 'index'])->name('catalog');

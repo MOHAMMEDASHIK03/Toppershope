@@ -11,18 +11,18 @@
 
 @php
 $colorMap = [
-    'orange' => ['ring'=>'ring-orange-300','bg_light'=>'bg-orange-50','text'=>'text-orange-600','btn'=>'bg-orange-500 hover:bg-orange-600','badge'=>'bg-orange-100 text-orange-800','border'=>'border-orange-200','pill'=>'bg-orange-50 border-orange-200 text-orange-700'],
+    'orange' => ['ring'=>'ring-primary-400','bg_light'=>'bg-primary-50','text'=>'text-primary-700','btn'=>'bg-primary-500 hover:bg-primary-700','badge'=>'bg-primary-100 text-primary-800','border'=>'border-primary-200','pill'=>'bg-primary-50 border-primary-200 text-primary-700'],
     'red'    => ['ring'=>'ring-red-300','bg_light'=>'bg-red-50','text'=>'text-red-600','btn'=>'bg-red-500 hover:bg-red-600','badge'=>'bg-red-100 text-red-800','border'=>'border-red-200','pill'=>'bg-red-50 border-red-200 text-red-700'],
-    'blue'   => ['ring'=>'ring-blue-300','bg_light'=>'bg-blue-50','text'=>'text-blue-600','btn'=>'bg-blue-600 hover:bg-blue-700','badge'=>'bg-blue-100 text-blue-800','border'=>'border-blue-200','pill'=>'bg-blue-50 border-blue-200 text-blue-700'],
-    'purple' => ['ring'=>'ring-purple-300','bg_light'=>'bg-purple-50','text'=>'text-purple-600','btn'=>'bg-purple-600 hover:bg-purple-700','badge'=>'bg-purple-100 text-purple-800','border'=>'border-purple-200','pill'=>'bg-purple-50 border-purple-200 text-purple-700'],
-    'teal'   => ['ring'=>'ring-teal-300','bg_light'=>'bg-teal-50','text'=>'text-teal-600','btn'=>'bg-teal-600 hover:bg-teal-700','badge'=>'bg-teal-100 text-teal-800','border'=>'border-teal-200','pill'=>'bg-teal-50 border-teal-200 text-teal-700'],
-    'indigo' => ['ring'=>'ring-indigo-300','bg_light'=>'bg-indigo-50','text'=>'text-indigo-600','btn'=>'bg-indigo-600 hover:bg-indigo-700','badge'=>'bg-indigo-100 text-indigo-800','border'=>'border-indigo-200','pill'=>'bg-indigo-50 border-indigo-200 text-indigo-700'],
+    'blue'   => ['ring'=>'ring-primary-300','bg_light'=>'bg-primary-50','text'=>'text-primary-600','btn'=>'bg-primary-600 hover:bg-primary-700','badge'=>'bg-primary-100 text-primary-800','border'=>'border-primary-200','pill'=>'bg-primary-50 border-primary-200 text-primary-700'],
+    'purple' => ['ring'=>'ring-primary-300','bg_light'=>'bg-primary-50','text'=>'text-primary-600','btn'=>'bg-primary-600 hover:bg-primary-700','badge'=>'bg-primary-100 text-primary-800','border'=>'border-primary-200','pill'=>'bg-primary-50 border-primary-200 text-primary-700'],
+    'teal'   => ['ring'=>'ring-primary-300','bg_light'=>'bg-primary-50','text'=>'text-primary-600','btn'=>'bg-primary-600 hover:bg-primary-700','badge'=>'bg-primary-100 text-primary-800','border'=>'border-primary-200','pill'=>'bg-primary-50 border-primary-200 text-primary-700'],
+    'indigo' => ['ring'=>'ring-primary-300','bg_light'=>'bg-primary-50','text'=>'text-primary-600','btn'=>'bg-primary-600 hover:bg-primary-700','badge'=>'bg-primary-100 text-primary-800','border'=>'border-primary-200','pill'=>'bg-primary-50 border-primary-200 text-primary-700'],
     'green'  => ['ring'=>'ring-green-300','bg_light'=>'bg-green-50','text'=>'text-green-600','btn'=>'bg-green-600 hover:bg-green-700','badge'=>'bg-green-100 text-green-800','border'=>'border-green-200','pill'=>'bg-green-50 border-green-200 text-green-700'],
     'slate'  => ['ring'=>'ring-slate-300','bg_light'=>'bg-slate-100','text'=>'text-slate-700','btn'=>'bg-slate-700 hover:bg-slate-800','badge'=>'bg-slate-200 text-slate-800','border'=>'border-slate-200','pill'=>'bg-slate-100 border-slate-200 text-slate-700'],
     'yellow' => ['ring'=>'ring-yellow-300','bg_light'=>'bg-yellow-50','text'=>'text-yellow-700','btn'=>'bg-yellow-500 hover:bg-yellow-600','badge'=>'bg-yellow-100 text-yellow-800','border'=>'border-yellow-200','pill'=>'bg-yellow-50 border-yellow-200 text-yellow-700'],
 ];
 $c = $colorMap[$category->landing('color', 'blue')] ?? $colorMap['blue'];
-$heroBg = $category->landing('hero_bg', 'from-blue-50 to-indigo-50');
+$heroBg = $category->landing('hero_bg', 'from-primary-50 to-primary-50');
 $iconUrl = $category->landing('icon_url');
 $subjects = $category->landing('subjects', []);
 $features = $category->landing('features', []);
@@ -129,7 +129,7 @@ $features = $category->landing('features', []);
                 <div class="h-36 bg-gradient-to-br {{ $heroBg }} flex items-center justify-center border-b border-gray-100 relative">
                     <div class="absolute top-3 left-3 flex items-center gap-2 flex-wrap">
                         @if($batch->subcategory)
-                        <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-indigo-600/90 text-white shadow-sm">{{ $batch->subcategory->name }}</span>
+                        <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-primary-600/90 text-white shadow-sm">{{ $batch->subcategory->name }}</span>
                         @endif
                         @if($batch->category)
                         <span class="px-2.5 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wide bg-white/90 text-slate-700 border border-white/70 shadow-sm">{{ $batch->category->name }}</span>
@@ -147,7 +147,7 @@ $features = $category->landing('features', []);
                     @endif
                     <p class="text-sm text-gray-500 mb-3 line-clamp-2">{{ $batch->course->description ?? 'Expert-led live classes with DPPs, Tests & 24×7 doubt support.' }}</p>
                     @if($batch->mode)
-                    <span class="text-[10px] font-bold bg-blue-50 text-primary border border-blue-100 px-2 py-0.5 rounded-full self-start mb-3">{{ $batch->mode }}</span>
+                    <span class="text-[10px] font-bold bg-primary-50 text-primary border border-primary-100 px-2 py-0.5 rounded-full self-start mb-3">{{ $batch->mode }}</span>
                     @endif
                     @if($batch->total_seats > 0)
                     <div class="mb-3">
@@ -206,7 +206,7 @@ $features = $category->landing('features', []);
                     </div>
                     @endif
                     @if($ub->mode)
-                    <span class="text-[10px] font-bold bg-blue-50 text-primary border border-blue-100 px-2 py-0.5 rounded-full self-start">{{ $ub->mode }}</span>
+                    <span class="text-[10px] font-bold bg-primary-50 text-primary border border-primary-100 px-2 py-0.5 rounded-full self-start">{{ $ub->mode }}</span>
                     @endif
                     <div class="flex items-center justify-between mt-1">
                         <p class="text-lg font-black text-gray-900">₹{{ number_format($ub->price) }}</p>

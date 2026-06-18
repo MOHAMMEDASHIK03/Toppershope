@@ -42,7 +42,7 @@
             border: 'border-rose-200',   
             titleColor: 'text-rose-900',   
             textColor: 'text-rose-800',
-            closeHover: 'text-rose-600 hover:text-rose-800 hover:bg-rose-100'
+            closeHover: 'text-primary-600 hover:text-rose-800 hover:bg-rose-100'
         },
         warning: { 
             title: 'Warning', 
@@ -60,7 +60,7 @@
             border: 'border-sky-200',    
             titleColor: 'text-sky-900',    
             textColor: 'text-sky-800',
-            closeHover: 'text-sky-600 hover:text-sky-800 hover:bg-sky-100'
+            closeHover: 'text-primary-500 hover:text-sky-800 hover:bg-sky-100'
         },
     };
 

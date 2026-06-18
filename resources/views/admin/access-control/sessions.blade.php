@@ -16,9 +16,9 @@
         'HR' => 'bg-rose-50 text-rose-700 border-rose-200',
         'Ads' => 'bg-sky-50 text-sky-700 border-sky-200',
         'Admission' => 'bg-amber-50 text-amber-800 border-amber-200',
-        'Faculty' => 'bg-emerald-50 text-emerald-700 border-emerald-200',
+        'Faculty' => 'bg-primary-50 text-emerald-700 border-emerald-200',
         'Student' => 'bg-violet-50 text-violet-700 border-violet-200',
-        'Admin' => 'bg-orange-50 text-indigo-700 border-indigo-200',
+        'Admin' => 'bg-primary-50 text-primary-700 border-primary-200',
     ];
 @endphp
 
@@ -27,7 +27,7 @@
         <h3 class="font-semibold text-slate-900">Active sessions</h3>
         <form action="{{ route('admin.access-control.sessions') }}" method="GET" class="flex items-center gap-2 w-full sm:w-auto">
             <input type="text" name="search" value="{{ $search ?? '' }}" placeholder="Search name, email, ID…"
-                class="flex-1 sm:w-56 px-3 py-2 text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-orange-500/20 focus:border-indigo-500 outline-none">
+                class="flex-1 sm:w-56 px-3 py-2 text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary-600/15 focus:border-primary-600 outline-none">
             <button type="submit" class="btn-primary text-sm py-2">Search</button>
             @if($search ?? false)
                 <a href="{{ route('admin.access-control.sessions') }}" class="btn-secondary text-sm py-2">Clear</a>

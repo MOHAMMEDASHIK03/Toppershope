@@ -64,7 +64,7 @@
         .btn { padding: 8px 18px; border-radius: 10px; font-size: 12px; font-weight: 700; cursor: pointer; border: none; transition: all 0.2s; }
         .btn-ghost { background: transparent; color: #94a3b8; border: 1px solid #334155; }
         .btn-ghost:hover { background: #1e293b; color: white; }
-        .btn-primary { background: linear-gradient(135deg, #4f46e5, #7c3aed); color: white; }
+        .btn-primary { background: linear-gradient(135deg, #6B21C8, #7723D6); color: white; }
         .btn-primary:hover { background: linear-gradient(135deg, #4338ca, #6d28d9); }
         .btn-danger { background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.2); }
         .btn-danger:hover { background: rgba(239,68,68,0.25); }
@@ -137,16 +137,16 @@
 
 {{-- ✅ Fullscreen Splash — Triggers true fullscreen on user click --}}
 <div id="fullscreenSplash" style="position:fixed;inset:0;background:#0a0e1a;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:24px;">
-    <div style="width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,#4f46e5,#7c3aed);display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:22px;margin-bottom:8px;">TH</div>
+    <img src="{{ asset('images/brand/logo-icon.jpg') }}" alt="Topper's Hope" style="width:64px;height:64px;border-radius:16px;object-fit:cover;margin-bottom:8px;">
     <div style="text-align:center;">
         <div style="font-size:22px;font-weight:900;color:white;margin-bottom:6px;">{{ $quiz->title }}</div>
         <div style="font-size:13px;color:#64748b;">Click the button below to enter fullscreen and begin your exam</div>
     </div>
-    <div style="display:flex;gap:12px;align-items:center;padding:12px 20px;border-radius:14px;background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);">
-        <span style="font-size:12px;color:#a5b4fc;">⏱ Total Time:</span>
+    <div style="display:flex;gap:12px;align-items:center;padding:12px 20px;border-radius:14px;background:rgba(119,35,214,0.08);border:1px solid rgba(119,35,214,0.2);">
+        <span style="font-size:12px;color:#D6BCFA;">⏱ Total Time:</span>
         <span style="font-size:14px;font-weight:800;color:#f87171;">{{ $quiz->duration_minutes }} Min</span>
     </div>
-    <button onclick="startExamFullscreen()" style="padding:16px 48px;border-radius:14px;background:linear-gradient(135deg,#4f46e5,#7c3aed);color:white;font-size:15px;font-weight:800;border:none;cursor:pointer;letter-spacing:0.5px;box-shadow:0 8px 25px rgba(99,102,241,0.4);transition:all 0.2s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+    <button onclick="startExamFullscreen()" style="padding:16px 48px;border-radius:14px;background:#7723D6;color:white;font-size:15px;font-weight:800;border:none;cursor:pointer;letter-spacing:0.5px;box-shadow:0 8px 25px rgba(119,35,214,0.4);transition:all 0.2s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
         ⛶ &nbsp;Enter Fullscreen &amp; Begin Exam
     </button>
     <div style="font-size:11px;color:#334155;text-align:center;max-width:400px;line-height:1.6;">
@@ -171,7 +171,7 @@
 {{-- Header --}}
 <div class="exam-header">
     <div style="display:flex;align-items:center;gap:10px;">
-        <div style="width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#4f46e5,#7c3aed);display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:11px;">TH</div>
+        <img src="{{ asset('images/brand/logo-icon.jpg') }}" alt="TH" style="width:32px;height:32px;border-radius:8px;object-fit:cover;">
         <div>
             <div style="font-size:13px;font-weight:800;color:white;">{{ $quiz->title }}</div>
             <div style="font-size:10px;color:#64748b;" id="currentSectionLabel">Section: {{ $quiz->sections->first()->name ?? 'General' }}</div>
@@ -216,7 +216,7 @@
     <div class="exam-sidebar">
         {{-- Profile --}}
         <div style="padding:16px;border-bottom:1px solid rgba(99,102,241,0.06);display:flex;align-items:center;gap:10px;">
-            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#4f46e5,#7c3aed);display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:12px;">{{ strtoupper(substr(auth()->user()->name, 0, 1)) }}</div>
+            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#6B21C8,#7723D6);display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:12px;">{{ strtoupper(substr(auth()->user()->name, 0, 1)) }}</div>
             <div>
                 <div style="font-size:12px;font-weight:700;color:white;">{{ auth()->user()->name }}</div>
                 <div style="font-size:10px;color:#64748b;">{{ auth()->user()->email }}</div>

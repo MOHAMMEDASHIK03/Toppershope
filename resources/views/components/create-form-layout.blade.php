@@ -20,7 +20,7 @@
 @php
     $cancelHref = $cancelHref ?? $backHref;
     $httpMethod = strtoupper($method);
-    $backHoverClass = 'hover:text-orange-600';
+    $backHoverClass = 'hover:text-primary-700';
     $formId = $formId ?? 'panel-create-form-' . substr(md5($action), 0, 8);
 @endphp
 

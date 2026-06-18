@@ -22,12 +22,12 @@
             <div>
                 <label class="block text-xs font-bold text-slate-400 uppercase tracking-wide mb-2">Subject / Title</label>
                 <input type="text" name="title" required placeholder="e.g. Doubt in Integration by Parts"
-                    class="w-full px-4 py-3 admin-input rounded-xl text-sm resize-none outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500">
+                    class="w-full px-4 py-3 admin-input rounded-xl text-sm resize-none outline-none focus:ring-2 focus:ring-primary-600/15 focus:border-primary-500">
             </div>
             <div>
                 <label class="block text-xs font-bold text-slate-400 uppercase tracking-wide mb-2">Your Question</label>
                 <textarea name="body" rows="4" required placeholder="Describe your doubt in detail..."
-                    class="w-full px-4 py-3 admin-input rounded-xl text-sm resize-none outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 resize-none"></textarea>
+                    class="w-full px-4 py-3 admin-input rounded-xl text-sm resize-none outline-none focus:ring-2 focus:ring-primary-600/15 focus:border-primary-500 resize-none"></textarea>
             </div>
             <div class="flex gap-2">
                 <button type="submit" class="btn-primary text-sm py-2.5 px-5 rounded-lg font-semibold">Post doubt</button>
@@ -41,7 +41,7 @@
 @if(isset($doubts) && $doubts->count() > 0)
     <div class="space-y-4">
         @foreach($doubts as $doubt)
-            <a href="{{ route('student.doubts.show', $doubt->id) }}" class="bg-white border border-slate-200 rounded-xl shadow-sm p-5 block hover:border-orange-200 transition-all">
+            <a href="{{ route('student.doubts.show', $doubt->id) }}" class="bg-white border border-slate-200 rounded-xl shadow-sm p-5 block hover:border-primary-200 transition-all">
                 <div class="flex items-start justify-between">
                     <div class="flex-1">
                         <h3 class="font-semibold text-slate-900 text-sm">{{ $doubt->subject }}</h3>
@@ -53,7 +53,7 @@
                             @endif
                         </div>
                     </div>
-                    <span class="px-2 py-1 rounded-md text-[10px] font-bold {{ $doubt->is_resolved ? 'bg-emerald-50 text-emerald-700' : 'bg-amber-500/10 text-amber-400' }}">
+                    <span class="px-2 py-1 rounded-md text-[10px] font-bold {{ $doubt->is_resolved ? 'bg-primary-50 text-emerald-700' : 'bg-amber-500/10 text-amber-400' }}">
                         {{ $doubt->is_resolved ? 'Resolved' : 'Open' }}
                     </span>
                 </div>

@@ -9,7 +9,7 @@
         <p class="text-sm font-medium text-slate-500 mt-1">Review and manage employee time off</p>
     </div>
     <div class="flex flex-wrap gap-3">
-        <a href="{{ route('hr.leaves.create') }}" class="px-4 py-2.5 btn-primary font-semibold rounded-xl text-sm shadow-sm hover:bg-orange-600 focus:ring-4 focus:ring-orange-100 transition-colors inline-flex items-center gap-2">
+        <a href="{{ route('hr.leaves.create') }}" class="px-4 py-2.5 btn-primary font-semibold rounded-xl text-sm shadow-sm hover:bg-primary-700 focus:ring-4 focus:ring-primary-100 transition-colors inline-flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg>
             Record Leave
         </a>
@@ -46,7 +46,7 @@
                                 <p class="text-[11px] text-slate-500 font-medium truncate">{{ $employee->employee_id }}</p>
                             @else
                                 <p class="font-bold text-slate-500 text-sm">Unknown employee</p>
-                                <p class="text-[11px] text-rose-500 font-medium">Record missing</p>
+                                <p class="text-[11px] text-primary-500 font-medium">Record missing</p>
                             @endif
                         </div>
                     </div>
@@ -68,12 +68,12 @@
                 <div>
                     <span class="panel-list__cell-label">Status</span>
                     @if($leave->status === 'approved')
-                        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-bold text-[11px]">
-                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Approved
+                        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-primary-50 text-emerald-700 font-bold text-[11px]">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary-500"></span> Approved
                         </span>
                     @elseif($leave->status === 'rejected')
                         <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-rose-50 text-rose-700 font-bold text-[11px]">
-                            <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span> Rejected
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary-500"></span> Rejected
                         </span>
                     @else
                         <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 font-bold text-[11px]">
@@ -89,7 +89,7 @@
 
                 <div class="lg:text-right">
                     <span class="panel-list__cell-label">Actions</span>
-                    <a href="{{ route('hr.leaves.edit', $leave) }}" class="inline-flex items-center justify-center lg:justify-end px-3 py-1.5 text-orange-600 hover:bg-orange-50 rounded-lg transition-colors font-bold text-xs sm:text-sm border border-orange-200 bg-white w-full lg:w-auto">
+                    <a href="{{ route('hr.leaves.edit', $leave) }}" class="inline-flex items-center justify-center lg:justify-end px-3 py-1.5 text-primary-700 hover:bg-primary-50 rounded-lg transition-colors font-bold text-xs sm:text-sm border border-primary-200 bg-white w-full lg:w-auto">
                         Review
                     </a>
                 </div>

@@ -47,7 +47,7 @@
         width: 32px;
         height: 32px;
         border-radius: 6px;
-        background: #f97316;
+        background: #7723D6;
         color: #fff;
         font-weight: 800;
         font-size: 11px;

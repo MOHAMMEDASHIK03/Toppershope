@@ -60,7 +60,7 @@
         font-weight: 800;
         font-size: 0.875rem;
         background: #fff7ed;
-        color: #ea580c;
+        color: #6B21C8;
         border: 1px solid #ffedd5;
     }
     .app-profile-name {
@@ -95,7 +95,7 @@
         padding: 0.5rem 0.75rem;
         font-size: 0.8125rem;
         font-weight: 700;
-        color: #ea580c;
+        color: #6B21C8;
         background: #fff7ed;
         border: 1px solid #fed7aa;
         border-radius: 0.625rem;
@@ -116,12 +116,12 @@
 @section('content')
 @php
     $statusColors = [
-        'applied' => ['text' => 'text-blue-700', 'bg' => 'bg-blue-50', 'dot' => 'bg-blue-500'],
-        'shortlisted' => ['text' => 'text-purple-700', 'bg' => 'bg-purple-50', 'dot' => 'bg-purple-500'],
-        'interviewed' => ['text' => 'text-indigo-700', 'bg' => 'bg-indigo-50', 'dot' => 'bg-indigo-500'],
+        'applied' => ['text' => 'text-primary-700', 'bg' => 'bg-primary-50', 'dot' => 'bg-primary-500'],
+        'shortlisted' => ['text' => 'text-primary-700', 'bg' => 'bg-primary-50', 'dot' => 'bg-primary-500'],
+        'interviewed' => ['text' => 'text-primary-700', 'bg' => 'bg-primary-50', 'dot' => 'bg-primary-500'],
         'offered' => ['text' => 'text-amber-700', 'bg' => 'bg-amber-50', 'dot' => 'bg-amber-500'],
-        'rejected' => ['text' => 'text-rose-700', 'bg' => 'bg-rose-50', 'dot' => 'bg-rose-500'],
-        'hired' => ['text' => 'text-emerald-700', 'bg' => 'bg-emerald-50', 'dot' => 'bg-emerald-500'],
+        'rejected' => ['text' => 'text-rose-700', 'bg' => 'bg-rose-50', 'dot' => 'bg-primary-500'],
+        'hired' => ['text' => 'text-emerald-700', 'bg' => 'bg-primary-50', 'dot' => 'bg-primary-500'],
     ];
 @endphp
 
@@ -130,12 +130,12 @@
         <h2 class="text-xl font-bold text-slate-800">Job Applications</h2>
         <p class="text-sm font-medium text-slate-500 mt-1">Review candidates and schedule interviews</p>
         @if(request('job'))
-            <p class="text-xs text-orange-600 font-semibold mt-1">Filtered by job posting · <a href="{{ route('hr.job-applications.index') }}" class="underline">Clear filter</a></p>
+            <p class="text-xs text-primary-700 font-semibold mt-1">Filtered by job posting · <a href="{{ route('hr.job-applications.index') }}" class="underline">Clear filter</a></p>
         @endif
     </div>
 
     <div class="flex flex-wrap items-center gap-3">
-        <a href="{{ route('hr.job-applications.create') }}" class="px-4 py-2.5 btn-primary font-semibold rounded-xl text-sm shadow-sm hover:bg-orange-600 focus:ring-4 focus:ring-orange-100 transition-colors inline-flex items-center gap-2">
+        <a href="{{ route('hr.job-applications.create') }}" class="px-4 py-2.5 btn-primary font-semibold rounded-xl text-sm shadow-sm hover:bg-primary-700 focus:ring-4 focus:ring-primary-100 transition-colors inline-flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg>
             Add manual application
         </a>
@@ -211,7 +211,7 @@
         </div>
     @else
         <div class="px-6 py-14 text-center">
-            <div class="w-16 h-16 mx-auto bg-orange-50 text-orange-500 rounded-2xl flex items-center justify-center mb-4 border border-orange-100">
+            <div class="w-16 h-16 mx-auto bg-primary-50 text-primary-500 rounded-2xl flex items-center justify-center mb-4 border border-primary-100">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M128,136a8,8,0,0,0-8,8v16H104a8,8,0,0,0,0,16h16v16a8,8,0,0,0,16,0V176h16a8,8,0,0,0,0-16H136V144A8,8,0,0,0,128,136ZM216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM176,88a8,8,0,0,1-8,8H88a8,8,0,0,1,0-16h80A8,8,0,0,1,176,88Z"/></svg>
             </div>
             <h3 class="text-lg font-bold text-slate-800 mb-1">No applications found</h3>

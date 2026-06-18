@@ -35,7 +35,7 @@
 
     <div class="job-card__body">
         <h3 class="job-card__title">
-            <a href="{{ route('hr.job-postings.edit', $job) }}" class="hover:text-orange-600 transition-colors">{{ $job->title }}</a>
+            <a href="{{ route('hr.job-postings.edit', $job) }}" class="hover:text-primary-700 transition-colors">{{ $job->title }}</a>
         </h3>
 
         <ul class="job-card__meta">

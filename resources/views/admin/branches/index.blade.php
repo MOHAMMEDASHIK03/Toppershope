@@ -14,10 +14,10 @@
 <!-- Branches Grid -->
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     @forelse($branches as $branch)
-        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm flex flex-col h-full hover:border-indigo-200 transition-colors">
+        <div class="bg-white border border-slate-200 rounded-xl p-6 shadow-sm flex flex-col h-full hover:border-primary-200 transition-colors">
             <div class="flex items-start justify-between mb-4">
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-lg bg-orange-50 text-orange-600 flex items-center justify-center border border-indigo-100 shrink-0">
+                    <div class="w-10 h-10 rounded-lg bg-primary-50 text-primary-700 flex items-center justify-center border border-primary-100 shrink-0">
                         <i class="ph ph-buildings text-xl"></i>
                     </div>
                     <div>
@@ -42,12 +42,12 @@
                     <span class="font-semibold text-slate-800">{{ $branch->employees_count }}</span> employees linked
                 </div>
                 <div class="flex gap-1">
-                    <button type="button" onclick="openEditModal({{ $branch->toJson() }})" class="p-2 text-slate-400 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors" title="Edit">
+                    <button type="button" onclick="openEditModal({{ $branch->toJson() }})" class="p-2 text-slate-400 hover:text-primary-700 hover:bg-primary-50 rounded-lg transition-colors" title="Edit">
                         <i class="ph ph-pencil-simple"></i>
                     </button>
                     <form action="{{ route('admin.branches.destroy', $branch) }}" method="POST" onsubmit="return confirm('Delete this branch?');">
                         @csrf @method('DELETE')
-                        <button type="submit" class="p-2 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors" title="Delete">
+                        <button type="submit" class="p-2 text-slate-400 hover:text-primary-600 hover:bg-rose-50 rounded-lg transition-colors" title="Delete">
                             <i class="ph ph-trash"></i>
                         </button>
                     </form>
@@ -63,7 +63,7 @@
 
 <x-panel.pagination :paginator="$branches" class="rounded-xl border border-slate-200 shadow-sm" />
 
-@php $branchInputClass = 'w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:bg-white focus:ring-2 focus:ring-orange-500/20 focus:border-indigo-500 transition-all'; @endphp
+@php $branchInputClass = 'w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:bg-white focus:ring-2 focus:ring-primary-600/15 focus:border-primary-600 transition-all'; @endphp
 
 <!-- Add Branch Modal -->
 <div id="add-branch-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
@@ -125,7 +125,7 @@
                     <textarea name="location" id="edit-location" rows="3" class="{{ $branchInputClass }} resize-none"></textarea>
                 </div>
                 <label class="flex items-start gap-3 cursor-pointer p-4 rounded-xl border border-slate-200 bg-slate-50">
-                    <input type="checkbox" name="is_active" id="edit-active" value="1" class="mt-0.5 w-5 h-5 rounded border-slate-300 text-orange-600 focus:ring-orange-500">
+                    <input type="checkbox" name="is_active" id="edit-active" value="1" class="mt-0.5 w-5 h-5 rounded border-slate-300 text-primary-700 focus:ring-primary-500">
                     <div>
                         <span class="block text-sm font-semibold text-slate-800">Branch is active</span>
                         <span class="block text-xs text-slate-500 mt-0.5">Inactive branches prevent new assignments.</span>

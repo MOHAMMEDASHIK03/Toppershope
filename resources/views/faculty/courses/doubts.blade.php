@@ -51,8 +51,8 @@
         <div class="w-1/3 border-r border-slate-200 bg-slate-50 flex flex-col h-full overflow-hidden">
             <div class="p-4 border-b border-slate-200 bg-white shadow-sm z-10">
                 <h3 class="font-bold text-slate-800 flex items-center justify-between">
-                    <span class="flex items-center gap-2"><i class="ph-fill ph-chats-circle text-indigo-500"></i> Student Doubts</span>
-                    <button class="text-slate-400 hover:text-orange-600 transition-colors"><i class="ph-bold ph-funnel"></i></button>
+                    <span class="flex items-center gap-2"><i class="ph-fill ph-chats-circle text-primary-500"></i> Student Doubts</span>
+                    <button class="text-slate-400 hover:text-primary-700 transition-colors"><i class="ph-bold ph-funnel"></i></button>
                 </h3>
             </div>
             
@@ -60,10 +60,10 @@
                 @forelse($doubts as $doubt)
                     <div @click="selectedDoubtId = {{ $doubt->id }}"
                          class="p-4 border-b border-slate-100 cursor-pointer transition-colors relative"
-                         :class="selectedDoubtId === {{ $doubt->id }} ? 'bg-orange-50 hover:bg-orange-50' : 'bg-white hover:bg-slate-50'">
+                         :class="selectedDoubtId === {{ $doubt->id }} ? 'bg-primary-50 hover:bg-primary-50' : 'bg-white hover:bg-slate-50'">
                         
                         <!-- Active Indicator -->
-                        <div x-show="selectedDoubtId === {{ $doubt->id }}" class="absolute left-0 top-0 bottom-0 w-1 bg-orange-500"></div>
+                        <div x-show="selectedDoubtId === {{ $doubt->id }}" class="absolute left-0 top-0 bottom-0 w-1 bg-primary-500"></div>
 
                         <div class="flex justify-between items-start mb-1 gap-2">
                             <h4 class="font-bold text-sm text-slate-800 line-clamp-1 flex-1">{{ $doubt->subject }}</h4>
@@ -100,7 +100,7 @@
             <!-- Empty State -->
             <div x-show="!selectedDoubtId" class="absolute inset-0 z-20 bg-white flex flex-col items-center justify-center text-center p-8">
                 <div class="w-20 h-20 bg-slate-50 text-slate-300 rounded-full flex items-center justify-center text-4xl mb-4 border border-slate-100 shadow-sm">
-                    <i class="ph-fill ph-chats text-indigo-200"></i>
+                    <i class="ph-fill ph-chats text-primary-200"></i>
                 </div>
                 <h3 class="text-xl font-bold text-slate-800 mb-2">Select a Conversation</h3>
                 <p class="text-slate-500 max-w-sm">Click on a student's doubt from the left pane to view details and provide an answer.</p>
@@ -113,7 +113,7 @@
                     <!-- Chat Header -->
                     <div class="px-6 py-4 border-b border-slate-200 bg-white flex items-center justify-between shadow-sm z-10">
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-orange-100 text-indigo-700 flex items-center justify-center font-black text-lg shadow-inner">
+                            <div class="w-10 h-10 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center font-black text-lg shadow-inner">
                                 {{ substr($doubt->student->name, 0, 1) }}
                             </div>
                             <div>
@@ -125,7 +125,7 @@
                         </div>
                         <div>
                              @if($doubt->is_resolved)
-                                <div class="bg-emerald-50 border border-emerald-200 text-emerald-700 px-3 py-1.5 rounded-lg flex items-center gap-2 text-xs font-bold shadow-sm">
+                                <div class="bg-primary-50 border border-emerald-200 text-emerald-700 px-3 py-1.5 rounded-lg flex items-center gap-2 text-xs font-bold shadow-sm">
                                     <i class="ph-fill ph-check-circle text-lg"></i> Query Resolved
                                 </div>
                             @else
@@ -147,7 +147,7 @@
                             </div>
                             <div class="flex-1 max-w-2xl bg-white border border-slate-200 rounded-2xl rounded-tl-sm p-4 shadow-sm">
                                 <h4 class="font-black text-slate-800 mb-2 border-b border-slate-100 pb-2 flex items-center gap-2">
-                                    <i class="ph-fill ph-question text-indigo-400 text-xl"></i>
+                                    <i class="ph-fill ph-question text-primary-400 text-xl"></i>
                                     {{ $doubt->subject }}
                                 </h4>
                                 <p class="text-slate-700 text-sm leading-relaxed whitespace-pre-wrap">{{ $doubt->description }}</p>
@@ -163,14 +163,14 @@
                         <!-- Faculty Reply Bubble (If resolved) -->
                         @if($doubt->is_resolved && $doubt->faculty_reply)
                             <div class="flex items-start gap-4 justify-end">
-                                <div class="flex-1 max-w-2xl bg-orange-50 border border-indigo-100 rounded-2xl rounded-tr-sm p-4 shadow-sm text-right">
-                                    <div class="flex items-center justify-end gap-2 mb-2 border-b border-indigo-200/50 pb-2">
-                                        <span class="text-xs text-indigo-400 font-semibold">{{ $doubt->updated_at->format('M j, Y g:i A') }}</span>
-                                        <h4 class="font-black text-indigo-900">Your Response</h4>
+                                <div class="flex-1 max-w-2xl bg-primary-50 border border-primary-100 rounded-2xl rounded-tr-sm p-4 shadow-sm text-right">
+                                    <div class="flex items-center justify-end gap-2 mb-2 border-b border-primary-200/50 pb-2">
+                                        <span class="text-xs text-primary-400 font-semibold">{{ $doubt->updated_at->format('M j, Y g:i A') }}</span>
+                                        <h4 class="font-black text-primary-900">Your Response</h4>
                                     </div>
-                                    <p class="text-indigo-900 text-sm leading-relaxed whitespace-pre-wrap text-left inline-block">{{ $doubt->faculty_reply }}</p>
+                                    <p class="text-primary-900 text-sm leading-relaxed whitespace-pre-wrap text-left inline-block">{{ $doubt->faculty_reply }}</p>
                                 </div>
-                                <div class="w-8 h-8 rounded-full bg-orange-500 flex-shrink-0 flex items-center justify-center font-bold text-xs text-white mt-1 shadow-sm">
+                                <div class="w-8 h-8 rounded-full bg-primary-500 flex-shrink-0 flex items-center justify-center font-bold text-xs text-white mt-1 shadow-sm">
                                     <i class="ph-bold ph-student"></i>
                                 </div>
                             </div>
@@ -183,13 +183,13 @@
                     <div class="bg-white border-t border-slate-200 p-4">
                         <form action="{{ route('faculty.courses.doubts.reply', [$course->id, $doubt->id]) }}" method="POST">
                             @csrf
-                            <div class="relative rounded-2xl border border-slate-300 bg-slate-50 focus-within:bg-white focus-within:border-indigo-400 focus-within:ring-2 focus-within:ring-indigo-100 transition-all p-2 shadow-sm">
+                            <div class="relative rounded-2xl border border-slate-300 bg-slate-50 focus-within:bg-white focus-within:border-primary-400 focus-within:ring-2 focus-within:ring-primary-100 transition-all p-2 shadow-sm">
                                 <textarea name="faculty_reply" rows="3" required placeholder="Type your detailed solution here..." class="w-full bg-transparent outline-none resize-none text-sm p-2 text-slate-700"></textarea>
                                 
                                 <div class="flex items-center justify-between border-t border-slate-200 pt-2 mt-2 px-2">
                                     <div class="flex items-center gap-2">
-                                        <button type="button" class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 hover:text-orange-600 hover:bg-orange-50 transition-colors"><i class="ph-bold ph-image text-lg"></i></button>
-                                        <button type="button" class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 hover:text-orange-600 hover:bg-orange-50 transition-colors"><i class="ph-bold ph-paperclip text-lg"></i></button>
+                                        <button type="button" class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 hover:text-primary-700 hover:bg-primary-50 transition-colors"><i class="ph-bold ph-image text-lg"></i></button>
+                                        <button type="button" class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-400 hover:text-primary-700 hover:bg-primary-50 transition-colors"><i class="ph-bold ph-paperclip text-lg"></i></button>
                                     </div>
                                     <button type="submit" class="btn-primary text-white font-bold py-1.5 px-4 rounded-xl text-sm shadow-sm transition-colors flex items-center gap-2">
                                         Send Reply <i class="ph-bold ph-paper-plane-right"></i>

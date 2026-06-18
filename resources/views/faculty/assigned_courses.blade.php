@@ -15,7 +15,7 @@
     @else
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             @foreach($courses as $course)
-                <article class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden flex flex-col group hover:shadow-md hover:border-orange-200 transition-all">
+                <article class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden flex flex-col group hover:shadow-md hover:border-primary-200 transition-all">
                     <div class="relative">
                         <x-course.cover :course="$course" height="h-40" />
                         <div class="absolute top-3 left-3 z-10">
@@ -26,7 +26,7 @@
                     </div>
 
                     <div class="p-5 flex-1 flex flex-col">
-                        <h3 class="font-semibold text-slate-900 text-base leading-snug mb-3 group-hover:text-orange-600 transition-colors line-clamp-2">
+                        <h3 class="font-semibold text-slate-900 text-base leading-snug mb-3 group-hover:text-primary-700 transition-colors line-clamp-2">
                             {{ $course->name }}
                         </h3>
 
@@ -35,7 +35,7 @@
                                 {{ $course->batches_count }} {{ Str::plural('batch', $course->batches_count) }}
                             </span>
                             @if($course->is_published)
-                                <span class="inline-flex items-center text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-1 rounded-md">
+                                <span class="inline-flex items-center text-xs font-semibold text-emerald-700 bg-primary-50 border border-emerald-200 px-2 py-1 rounded-md">
                                     Published
                                 </span>
                             @else

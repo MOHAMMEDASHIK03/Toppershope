@@ -14,7 +14,7 @@
     layout-view="layouts.faculty"
 >
     @php
-        $inputClass = 'w-full rounded-xl border border-slate-200 bg-slate-50 text-slate-900 focus:bg-white focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 text-sm py-2.5 px-3 outline-none';
+        $inputClass = 'w-full rounded-xl border border-slate-200 bg-slate-50 text-slate-900 focus:bg-white focus:ring-2 focus:ring-primary-600/15 focus:border-primary-500 text-sm py-2.5 px-3 outline-none';
         $selectedUser = old('user_id', request('user_id'));
     @endphp
 
@@ -28,7 +28,7 @@
                 @endforeach
             </select>
             @error('user_id')
-                <p class="text-rose-600 text-xs font-medium mt-1.5">{{ $message }}</p>
+                <p class="text-primary-600 text-xs font-medium mt-1.5">{{ $message }}</p>
             @enderror
         </div>
 
@@ -44,7 +44,7 @@
             </select>
             <p class="text-xs text-slate-500 mt-1.5">The faculty member will get access to manage this course&rsquo;s content, batches, and teaching tools.</p>
             @error('course_id')
-                <p class="text-rose-600 text-xs font-medium mt-1.5">{{ $message }}</p>
+                <p class="text-primary-600 text-xs font-medium mt-1.5">{{ $message }}</p>
             @enderror
         </div>
     </div>

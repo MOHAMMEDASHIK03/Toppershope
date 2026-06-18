@@ -30,7 +30,7 @@
         justify-content: center;
         border-radius: 0.75rem;
         background: #fff7ed;
-        color: #ea580c;
+        color: #6B21C8;
         border: 1px solid #ffedd5;
     }
     .perf-summary {
@@ -79,7 +79,7 @@
     }
     .perf-period-chip:hover {
         border-color: #fdba74;
-        color: #ea580c;
+        color: #6B21C8;
         background: #fff7ed;
     }
     .perf-rating__track {
@@ -119,12 +119,12 @@
     .perf-rating__option:hover .perf-rating__num {
         background: #fff7ed;
         border-color: #fed7aa;
-        color: #ea580c;
+        color: #6B21C8;
     }
     .perf-rating__option input:checked + .perf-rating__num {
         color: #fff;
-        background: #f97316;
-        border-color: #ea580c;
+        background: #7723D6;
+        border-color: #6B21C8;
         box-shadow: 0 4px 14px rgb(249 115 22 / 0.35);
     }
     .perf-status-grid {
@@ -195,7 +195,7 @@
         color: #047857;
     }
     .perf-status-card__input:checked + .perf-status-card__body--acknowledged {
-        border-color: #f97316;
+        border-color: #7723D6;
         background: #fff7ed;
         box-shadow: 0 0 0 3px rgb(249 115 22 / 0.2);
     }
@@ -221,7 +221,7 @@
         letter-spacing: 0;
         font-size: 0.8125rem;
         font-weight: 600;
-        color: #ea580c;
+        color: #6B21C8;
     }
 </style>
 @endpush
@@ -395,8 +395,8 @@
 <style>
     .perf-period-chip.is-active {
         color: #fff;
-        background: #f97316;
-        border-color: #f97316;
+        background: #7723D6;
+        border-color: #7723D6;
     }
 </style>
 @endpush

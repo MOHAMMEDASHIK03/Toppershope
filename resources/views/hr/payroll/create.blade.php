@@ -34,7 +34,7 @@
         <input type="hidden" name="month_year" id="monthYear" value="{{ $defaultMonthYear }}">
     </div>
 
-    <div class="bg-orange-50 border border-indigo-100 rounded-xl p-4 text-sm text-indigo-800">
+    <div class="bg-primary-50 border border-primary-100 rounded-xl p-4 text-sm text-primary-800">
         Ensure the employee has a salary structure in <a href="{{ route('hr.payroll.settings') }}" class="font-semibold underline">Payroll settings</a> before generating.
     </div>
 </x-create-form-layout>

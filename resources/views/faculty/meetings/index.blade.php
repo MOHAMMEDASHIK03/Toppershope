@@ -284,7 +284,7 @@
                     <div style="border:1.5px solid #e2e8f0;border-radius:.875rem;overflow:hidden;max-height:180px;overflow-y:auto;">
                         <template x-for="s in students" :key="s.id">
                             <label style="display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;cursor:pointer;border-bottom:1px solid #f1f5f9;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background=''">
-                                <input type="checkbox" name="student_ids[]" :value="s.id" style="accent-color:#f97316;">
+                                <input type="checkbox" name="student_ids[]" :value="s.id" style="accent-color:#7723D6;">
                                 <div>
                                     <div style="font-weight:600;font-size:.875rem;color:#1e293b;" x-text="s.name"></div>
                                     <div style="font-size:.75rem;color:#64748b;" x-text="s.email"></div>

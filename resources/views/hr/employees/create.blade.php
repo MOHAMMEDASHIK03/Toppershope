@@ -18,7 +18,7 @@
         <div class="flex items-center gap-3 ml-auto md:ml-0">
             <button @click="if(tab > 1) tab--" class="px-4 py-2 bg-white border border-slate-200 text-slate-600 font-bold rounded-lg text-sm hover:bg-slate-50 transition-colors">Previous</button>
             <button @click="if(tab < 9) tab++" class="px-4 py-2 bg-white border border-slate-200 text-slate-600 font-bold rounded-lg text-sm hover:bg-slate-50 transition-colors">Next Section</button>
-            <button type="submit" form="employeeForm" class="px-6 py-2 btn-primary font-bold rounded-lg text-sm shadow-sm hover:bg-orange-600 transition-colors">Save Employee</button>
+            <button type="submit" form="employeeForm" class="px-6 py-2 btn-primary font-bold rounded-lg text-sm shadow-sm hover:bg-primary-700 transition-colors">Save Employee</button>
         </div>
     </div>
 
@@ -41,7 +41,7 @@
         <div class="w-full md:w-64 shrink-0 bg-white border border-slate-100 rounded-2xl p-2 shadow-sm sticky top-6">
             <template x-for="t in tabs" :key="t.id">
                 <button type="button" @click="tab = t.id"
-                        :class="tab === t.id ? 'bg-orange-50 text-indigo-700 font-bold' : 'text-slate-500 hover:bg-slate-50 hover:text-slate-700'"
+                        :class="tab === t.id ? 'bg-primary-50 text-primary-700 font-bold' : 'text-slate-500 hover:bg-slate-50 hover:text-slate-700'"
                         class="w-full text-left px-4 py-3 rounded-xl text-sm transition-colors flex items-center justify-between mb-1">
                     <span x-text="t.name"></span>
                     <svg x-show="tab === t.id" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></svg>
@@ -63,25 +63,25 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2">First Name <span class="text-rose-500">*</span></label>
-                        <input type="text" name="first_name" value="{{ old('first_name') }}" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-600/20 focus:border-indigo-600 outline-none text-slate-900 font-medium">
+                        <label class="block text-sm font-bold text-slate-700 mb-2">First Name <span class="text-primary-500">*</span></label>
+                        <input type="text" name="first_name" value="{{ old('first_name') }}" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary-600/20 focus:border-primary-600 outline-none text-slate-900 font-medium">
                     </div>
                     <div>
                         <label class="block text-sm font-bold text-slate-700 mb-2">Middle Name</label>
-                        <input type="text" name="middle_name" value="{{ old('middle_name') }}" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-600/20 focus:border-indigo-600 outline-none text-slate-900 font-medium">
+                        <input type="text" name="middle_name" value="{{ old('middle_name') }}" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary-600/20 focus:border-primary-600 outline-none text-slate-900 font-medium">
                     </div>
                     <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2">Last Name <span class="text-rose-500">*</span></label>
-                        <input type="text" name="last_name" value="{{ old('last_name') }}" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-600/20 focus:border-indigo-600 outline-none text-slate-900 font-medium">
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Last Name <span class="text-primary-500">*</span></label>
+                        <input type="text" name="last_name" value="{{ old('last_name') }}" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary-600/20 focus:border-primary-600 outline-none text-slate-900 font-medium">
                     </div>
                     
                     <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2">Email Address <span class="text-rose-500">*</span></label>
-                        <input type="email" name="email" value="{{ old('email') }}" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-600/20 focus:border-indigo-600 outline-none text-slate-900 font-medium">
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Email Address <span class="text-primary-500">*</span></label>
+                        <input type="email" name="email" value="{{ old('email') }}" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary-600/20 focus:border-primary-600 outline-none text-slate-900 font-medium">
                     </div>
                     <div>
                         <label class="block text-sm font-bold text-slate-700 mb-2">Official Email</label>
-                        <input type="email" name="official_email" value="{{ old('official_email') }}" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-600/20 focus:border-indigo-600 outline-none text-slate-900 font-medium">
+                        <input type="email" name="official_email" value="{{ old('official_email') }}" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary-600/20 focus:border-primary-600 outline-none text-slate-900 font-medium">
                     </div>
                     <div>
                         <label class="block text-sm font-bold text-slate-700 mb-2">Date of Birth</label>
@@ -89,7 +89,7 @@
                     </div>
 
                     <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2">Gender <span class="text-rose-500">*</span></label>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Gender <span class="text-primary-500">*</span></label>
                         <select name="gender" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 outline-none text-slate-900 font-medium appearance-none">
                             <option value="">Select Gender</option>
                             <option value="male">Male</option>
@@ -98,15 +98,15 @@
                         </select>
                     </div>
                     <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2">Blood Group <span class="text-rose-500">*</span></label>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Blood Group <span class="text-primary-500">*</span></label>
                         <input type="text" name="blood_group" required value="{{ old('blood_group') }}" placeholder="e.g. O+" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 outline-none text-slate-900 font-medium">
                     </div>
                     <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2">Nationality <span class="text-rose-500">*</span></label>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Nationality <span class="text-primary-500">*</span></label>
                         <input type="text" name="nationality" required value="{{ old('nationality', 'Indian') }}" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 outline-none text-slate-900 font-medium">
                     </div>
                     <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2">Marital Status <span class="text-rose-500">*</span></label>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Marital Status <span class="text-primary-500">*</span></label>
                         <select name="marital_status" x-model="maritalStatus" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 outline-none text-slate-900 font-medium appearance-none">
                             <option value="">Select</option>
                             <option value="single">Single</option>
@@ -116,7 +116,7 @@
                         </select>
                     </div>
                     <div x-show="maritalStatus === 'married'">
-                        <label class="block text-sm font-bold text-slate-700 mb-2">Spouse Name <span class="text-rose-500">*</span></label>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Spouse Name <span class="text-primary-500">*</span></label>
                         <input type="text" name="spouse_name" :required="maritalStatus === 'married'" value="{{ old('spouse_name') }}" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 outline-none text-slate-900 font-medium">
                     </div>
                     <div x-show="maritalStatus !== 'single'">
@@ -132,11 +132,11 @@
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                     <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2">Primary Phone <span class="text-rose-500">*</span></label>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Primary Phone <span class="text-primary-500">*</span></label>
                         <input type="text" name="phone" required value="{{ old('phone') }}" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 outline-none font-medium">
                     </div>
                     <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2">Alternate Phone <span class="text-rose-500">*</span></label>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Alternate Phone <span class="text-primary-500">*</span></label>
                         <input type="text" name="alt_phone" required value="{{ old('alt_phone') }}" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 outline-none font-medium">
                     </div>
                 </div>
@@ -144,15 +144,15 @@
                 <h4 class="text-sm font-black uppercase text-slate-400 mb-4">Emergency Contact</h4>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                     <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-2">Name <span class="text-rose-500">*</span></label>
+                        <label class="block text-xs font-bold text-slate-700 mb-2">Name <span class="text-primary-500">*</span></label>
                         <input type="text" name="emergency_name" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 outline-none font-medium">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-2">Phone Number <span class="text-rose-500">*</span></label>
+                        <label class="block text-xs font-bold text-slate-700 mb-2">Phone Number <span class="text-primary-500">*</span></label>
                         <input type="text" name="emergency_phone" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 outline-none font-medium">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-2">Relationship <span class="text-rose-500">*</span></label>
+                        <label class="block text-xs font-bold text-slate-700 mb-2">Relationship <span class="text-primary-500">*</span></label>
                         <input type="text" name="emergency_relationship" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 outline-none font-medium">
                     </div>
                 </div>
@@ -176,7 +176,7 @@
                         <div class="flex items-center justify-between mb-4">
                             <h4 class="text-sm font-black uppercase text-slate-400">Current Address</h4>
                             <label class="flex items-center gap-2 text-sm font-medium text-slate-600 cursor-pointer">
-                                <input type="checkbox" name="same_as_permanent" x-model="sameAsPermanent" value="1" class="rounded text-orange-600 focus:ring-orange-500">
+                                <input type="checkbox" name="same_as_permanent" x-model="sameAsPermanent" value="1" class="rounded text-primary-700 focus:ring-primary-500">
                                 Same as permanent
                             </label>
                         </div>
@@ -198,7 +198,7 @@
                 <h3 class="text-lg font-bold text-slate-800 mb-6 border-b border-slate-100 pb-3">Identity Documents</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2">Aadhaar Number <span class="text-rose-500">*</span></label>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Aadhaar Number <span class="text-primary-500">*</span></label>
                         <input type="text" name="aadhaar_number" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 outline-none font-medium">
                     </div>
                     <div>
@@ -251,7 +251,7 @@
                     />
 
                     <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-1.5">Joining Date <span class="text-rose-500">*</span></label>
+                        <label class="block text-sm font-bold text-slate-700 mb-1.5">Joining Date <span class="text-primary-500">*</span></label>
                         <input type="date" name="joining_date" value="{{ old('joining_date', date('Y-m-d')) }}" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 outline-none font-medium">
                     </div>
                     <div x-show="employeeType === 'probation'" x-transition>
@@ -264,7 +264,7 @@
                     </div>
 
                     <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-1.5">Work Location <span class="text-rose-500">*</span></label>
+                        <label class="block text-sm font-bold text-slate-700 mb-1.5">Work Location <span class="text-primary-500">*</span></label>
                         <select name="work_location" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 outline-none font-medium appearance-none">
                             <option value="">Select Location</option>
                             <option value="On-Site">On-Site</option>
@@ -273,7 +273,7 @@
                         </select>
                     </div>
                     <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-1.5">Office Branch <span class="text-rose-500">*</span></label>
+                        <label class="block text-sm font-bold text-slate-700 mb-1.5">Office Branch <span class="text-primary-500">*</span></label>
                         <select name="branch_id" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 outline-none font-medium appearance-none">
                             <option value="">Select Branch</option>
                             @foreach($branches as $b)
@@ -282,7 +282,7 @@
                         </select>
                     </div>
                     <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-1.5">Reporting Manager <span class="text-rose-500">*</span></label>
+                        <label class="block text-sm font-bold text-slate-700 mb-1.5">Reporting Manager <span class="text-primary-500">*</span></label>
                         <select name="reporting_manager_id" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 outline-none font-medium appearance-none">
                             <option value="">Select Manager</option>
                             @foreach($managers as $m)
@@ -307,45 +307,45 @@
                         </label>
                         <label class="cursor-pointer">
                             <input type="radio" x-model="panelAccess" name="panel_access" value="hr" class="peer sr-only">
-                            <div class="px-3 py-3 rounded-xl border-2 peer-checked:border-rose-500 peer-checked:bg-rose-50 border-slate-200 bg-white text-center transition-all">
+                            <div class="px-3 py-3 rounded-xl border-2 peer-checked:border-primary-500 peer-checked:bg-rose-50 border-slate-200 bg-white text-center transition-all">
                                 <span class="block text-sm font-bold peer-checked:text-rose-700 text-slate-600">HR Panel</span>
                             </div>
                         </label>
                         <label class="cursor-pointer">
                             <input type="radio" x-model="panelAccess" name="panel_access" value="faculty" class="peer sr-only">
-                            <div class="px-3 py-3 rounded-xl border-2 peer-checked:border-indigo-500 peer-checked:bg-orange-50 border-slate-200 bg-white text-center transition-all">
-                                <span class="block text-sm font-bold peer-checked:text-indigo-700 text-slate-600">Faculty</span>
+                            <div class="px-3 py-3 rounded-xl border-2 peer-checked:border-primary-500 peer-checked:bg-primary-50 border-slate-200 bg-white text-center transition-all">
+                                <span class="block text-sm font-bold peer-checked:text-primary-700 text-slate-600">Faculty</span>
                             </div>
                         </label>
                         <label class="cursor-pointer">
                             <input type="radio" x-model="panelAccess" name="panel_access" value="faculty_head" class="peer sr-only">
-                            <div class="px-3 py-3 rounded-xl border-2 peer-checked:border-orange-500 peer-checked:bg-orange-50 border-slate-200 bg-white text-center transition-all">
-                                <span class="block text-sm font-bold peer-checked:text-orange-700 text-slate-600">Faculty Head</span>
+                            <div class="px-3 py-3 rounded-xl border-2 peer-checked:border-primary-500 peer-checked:bg-primary-50 border-slate-200 bg-white text-center transition-all">
+                                <span class="block text-sm font-bold peer-checked:text-primary-700 text-slate-600">Faculty Head</span>
                             </div>
                         </label>
                         <label class="cursor-pointer">
                             <input type="radio" x-model="panelAccess" name="panel_access" value="ads" class="peer sr-only">
-                            <div class="px-3 py-3 rounded-xl border-2 peer-checked:border-blue-500 peer-checked:bg-orange-50 border-slate-200 bg-white text-center transition-all">
-                                <span class="block text-sm font-bold peer-checked:text-blue-700 text-slate-600">Ads Panel</span>
+                            <div class="px-3 py-3 rounded-xl border-2 peer-checked:border-primary-500 peer-checked:bg-primary-50 border-slate-200 bg-white text-center transition-all">
+                                <span class="block text-sm font-bold peer-checked:text-primary-700 text-slate-600">Ads Panel</span>
                             </div>
                         </label>
                         <label class="cursor-pointer">
                             <input type="radio" x-model="panelAccess" name="panel_access" value="admission" class="peer sr-only">
-                            <div class="px-3 py-3 rounded-xl border-2 peer-checked:border-emerald-500 peer-checked:bg-emerald-50 border-slate-200 bg-white text-center transition-all">
+                            <div class="px-3 py-3 rounded-xl border-2 peer-checked:border-primary-500 peer-checked:bg-primary-50 border-slate-200 bg-white text-center transition-all">
                                 <span class="block text-sm font-bold peer-checked:text-emerald-700 text-slate-600">Admission</span>
                             </div>
                         </label>
                     </div>
                 </div>
 
-                <div x-show="panelAccess !== 'none'" x-transition class="bg-orange-50/50 rounded-xl p-5 border border-indigo-100">
-                    <p class="text-sm text-indigo-800 font-medium mb-4">
+                <div x-show="panelAccess !== 'none'" x-transition class="bg-primary-50/50 rounded-xl p-5 border border-primary-100">
+                    <p class="text-sm text-primary-800 font-medium mb-4">
                         A user account will be created automatically in the selected module using the employee's email address.
                     </p>
                     <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-1.5">Initial Account Password <span class="text-rose-500" x-show="panelAccess !== 'none'">*</span></label>
+                        <label class="block text-sm font-bold text-slate-700 mb-1.5">Initial Account Password <span class="text-primary-500" x-show="panelAccess !== 'none'">*</span></label>
                         <input type="text" name="panel_password" x-bind:required="panelAccess !== 'none'"
-                               class="w-full md:w-1/2 px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:border-indigo-600 outline-none text-slate-900 font-medium"
+                               class="w-full md:w-1/2 px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:border-primary-600 outline-none text-slate-900 font-medium"
                                placeholder="Set initial password">
                     </div>
                 </div>
@@ -355,7 +355,7 @@
             <div x-show="tab === 6" x-transition.opacity style="display: none;">
                 <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-6">
                     <h3 class="text-lg font-bold text-slate-800">Education Details</h3>
-                    <button type="button" @click="addEducation()" class="text-sm font-bold text-orange-600 hover:text-indigo-700">+ Add Row</button>
+                    <button type="button" @click="addEducation()" class="text-sm font-bold text-primary-700 hover:text-primary-700">+ Add Row</button>
                 </div>
                 
                 <div class="space-y-4">
@@ -368,7 +368,7 @@
                                 <input type="number" x-bind:name="'education['+index+'][graduation_year]'" placeholder="Year" class="px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm outline-none focus:ring-2 font-medium">
                                 <input type="text" x-bind:name="'education['+index+'][grade]'" placeholder="Grade / CGPA" class="px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm outline-none focus:ring-2 font-medium">
                             </div>
-                            <button type="button" @click="removeEducation(edu.id)" class="text-rose-500 p-2 hover:bg-rose-50 rounded-lg shrink-0 mt-0.5">
+                            <button type="button" @click="removeEducation(edu.id)" class="text-primary-500 p-2 hover:bg-rose-50 rounded-lg shrink-0 mt-0.5">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"/></svg>
                             </button>
                         </div>
@@ -380,7 +380,7 @@
             <div x-show="tab === 7" x-transition.opacity style="display: none;">
                 <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-6">
                     <h3 class="text-lg font-bold text-slate-800">Skills & Certifications</h3>
-                    <button type="button" @click="addSkill()" class="text-sm font-bold text-orange-600 hover:text-indigo-700">+ Add Row</button>
+                    <button type="button" @click="addSkill()" class="text-sm font-bold text-primary-700 hover:text-primary-700">+ Add Row</button>
                 </div>
 
                 <div class="space-y-4">
@@ -401,7 +401,7 @@
                                     <option value="Expert">Expert</option>
                                 </select>
                             </div>
-                            <button type="button" @click="removeSkill(skill.id)" class="text-rose-500 p-2 hover:bg-rose-50 rounded-lg shrink-0 mt-0.5">
+                            <button type="button" @click="removeSkill(skill.id)" class="text-primary-500 p-2 hover:bg-rose-50 rounded-lg shrink-0 mt-0.5">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"/></svg>
                             </button>
                         </div>
@@ -413,7 +413,7 @@
             <div x-show="tab === 8" x-transition.opacity style="display: none;">
                 <h3 class="text-lg font-bold text-slate-800 mb-6 border-b border-slate-100 pb-3">Bank & Payroll Details</h3>
                 <div class="mb-6 max-w-sm">
-                    <label class="block text-sm font-bold text-slate-700 mb-2">Payment Method <span class="text-rose-500">*</span></label>
+                    <label class="block text-sm font-bold text-slate-700 mb-2">Payment Method <span class="text-primary-500">*</span></label>
                     <select name="payment_method" x-model="paymentMethod" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 outline-none font-medium appearance-none text-slate-900">
                         <option value="bank_transfer">Bank Transfer</option>
                         <option value="cheque">Cheque</option>
@@ -423,22 +423,22 @@
 
                 <div x-show="paymentMethod !== 'cash'" x-transition class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6 pb-6 border-b border-slate-100">
                     <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2">Bank Name <span class="text-rose-500">*</span></label>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Bank Name <span class="text-primary-500">*</span></label>
                         <input type="text" name="bank_name" :required="paymentMethod !== 'cash'" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 outline-none font-medium text-slate-900">
                     </div>
                     <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2">IFSC Code <span class="text-rose-500">*</span></label>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">IFSC Code <span class="text-primary-500">*</span></label>
                         <input type="text" name="ifsc_code" :required="paymentMethod !== 'cash'" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 outline-none font-medium text-slate-900">
                     </div>
                     <div class="hidden lg:block"></div>
                     <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2">Account Number <span class="text-rose-500">*</span></label>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Account Number <span class="text-primary-500">*</span></label>
                         <input type="password" name="bank_account_number" x-model="bankAccountNumber" :required="paymentMethod !== 'cash'" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 outline-none font-medium text-slate-900">
                     </div>
                     <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2">Confirm Account Number <span class="text-rose-500">*</span></label>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Confirm Account Number <span class="text-primary-500">*</span></label>
                         <input type="text" x-model="confirmBankAccountNumber" :required="paymentMethod !== 'cash'" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 outline-none font-medium text-slate-900">
-                        <span x-show="bankAccountNumber && confirmBankAccountNumber && bankAccountNumber !== confirmBankAccountNumber" class="text-xs font-bold text-rose-500 mt-1 block">The account number is mismatch!</span>
+                        <span x-show="bankAccountNumber && confirmBankAccountNumber && bankAccountNumber !== confirmBankAccountNumber" class="text-xs font-bold text-primary-500 mt-1 block">The account number is mismatch!</span>
                     </div>
                 </div>
 
@@ -458,7 +458,7 @@
             <div x-show="tab === 9" x-transition.opacity style="display: none;">
                 <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-6">
                     <h3 class="text-lg font-bold text-slate-800">Company Assets (Initial Assignment)</h3>
-                    <button type="button" @click="addAsset()" class="text-sm font-bold text-orange-600 hover:text-indigo-700">+ Add Row</button>
+                    <button type="button" @click="addAsset()" class="text-sm font-bold text-primary-700 hover:text-primary-700">+ Add Row</button>
                 </div>
                 
                 <div class="space-y-4 mb-8">
@@ -469,7 +469,7 @@
                                 <input type="text" x-bind:name="'assets['+index+'][asset_serial]'" placeholder="Serial # or Identifier" class="px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm outline-none focus:ring-2 font-medium">
                                 <input type="date" x-bind:name="'assets['+index+'][assigned_date]'" class="px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm outline-none focus:ring-2 font-medium">
                             </div>
-                            <button type="button" @click="removeAsset(asset.id)" class="text-rose-500 p-2 hover:bg-rose-50 rounded-lg shrink-0 mt-0.5">
+                            <button type="button" @click="removeAsset(asset.id)" class="text-primary-500 p-2 hover:bg-rose-50 rounded-lg shrink-0 mt-0.5">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"/></svg>
                             </button>
                         </div>

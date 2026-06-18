@@ -28,7 +28,7 @@
                     <tr>
                         <td>
                             <div class="flex items-center gap-3">
-                                <div class="w-8 h-8 rounded-full bg-orange-100 text-indigo-700 flex items-center justify-center text-xs font-bold shrink-0">
+                                <div class="w-8 h-8 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center text-xs font-bold shrink-0">
                                     {{ strtoupper(substr($user->name, 0, 1)) }}
                                 </div>
                                 <span class="font-semibold text-slate-800">{{ $user->name }}</span>
@@ -45,12 +45,12 @@
                         <td class="text-slate-500 whitespace-nowrap">{{ $user->created_at->format('M d, Y') }}</td>
                         <td class="text-right whitespace-nowrap">
                             <div class="flex justify-end gap-1">
-                                <a href="{{ route('admin.hr-users.edit', $user) }}" class="p-2 text-slate-400 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors" title="Edit">
+                                <a href="{{ route('admin.hr-users.edit', $user) }}" class="p-2 text-slate-400 hover:text-primary-700 hover:bg-primary-50 rounded-lg transition-colors" title="Edit">
                                     <i class="ph ph-pencil-simple"></i>
                                 </a>
                                 <form action="{{ route('admin.hr-users.destroy', $user) }}" method="POST" onsubmit="return confirm('Revoke this access? This cannot be undone.');">
                                     @csrf @method('DELETE')
-                                    <button type="submit" class="p-2 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors" title="Revoke">
+                                    <button type="submit" class="p-2 text-slate-400 hover:text-primary-600 hover:bg-rose-50 rounded-lg transition-colors" title="Revoke">
                                         <i class="ph ph-trash"></i>
                                     </button>
                                 </form>

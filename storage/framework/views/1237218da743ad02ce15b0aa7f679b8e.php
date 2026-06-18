@@ -188,7 +188,7 @@
 <?php $component->withAttributes([]); ?>
      <?php $__env->slot('header', null, []); ?> 
         <h3 class="font-semibold text-slate-900">Recent financial events</h3>
-        <select class="text-sm border border-slate-200 rounded-lg px-3 py-1.5 text-slate-700 bg-white focus:ring-2 focus:ring-orange-500/20 focus:border-indigo-500 outline-none">
+        <select class="text-sm border border-slate-200 rounded-lg px-3 py-1.5 text-slate-700 bg-white focus:ring-2 focus:ring-primary-600/15 focus:border-primary-600 outline-none">
             <option>All transactions</option>
             <option>Course sales only</option>
             <option>Payroll only</option>
@@ -203,17 +203,17 @@
             <div class="flex-1 w-full">
                 <label class="block text-xs font-medium text-slate-600 mb-1">Title</label>
                 <input type="text" name="title" required placeholder="e.g. Server hosting"
-                    class="w-full px-3 py-2 text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-orange-500/20 focus:border-indigo-500 outline-none">
+                    class="w-full px-3 py-2 text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary-600/15 focus:border-primary-600 outline-none">
             </div>
             <div class="w-full md:w-32">
                 <label class="block text-xs font-medium text-slate-600 mb-1">Amount (₹)</label>
                 <input type="number" step="0.01" name="amount" required placeholder="0.00"
-                    class="w-full px-3 py-2 text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-orange-500/20 focus:border-indigo-500 outline-none">
+                    class="w-full px-3 py-2 text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary-600/15 focus:border-primary-600 outline-none">
             </div>
             <div class="w-full md:w-40">
                 <label class="block text-xs font-medium text-slate-600 mb-1">Date</label>
                 <input type="date" name="expense_date" required value="<?php echo e(date('Y-m-d')); ?>"
-                    class="w-full px-3 py-2 text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-orange-500/20 focus:border-indigo-500 outline-none">
+                    class="w-full px-3 py-2 text-sm border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary-600/15 focus:border-primary-600 outline-none">
             </div>
             <button type="submit" class="btn-primary h-[38px] w-full md:w-auto whitespace-nowrap">
                 <i class="ph ph-plus"></i> Log expense
@@ -236,7 +236,7 @@
                 <tr>
                     <td>
                         <div class="flex items-center gap-2.5">
-                            <span class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 <?php echo e($tx->type === 'income' ? 'bg-emerald-50 text-emerald-600' : 'bg-rose-50 text-rose-600'); ?>">
+                            <span class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 <?php echo e($tx->type === 'income' ? 'bg-primary-50 text-primary-600' : 'bg-rose-50 text-primary-600'); ?>">
                                 <i class="ph <?php echo e($tx->type === 'income' ? 'ph-arrow-down-left' : 'ph-arrow-up-right'); ?>"></i>
                             </span>
                             <div>
@@ -247,7 +247,7 @@
                     </td>
                     <td class="text-slate-600"><?php echo e($tx->user); ?></td>
                     <td class="text-slate-500 whitespace-nowrap"><?php echo e(\Carbon\Carbon::parse($tx->date)->format('M d, Y')); ?></td>
-                    <td class="text-right font-semibold whitespace-nowrap <?php echo e($tx->type === 'income' ? 'text-emerald-600' : 'text-rose-600'); ?>">
+                    <td class="text-right font-semibold whitespace-nowrap <?php echo e($tx->type === 'income' ? 'text-primary-600' : 'text-primary-600'); ?>">
                         <?php echo e($tx->type === 'income' ? '+' : '-'); ?>₹<?php echo e(number_format($tx->amount, 2)); ?>
 
                     </td>

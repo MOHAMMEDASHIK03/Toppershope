@@ -6,10 +6,10 @@
  * issues and to maintain a consistent look without repeating long class strings.
  *
  * COLOUR REFERENCE
- *   Primary (orange)  : #f97316 / var(--color-primary)
+ *   Primary (purple)  : #7723D6 / var(--color-primary)
  *   Dark sidebar      : #0f172a (slate-900)
- *   Accent blue       : #1d4ed8 (blue-700)
- *   Accent indigo     : #4338ca (indigo-700)
+ *   Accent purple : #7723D6
+ *   
  *   Success green     : #16a34a (green-600)
  *   Warning amber     : #d97706 (amber-600)
  *   Danger red        : #dc2626 (red-600)
@@ -22,7 +22,7 @@
 
 /* Google / OAuth linking banner */
 .fp-banner-google {
-    background: linear-gradient(135deg, #1d4ed8, #4338ca);
+    background: linear-gradient(135deg, #7723D6, #581C87);
     color: #fff;
     border-radius: 1rem;
     padding: 1.5rem;
@@ -63,7 +63,7 @@
 .fp-banner-google .fp-banner-btn {
     flex-shrink: 0;
     background: #fff;
-    color: #1d4ed8;
+    color: #7723D6;
     font-weight: 700;
     font-size: 0.875rem;
     padding: 0.65rem 1.25rem;
@@ -180,7 +180,7 @@
 
 .fp-stat-icon.orange {
     background: #fff7ed;
-    color: #ea580c;
+    color: #6B21C8;
 }
 
 .fp-stat-icon.blue {
@@ -195,7 +195,7 @@
 
 .fp-stat-icon.purple {
     background: #faf5ff;
-    color: #9333ea;
+    color: #6B21C8;
 }
 
 .fp-stat-icon.amber {
@@ -255,7 +255,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: #f97316;
+    background: #7723D6;
     color: #fff;
     font-weight: 700;
     font-size: 0.875rem;
@@ -286,7 +286,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: linear-gradient(135deg, #1d4ed8, #4338ca);
+    background: linear-gradient(135deg, #7723D6, #581C87);
     color: #fff;
     font-weight: 700;
     font-size: 0.875rem;
@@ -453,12 +453,12 @@
 
 .fp-badge.batch {
     background: #dbeafe;
-    color: #1d4ed8;
+    color: #7723D6;
 }
 
 .fp-badge.one-on-one {
     background: #f3e8ff;
-    color: #7c3aed;
+    color: #7723D6;
 }
 
 .fp-badge.online {
@@ -554,7 +554,7 @@
 
 .fp-filter-select:focus,
 .fp-filter-input:focus {
-    border-color: #f97316;
+    border-color: #7723D6;
     background: #fff;
 }
 
@@ -663,7 +663,7 @@
 .fp-input:focus,
 .fp-select:focus,
 .fp-textarea:focus {
-    border-color: #f97316;
+    border-color: #7723D6;
     background: #fff;
     box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.12);
 }
@@ -687,7 +687,7 @@
 }
 
 .fp-type-option.selected-primary {
-    border-color: #f97316;
+    border-color: #7723D6;
     background: #fff7ed;
 }
 
@@ -702,7 +702,7 @@
 }
 
 .fp-type-option input[type=radio] {
-    accent-color: #f97316;
+    accent-color: #7723D6;
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -778,15 +778,15 @@
 
 /* Ensure bg-primary always works */
 .bg-primary {
-    background-color: #f97316 !important;
+    background-color: #7723D6 !important;
 }
 
 .text-primary {
-    color: #f97316 !important;
+    color: #7723D6 !important;
 }
 
 .border-primary {
-    border-color: #f97316 !important;
+    border-color: #7723D6 !important;
 }
 
 .bg-primary\/10 {
@@ -798,14 +798,14 @@
 }
 
 .hover\:bg-primary:hover {
-    background-color: #f97316 !important;
+    background-color: #7723D6 !important;
 }
 
 /* Gradient helpers */
 .from-primary {
-    --tw-gradient-from: #f97316;
+    --tw-gradient-from: #7723D6;
 }
 
-.to-orange-500 {
-    --tw-gradient-to: #f97316;
+.to-primary-600 {
+    --tw-gradient-to: #7723D6;
 }

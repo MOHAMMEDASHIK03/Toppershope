@@ -12,13 +12,13 @@
         'published' => [
             'label' => 'Published',
             'desc' => 'Employee can view this review.',
-            'dot' => 'bg-emerald-500',
+            'dot' => 'bg-primary-500',
             'variant' => 'published',
         ],
         'acknowledged' => [
             'label' => 'Acknowledged',
             'desc' => 'Employee has read and acknowledged.',
-            'dot' => 'bg-orange-500',
+            'dot' => 'bg-primary-500',
             'variant' => 'acknowledged',
         ],
     ];

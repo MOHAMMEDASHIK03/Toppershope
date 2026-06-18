@@ -65,7 +65,7 @@
             </div>
             <div class="relative w-full sm:w-64">
                 <i class="ph-bold ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
-                <input type="text" placeholder="Search students..." class="w-full bg-white border border-slate-200 rounded-xl pl-10 pr-4 py-2 text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-orange-500 transition-colors">
+                <input type="text" placeholder="Search students..." class="w-full bg-white border border-slate-200 rounded-xl pl-10 pr-4 py-2 text-sm focus:outline-none focus:border-primary-600 focus:ring-1 focus:ring-primary-500 transition-colors">
             </div>
         </div>
 
@@ -88,7 +88,7 @@
                             <td class="py-4 px-6 text-center text-slate-400 font-medium">{{ $index + 1 }}</td>
                             <td class="py-4 px-6">
                                 <div class="flex items-center gap-3">
-                                    <div class="w-8 h-8 rounded-full bg-orange-100 text-indigo-700 flex items-center justify-center font-bold text-xs">
+                                    <div class="w-8 h-8 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center font-bold text-xs">
                                         {{ substr($attempt->student->name, 0, 1) }}
                                     </div>
                                     <div>
@@ -100,7 +100,7 @@
                             <td class="py-4 px-6 text-slate-700 font-medium">
                                 {{ $attempt->quiz->title }}
                             </td>
-                            <td class="py-4 px-6 text-center font-black {{ $attempt->score < 0 ? 'text-red-500' : ($attempt->score > 15 ? 'text-emerald-500' : 'text-slate-700') }}">
+                            <td class="py-4 px-6 text-center font-black {{ $attempt->score < 0 ? 'text-red-500' : ($attempt->score > 15 ? 'text-primary-500' : 'text-slate-700') }}">
                                 {{ number_format($attempt->score, 2) }}
                             </td>
                             <td class="py-4 px-6 text-center text-slate-500 text-xs">
@@ -108,13 +108,13 @@
                             </td>
                             <td class="py-4 px-6 text-center">
                                 @if($attempt->faculty_remarks)
-                                    <span class="bg-orange-50 text-indigo-700 border border-indigo-200 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wide">Reviewed</span>
+                                    <span class="bg-primary-50 text-primary-700 border border-primary-200 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wide">Reviewed</span>
                                 @else
                                     <span class="bg-slate-100 text-slate-600 border border-slate-200 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wide">Pending</span>
                                 @endif
                             </td>
                             <td class="py-4 px-6 text-center">
-                                <button @click="openReviewModal({{ $attempt->id }}, '{{ addslashes($attempt->student->name) }}', {{ $attempt->score }}, '{{ addslashes($attempt->faculty_remarks) }}', '{{ route('faculty.courses.results.remarks.update', [$course->id, $attempt->id]) }}')" class="bg-white border border-slate-200 hover:border-indigo-300 hover:text-orange-600 text-slate-600 px-3 py-1.5 rounded-lg text-xs font-bold transition-colors inline-flex items-center gap-1.5 shadow-sm">
+                                <button @click="openReviewModal({{ $attempt->id }}, '{{ addslashes($attempt->student->name) }}', {{ $attempt->score }}, '{{ addslashes($attempt->faculty_remarks) }}', '{{ route('faculty.courses.results.remarks.update', [$course->id, $attempt->id]) }}')" class="bg-white border border-slate-200 hover:border-primary-300 hover:text-primary-700 text-slate-600 px-3 py-1.5 rounded-lg text-xs font-bold transition-colors inline-flex items-center gap-1.5 shadow-sm">
                                     <i class="ph-bold {{ $attempt->faculty_remarks ? 'ph-pencil-simple' : 'ph-eye' }}"></i> 
                                     {{ $attempt->faculty_remarks ? 'Edit Remark' : 'Review' }}
                                 </button>
@@ -154,12 +154,12 @@
                     @csrf
                     <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4 border-b border-slate-100">
                         <div class="sm:flex sm:items-start">
-                            <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-orange-100 sm:mx-0 sm:h-10 sm:w-10">
-                                <i class="ph-fill ph-student text-orange-600 text-xl"></i>
+                            <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-primary-100 sm:mx-0 sm:h-10 sm:w-10">
+                                <i class="ph-fill ph-student text-primary-700 text-xl"></i>
                             </div>
                             <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
                                 <h3 class="text-lg leading-6 font-bold text-slate-800" id="modal-title">
-                                    Reviewing <span x-text="attemptStudent" class="text-orange-600"></span>
+                                    Reviewing <span x-text="attemptStudent" class="text-primary-700"></span>
                                 </h3>
                                 <div class="mt-1 mb-4 flex items-center gap-2">
                                     <span class="text-xs text-slate-500 font-medium">Achieved Score:</span>
@@ -168,17 +168,17 @@
                                 
                                 <div class="mt-2 text-left">
                                     <label class="block text-sm font-bold text-slate-700 mb-2">Faculty Remarks</label>
-                                    <textarea name="faculty_remarks" x-model="attemptRemarks" rows="4" class="w-full border border-slate-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-orange-500 focus:border-indigo-500 outline-none transition-all placeholder:text-slate-400" placeholder="Enter constructive feedback or remarks for the student..." required></textarea>
+                                    <textarea name="faculty_remarks" x-model="attemptRemarks" rows="4" class="w-full border border-slate-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-600 outline-none transition-all placeholder:text-slate-400" placeholder="Enter constructive feedback or remarks for the student..." required></textarea>
                                     <p class="text-[10px] text-slate-500 mt-2"><i class="ph-bold ph-info"></i> These remarks will be visible to the student on their graphical performance report.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="bg-slate-50 px-4 py-3 sm:px-6 flex flex-col-reverse sm:flex-row justify-end gap-3">
-                        <button type="button" @click="reviewingAttempt = null" class="w-full inline-flex justify-center rounded-xl border border-slate-300 shadow-sm px-4 py-2 bg-white text-sm font-bold text-slate-700 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 sm:w-auto">
+                        <button type="button" @click="reviewingAttempt = null" class="w-full inline-flex justify-center rounded-xl border border-slate-300 shadow-sm px-4 py-2 bg-white text-sm font-bold text-slate-700 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 sm:w-auto">
                             Cancel
                         </button>
-                        <button type="submit" class="w-full inline-flex justify-center rounded-xl border border-transparent shadow-sm px-5 py-2 bg-orange-500 text-sm font-bold text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 sm:w-auto flex items-center gap-2">
+                        <button type="submit" class="w-full inline-flex justify-center rounded-xl border border-transparent shadow-sm px-5 py-2 bg-primary-500 text-sm font-bold text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 sm:w-auto flex items-center gap-2">
                             <i class="ph-bold ph-floppy-disk"></i> Save Remarks
                         </button>
                     </div>

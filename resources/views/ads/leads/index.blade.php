@@ -6,13 +6,13 @@
 <div class="py-4">
     {{-- Filters --}}
     <form method="GET" class="flex flex-wrap gap-3 mb-6">
-        <select name="campaign_id" onchange="this.form.submit()" class="px-4 py-2 bg-white border border-slate-200 rounded-xl text-sm text-slate-700 font-semibold focus:outline-none focus:ring-2 focus:ring-orange-400/40 focus:border-orange-400">
+        <select name="campaign_id" onchange="this.form.submit()" class="px-4 py-2 bg-white border border-slate-200 rounded-xl text-sm text-slate-700 font-semibold focus:outline-none focus:ring-2 focus:ring-primary-500/40 focus:border-primary-500">
             <option value="">All Campaigns</option>
             @foreach($campaigns as $c)
                 <option value="{{ $c->id }}" {{ request('campaign_id') == $c->id ? 'selected' : '' }}>{{ $c->title }}</option>
             @endforeach
         </select>
-        <select name="type" onchange="this.form.submit()" class="px-4 py-2 bg-white border border-slate-200 rounded-xl text-sm text-slate-700 font-semibold focus:outline-none focus:ring-2 focus:ring-orange-400/40 focus:border-orange-400">
+        <select name="type" onchange="this.form.submit()" class="px-4 py-2 bg-white border border-slate-200 rounded-xl text-sm text-slate-700 font-semibold focus:outline-none focus:ring-2 focus:ring-primary-500/40 focus:border-primary-500">
             <option value="">All Types</option>
             <option value="enrol"    {{ request('type') === 'enrol'    ? 'selected' : '' }}>Enrol</option>
             <option value="interest" {{ request('type') === 'interest' ? 'selected' : '' }}>Interest</option>
@@ -47,7 +47,7 @@
                     <tr class="hover:bg-slate-50 transition">
                         <td class="px-6 py-4">
                             <div class="flex items-center gap-3">
-                                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white font-black text-xs shrink-0">
+                                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center text-white font-black text-xs shrink-0">
                                     {{ strtoupper(substr($lead->name, 0, 1)) }}
                                 </div>
                                 <div>
@@ -58,13 +58,13 @@
                         </td>
                         <td class="px-4 py-4">
                             <p class="text-slate-900 font-semibold">{{ $lead->phone }}</p>
-                            <a href="mailto:{{ $lead->email }}" class="text-orange-500 text-xs hover:underline">{{ $lead->email }}</a>
+                            <a href="mailto:{{ $lead->email }}" class="text-primary-500 text-xs hover:underline">{{ $lead->email }}</a>
                         </td>
                         <td class="px-4 py-4">
                             <p class="font-semibold text-slate-700 max-w-[160px] truncate">{{ $lead->campaign?->title ?? '—' }}</p>
                         </td>
                         <td class="px-4 py-4">
-                            <span class="px-2.5 py-1 rounded-full text-xs font-black {{ $lead->enquiry_type === 'enrol' ? 'bg-orange-100 text-orange-700' : 'bg-blue-100 text-blue-700' }}">
+                            <span class="px-2.5 py-1 rounded-full text-xs font-black {{ $lead->enquiry_type === 'enrol' ? 'bg-primary-100 text-primary-700' : 'bg-primary-100 text-primary-700' }}">
                                 {{ $lead->enquiry_type === 'enrol' ? 'Enrol' : 'Interest' }}
                             </span>
                         </td>

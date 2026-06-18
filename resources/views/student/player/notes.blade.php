@@ -104,7 +104,7 @@
 
 @section('content')
 <div class="flex items-center gap-2 text-sm text-slate-500 mb-6">
-    <a href="{{ route('student.my-courses.show', $enrollment->id) }}" class="hover:text-orange-600 transition-colors">← Back to Course</a>
+    <a href="{{ route('student.my-courses.show', $enrollment->id) }}" class="hover:text-primary-700 transition-colors">← Back to Course</a>
 </div>
 
 <div class="max-w-5xl mx-auto">
@@ -119,7 +119,7 @@
                 @endif
             </div>
             <div class="flex items-center gap-3">
-                <span class="px-3 py-1 rounded-lg bg-emerald-50 text-emerald-700 text-[10px] font-bold border border-emerald-200 uppercase tracking-wider">🔒 Protected</span>
+                <span class="px-3 py-1 rounded-lg bg-primary-50 text-emerald-700 text-[10px] font-bold border border-emerald-200 uppercase tracking-wider">🔒 Protected</span>
                 <button class="pdf-toolbar-btn fullscreen" id="pdfFullscreenBtn" title="Fullscreen">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 256 256"><path d="M216,48V88a8,8,0,0,1-16,0V56H168a8,8,0,0,1,0-16h40A8,8,0,0,1,216,48ZM88,200H56V168a8,8,0,0,0-16,0v40a8,8,0,0,0,8,8H88a8,8,0,0,0,0-16Zm120-40a8,8,0,0,0-8,8v32H168a8,8,0,0,0,0,16h40a8,8,0,0,0,8-8V168A8,8,0,0,0,208,160ZM88,40H48a8,8,0,0,0-8,8V88a8,8,0,0,0,16,0V56H88a8,8,0,0,0,0-16Z"/></svg>
                     Fullscreen

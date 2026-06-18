@@ -163,12 +163,12 @@
 
 @section('content')
 <div class="flex items-center gap-2 text-sm text-slate-500 mb-6">
-    <a href="{{ route('student.my-courses.show', $enrollment->id) }}" class="hover:text-orange-600 transition-colors">← Back to Course</a>
+    <a href="{{ route('student.my-courses.show', $enrollment->id) }}" class="hover:text-primary-700 transition-colors">← Back to Course</a>
 </div>
 
 <div class="max-w-5xl mx-auto">
     {{-- Custom Video Player --}}
-    <div class="bg-white border border-slate-200 rounded-xl p-1 shadow-sm rounded-3xl mb-6 border border-slate-200 shadow-2xl shadow-indigo-500/10">
+    <div class="bg-white border border-slate-200 rounded-xl p-1 shadow-sm rounded-3xl mb-6 border border-slate-200 shadow-2xl shadow-primary-500/10">
         <div class="custom-player-wrapper paused" id="playerWrapper">
             
             @if($signedUrl)
@@ -200,7 +200,7 @@
 
             {{-- Loading Spinner --}}
             <div class="loading-spinner">
-                <svg class="animate-spin text-indigo-500 w-12 h-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                <svg class="animate-spin text-primary-500 w-12 h-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
             </div>
 
             {{-- Center Action Indicator --}}
@@ -263,7 +263,7 @@
                             <div class="settings-menu" id="speedMenu">
                                 <div class="settings-item" data-speed="0.5">0.5x</div>
                                 <div class="settings-item" data-speed="0.75">0.75x</div>
-                                <div class="settings-item text-orange-600" data-speed="1">1x (Normal)</div>
+                                <div class="settings-item text-primary-700" data-speed="1">1x (Normal)</div>
                                 <div class="settings-item" data-speed="1.25">1.25x</div>
                                 <div class="settings-item" data-speed="1.5">1.5x</div>
                                 <div class="settings-item" data-speed="2">2x</div>
@@ -276,7 +276,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm88-29.84q.06-2.16,0-4.32l14.92-18.64a8,8,0,0,0,1.48-7.06,107.21,107.21,0,0,0-10.88-26.25,8,8,0,0,0-6-3.93l-23.72-2.61a89.83,89.83,0,0,0-15.23-26.54L186.27,20a8,8,0,0,0-2.48-6.72,107.9,107.9,0,0,0-26.85-8.87,8,8,0,0,0-7.46,2.86L134.42,26a89.2,89.2,0,0,0-12.84,0L106.52,7.24a8,8,0,0,0-7.46-2.86,107.21,107.21,0,0,0-26.25,10.88,8,8,0,0,0-2.48,6.72L80.89,45.74A89.83,89.83,0,0,0,65.66,72.28L41.94,69.67a8,8,0,0,0-6,3.93A107.21,107.21,0,0,0,25.07,99.85a8,8,0,0,0,1.48,7.06L41.47,125.55A88.58,88.58,0,0,0,40,128a88.58,88.58,0,0,0,1.47,2.45L26.55,149.09a8,8,0,0,0-1.48,7.06,107.21,107.21,0,0,0,10.88,26.25,8,8,0,0,0,6,3.93l23.72,2.61a89.83,89.83,0,0,0,15.23,26.54l-9.66,20.73a8,8,0,0,0,2.48,6.72,107.9,107.9,0,0,0,26.85,8.87,8,8,0,0,0,7.46-2.86L121.58,230a89.2,89.2,0,0,0,12.84,0l15.06,18.78a8,8,0,0,0,7.46,2.86,107.21,107.21,0,0,0,26.25-10.88,8,8,0,0,0,2.48-6.72l-10.46-23.76a89.83,89.83,0,0,0,15.23-26.54l23.72,2.61a8,8,0,0,0,6-3.93,107.21,107.21,0,0,0,10.88-26.25,8,8,0,0,0-1.48-7.06ZM168,128V128a16,16,0,0,1-16,16H104a16,16,0,0,1-16-16v0a16,16,0,0,1,16-16h48A16,16,0,0,1,168,128Z"/></svg>
                             </button>
                             <div class="settings-menu" id="qualityMenu">
-                                <div class="settings-item text-orange-600" data-quality="auto">Auto</div>
+                                <div class="settings-item text-primary-700" data-quality="auto">Auto</div>
                             </div>
                         </div>
 
@@ -307,15 +307,15 @@
         <div class="mt-6 flex flex-wrap items-center gap-4 text-xs font-medium">
             @if($video->duration_minutes)
                 <div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100/80 text-slate-600 border border-slate-200">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-orange-600" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h56A8,8,0,0,1,192,128Z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-primary-700" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h56A8,8,0,0,1,192,128Z"/></svg>
                     <span>{{ $video->duration_minutes }} Minutes</span>
                 </div>
             @endif
-            <div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-50 text-emerald-700 border border-emerald-200">
+            <div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-primary-50 text-emerald-700 border border-emerald-200">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>
                 <span>HD Streaming Available</span>
             </div>
-            <div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-sky-500/10 text-sky-400 border border-sky-500/20">
+            <div class="flex items-center gap-2 px-4 py-2 rounded-xl bg-primary-500/10 text-sky-400 border border-primary-500/20">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M168,104a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,104Zm-8,40H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16Zm56-96V208a16,16,0,0,1-16,16H56a16,16,0,0,1-16-16V48A16,16,0,0,1,56,32H200A16,16,0,0,1,216,48ZM200,48H56V208H200Z"/></svg>
                 <span>Syllabus Aligned</span>
             </div>
@@ -429,7 +429,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { key: 'medium', label: '360p' },
                 { key: 'small',  label: '240p' },
             ];
-            qualityMenu.innerHTML = '<div class="settings-item text-orange-600" data-quality="default">Auto</div>';
+            qualityMenu.innerHTML = '<div class="settings-item text-primary-700" data-quality="default">Auto</div>';
             qualityLabels.forEach(({ key, label }) => {
                 qualityMenu.insertAdjacentHTML('beforeend', `<div class="settings-item" data-quality="${key}">${label}</div>`);
             });
@@ -678,8 +678,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 ytPlayer.setPlaybackRate(parseFloat(speed));
             }
             
-            speedOptions.forEach(opt => opt.classList.remove('text-orange-600'));
-            e.target.classList.add('text-orange-600');
+            speedOptions.forEach(opt => opt.classList.remove('text-primary-700'));
+            e.target.classList.add('text-primary-700');
             
             speedBtn.querySelector('span').textContent = speed + 'x';
             speedMenu.classList.remove('active');
@@ -703,8 +703,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     ytPlayer.setPlaybackQuality(quality);
                 }
                 
-                qualityOptions.forEach(opt => opt.classList.remove('text-orange-600'));
-                e.target.classList.add('text-orange-600');
+                qualityOptions.forEach(opt => opt.classList.remove('text-primary-700'));
+                e.target.classList.add('text-primary-700');
                 qualityMenu.classList.remove('active');
             });
         });

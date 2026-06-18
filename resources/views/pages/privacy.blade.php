@@ -9,7 +9,7 @@
 
 {{-- ===== HERO ===== --}}
 <section class="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-white border-b border-slate-100 py-20 md:py-24">
-    <div class="absolute -top-20 left-1/4 w-72 h-72 bg-blue-100/70 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -top-20 left-1/4 w-72 h-72 bg-primary-100/70 rounded-full blur-3xl pointer-events-none"></div>
     <div class="absolute -bottom-20 right-1/4 w-80 h-80 bg-violet-100/60 rounded-full blur-3xl pointer-events-none"></div>
 
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -19,7 +19,7 @@
         </div>
         <h1 id="hero-title" class="text-4xl md:text-6xl font-black text-slate-900 leading-tight mb-5">
             Privacy
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-violet-600">Policy</span>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-600">Policy</span>
         </h1>
         <p id="hero-sub" class="text-lg text-slate-600 max-w-2xl mx-auto mb-5">
             Understand how we collect, process, and protect your data while using Topper's Hope services.
@@ -33,7 +33,7 @@
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {{-- Intro card --}}
-        <div class="bg-blue-50 border-l-4 border-primary rounded-r-2xl p-6 mb-12">
+        <div class="bg-primary-50 border-l-4 border-primary rounded-r-2xl p-6 mb-12">
             <p class="text-gray-700 leading-relaxed">
                 Welcome to <strong>Topper's Hope</strong> ("Company", "we", "our", "us"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website <strong>toppershope.in</strong> and use our services. Please read this policy carefully. If you disagree with its terms, please discontinue use of our site.
             </p>
@@ -115,8 +115,8 @@
             @foreach($sections as $s)
             <div class="privacy-section bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow p-8">
                 <div class="flex items-center gap-3 mb-5">
-                    <span class="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center">
-                        <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="{{ $s['icon'] }}"></path></svg>
+                    <span class="w-10 h-10 rounded-xl bg-primary-50 border border-primary-100 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="{{ $s['icon'] }}"></path></svg>
                     </span>
                     <h2 class="text-xl font-bold text-gray-900">{{ $s['title'] }}</h2>
                 </div>
@@ -129,7 +129,7 @@
 
         {{-- Footer links --}}
         <div class="mt-12 text-center">
-            <a href="{{ route('terms') }}" class="inline-flex items-center gap-2 text-primary font-semibold hover:text-blue-700 transition-colors">
+            <a href="{{ route('terms') }}" class="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-700 transition-colors">
                 Read our Terms &amp; Conditions
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </a>

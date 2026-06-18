@@ -5,7 +5,7 @@
 @section('content')
 <div class="pt-2 space-y-6">
 
-<a href="{{ url()->previous() }}" class="inline-flex items-center gap-1.5 text-xs font-bold text-slate-500 hover:text-indigo-500 transition">
+<a href="{{ url()->previous() }}" class="inline-flex items-center gap-1.5 text-xs font-bold text-slate-500 hover:text-primary-500 transition">
     ← Back to contacts
 </a>
 
@@ -110,7 +110,7 @@
 
             @if($contact->trial && !$contact->trial->is_expired && $contact->trial->expires_at->isFuture())
             {{-- Active trial --}}
-            <div class="p-4 bg-emerald-50 border border-emerald-200 rounded-xl space-y-2">
+            <div class="p-4 bg-primary-50 border border-emerald-200 rounded-xl space-y-2">
                 <p class="text-xs font-black text-emerald-700 uppercase">Active Trial</p>
                 <p class="text-sm font-bold text-slate-800">{{ $contact->trial->name }}</p>
                 <div class="bg-white/60 p-2 my-2 rounded-lg border border-emerald-100 flex flex-col gap-1">
@@ -154,7 +154,7 @@
                 @csrf
                 <textarea name="note" rows="3" required
                           placeholder="What happened on the call? What did the student say? Any follow-up needed?"
-                          class="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:border-indigo-400 resize-none bg-slate-50 transition"></textarea>
+                          class="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary-400 resize-none bg-slate-50 transition"></textarea>
                 <div class="flex justify-end">
                     <button type="submit"
                             class="px-5 py-2.5 text-white font-black text-sm rounded-xl hover:opacity-90 transition"
@@ -174,7 +174,7 @@
             <div class="divide-y divide-slate-100">
                 @forelse($contact->remarks as $remark)
                 <div class="px-6 py-5 flex gap-4">
-                    <div class="w-9 h-9 rounded-xl bg-orange-100 flex items-center justify-center font-black text-orange-600 text-sm shrink-0">
+                    <div class="w-9 h-9 rounded-xl bg-primary-100 flex items-center justify-center font-black text-primary-700 text-sm shrink-0">
                         {{ strtoupper(substr($remark->staff?->name ?? 'S', 0, 1)) }}
                     </div>
                     <div class="flex-1">

@@ -14,8 +14,8 @@
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-5 flex items-center gap-4">
-            <div class="w-11 h-11 rounded-xl bg-orange-50 flex items-center justify-center shrink-0">
-                <i class="ph-fill ph-chalkboard-teacher text-2xl text-orange-600"></i>
+            <div class="w-11 h-11 rounded-xl bg-primary-50 flex items-center justify-center shrink-0">
+                <i class="ph-fill ph-chalkboard-teacher text-2xl text-primary-700"></i>
             </div>
             <div>
                 <p class="text-2xl font-bold text-slate-800 tabular-nums">{{ $facultyUsers->count() }}</p>
@@ -23,8 +23,8 @@
             </div>
         </div>
         <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-5 flex items-center gap-4">
-            <div class="w-11 h-11 rounded-xl bg-emerald-50 flex items-center justify-center shrink-0">
-                <i class="ph-fill ph-books text-2xl text-emerald-600"></i>
+            <div class="w-11 h-11 rounded-xl bg-primary-50 flex items-center justify-center shrink-0">
+                <i class="ph-fill ph-books text-2xl text-primary-600"></i>
             </div>
             <div>
                 <p class="text-2xl font-bold text-slate-800 tabular-nums">{{ $allCourses->count() }}</p>
@@ -42,7 +42,7 @@
         </div>
         <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-5 flex items-center gap-4">
             <div class="w-11 h-11 rounded-xl bg-rose-50 flex items-center justify-center shrink-0">
-                <i class="ph-fill ph-warning-circle text-2xl text-rose-500"></i>
+                <i class="ph-fill ph-warning-circle text-2xl text-primary-500"></i>
             </div>
             <div>
                 <p class="text-2xl font-bold text-slate-800 tabular-nums">{{ $facultyUsers->filter(fn($f) => $f->courses->isEmpty())->count() }}</p>
@@ -62,7 +62,7 @@
             @foreach($facultyUsers as $fac)
                 <div class="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
                     <div class="p-5 flex items-center gap-4 border-b border-slate-100 bg-slate-50/50">
-                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-orange-400 to-amber-500 flex items-center justify-center text-white font-bold text-lg shrink-0 shadow-sm">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center text-white font-bold text-lg shrink-0 shadow-sm">
                             {{ strtoupper(substr($fac->name, 0, 1)) }}
                         </div>
                         <div class="flex-1 min-w-0">
@@ -70,7 +70,7 @@
                             <p class="text-xs text-slate-500 truncate">{{ $fac->email }}</p>
                         </div>
                         <a href="{{ route('faculty.head.faculties.assign.create', ['user_id' => $fac->id]) }}"
-                           class="shrink-0 px-3 py-1.5 bg-orange-50 hover:bg-orange-100 text-orange-700 text-xs font-semibold rounded-lg border border-orange-100 transition-colors">
+                           class="shrink-0 px-3 py-1.5 bg-primary-50 hover:bg-primary-100 text-primary-700 text-xs font-semibold rounded-lg border border-primary-100 transition-colors">
                             + Assign
                         </a>
                     </div>
@@ -90,7 +90,7 @@
                                             <div class="w-2 h-2 rounded-full shrink-0 {{ $course->is_published ? 'bg-emerald-400' : 'bg-amber-400' }}"></div>
                                             <p class="text-sm font-medium text-slate-700 truncate">{{ $course->name }}</p>
                                             @if($course->category)
-                                                <span class="shrink-0 text-[10px] font-semibold bg-orange-50 text-orange-700 px-2 py-0.5 rounded-full">{{ $course->category->name }}</span>
+                                                <span class="shrink-0 text-[10px] font-semibold bg-primary-50 text-primary-700 px-2 py-0.5 rounded-full">{{ $course->category->name }}</span>
                                             @endif
                                         </div>
                                         <form method="POST" action="{{ route('faculty.head.faculties.unassign') }}" class="shrink-0 ml-2">

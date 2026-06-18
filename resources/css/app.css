@@ -1,4 +1,9 @@
+@import './design-tokens.css';
 @import 'tailwindcss';
+@import './theme.css';
+@import './panel.css';
+@import './th-select.css';
+@import './th-pickers.css';
 @import './faculty-panel.css';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
@@ -7,13 +12,27 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: 'Inter', 'Segoe UI', Roboto, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
-    /* ── Brand Colours ─────────────────────────────── */
-    --color-primary: #f97316;
-    /* orange-500 */
-    --color-primary-dark: #ea6c0a;
-    /* orange-600 */
-    --color-primary-light: #fed7aa;
-    /* orange-200 */
+    /* Primary Brand Scale */
+    --color-primary-50: #F5F0FF;
+    --color-primary-100: #E9D8FD;
+    --color-primary-200: #D6BCFA;
+    --color-primary-300: #B794F4;
+    --color-primary-400: #9F7AEA;
+    --color-primary-500: #805AD5;
+    --color-primary-600: #7723D6;
+    --color-primary-700: #6B21C8;
+    --color-primary-800: #581C87;
+    --color-primary-900: #3B0764;
+
+    /* Semantic aliases */
+    --color-primary: #7723D6;
+    --color-primary-dark: #6B21C8;
+    --color-primary-light: #D6BCFA;
+    --color-accent-purple: #7723D6;
+    --color-accent-light: #9F7AEA;
+    --color-success: #16A34A;
+    --color-warning: #F59E0B;
+    --color-error: #DC2626;
 }

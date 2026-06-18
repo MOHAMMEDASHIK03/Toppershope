@@ -9,8 +9,8 @@
     {{-- Stat cards --}}
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-5 flex items-center gap-4">
-            <div class="w-11 h-11 rounded-xl bg-orange-50 flex items-center justify-center shrink-0">
-                <i class="ph-fill ph-users-three text-2xl text-orange-600"></i>
+            <div class="w-11 h-11 rounded-xl bg-primary-50 flex items-center justify-center shrink-0">
+                <i class="ph-fill ph-users-three text-2xl text-primary-700"></i>
             </div>
             <div>
                 <p class="text-2xl font-bold text-slate-800 tabular-nums">{{ $batches->total() }}</p>
@@ -18,8 +18,8 @@
             </div>
         </div>
         <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-5 flex items-center gap-4">
-            <div class="w-11 h-11 rounded-xl bg-emerald-50 flex items-center justify-center shrink-0">
-                <i class="ph-fill ph-check-circle text-2xl text-emerald-600"></i>
+            <div class="w-11 h-11 rounded-xl bg-primary-50 flex items-center justify-center shrink-0">
+                <i class="ph-fill ph-check-circle text-2xl text-primary-600"></i>
             </div>
             <div>
                 <p class="text-2xl font-bold text-slate-800 tabular-nums">{{ $activeBatchCount }}</p>
@@ -52,7 +52,7 @@
             <div class="flex-1 min-w-[200px]">
                 <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5">Filter by course</label>
                 <select name="course_id" onchange="this.form.submit()"
-                    class="w-full rounded-lg border border-slate-200 bg-slate-50 text-slate-900 focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 text-sm py-2.5 px-3">
+                    class="w-full rounded-lg border border-slate-200 bg-slate-50 text-slate-900 focus:ring-2 focus:ring-primary-600/15 focus:border-primary-500 text-sm py-2.5 px-3">
                     <option value="">All courses</option>
                     @foreach($courses as $course)
                         <option value="{{ $course->id }}" {{ request('course_id') == $course->id ? 'selected' : '' }}>
@@ -64,7 +64,7 @@
             <div class="min-w-[140px]">
                 <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5">Status</label>
                 <select name="status" onchange="this.form.submit()"
-                    class="w-full rounded-lg border border-slate-200 bg-slate-50 text-slate-900 focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 text-sm py-2.5 px-3">
+                    class="w-full rounded-lg border border-slate-200 bg-slate-50 text-slate-900 focus:ring-2 focus:ring-primary-600/15 focus:border-primary-500 text-sm py-2.5 px-3">
                     <option value="">All</option>
                     <option value="active" {{ request('status') === 'active' ? 'selected' : '' }}>Active</option>
                     <option value="filling_fast" {{ request('status') === 'filling_fast' ? 'selected' : '' }}>Filling fast</option>
@@ -171,7 +171,7 @@
                                 <td class="text-right">
                                     <div class="flex items-center justify-end gap-1">
                                         <a href="{{ route('faculty.head.batches.edit', $batch) }}"
-                                           class="p-2 text-slate-400 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors"
+                                           class="p-2 text-slate-400 hover:text-primary-700 hover:bg-primary-50 rounded-lg transition-colors"
                                            title="Edit batch">
                                             <i class="ph-bold ph-pencil-simple text-base"></i>
                                         </a>

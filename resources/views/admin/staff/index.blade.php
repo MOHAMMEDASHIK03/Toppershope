@@ -43,7 +43,7 @@
                     <tr>
                         <td class="font-semibold text-slate-800">{{ $user->name }}</td>
                         <td class="text-slate-600">{{ $user->email }}</td>
-                        <td><span class="inline-flex px-2 py-0.5 rounded-full text-[10px] font-bold uppercase bg-emerald-50 text-emerald-700 border border-emerald-200">Academic ({{ ucfirst(str_replace('_', ' ', $user->role)) }})</span></td>
+                        <td><span class="inline-flex px-2 py-0.5 rounded-full text-[10px] font-bold uppercase bg-primary-50 text-emerald-700 border border-emerald-200">Academic ({{ ucfirst(str_replace('_', ' ', $user->role)) }})</span></td>
                         <td class="text-right text-slate-500 whitespace-nowrap">{{ $user->created_at->format('M d, Y') }}</td>
                     </tr>
                 @endforeach

@@ -15,16 +15,16 @@
         line-height: 1.25 !important;
         color: #ffffff !important;
         -webkit-text-fill-color: #ffffff !important;
-        background-color: #f97316 !important;
+        background-color: #7723D6 !important;
         background-image: none !important;
-        border: 1px solid #ea580c !important;
+        border: 1px solid #6B21C8 !important;
         border-radius: 0.5rem !important;
         box-shadow: 0 1px 2px rgb(249 115 22 / 0.25) !important;
         cursor: pointer !important;
         appearance: none !important;
     }
     .payroll-structure-form .payroll-save-btn:hover {
-        background-color: #ea580c !important;
+        background-color: #6B21C8 !important;
         color: #ffffff !important;
         -webkit-text-fill-color: #ffffff !important;
     }
@@ -50,7 +50,7 @@
 
     @if($employees->isEmpty())
         <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-12 text-center">
-            <p class="text-slate-400 font-medium">No active employees found. <a href="{{ route('hr.employees.create') }}" class="text-orange-600 underline font-bold">Add an employee first.</a></p>
+            <p class="text-slate-400 font-medium">No active employees found. <a href="{{ route('hr.employees.create') }}" class="text-primary-700 underline font-bold">Add an employee first.</a></p>
         </div>
     @else
         {{-- Employee Selector Dropdown --}}
@@ -73,7 +73,7 @@
         <div class="space-y-5">
             {{-- Empty State when no employee is selected --}}
             <div x-show="!selectedEmployeeId" x-transition.opacity class="bg-white rounded-2xl border border-slate-100 shadow-sm p-12 text-center select-none">
-                <div class="w-16 h-16 rounded-full bg-orange-50 border border-orange-100 flex items-center justify-center mx-auto mb-4 text-orange-600">
+                <div class="w-16 h-16 rounded-full bg-primary-50 border border-primary-100 flex items-center justify-center mx-auto mb-4 text-primary-700">
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 256 256"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm112-32A112,112,0,1,1,128,16,112.12,112.12,0,0,1,240,128Zm-16,0a96,96,0,1,0-96,96A96.11,96.11,0,0,0,224,128Z"/></svg>
                 </div>
                 <h3 class="font-bold text-slate-700 text-base">No Employee Selected</h3>
@@ -90,7 +90,7 @@
                     {{-- Card header --}}
                     <div class="px-5 sm:px-6 py-4 bg-white border-b border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                         <div class="flex items-center gap-3 min-w-0">
-                            <div class="w-11 h-11 rounded-full bg-gradient-to-br from-orange-400 to-amber-500 flex items-center justify-center text-white text-sm font-bold shrink-0 shadow-sm">
+                            <div class="w-11 h-11 rounded-full bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center text-white text-sm font-bold shrink-0 shadow-sm">
                                 {{ strtoupper(substr($emp->first_name, 0, 1) . substr($emp->last_name, 0, 1)) }}
                             </div>
                             <div class="min-w-0">
@@ -111,7 +111,7 @@
                         <div>
                             <label class="block text-xs font-black tracking-widest uppercase text-slate-400 mb-3 select-none">Base Pay</label>
                             <div>
-                                <label class="block text-sm font-bold text-slate-700 mb-1.5">Basic Salary (₹) <span class="text-rose-500">*</span></label>
+                                <label class="block text-sm font-bold text-slate-700 mb-1.5">Basic Salary (₹) <span class="text-primary-500">*</span></label>
                                 <input type="number" name="basic_salary" value="{{ old('basic_salary', $str->basic_salary) }}" required min="0" step="0.01"
                                        class="admin-input font-semibold text-slate-900">
                             </div>
@@ -119,7 +119,7 @@
 
                         {{-- Allowances --}}
                         <div class="border-t lg:border-t-0 lg:border-l border-slate-100 lg:pl-8 pt-6 lg:pt-0">
-                            <label class="block text-xs font-black tracking-widest uppercase text-emerald-600 mb-3 select-none">Allowances (+)</label>
+                            <label class="block text-xs font-black tracking-widest uppercase text-primary-600 mb-3 select-none">Allowances (+)</label>
                             <div class="space-y-4">
                                 <div class="grid grid-cols-2 gap-3 items-center">
                                     <label class="text-sm font-bold text-slate-600">HRA</label>
@@ -136,7 +136,7 @@
 
                         {{-- Deductions --}}
                         <div class="border-t lg:border-t-0 lg:border-l border-slate-100 lg:pl-8 pt-6 lg:pt-0">
-                            <label class="block text-xs font-black tracking-widest uppercase text-rose-500 mb-3 select-none">Deductions (-)</label>
+                            <label class="block text-xs font-black tracking-widest uppercase text-primary-500 mb-3 select-none">Deductions (-)</label>
                             <div class="space-y-4">
                                 <div class="grid grid-cols-2 gap-3 items-center">
                                     <label class="text-sm font-bold text-slate-600">TDS / Tax</label>
@@ -159,7 +159,7 @@
                         <button
                             type="submit"
                             class="payroll-save-btn w-full sm:w-auto"
-                            style="background-color:#f97316;color:#ffffff;border:1px solid #ea580c;"
+                            style="background-color:#7723D6;color:#ffffff;border:1px solid #6B21C8;"
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true"><path d="M219.31,72,184,36.69A15.86,15.86,0,0,0,172.69,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V83.31A15.86,15.86,0,0,0,219.31,72ZM168,208H88V152h80Zm40,0H184V152a16,16,0,0,0-16-16H88a16,16,0,0,0-16,16v56H48V48H172.69L208,83.31Z"/></svg>
                             <span>Save structure</span>

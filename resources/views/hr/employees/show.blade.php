@@ -20,7 +20,7 @@
                     {{ $employee->is_active ? 'Deactivate' : 'Activate' }}
                 </button>
             </form>
-            <a href="{{ route('hr.employees.edit', $employee->id) }}" class="px-5 py-2.5 btn-primary font-bold rounded-xl text-sm shadow-sm hover:bg-orange-600 transition-colors">
+            <a href="{{ route('hr.employees.edit', $employee->id) }}" class="px-5 py-2.5 btn-primary font-bold rounded-xl text-sm shadow-sm hover:bg-primary-700 transition-colors">
                 Edit Protocol
             </a>
         </div>
@@ -42,7 +42,7 @@
                 { id: 'assets', name: 'Company Assets' }
             ]" :key="t.id">
                 <button type="button" @click="tab = t.id"
-                        :class="tab === t.id ? 'bg-orange-50 text-indigo-700 font-bold' : 'text-slate-500 hover:bg-slate-50 hover:text-slate-700 font-medium'"
+                        :class="tab === t.id ? 'bg-primary-50 text-primary-700 font-bold' : 'text-slate-500 hover:bg-slate-50 hover:text-slate-700 font-medium'"
                         class="w-full text-left px-4 py-3 rounded-xl text-sm transition-colors flex items-center justify-between mb-1">
                     <span x-text="t.name"></span>
                     <svg x-show="tab === t.id" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></svg>
@@ -53,12 +53,12 @@
         <div class="flex-1 w-full space-y-6">
             {{-- Persistent Profile Hero Card --}}
             <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8 relative overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-r from-indigo-50/50 to-white pointer-events-none"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-primary-50/50 to-white pointer-events-none"></div>
                 <div class="relative flex flex-col md:flex-row items-center md:items-start gap-6">
                     @if($employee->profile_photo)
                         <img src="{{ Storage::url($employee->profile_photo) }}" class="w-24 h-24 rounded-2xl object-cover shadow-sm ring-4 ring-white border border-slate-100 shrink-0">
                     @else
-                        <div class="w-24 h-24 rounded-2xl bg-orange-100 text-indigo-700 font-black text-3xl flex items-center justify-center shrink-0 shadow-sm ring-4 ring-white border border-slate-100">
+                        <div class="w-24 h-24 rounded-2xl bg-primary-100 text-primary-700 font-black text-3xl flex items-center justify-center shrink-0 shadow-sm ring-4 ring-white border border-slate-100">
                             {{ strtoupper(substr($employee->first_name, 0, 1)) }}{{ strtoupper(substr($employee->last_name, 0, 1)) }}
                         </div>
                     @endif
@@ -71,7 +71,7 @@
                             <div class="flex items-center gap-2 justify-center md:justify-end flex-wrap">
                                 <span class="font-mono text-sm font-bold bg-white border border-slate-200 text-slate-600 px-3 py-1 rounded-xl shadow-sm">{{ $employee->employee_id }}</span>
                                 @if($employee->is_active)
-                                    <span class="text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-100 px-3 py-1 rounded-xl shadow-sm inline-flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Active</span>
+                                    <span class="text-xs font-bold text-emerald-700 bg-primary-50 border border-emerald-100 px-3 py-1 rounded-xl shadow-sm inline-flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary-500"></span> Active</span>
                                 @else
                                     <span class="text-xs font-bold text-slate-600 bg-slate-100 border border-slate-200 px-3 py-1 rounded-xl shadow-sm inline-flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span> Inactive</span>
                                 @endif
@@ -116,7 +116,7 @@
                                 </div>
                                 <div class="flex justify-between">
                                     <span class="text-slate-500 font-medium">Line Manager</span>
-                                    <span class="text-orange-600 font-bold">
+                                    <span class="text-primary-700 font-bold">
                                         @if($employee->reportingManager)
                                             <a href="{{ route('hr.employees.show', $employee->reportingManager->id) }}">{{ $employee->reportingManager->first_name }} {{ $employee->reportingManager->last_name }}</a>
                                         @else
@@ -137,14 +137,14 @@
                                     if ($employee->account_type === 'App\Models\Ads\AdsUser') $panelLabel = 'Ads Campaign Manager';
                                     if ($employee->account_type === 'App\Models\Admission\AdmissionUser') $panelLabel = 'Admission CRM Member';
                                 @endphp
-                                <div class="p-4 bg-orange-50 border border-indigo-100 rounded-xl">
+                                <div class="p-4 bg-primary-50 border border-primary-100 rounded-xl">
                                     <div class="flex items-center gap-3 mb-2">
                                         <div class="w-8 h-8 rounded-full btn-primary flex items-center justify-center">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M208,40H48A16,16,0,0,0,32,56V200a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V56A16,16,0,0,0,208,40Zm0,160H48V56H208V200ZM144,120v40a8,8,0,0,1-16,0v-8H112v8a8,8,0,0,1-16,0V120a8,8,0,0,1,8-8h32A8,8,0,0,1,144,120Zm-16,0H112v16h16Z"/></svg>
                                         </div>
-                                        <p class="font-bold text-indigo-900">{{ $panelLabel }}</p>
+                                        <p class="font-bold text-primary-900">{{ $panelLabel }}</p>
                                     </div>
-                                    <p class="text-sm text-indigo-700/80 font-medium">This employee has active panel login credentials mapped to their official email.</p>
+                                    <p class="text-sm text-primary-700/80 font-medium">This employee has active panel login credentials mapped to their official email.</p>
                                 </div>
                             @else
                                 <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl">
@@ -283,14 +283,14 @@
                                         $tenure = 'Unknown';
                                     }
                                 @endphp
-                                <span class="font-black text-lg text-indigo-700">{{ $tenure }}</span>
+                                <span class="font-black text-lg text-primary-700">{{ $tenure }}</span>
                             </div>
                             <div class="text-right">
                                 <span class="block text-slate-500 font-medium mb-1">Confirmation Status</span>
                                 @if($employee->employee_type !== 'probation')
-                                    <span class="font-bold text-emerald-600">Confirmed</span>
+                                    <span class="font-bold text-primary-600">Confirmed</span>
                                 @elseif($employee->confirmation_date && $employee->confirmation_date <= now())
-                                    <span class="font-bold text-emerald-600">Confirmed ({{ $employee->confirmation_date->format('M d, Y') }})</span>
+                                    <span class="font-bold text-primary-600">Confirmed ({{ $employee->confirmation_date->format('M d, Y') }})</span>
                                 @else
                                     @php
                                         $probDays = $employee->probation_period ?? ($employee->confirmation_date && $employee->joining_date ? $employee->joining_date->diffInDays($employee->confirmation_date) : null);
@@ -352,9 +352,9 @@
                             @foreach($employee->skills as $skill)
                             @php
                                 $color = match($skill->skill_type) {
-                                    'technical' => 'bg-orange-50 text-blue-700 border-blue-200',
-                                    'soft' => 'bg-emerald-50 text-emerald-700 border-emerald-200',
-                                    'language' => 'bg-purple-50 text-purple-700 border-purple-200',
+                                    'technical' => 'bg-primary-50 text-primary-700 border-primary-200',
+                                    'soft' => 'bg-primary-50 text-emerald-700 border-emerald-200',
+                                    'language' => 'bg-primary-50 text-primary-700 border-primary-200',
                                     'certification' => 'bg-rose-50 text-rose-700 border-rose-200',
                                     default => 'bg-slate-50 text-slate-700 border-slate-200'
                                 };
@@ -417,11 +417,11 @@
                                     <div class="flex items-center gap-4">
                                         <span class="font-black text-slate-700 shrink-0">₹ {{ number_format($pr->net_payable, 2) }}</span>
                                         @if($pr->status === 'paid')
-                                            <span class="px-2 py-1 bg-emerald-50 text-emerald-700 font-bold text-[10px] uppercase rounded">Paid</span>
+                                            <span class="px-2 py-1 bg-primary-50 text-emerald-700 font-bold text-[10px] uppercase rounded">Paid</span>
                                         @else
                                             <span class="px-2 py-1 bg-amber-50 text-amber-700 font-bold text-[10px] uppercase rounded">Pending</span>
                                         @endif
-                                        <a href="{{ route('hr.payroll.show', $pr->id) }}" class="p-2 text-orange-600 hover:bg-orange-50 rounded" title="View Payslip">
+                                        <a href="{{ route('hr.payroll.show', $pr->id) }}" class="p-2 text-primary-700 hover:bg-primary-50 rounded" title="View Payslip">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M224,152a8,8,0,0,1-8,8H136v64a8,8,0,0,1-16,0V160H40a8,8,0,0,1,0-16h80V80a8,8,0,0,1,16,0v64h80A8,8,0,0,1,224,152Z"/></svg>
                                         </a>
                                     </div>
@@ -503,7 +503,7 @@
                                             @if($asset->returned_date)
                                                 <span class="px-2 py-1 bg-slate-100 text-slate-600 font-bold text-xs rounded">Returned on {{ $asset->returned_date->format('M d') }}</span>
                                             @else
-                                                <span class="px-2 py-1 bg-orange-50 text-indigo-700 font-bold text-xs rounded">With Employee</span>
+                                                <span class="px-2 py-1 bg-primary-50 text-primary-700 font-bold text-xs rounded">With Employee</span>
                                             @endif
                                         </td>
                                     </tr>

@@ -8,7 +8,7 @@
         <h2 class="text-xl font-bold text-slate-800">Departments</h2>
         <p class="text-sm font-medium text-slate-500 mt-1">Manage organizational departments</p>
     </div>
-    <a href="{{ route('hr.departments.create') }}" class="px-4 py-2.5 btn-primary font-semibold rounded-xl text-sm shadow-sm hover:bg-orange-600 focus:ring-4 focus:ring-orange-100 transition-colors inline-flex items-center gap-2 shrink-0">
+    <a href="{{ route('hr.departments.create') }}" class="px-4 py-2.5 btn-primary font-semibold rounded-xl text-sm shadow-sm hover:bg-primary-700 focus:ring-4 focus:ring-primary-100 transition-colors inline-flex items-center gap-2 shrink-0">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg>
         Add Department
     </a>
@@ -36,7 +36,7 @@
                 </div>
                 <div>
                     <span class="panel-list__cell-label">Employees</span>
-                    <span class="inline-flex items-center justify-center min-w-[2rem] h-8 px-2.5 rounded-lg bg-orange-50 text-orange-700 font-bold text-xs">
+                    <span class="inline-flex items-center justify-center min-w-[2rem] h-8 px-2.5 rounded-lg bg-primary-50 text-primary-700 font-bold text-xs">
                         {{ $dept->employees_count }}
                     </span>
                 </div>
@@ -52,7 +52,7 @@
         @empty
             <div class="px-6 py-12 text-center text-slate-500 font-medium text-sm">
                 No departments created yet.<br>
-                <a href="{{ route('hr.departments.create') }}" class="text-orange-600 hover:underline mt-2 inline-block">Create your first department</a>
+                <a href="{{ route('hr.departments.create') }}" class="text-primary-700 hover:underline mt-2 inline-block">Create your first department</a>
             </div>
         @endforelse
     </div>

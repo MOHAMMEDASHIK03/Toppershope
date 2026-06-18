@@ -29,7 +29,7 @@
             </button>
         </form>
 
-        <a href="{{ route('hr.employees.create') }}" class="px-4 py-2.5 btn-primary font-semibold rounded-xl text-sm shadow-sm hover:bg-orange-600 focus:ring-4 focus:ring-orange-100 transition-colors inline-flex items-center gap-2">
+        <a href="{{ route('hr.employees.create') }}" class="px-4 py-2.5 btn-primary font-semibold rounded-xl text-sm shadow-sm hover:bg-primary-700 focus:ring-4 focus:ring-primary-100 transition-colors inline-flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg>
             Add Employee
         </a>
@@ -42,12 +42,12 @@
         <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Search Employees</label>
         <div class="relative">
             <svg class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"/></svg>
-            <input type="text" name="search" value="{{ request('search') }}" placeholder="Name, Email, or EMP ID..." class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 focus:border-indigo-500 focus:bg-white rounded-xl text-sm font-semibold text-slate-800 outline-none focus:ring-4 focus:ring-indigo-150 transition-all">
+            <input type="text" name="search" value="{{ request('search') }}" placeholder="Name, Email, or EMP ID..." class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 focus:border-primary-600 focus:bg-white rounded-xl text-sm font-semibold text-slate-800 outline-none focus:ring-4 focus:ring-primary-600/15 transition-all">
         </div>
     </div>
     <div class="w-full lg:w-44">
         <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Department</label>
-        <select name="department_id" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-semibold text-slate-800 outline-none focus:border-indigo-500 focus:bg-white transition-all appearance-none">
+        <select name="department_id" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-semibold text-slate-800 outline-none focus:border-primary-600 focus:bg-white transition-all appearance-none">
             <option value="">All Departments</option>
             @foreach($departments as $dept)
                 <option value="{{ $dept->id }}" @selected(request('department_id') == $dept->id)>{{ $dept->name }}</option>
@@ -56,14 +56,14 @@
     </div>
     <div class="w-full lg:w-36 px-2">
         <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Status</label>
-        <select name="status" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-semibold text-slate-800 outline-none focus:border-indigo-500 focus:bg-white transition-all appearance-none">
+        <select name="status" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-semibold text-slate-800 outline-none focus:border-primary-600 focus:bg-white transition-all appearance-none">
             <option value="">All Statuses</option>
             <option value="active" @selected(request('status') === 'active')>Active</option>
             <option value="inactive" @selected(request('status') === 'inactive')>Inactive</option>
         </select>
     </div>
     <div class="flex gap-2 w-full md:w-auto">
-        <button type="submit" class="flex-1 md:flex-initial px-6 py-2.5 btn-primary font-semibold rounded-xl text-sm shadow-sm hover:bg-orange-600 focus:ring-4 focus:ring-orange-100 transition-colors inline-flex items-center gap-2">
+        <button type="submit" class="flex-1 md:flex-initial px-6 py-2.5 btn-primary font-semibold rounded-xl text-sm shadow-sm hover:bg-primary-700 focus:ring-4 focus:ring-primary-100 transition-colors inline-flex items-center gap-2">
             Filter
         </button>
         @if(request()->anyFilled(['search', 'department_id', 'status']))
@@ -96,17 +96,17 @@
                     } elseif ($emp->account_type === 'App\Models\User') {
                         if (isset($emp->account) && $emp->account->role === 'faculty_head') {
                             $panelLabel = 'Faculty Head';
-                            $panelColor = 'bg-purple-50 border border-purple-100 text-purple-700';
+                            $panelColor = 'bg-primary-50 border border-primary-100 text-primary-700';
                         } else {
                             $panelLabel = 'Faculty';
-                            $panelColor = 'bg-indigo-50 border border-indigo-100 text-indigo-700';
+                            $panelColor = 'bg-primary-50 border border-primary-100 text-primary-700';
                         }
                     } elseif ($emp->account_type === 'App\Models\Ads\AdsUser') {
                         $panelLabel = 'Ads Panel';
-                        $panelColor = 'bg-blue-50 border border-blue-100 text-blue-700';
+                        $panelColor = 'bg-primary-50 border border-primary-100 text-primary-700';
                     } elseif ($emp->account_type === 'App\Models\Admission\AdmissionUser') {
                         $panelLabel = 'Admission CRM';
-                        $panelColor = 'bg-emerald-50 border border-emerald-100 text-emerald-700';
+                        $panelColor = 'bg-primary-50 border border-emerald-100 text-emerald-700';
                     }
                 }
                 $initials = strtoupper(substr($emp->first_name, 0, 1) . substr($emp->last_name, 0, 1));
@@ -154,8 +154,8 @@
                 <div>
                     <span class="panel-list__cell-label">Status</span>
                     @if($emp->is_active)
-                        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 font-bold text-[10px]">
-                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Active
+                        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-50 border border-emerald-100 text-emerald-700 font-bold text-[10px]">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary-500"></span> Active
                         </span>
                     @else
                         <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200 text-slate-600 font-bold text-[10px]">
@@ -177,7 +177,7 @@
                             @method('PATCH')
                             <button
                                 type="submit"
-                                class="p-2 {{ $emp->is_active ? 'text-rose-600 hover:bg-rose-50' : 'text-emerald-600 hover:bg-emerald-50' }} rounded-lg transition-colors"
+                                class="p-2 {{ $emp->is_active ? 'text-primary-600 hover:bg-rose-50' : 'text-primary-600 hover:bg-primary-50' }} rounded-lg transition-colors"
                                 title="{{ $emp->is_active ? 'Deactivate' : 'Activate' }}"
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm48-88a8,8,0,0,1-8,8H88a8,8,0,0,1,0-16h80A8,8,0,0,1,176,128Z"/></svg>
@@ -185,7 +185,7 @@
                         </form>
                         <a
                             href="{{ route('hr.employees.show', $emp->id) }}"
-                            class="p-2 text-orange-600 hover:bg-orange-50 border border-orange-200 rounded-lg transition-colors inline-flex"
+                            class="p-2 text-primary-700 hover:bg-primary-50 border border-primary-200 rounded-lg transition-colors inline-flex"
                             title="View profile"
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true"><path d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128c-7.21,13.46-38.62,64-103.05,64Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"/></svg>

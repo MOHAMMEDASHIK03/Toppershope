@@ -6,7 +6,7 @@
 <div x-data="{ selectedUnit: null, unitName: '' }">
 
     <div class="mb-6 flex items-center gap-4 flex-wrap">
-        <a href="{{ route('admin.courses.edit', $course->id) }}" class="text-orange-600 hover:text-indigo-800 transition-colors text-sm font-semibold">
+        <a href="{{ route('admin.courses.edit', $course->id) }}" class="text-primary-700 hover:text-primary-800 transition-colors text-sm font-semibold">
             &larr; Back to course config
         </a>
         <div class="h-4 w-px bg-slate-200 hidden sm:block"></div>
@@ -46,7 +46,7 @@
                                     <div x-show="chapOpen" class="pl-6 pb-2 space-y-1">
                                         @forelse($chapter->units as $unit)
                                             <div @click="selectedUnit = {{ $unit->id }}; unitName = '{{ addslashes($unit->name) }}'"
-                                                 :class="selectedUnit == {{ $unit->id }} ? 'bg-orange-50 text-indigo-700 border-indigo-200' : 'text-slate-600 border-transparent hover:bg-slate-50'"
+                                                 :class="selectedUnit == {{ $unit->id }} ? 'bg-primary-50 text-primary-700 border-primary-200' : 'text-slate-600 border-transparent hover:bg-slate-50'"
                                                  class="flex items-center justify-between px-3 py-1.5 rounded-lg cursor-pointer text-xs border transition-all">
                                                 <span>{{ $unit->name }}</span>
                                                 <span class="text-[10px] font-bold opacity-60">{{ $unit->quizzes->count() }}Q</span>
@@ -80,7 +80,7 @@
 
             <div x-show="selectedUnit" x-cloak class="flex flex-col h-full">
                 <div class="px-6 py-4 border-b border-slate-100 bg-slate-50 shrink-0">
-                    <p class="text-xs font-semibold text-orange-600 uppercase tracking-wide mb-0.5">Managing quizzes for</p>
+                    <p class="text-xs font-semibold text-primary-700 uppercase tracking-wide mb-0.5">Managing quizzes for</p>
                     <h4 class="text-lg font-bold text-slate-900" x-text="unitName"></h4>
                 </div>
 

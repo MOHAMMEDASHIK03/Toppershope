@@ -20,7 +20,7 @@
     categoryId: @js($course->category_id),
 })" class="pb-12 max-w-6xl">
 
-    <a href="{{ $backHref }}" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-500 hover:text-orange-600 transition-colors mb-5">
+    <a href="{{ $backHref }}" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-500 hover:text-primary-700 transition-colors mb-5">
         <i class="ph-bold ph-arrow-left"></i>
         {{ $backLabel }}
     </a>
@@ -29,7 +29,7 @@
         <div>
             <h2 class="text-2xl font-bold tracking-tight text-slate-900 flex items-center gap-3 flex-wrap">
                 {{ $course->name }}
-                <span x-show="isPublished" x-cloak class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wide bg-orange-50 text-orange-700 border border-orange-200">Published</span>
+                <span x-show="isPublished" x-cloak class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wide bg-primary-50 text-primary-700 border border-primary-200">Published</span>
                 <span x-show="!isPublished" x-cloak class="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wide bg-amber-50 text-amber-700 border border-amber-200">Draft</span>
             </h2>
             <p class="text-sm text-slate-500 mt-1">Manage landing page details, instructors, and batches.</p>
@@ -92,7 +92,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div>
-                        <label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-1.5">Course title (public name) <span class="text-rose-500">*</span></label>
+                        <label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-1.5">Course title (public name) <span class="text-primary-500">*</span></label>
                         <input type="text" name="title" value="{{ $course->name }}" required class="admin-input">
                     </div>
                     <div>
@@ -105,7 +105,7 @@
                 </div>
 
                 <div class="mb-6">
-                    <label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-1.5">Short card description <span class="text-rose-500">*</span></label>
+                    <label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-1.5">Short card description <span class="text-primary-500">*</span></label>
                     <textarea name="description" required rows="2" class="admin-input resize-none">{{ $course->description }}</textarea>
                 </div>
 
@@ -141,9 +141,9 @@
                 <div class="p-5 space-y-3">
                     <template x-for="(item, index) in whatYouLearn" :key="index">
                         <div class="flex items-center gap-3 group">
-                            <i class="ph-fill ph-check-circle text-orange-500 shrink-0 text-lg"></i>
+                            <i class="ph-fill ph-check-circle text-primary-500 shrink-0 text-lg"></i>
                             <input type="text" x-model="whatYouLearn[index]" placeholder="e.g. Master concepts of Newton's Laws" class="flex-1 admin-input text-sm">
-                            <button type="button" @click="whatYouLearn.splice(index, 1)" class="p-2 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors">
+                            <button type="button" @click="whatYouLearn.splice(index, 1)" class="p-2 text-slate-400 hover:text-primary-600 hover:bg-rose-50 rounded-lg transition-colors">
                                 <i class="ph-bold ph-trash"></i>
                             </button>
                         </div>
@@ -167,7 +167,7 @@
                         <div class="flex items-center gap-3">
                             <!-- Emoji Picker Dropdown -->
                             <div class="relative shrink-0" x-data="{ pickerOpen: false }">
-                                <button type="button" @click="pickerOpen = !pickerOpen" @click.outside="pickerOpen = false" class="w-10 h-10 rounded-lg bg-orange-50 border border-orange-100 flex items-center justify-center text-lg transition-colors hover:bg-orange-100 focus:ring-2 focus:ring-orange-300">
+                                <button type="button" @click="pickerOpen = !pickerOpen" @click.outside="pickerOpen = false" class="w-10 h-10 rounded-lg bg-primary-50 border border-primary-100 flex items-center justify-center text-lg transition-colors hover:bg-primary-100 focus:ring-2 focus:ring-primary-400">
                                     <span x-text="inc.icon || '📦'"></span>
                                 </button>
                                 
@@ -178,7 +178,7 @@
                             
                             <input type="text" x-model="inc.text" placeholder="Description (e.g. 50+ Hours of Video Content)" class="flex-1 admin-input text-sm">
                             
-                            <button type="button" @click="includes.splice(index, 1)" class="p-2 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors shrink-0">
+                            <button type="button" @click="includes.splice(index, 1)" class="p-2 text-slate-400 hover:text-primary-600 hover:bg-rose-50 rounded-lg transition-colors shrink-0">
                                 <i class="ph-bold ph-trash"></i>
                             </button>
                         </div>
@@ -192,22 +192,22 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Syllabus PDF</label>
-                        <div class="border-2 border-dashed border-slate-200 rounded-xl p-4 hover:border-orange-300 transition-colors">
-                            <input type="file" name="syllabus_pdf" accept="application/pdf" class="block w-full text-sm text-slate-600 file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-orange-50 file:text-orange-700 hover:file:bg-orange-100">
+                        <div class="border-2 border-dashed border-slate-200 rounded-xl p-4 hover:border-primary-400 transition-colors">
+                            <input type="file" name="syllabus_pdf" accept="application/pdf" class="block w-full text-sm text-slate-600 file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-primary-50 file:text-primary-700 hover:file:bg-primary-100">
                         </div>
                         @if($course->syllabus_pdf_path)
-                            <p class="mt-2 text-xs text-orange-600 font-semibold flex items-center gap-1">
+                            <p class="mt-2 text-xs text-primary-700 font-semibold flex items-center gap-1">
                                 <i class="ph-fill ph-check-circle"></i> Active: {{ basename($course->syllabus_pdf_path) }}
                             </p>
                         @endif
                     </div>
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Custom hero image</label>
-                        <div class="border-2 border-dashed border-slate-200 rounded-xl p-4 hover:border-orange-300 transition-colors">
-                            <input type="file" name="hero_image" accept="image/*" class="block w-full text-sm text-slate-600 file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-orange-50 file:text-orange-700 hover:file:bg-orange-100">
+                        <div class="border-2 border-dashed border-slate-200 rounded-xl p-4 hover:border-primary-400 transition-colors">
+                            <input type="file" name="hero_image" accept="image/*" class="block w-full text-sm text-slate-600 file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-primary-50 file:text-primary-700 hover:file:bg-primary-100">
                         </div>
                         @if($course->hero_image)
-                            <p class="mt-2 text-xs text-orange-600 font-semibold flex items-center gap-1">
+                            <p class="mt-2 text-xs text-primary-700 font-semibold flex items-center gap-1">
                                 <i class="ph-fill ph-check-circle"></i> Custom image active.
                             </p>
                         @endif
@@ -230,7 +230,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 <template x-for="(fac, index) in faculty" :key="index">
                     <div class="bg-white border border-slate-200 rounded-2xl shadow-sm relative p-5 hover:shadow-md transition-shadow">
-                        <button type="button" @click="faculty.splice(index, 1)" class="absolute top-3 right-3 w-8 h-8 flex items-center justify-center bg-white border border-slate-200 rounded-lg text-slate-400 hover:text-rose-600 hover:border-rose-200 shadow-sm transition-colors z-10">
+                        <button type="button" @click="faculty.splice(index, 1)" class="absolute top-3 right-3 w-8 h-8 flex items-center justify-center bg-white border border-slate-200 rounded-lg text-slate-400 hover:text-primary-600 hover:border-rose-200 shadow-sm transition-colors z-10">
                             <i class="ph-bold ph-trash text-sm"></i>
                         </button>
                         <div class="space-y-3 pr-6">
@@ -304,7 +304,7 @@
                                         <td class="text-center text-slate-600">{{ $batch->filled_seats }} / {{ $batch->total_seats }}</td>
                                         @if($extendedBatches)
                                             <td class="text-center">
-                                                <span class="inline-flex px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide bg-orange-50 text-orange-700 border border-orange-200">{{ $batch->mode ?? '—' }}</span>
+                                                <span class="inline-flex px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide bg-primary-50 text-primary-700 border border-primary-200">{{ $batch->mode ?? '—' }}</span>
                                             </td>
                                         @endif
                                         <td class="text-center">
@@ -317,7 +317,7 @@
                                             @endif
                                         </td>
                                         <td class="text-right">
-                                            <button type="button" @click="openEditBatch(@js($batch))" class="text-orange-600 hover:text-orange-700 font-semibold text-sm">Edit</button>
+                                            <button type="button" @click="openEditBatch(@js($batch))" class="text-primary-700 hover:text-primary-700 font-semibold text-sm">Edit</button>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -347,11 +347,11 @@
                     </template>
                     <div class="p-6 grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div class="sm:col-span-2">
-                            <label class="block text-xs font-bold uppercase tracking-wide text-slate-500 mb-1.5">Batch name <span class="text-rose-500">*</span></label>
+                            <label class="block text-xs font-bold uppercase tracking-wide text-slate-500 mb-1.5">Batch name <span class="text-primary-500">*</span></label>
                             <input type="text" name="name" x-model="batchForm.name" required class="admin-input">
                         </div>
                         <div>
-                            <label class="block text-xs font-bold uppercase tracking-wide text-slate-500 mb-1.5">Price (₹) <span class="text-rose-500">*</span></label>
+                            <label class="block text-xs font-bold uppercase tracking-wide text-slate-500 mb-1.5">Price (₹) <span class="text-primary-500">*</span></label>
                             <input type="number" name="price" x-model="batchForm.price" required class="admin-input">
                         </div>
                         <div>
@@ -359,7 +359,7 @@
                             <input type="number" name="original_price" x-model="batchForm.original_price" class="admin-input">
                         </div>
                         <div>
-                            <label class="block text-xs font-bold uppercase tracking-wide text-slate-500 mb-1.5">Total seats <span class="text-rose-500">*</span></label>
+                            <label class="block text-xs font-bold uppercase tracking-wide text-slate-500 mb-1.5">Total seats <span class="text-primary-500">*</span></label>
                             <input type="number" name="total_seats" x-model="batchForm.total_seats" required class="admin-input">
                         </div>
                         @if($extendedBatches)
@@ -396,7 +396,7 @@
                         @if($extendedBatches)
                             <div class="sm:col-span-2">
                                 <label class="flex items-start sm:items-center gap-3 cursor-pointer p-4 bg-amber-50 border border-amber-200 rounded-xl hover:bg-amber-100 transition-colors">
-                                    <input type="checkbox" name="is_upcoming" :checked="batchForm.is_upcoming" @change="batchForm.is_upcoming = $event.target.checked" class="rounded mt-0.5 sm:mt-0 w-5 h-5 text-orange-500 focus:ring-orange-400 border-amber-300">
+                                    <input type="checkbox" name="is_upcoming" :checked="batchForm.is_upcoming" @change="batchForm.is_upcoming = $event.target.checked" class="rounded mt-0.5 sm:mt-0 w-5 h-5 text-primary-500 focus:ring-primary-500 border-amber-300">
                                     <div>
                                         <p class="text-sm font-bold text-amber-900">Mark as &quot;Coming soon&quot;</p>
                                         <p class="text-xs text-amber-700 mt-0.5">Shows in upcoming batches; students can register interest instead of enrolling.</p>

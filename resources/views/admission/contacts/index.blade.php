@@ -19,7 +19,7 @@
     <a href="{{ route('admission.contacts.index', array_merge(request()->except('tab','page'), ['tab' => $key])) }}"
        class="flex items-center gap-2 px-5 py-3.5 text-sm font-bold whitespace-nowrap border-b-2 transition-colors
               {{ $tab === $key
-                    ? 'border-indigo-500 text-orange-600'
+                    ? 'border-primary-500 text-primary-700'
                     : 'border-transparent text-slate-500 hover:text-slate-800' }}">
         <span>{{ $icon }}</span> {{ $label }}
     </a>
@@ -30,7 +30,7 @@
 <form method="GET" action="{{ route('admission.contacts.index') }}" class="flex flex-wrap items-center gap-3">
     <input type="hidden" name="tab" value="{{ $tab }}">
     <select name="course_id" onchange="this.form.submit()"
-            class="px-3 py-2 text-sm border border-slate-200 rounded-xl bg-white text-slate-700 font-semibold focus:ring-2 focus:ring-indigo-300 focus:border-indigo-400 outline-none">
+            class="px-3 py-2 text-sm border border-slate-200 rounded-xl bg-white text-slate-700 font-semibold focus:ring-2 focus:ring-primary-300 focus:border-primary-400 outline-none">
         <option value="">All Courses</option>
         @foreach($courses as $c)
         <option value="{{ $c->id }}" {{ $courseId == $c->id ? 'selected' : '' }}>{{ $c->name }}</option>
@@ -38,7 +38,7 @@
     </select>
     @if($courseId && $batches->count())
     <select name="batch_id" onchange="this.form.submit()"
-            class="px-3 py-2 text-sm border border-slate-200 rounded-xl bg-white text-slate-700 font-semibold focus:ring-2 focus:ring-indigo-300 focus:border-indigo-400 outline-none">
+            class="px-3 py-2 text-sm border border-slate-200 rounded-xl bg-white text-slate-700 font-semibold focus:ring-2 focus:ring-primary-300 focus:border-primary-400 outline-none">
         <option value="">All Batches</option>
         @foreach($batches as $b)
         <option value="{{ $b->id }}" {{ $batchId == $b->id ? 'selected' : '' }}>{{ $b->name }}</option>
@@ -97,13 +97,13 @@
                     </td>
                     <td class="px-5 py-4 hidden sm:table-cell">
                         <a href="tel:{{ $contact->display_phone }}"
-                           class="font-mono text-sm font-semibold text-slate-700 hover:text-orange-600 transition">{{ $contact->display_phone }}</a>
+                           class="font-mono text-sm font-semibold text-slate-700 hover:text-primary-700 transition">{{ $contact->display_phone }}</a>
                     </td>
                     <td class="px-5 py-4 hidden md:table-cell">
                         <span class="px-2 py-0.5 text-xs font-bold rounded-full
-                            {{ $contact->source_type === 'ad_lead' ? 'bg-orange-100 text-orange-700'
-                               : ($contact->source_type === 'registered' ? 'bg-blue-100 text-blue-700'
-                               : 'bg-purple-100 text-purple-700') }}">
+                            {{ $contact->source_type === 'ad_lead' ? 'bg-primary-100 text-primary-700'
+                               : ($contact->source_type === 'registered' ? 'bg-primary-100 text-primary-700'
+                               : 'bg-primary-100 text-primary-700') }}">
                             {{ str_replace('_', ' ', ucfirst($contact->source_type)) }}
                         </span>
                         @if($contact->adLead?->campaign)
@@ -114,7 +114,7 @@
                         <form method="POST" action="{{ route('admission.contacts.status', $contact) }}" class="inline">
                             @csrf @method('PATCH')
                             <select name="call_status" onchange="this.form.submit()"
-                                    class="text-xs font-bold border-0 rounded-lg p-1.5 focus:ring-1 focus:ring-indigo-300 outline-none cursor-pointer
+                                    class="text-xs font-bold border-0 rounded-lg p-1.5 focus:ring-1 focus:ring-primary-300 outline-none cursor-pointer
                                            {{ $contact->call_status === 'answered' ? 'bg-green-100 text-green-700'
                                               : ($contact->call_status === 'no_response' ? 'bg-yellow-100 text-yellow-700'
                                               : 'bg-slate-100 text-slate-500') }}">
@@ -128,10 +128,10 @@
                         <form method="POST" action="{{ route('admission.contacts.status', $contact) }}" class="inline">
                             @csrf @method('PATCH')
                             <select name="outcome" onchange="this.form.submit()"
-                                    class="text-xs font-bold border-0 rounded-lg p-1.5 focus:ring-1 focus:ring-indigo-300 outline-none cursor-pointer
-                                           {{ $contact->outcome === 'will_join' ? 'bg-blue-100 text-blue-700'
+                                    class="text-xs font-bold border-0 rounded-lg p-1.5 focus:ring-1 focus:ring-primary-300 outline-none cursor-pointer
+                                           {{ $contact->outcome === 'will_join' ? 'bg-primary-100 text-primary-700'
                                               : ($contact->outcome === 'rejected' ? 'bg-red-100 text-red-600'
-                                              : 'bg-orange-100 text-orange-600') }}">
+                                              : 'bg-primary-100 text-primary-700') }}">
                                 <option value="pending"   {{ $contact->outcome === 'pending'   ? 'selected' : '' }}>Pending</option>
                                 <option value="will_join" {{ $contact->outcome === 'will_join' ? 'selected' : '' }}>Will Join</option>
                                 <option value="rejected"  {{ $contact->outcome === 'rejected'  ? 'selected' : '' }}>Rejected</option>
@@ -153,7 +153,7 @@
                     </td>
                     <td class="px-5 py-4">
                         <a href="{{ route('admission.contacts.show', $contact) }}"
-                           class="inline-flex items-center gap-1 text-xs font-bold text-indigo-500 hover:text-indigo-700 transition">
+                           class="inline-flex items-center gap-1 text-xs font-bold text-primary-500 hover:text-primary-700 transition">
                             View
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 256 256"><path d="M224,104a8,8,0,0,1-16,0V59.32l-82.34,82.34a8,8,0,0,1-11.32-11.32L196.68,48H152a8,8,0,0,1,0-16h64a8,8,0,0,1,8,8Zm-40,24a8,8,0,0,0-8,8v72H48V80h72a8,8,0,0,0,0-16H48A16,16,0,0,0,32,80V208a16,16,0,0,0,16,16H176a16,16,0,0,0,16-16V136A8,8,0,0,0,184,128Z"/></svg>
                         </a>

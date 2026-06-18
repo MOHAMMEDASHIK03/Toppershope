@@ -8,7 +8,7 @@
 <section class="bg-gradient-to-br from-gray-900 via-[#0d1b6e] to-gray-900 pt-8 pb-0 relative overflow-hidden min-h-[420px]">
     {{-- Orbs --}}
     <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/3"></div>
-    <div class="absolute bottom-0 left-0 w-80 h-80 bg-purple-600/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-80 h-80 bg-primary-600/15 rounded-full blur-3xl pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {{-- Breadcrumb --}}
@@ -26,7 +26,7 @@
             {{-- LEFT: Course Info --}}
             <div class="lg:col-span-2 pb-16" id="hero-left">
                 @if($course->category)
-                <span class="inline-block bg-primary/30 border border-primary/40 text-blue-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-5">
+                <span class="inline-block bg-primary/30 border border-primary/40 text-primary-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-5">
                     {{ $course->category->name }}
                 </span>
                 @endif
@@ -70,7 +70,7 @@
                     @foreach($course->highlights as $hl)
                     <div class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-center">
                         <div class="w-8 h-8 mx-auto mb-2 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center">
-                            <svg class="w-4 h-4 text-cyan-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <svg class="w-4 h-4 text-primary-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                         </div>
                         <p class="text-white text-xs font-bold">{{ $hl['text'] ?? $hl }}</p>
                     </div>
@@ -128,7 +128,7 @@
             @if($course->about)
             <div class="course-section" id="section-about">
                 <h2 class="text-2xl font-black text-gray-900 mb-4">About this Course</h2>
-                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-2xl p-6 text-gray-700 leading-relaxed">
+                <div class="bg-gradient-to-br from-primary-50 to-primary-50 border border-primary-100 rounded-2xl p-6 text-gray-700 leading-relaxed">
                     {!! nl2br(e($course->about)) !!}
                 </div>
             </div>
@@ -171,7 +171,7 @@
                             $isPhosphor = str_starts_with($iconVal, 'ph-');
                         @endphp
                         <div class="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-primary/20 transition-all">
-                            <div class="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center shrink-0 text-xl select-none">
+                            <div class="w-10 h-10 bg-primary-50 rounded-xl flex items-center justify-center shrink-0 text-xl select-none">
                                 @if($isPhosphor)
                                     <i class="{{ $iconVal }} text-primary"></i>
                                 @else
@@ -228,7 +228,7 @@
                 
                 @if($course->syllabus_pdf_path)
                 <div class="mt-5 flex justify-end">
-                    <a href="{{ asset('storage/' . $course->syllabus_pdf_path) }}" target="_blank" class="inline-flex items-center gap-2 px-6 py-2.5 bg-indigo-50 hover:bg-indigo-600 text-indigo-700 hover:text-white font-black rounded-xl transition-all border border-indigo-100 shadow-sm hover:shadow-md hover:-translate-y-0.5">
+                    <a href="{{ asset('storage/' . $course->syllabus_pdf_path) }}" target="_blank" class="inline-flex items-center gap-2 px-6 py-2.5 bg-primary-50 hover:bg-primary-600 text-primary-700 hover:text-white font-black rounded-xl transition-all border border-primary-100 shadow-sm hover:shadow-md hover:-translate-y-0.5">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                         Download Full Syllabus PDF
                     </a>
@@ -285,7 +285,7 @@
                                     @endif
                                 </div>
                                 @if($batch->mode)
-                                <span class="shrink-0 ml-2 text-[10px] font-bold bg-blue-50 text-primary border border-blue-100 px-2 py-0.5 rounded-full">{{ $batch->mode }}</span>
+                                <span class="shrink-0 ml-2 text-[10px] font-bold bg-primary-50 text-primary border border-primary-100 px-2 py-0.5 rounded-full">{{ $batch->mode }}</span>
                                 @endif
                             </div>
                             <div class="space-y-2 mb-4">
@@ -331,7 +331,7 @@
                                     @endif
                                 </div>
                                 <a href="{{ route('checkout.show', $batch->uuid) }}"
-                                   class="px-5 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-black rounded-xl text-sm transition-all shadow-[0_4px_14px_rgba(79,70,229,0.4)] hover:shadow-[0_4px_20px_rgba(79,70,229,0.6)] hover:-translate-y-0.5 inline-flex items-center gap-1.5 border border-indigo-500/50">
+                                   class="px-5 py-2.5 bg-gradient-to-r from-primary-600 to-primary-600 hover:from-primary-700 hover:to-primary-700 text-white font-black rounded-xl text-sm transition-all shadow-[0_4px_14px_rgba(119,35,214,0.4)] hover:shadow-[0_4px_20px_rgba(119,35,214,0.6)] hover:-translate-y-0.5 inline-flex items-center gap-1.5 border border-primary-500/50">
                                     Enroll Now
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                 </a>
@@ -341,10 +341,10 @@
                     @endforeach
                 </div>
                 @else
-                <div class="bg-blue-50 border border-blue-200 rounded-2xl p-6 text-center">
-                    <p class="text-blue-700 font-bold text-sm">Launching Soon</p>
-                    <p class="text-blue-500 text-xs mt-1">Join the waitlist to get early access</p>
-                    <a href="{{ route('contact') }}" class="mt-4 inline-block px-5 py-2.5 bg-primary text-white font-bold rounded-xl text-sm hover:bg-blue-700 transition-colors">
+                <div class="bg-primary-50 border border-primary-200 rounded-2xl p-6 text-center">
+                    <p class="text-primary-700 font-bold text-sm">Launching Soon</p>
+                    <p class="text-primary-500 text-xs mt-1">Join the waitlist to get early access</p>
+                    <a href="{{ route('contact') }}" class="mt-4 inline-block px-5 py-2.5 bg-primary text-white font-bold rounded-xl text-sm hover:bg-primary-700 transition-colors">
                         Register Interest
                     </a>
                 </div>
@@ -388,7 +388,7 @@
                         '7-Day Refund Policy',
                     ] as $txt)
                     <div class="flex items-center gap-2.5 text-sm text-gray-600">
-                        <span class="w-6 h-6 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center shrink-0">
+                        <span class="w-6 h-6 rounded-lg bg-primary-50 border border-primary-100 flex items-center justify-center shrink-0">
                             <svg class="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                         </span>
                         <span class="font-medium">{{ $txt }}</span>
@@ -397,10 +397,10 @@
                 </div>
 
                 {{-- Need Help --}}
-                <div class="bg-gradient-to-br from-primary to-blue-700 rounded-2xl p-5 text-white text-center">
+                <div class="bg-gradient-to-br from-primary to-primary-700 rounded-2xl p-5 text-white text-center">
                     <p class="font-black text-base mb-1">Need Help?</p>
-                    <p class="text-xs text-blue-200 mb-4">Talk to our academic counselors</p>
-                    <a href="tel:+919876543210" class="inline-flex items-center gap-2 bg-white text-primary font-bold text-sm px-5 py-2.5 rounded-xl hover:bg-blue-50 transition-colors">
+                    <p class="text-xs text-primary-200 mb-4">Talk to our academic counselors</p>
+                    <a href="tel:+919876543210" class="inline-flex items-center gap-2 bg-white text-primary font-bold text-sm px-5 py-2.5 rounded-xl hover:bg-primary-50 transition-colors">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                         +91 98765 43210
                     </a>
@@ -435,7 +435,7 @@
                     <div class="shrink-0 w-full {{ count($facultyList) >= 3 ? 'md:w-[calc(33.333%-16px)]' : (count($facultyList) == 2 ? 'md:w-[calc(50%-12px)]' : 'md:w-full max-w-sm mx-auto') }}">
                         <div class="bg-white rounded-3xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group">
                             {{-- Photo / avatar --}}
-                            <div class="h-52 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex items-end justify-center relative overflow-hidden">
+                            <div class="h-52 bg-gradient-to-br from-primary-50 via-primary-50 to-primary-50 flex items-end justify-center relative overflow-hidden">
                                 {{-- Subtle pattern bg --}}
                                 <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle, #3b82f6 1px, transparent 1px); background-size: 20px 20px;"></div>
                                 @if(!empty($f['photo']))
@@ -461,13 +461,13 @@
 
                                 <div class="flex flex-wrap gap-2 mb-4">
                                     @if(!empty($f['subject']))
-                                    <span class="bg-blue-50 border border-blue-100 text-blue-700 text-[10px] font-bold px-2.5 py-1 rounded-full">{{ $f['subject'] }}</span>
+                                    <span class="bg-primary-50 border border-primary-100 text-primary-700 text-[10px] font-bold px-2.5 py-1 rounded-full">{{ $f['subject'] }}</span>
                                     @endif
                                     @if(!empty($f['experience']))
                                     <span class="bg-green-50 border border-green-100 text-green-700 text-[10px] font-bold px-2.5 py-1 rounded-full">{{ $f['experience'] }}</span>
                                     @endif
                                     @if(!empty($f['students']))
-                                    <span class="bg-purple-50 border border-purple-100 text-purple-700 text-[10px] font-bold px-2.5 py-1 rounded-full">{{ $f['students'] }} students</span>
+                                    <span class="bg-primary-50 border border-primary-100 text-primary-700 text-[10px] font-bold px-2.5 py-1 rounded-full">{{ $f['students'] }} students</span>
                                     @endif
                                 </div>
 
@@ -520,11 +520,11 @@
             @foreach($related as $rc)
             <a href="{{ route('course.detail', $rc->slug) }}"
                class="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md hover:border-primary/30 transition-all group overflow-hidden flex flex-col">
-                <div class="h-32 bg-gradient-to-br from-blue-50 via-purple-50 to-indigo-50 relative flex items-center justify-center border-b border-gray-100 overflow-hidden">
+                <div class="h-32 bg-gradient-to-br from-primary-50 via-primary-50 to-primary-50 relative flex items-center justify-center border-b border-gray-100 overflow-hidden">
                     @if($rc->hero_image)
                     <img src="{{ asset('storage/' . $rc->hero_image) }}" alt="{{ $rc->name }}" class="w-full h-full object-cover opacity-80 mix-blend-multiply">
                     @else
-                    <h4 class="text-3xl font-black text-indigo-200 uppercase tracking-tighter">{{ strtoupper(substr($rc->name,0,4)) }}</h4>
+                    <h4 class="text-3xl font-black text-primary-200 uppercase tracking-tighter">{{ strtoupper(substr($rc->name,0,4)) }}</h4>
                     @endif
                 </div>
                 <div class="p-5 flex flex-col flex-grow">

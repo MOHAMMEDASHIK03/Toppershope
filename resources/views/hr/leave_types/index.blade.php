@@ -8,7 +8,7 @@
         <h2 class="text-xl font-bold text-slate-800">Leave Types</h2>
         <p class="text-sm font-medium text-slate-500 mt-1">Configure allowable leave categories</p>
     </div>
-    <a href="{{ route('hr.leave-types.create') }}" class="px-4 py-2 btn-primary font-bold rounded-xl text-sm shadow-sm hover:bg-orange-600 focus:ring-4 focus:ring-orange-100 transition-colors inline-flex items-center gap-2 shrink-0">
+    <a href="{{ route('hr.leave-types.create') }}" class="px-4 py-2 btn-primary font-bold rounded-xl text-sm shadow-sm hover:bg-primary-700 focus:ring-4 focus:ring-primary-100 transition-colors inline-flex items-center gap-2 shrink-0">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg>
         Add Leave Type
     </a>
@@ -36,7 +36,7 @@
                 </div>
                 <div>
                     <span class="panel-list__cell-label">Allowance</span>
-                    <p class="text-sm font-bold text-orange-600">{{ $type->days_allowed }} <span class="text-slate-500 font-semibold">days / yr</span></p>
+                    <p class="text-sm font-bold text-primary-700">{{ $type->days_allowed }} <span class="text-slate-500 font-semibold">days / yr</span></p>
                 </div>
                 <div>
                     <span class="panel-list__cell-label">Status</span>
@@ -50,7 +50,7 @@
         @empty
             <div class="px-6 py-12 text-center text-slate-500 font-medium text-sm">
                 No leave types configured.<br>
-                <a href="{{ route('hr.leave-types.create') }}" class="text-orange-600 hover:underline mt-2 inline-block">Create the first one (e.g. Sick Leave, Casual Leave)</a>
+                <a href="{{ route('hr.leave-types.create') }}" class="text-primary-700 hover:underline mt-2 inline-block">Create the first one (e.g. Sick Leave, Casual Leave)</a>
             </div>
         @endforelse
     </div>

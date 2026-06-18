@@ -11,7 +11,7 @@
 
 <!-- ===== PREMIUM HERO ===== -->
 <section id="faq-hero" class="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-white border-b border-slate-100">
-    <div class="absolute -top-28 left-1/4 w-72 h-72 rounded-full bg-blue-100/70 blur-3xl pointer-events-none"></div>
+    <div class="absolute -top-28 left-1/4 w-72 h-72 rounded-full bg-primary-100/70 blur-3xl pointer-events-none"></div>
     <div class="absolute -bottom-28 right-1/4 w-80 h-80 rounded-full bg-violet-100/60 blur-3xl pointer-events-none"></div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24 flex flex-col md:flex-row items-center gap-10">
@@ -19,7 +19,7 @@
             <span id="hero-badge" class="inline-flex items-center bg-white border border-slate-200 text-primary text-xs font-extrabold px-4 py-2 rounded-full uppercase tracking-widest mb-6">Support Center</span>
             <h1 id="hero-title" class="text-4xl md:text-6xl font-black text-slate-900 leading-tight mb-5">
                 Frequently Asked
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-violet-600">Questions</span>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-600">Questions</span>
             </h1>
             <p id="hero-sub" class="text-slate-600 text-lg leading-relaxed max-w-xl">
                 Clear answers for admissions, classes, plans, payments, tests, and account support.
@@ -55,7 +55,7 @@
             <div class="lg:col-span-8 gsap-reveal">
                 <!-- Accent bordered heading -->
                 <div class="flex items-stretch gap-4 mb-8">
-                    <div class="w-1.5 rounded-full bg-gradient-to-b from-primary to-purple-500 shrink-0"></div>
+                    <div class="w-1.5 rounded-full bg-gradient-to-b from-primary to-primary-500 shrink-0"></div>
                     <h2 class="text-4xl md:text-5xl font-black text-gray-900">
                         <span class="text-primary">Asked</span> Questions
                     </h2>
@@ -76,7 +76,7 @@
                 <!-- Quick stats row -->
                 <div class="mt-10 grid grid-cols-3 gap-6">
                     @foreach([['val'=>'15+','label'=>'Questions Answered'],['val'=>'< 2 hrs','label'=>'Avg. Response Time'],['val'=>'24×7','label'=>'Support Available']] as $stat)
-                    <div class="text-center bg-gradient-to-b from-blue-50 to-white border border-blue-100 rounded-2xl py-5 px-4">
+                    <div class="text-center bg-gradient-to-b from-primary-50 to-white border border-primary-100 rounded-2xl py-5 px-4">
                         <p class="text-2xl font-black text-primary">{{ $stat['val'] }}</p>
                         <p class="text-xs text-gray-500 font-semibold mt-1 uppercase tracking-wide">{{ $stat['label'] }}</p>
                     </div>
@@ -86,14 +86,14 @@
 
             <!-- Right: Contact Info Card -->
             <div class="lg:col-span-4 gsap-reveal lg:sticky lg:top-28" id="contact-card">
-                <div class="relative bg-gradient-to-br from-primary via-[#2233ff] to-[#7B61FF] rounded-3xl p-8 text-white shadow-2xl overflow-hidden">
+                <div class="relative bg-gradient-to-br from-primary via-[#2233ff] to-primary-800 rounded-3xl p-8 text-white shadow-2xl overflow-hidden">
                     <!-- Decorative circles -->
                     <div class="absolute -top-8 -right-8 w-40 h-40 rounded-full bg-white/5 border border-white/10"></div>
                     <div class="absolute -bottom-10 -left-10 w-56 h-56 rounded-full bg-white/5 border border-white/10"></div>
 
                     <div class="relative z-10">
                         <h3 class="text-3xl font-black mb-2 leading-tight">Contact<br>Information</h3>
-                        <p class="text-blue-200 text-sm mb-6 leading-relaxed">No question should be left without an answer. Contact us now and we'll get back to you promptly.</p>
+                        <p class="text-primary-200 text-sm mb-6 leading-relaxed">No question should be left without an answer. Contact us now and we'll get back to you promptly.</p>
 
                         <div class="w-full h-px bg-white/20 mb-6"></div>
 
@@ -104,7 +104,7 @@
                                 </div>
                                 <div>
                                     <p class="font-bold text-sm text-white">Office Location</p>
-                                    <p class="text-blue-200 text-sm">Tamil Nadu, India</p>
+                                    <p class="text-primary-200 text-sm">Tamil Nadu, India</p>
                                 </div>
                             </li>
                             <li class="flex items-start gap-4">
@@ -113,9 +113,9 @@
                                 </div>
                                 <div>
                                     <p class="font-bold text-sm text-white">Phone Numbers</p>
-                                    <a href="tel:+917012276177" class="text-blue-200 hover:text-white text-sm block transition-colors">+91 70122 76177</a>
-                                    <a href="tel:+918075098177" class="text-blue-200 hover:text-white text-sm block transition-colors">+91 80750 98177</a>
-                                    <a href="tel:+917639276646" class="text-blue-200 hover:text-white text-sm block transition-colors">+91 76392 76646</a>
+                                    <a href="tel:+917012276177" class="text-primary-200 hover:text-white text-sm block transition-colors">+91 70122 76177</a>
+                                    <a href="tel:+918075098177" class="text-primary-200 hover:text-white text-sm block transition-colors">+91 80750 98177</a>
+                                    <a href="tel:+917639276646" class="text-primary-200 hover:text-white text-sm block transition-colors">+91 76392 76646</a>
                                 </div>
                             </li>
                             <li class="flex items-start gap-4">
@@ -124,7 +124,7 @@
                                 </div>
                                 <div>
                                     <p class="font-bold text-sm text-white">Email</p>
-                                    <a href="mailto:support@toppershope.com" class="text-blue-200 hover:text-white text-sm block transition-colors">support@toppershope.com</a>
+                                    <a href="mailto:support@toppershope.com" class="text-primary-200 hover:text-white text-sm block transition-colors">support@toppershope.com</a>
                                 </div>
                             </li>
                         </ul>
@@ -235,19 +235,19 @@
             <div class="hidden lg:block">
                 <!-- Quick help card -->
                 <div class="sticky top-40 space-y-6">
-                    <div class="bg-gradient-to-br from-primary via-[#2233ff] to-[#7B61FF] rounded-3xl p-7 text-white shadow-xl relative overflow-hidden">
+                    <div class="bg-gradient-to-br from-primary via-[#2233ff] to-primary-800 rounded-3xl p-7 text-white shadow-xl relative overflow-hidden">
                         <div class="absolute -top-6 -right-6 w-32 h-32 rounded-full bg-white/5 border border-white/10"></div>
                         <div class="absolute -bottom-8 -left-8 w-40 h-40 rounded-full bg-white/5 border border-white/10"></div>
                         <div class="relative z-10">
                             <h3 class="text-xl font-black mb-1">Contact Information</h3>
-                            <p class="text-blue-200 text-xs mb-5 leading-relaxed">No question should be left without an answer. Contact us now.</p>
+                            <p class="text-primary-200 text-xs mb-5 leading-relaxed">No question should be left without an answer. Contact us now.</p>
                             <div class="w-full h-px bg-white/20 mb-5"></div>
                             <ul class="space-y-3 mb-5 text-sm">
-                                <li class="flex items-center gap-3"><svg class="w-4 h-4 text-cyan-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg><span class="text-blue-100">Tamil Nadu, India</span></li>
-                                <li class="flex items-center gap-3"><svg class="w-4 h-4 text-cyan-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg><a href="tel:+917012276177" class="text-blue-100 hover:text-white transition-colors">+91 70122 76177</a></li>
-                                <li class="flex items-center gap-3"><svg class="w-4 h-4 text-cyan-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg><a href="tel:+918075098177" class="text-blue-100 hover:text-white transition-colors">+91 80750 98177</a></li>
-                                <li class="flex items-center gap-3"><svg class="w-4 h-4 text-cyan-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg><a href="tel:+917639276646" class="text-blue-100 hover:text-white transition-colors">+91 76392 76646</a></li>
-                                <li class="flex items-center gap-3"><svg class="w-4 h-4 text-cyan-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg><a href="mailto:support@toppershope.com" class="text-blue-100 hover:text-white transition-colors">support@toppershope.com</a></li>
+                                <li class="flex items-center gap-3"><svg class="w-4 h-4 text-primary-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg><span class="text-primary-100">Tamil Nadu, India</span></li>
+                                <li class="flex items-center gap-3"><svg class="w-4 h-4 text-primary-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg><a href="tel:+917012276177" class="text-primary-100 hover:text-white transition-colors">+91 70122 76177</a></li>
+                                <li class="flex items-center gap-3"><svg class="w-4 h-4 text-primary-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg><a href="tel:+918075098177" class="text-primary-100 hover:text-white transition-colors">+91 80750 98177</a></li>
+                                <li class="flex items-center gap-3"><svg class="w-4 h-4 text-primary-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg><a href="tel:+917639276646" class="text-primary-100 hover:text-white transition-colors">+91 76392 76646</a></li>
+                                <li class="flex items-center gap-3"><svg class="w-4 h-4 text-primary-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg><a href="mailto:support@toppershope.com" class="text-primary-100 hover:text-white transition-colors">support@toppershope.com</a></li>
                             </ul>
                             <div class="w-full h-px bg-white/20 mb-5"></div>
                             <p class="font-bold text-xs text-white mb-3 uppercase tracking-wider">Follow Us</p>
@@ -262,13 +262,13 @@
                     </div>
 
                     <!-- Still have questions -->
-                    <div class="bg-blue-50 border border-blue-100 rounded-2xl p-6 text-center">
-                    <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-blue-100 border border-blue-200 flex items-center justify-center">
+                    <div class="bg-primary-50 border border-primary-100 rounded-2xl p-6 text-center">
+                    <div class="w-12 h-12 mx-auto mb-3 rounded-xl bg-primary-100 border border-primary-200 flex items-center justify-center">
                         <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
                     </div>
                         <h4 class="font-black text-gray-900 mb-2">Still have questions?</h4>
                         <p class="text-gray-500 text-sm mb-4">Our team replies within 2 hours.</p>
-                        <a href="mailto:support@toppershope.com" class="block w-full py-2.5 bg-primary hover:bg-blue-700 text-white text-sm font-bold rounded-xl transition-all shadow-sm">Email Us Now</a>
+                        <a href="mailto:support@toppershope.com" class="block w-full py-2.5 bg-primary hover:bg-primary-700 text-white text-sm font-bold rounded-xl transition-all shadow-sm">Email Us Now</a>
                     </div>
                 </div>
             </div>
@@ -279,15 +279,15 @@
 <!-- ===== MOBILE CONTACT CARD ===== -->
 <section class="lg:hidden py-12 bg-slate-50 border-t border-gray-100">
     <div class="max-w-lg mx-auto px-4">
-        <div class="bg-gradient-to-br from-primary to-purple-600 rounded-3xl p-8 text-white shadow-xl">
+        <div class="bg-gradient-to-br from-primary to-primary-600 rounded-3xl p-8 text-white shadow-xl">
             <h3 class="text-2xl font-black mb-1">Contact Information</h3>
-            <p class="text-blue-200 text-sm mb-6">No question should be left without an answer.</p>
+            <p class="text-primary-200 text-sm mb-6">No question should be left without an answer.</p>
             <ul class="space-y-3 text-sm mb-6">
-                <li class="flex items-center gap-3 text-blue-100"><svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>Tamil Nadu, India</li>
-                <li><a href="tel:+917012276177" class="flex items-center gap-3 text-blue-100 hover:text-white"><svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>+91 70122 76177</a></li>
-                <li><a href="tel:+918075098177" class="flex items-center gap-3 text-blue-100 hover:text-white"><svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>+91 80750 98177</a></li>
-                <li><a href="tel:+917639276646" class="flex items-center gap-3 text-blue-100 hover:text-white"><svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>+91 76392 76646</a></li>
-                <li><a href="mailto:support@toppershope.com" class="flex items-center gap-3 text-blue-100 hover:text-white"><svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>support@toppershope.com</a></li>
+                <li class="flex items-center gap-3 text-primary-100"><svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>Tamil Nadu, India</li>
+                <li><a href="tel:+917012276177" class="flex items-center gap-3 text-primary-100 hover:text-white"><svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>+91 70122 76177</a></li>
+                <li><a href="tel:+918075098177" class="flex items-center gap-3 text-primary-100 hover:text-white"><svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>+91 80750 98177</a></li>
+                <li><a href="tel:+917639276646" class="flex items-center gap-3 text-primary-100 hover:text-white"><svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>+91 76392 76646</a></li>
+                <li><a href="mailto:support@toppershope.com" class="flex items-center gap-3 text-primary-100 hover:text-white"><svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>support@toppershope.com</a></li>
             </ul>
         </div>
     </div>

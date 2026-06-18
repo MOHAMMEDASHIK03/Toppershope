@@ -10,7 +10,7 @@
     </div>
     
     <div class="flex items-center gap-3 w-full md:w-auto">
-        <a href="{{ route('hr.employee-documents.create') }}" class="w-full md:w-auto px-4 py-2.5 btn-primary font-semibold rounded-xl text-sm shadow-sm hover:bg-orange-600 focus:ring-4 focus:ring-orange-100 transition-colors inline-flex items-center justify-center gap-2">
+        <a href="{{ route('hr.employee-documents.create') }}" class="w-full md:w-auto px-4 py-2.5 btn-primary font-semibold rounded-xl text-sm shadow-sm hover:bg-primary-700 focus:ring-4 focus:ring-primary-100 transition-colors inline-flex items-center justify-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true"><path d="M224,144v64a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V144a8,8,0,0,1,16,0v56H208V144a8,8,0,0,1,16,0ZM93.66,77.66,120,51.31V168a8,8,0,0,0,16,0V51.31l26.34,26.35a8,8,0,0,0,11.32-11.32l-40-40a8,8,0,0,0-11.32,0l-40,40A8,8,0,0,0,93.66,77.66Z"/></svg>
             Upload document
         </a>
@@ -28,7 +28,7 @@
                 name="search"
                 value="{{ request('search') }}"
                 placeholder="Search documents or employees..."
-                class="w-full pl-9 pr-4 py-2 bg-white border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 outline-none transition-all placeholder:text-slate-400 font-medium"
+                class="w-full pl-9 pr-4 py-2 bg-white border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-primary-600/15 focus:border-primary-500 outline-none transition-all placeholder:text-slate-400 font-medium"
             >
         </div>
         <div class="flex items-center gap-2 shrink-0">
@@ -59,7 +59,7 @@
                 <tr class="hover:bg-slate-50/50 transition-colors">
                     <td class="px-6 py-4">
                         <div class="flex items-center gap-3">
-                            <div class="p-2 bg-rose-50 text-rose-600 rounded-lg shrink-0">
+                            <div class="p-2 bg-rose-50 text-primary-600 rounded-lg shrink-0">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-24-64a8,8,0,0,1-8,8H88a8,8,0,0,1,0-16h80A8,8,0,0,1,176,152Zm0-32a8,8,0,0,1-8,8H88a8,8,0,0,1,0-16h80A8,8,0,0,1,176,120Z"/></svg>
                             </div>
                             <div>
@@ -87,7 +87,7 @@
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 download
-                                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-bold tracking-wide text-orange-600 bg-white border border-orange-200 rounded-lg hover:bg-orange-50 transition-colors"
+                                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-bold tracking-wide text-primary-700 bg-white border border-primary-200 rounded-lg hover:bg-primary-50 transition-colors"
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true"><path d="M224,152v56a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V152a16,16,0,0,1,16-16H80a8,8,0,0,1,0,16H48v56H208V152H176a8,8,0,0,1,0-16h32A16,16,0,0,1,224,152ZM122.34,165.66l-26.35-26.34V216a8,8,0,0,1-16,0V139.31l-26.34,26.35a8,8,0,0,1-11.32-11.32l40-40a8,8,0,0,1,11.32,0l40,40A8,8,0,0,1,122.34,165.66Z"/></svg>
                                 Download
@@ -102,7 +102,7 @@
                                 @method('DELETE')
                                 <button
                                     type="submit"
-                                    class="inline-flex items-center justify-center p-1.5 text-rose-600 bg-white border border-rose-200 rounded-lg hover:bg-rose-50 transition-colors"
+                                    class="inline-flex items-center justify-center p-1.5 text-primary-600 bg-white border border-rose-200 rounded-lg hover:bg-rose-50 transition-colors"
                                     title="Delete document"
                                     aria-label="Delete document"
                                 >
@@ -117,10 +117,10 @@
                     <td colspan="5" class="px-6 py-12 text-center text-slate-500 font-medium text-sm">
                         @if(request()->filled('search'))
                             No documents match “{{ request('search') }}”.<br>
-                            <a href="{{ route('hr.employee-documents.index') }}" class="text-orange-600 hover:underline mt-2 inline-block">Clear search</a>
+                            <a href="{{ route('hr.employee-documents.index') }}" class="text-primary-700 hover:underline mt-2 inline-block">Clear search</a>
                         @else
                             No documents stored in the vault.<br>
-                            <a href="{{ route('hr.employee-documents.create') }}" class="text-orange-600 hover:underline mt-2 inline-block">Upload the first document</a>
+                            <a href="{{ route('hr.employee-documents.create') }}" class="text-primary-700 hover:underline mt-2 inline-block">Upload the first document</a>
                         @endif
                     </td>
                 </tr>

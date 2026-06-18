@@ -65,7 +65,7 @@
                 File upload <span class="text-red-500">*</span>
             </label>
             <p class="text-xs text-slate-500 mb-2">PDF, JPG, or PNG — maximum 5MB</p>
-            <div class="relative rounded-xl border-2 border-dashed border-slate-200 bg-slate-50 hover:border-orange-300 hover:bg-orange-50/40 transition-colors p-6 text-center">
+            <div class="relative rounded-xl border-2 border-dashed border-slate-200 bg-slate-50 hover:border-primary-400 hover:bg-primary-50/40 transition-colors p-6 text-center">
                 <input
                     type="file"
                     id="document_file"
@@ -76,10 +76,10 @@
                     onchange="document.getElementById('file-name-hint').textContent = this.files[0]?.name || 'No file chosen'"
                 >
                 <div class="pointer-events-none">
-                    <div class="mx-auto w-12 h-12 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center mb-3">
+                    <div class="mx-auto w-12 h-12 rounded-xl bg-primary-100 text-primary-700 flex items-center justify-center mb-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216ZM133.66,122.34A8,8,0,0,1,136,128v40a8,8,0,0,1-16,0V139.31l-18.34,18.35a8,8,0,0,1-11.32-11.32l32-32A8,8,0,0,1,133.66,122.34Z"/></svg>
                     </div>
-                    <span class="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-white border border-slate-200 text-sm font-semibold text-orange-600">
+                    <span class="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-white border border-slate-200 text-sm font-semibold text-primary-700">
                         Choose file
                     </span>
                     <p id="file-name-hint" class="mt-3 text-xs font-medium text-slate-500">No file chosen</p>
