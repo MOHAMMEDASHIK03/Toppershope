@@ -44,17 +44,12 @@
     }
 
     .payslip-doc__logo {
-        width: 32px;
-        height: 32px;
-        border-radius: 6px;
-        background: #7723D6;
-        color: #fff;
-        font-weight: 800;
-        font-size: 11px;
-        text-align: center;
-        line-height: 32px;
-        display: inline-block;
+        width: 56px;
+        height: 56px;
+        object-fit: contain;
+        display: block;
         margin-bottom: 4px;
+        border-radius: 6px;
     }
 
     .payslip-doc__company-name {
@@ -351,35 +346,58 @@
             margin: 0 !important;
             padding: 0 !important;
             background: #fff !important;
+            height: auto !important;
+            overflow: visible !important;
             -webkit-print-color-adjust: exact;
             print-color-adjust: exact;
+        }
+
+        /* Hide all page chrome — only the payslip document should print */
+        body * {
+            visibility: hidden;
+        }
+
+        .payslip-doc,
+        .payslip-doc * {
+            visibility: visible;
+        }
+
+        .payslip-doc {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            margin: 0;
+            padding: 0;
         }
 
         aside,
         #sidebar,
         #sidebar-backdrop,
-        body > div > div > header,
+        .panel-header,
+        header.panel-header,
+        [data-theme-toggle],
+        #th-confirm-modal,
+        #th-toast-root,
         .no-print {
             display: none !important;
+            visibility: hidden !important;
         }
 
         body,
         body > div,
-        main {
+        main,
+        .payslip-print-root,
+        .payslip-screen-wrap {
             display: block !important;
             width: 100% !important;
-            min-height: auto !important;
+            min-height: 0 !important;
+            height: auto !important;
             overflow: visible !important;
             padding: 0 !important;
             margin: 0 !important;
             background: #fff !important;
-        }
-
-        .payslip-print-root {
-            position: relative;
-            width: 100%;
-            margin: 0;
-            padding: 0;
+            max-width: none !important;
         }
 
         .payslip-doc__sheet {

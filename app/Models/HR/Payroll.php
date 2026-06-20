@@ -16,4 +16,9 @@ class Payroll extends Model
     {
         return $this->belongsTo(Employee::class);
     }
+
+    public function generatedBy()
+    {
+        return $this->belongsTo(HrUser::class, 'generated_by');
+    }
 }

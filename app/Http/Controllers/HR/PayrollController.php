@@ -111,13 +111,14 @@ class PayrollController extends Controller
         $netPayable  = $structure->basic_salary + $allowances - $deductions;
 
         Payroll::create([
-            'employee_id'  => $empId,
-            'month_year'   => $monthYear,
-            'basic_salary' => $structure->basic_salary,
-            'allowances'   => $allowances,
-            'deductions'   => $deductions,
-            'net_payable'  => $netPayable,
-            'status'       => 'pending',
+            'employee_id'   => $empId,
+            'generated_by'  => auth('hr')->id(),
+            'month_year'    => $monthYear,
+            'basic_salary'  => $structure->basic_salary,
+            'allowances'    => $allowances,
+            'deductions'    => $deductions,
+            'net_payable'   => $netPayable,
+            'status'        => 'pending',
         ]);
 
         return redirect()->route('hr.payroll.index', ['month_year' => $monthYear])

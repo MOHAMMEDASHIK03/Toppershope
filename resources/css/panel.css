@@ -768,6 +768,12 @@ body { font-family: 'Inter', sans-serif; }
     }
     .th-confirm-btn--primary:hover { background: #6B21C8; }
 
+    @media print {
+        #th-confirm-modal {
+            display: none !important;
+        }
+    }
+
     /* Mobile table card view */
     @media (max-width: 640px) {
         .panel-table-wrap--responsive {

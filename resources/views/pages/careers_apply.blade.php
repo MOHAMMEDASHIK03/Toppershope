@@ -197,7 +197,7 @@
 
                             <div>
                                 <label for="phone" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-2">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" value="{{ old('phone') }}" placeholder="e.g., +91 98765 43210"
+                                <input type="tel" id="phone" name="phone" value="{{ old('phone') }}" placeholder="e.g., {{ config('contact.phone') }}"
                                        class="w-full px-4 py-3 bg-slate-50 border @error('phone') border-red-400 focus:ring-red-150 @else border-slate-200 focus:ring-primary-600/15 @enderror rounded-xl focus:ring-4 focus:border-primary outline-none transition-all font-semibold text-slate-800 text-sm">
                                 @error('phone')
                                     <p class="text-xs text-red-500 font-bold mt-1.5">{{ $message }}</p>

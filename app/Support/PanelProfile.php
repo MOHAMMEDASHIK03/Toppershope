@@ -80,8 +80,12 @@ class PanelProfile
         ['name' => 'name', 'label' => 'Full Name', 'type' => 'text', 'required' => true],
         ['name' => 'phone', 'label' => 'Phone', 'type' => 'text', 'required' => false],
       ],
-      'admin', 'hr', 'ads', 'admission' => [
+      'admin', 'ads', 'admission' => [
         ['name' => 'name', 'label' => 'Full Name', 'type' => 'text', 'required' => true],
+      ],
+      'hr' => [
+        ['name' => 'name', 'label' => 'Full Name', 'type' => 'text', 'required' => true],
+        ['name' => 'phone', 'label' => 'Phone', 'type' => 'text', 'required' => false],
       ],
       default => [],
     };

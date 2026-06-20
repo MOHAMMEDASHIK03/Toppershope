@@ -78,12 +78,22 @@ class MyCoursesController extends Controller
         $note = Note::findOrFail($noteId);
 
         $signedUrl = null;
+        $downloadUrl = null;
         if ($note->file_path) {
             $signedUrl = URL::temporarySignedRoute(
                 'media.pdf', now()->addHours(2), ['filename' => $note->file_path]
             );
+            $downloadUrl = URL::temporarySignedRoute(
+                'media.pdf',
+                now()->addHours(2),
+                [
+                    'filename' => $note->file_path,
+                    'download' => 1,
+                    'name' => $note->downloadFilename(),
+                ]
+            );
         }
 
-        return view('student.player.notes', compact('enrollment', 'note', 'signedUrl'));
+        return view('student.player.notes', compact('enrollment', 'note', 'signedUrl', 'downloadUrl'));
     }
 }

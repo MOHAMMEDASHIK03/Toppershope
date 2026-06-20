@@ -37,12 +37,20 @@ function extractConfirmMessage(source) {
 }
 
 function isDeleteForm(form) {
+    if (form.dataset.noConfirm === '1' || form.hasAttribute('data-no-confirm')) {
+        return false;
+    }
+
     const methodInput = form.querySelector('input[name="_method"]');
     if (methodInput?.value?.toUpperCase() === 'DELETE') {
         return true;
     }
 
     return form.getAttribute('method')?.toUpperCase() === 'DELETE';
+}
+
+function shouldSkipConfirmElement(el) {
+    return el?.dataset?.noConfirm === '1' || el?.hasAttribute?.('data-no-confirm');
 }
 
 function confirmActionLabel(message) {
@@ -127,7 +135,15 @@ function upgradeLegacyConfirms() {
     });
 
     document.querySelectorAll('[onclick]').forEach((el) => {
+        if (shouldSkipConfirmElement(el)) {
+            return;
+        }
+
         const onclick = el.getAttribute('onclick');
+        if (/\bwindow\.print\s*\(/.test(onclick || '')) {
+            return;
+        }
+
         const message = extractConfirmMessage(onclick);
         if (!message) {
             return;
@@ -164,6 +180,8 @@ function initThConfirm() {
         }
     });
 
+    window.addEventListener('beforeprint', closeModal);
+
     document.addEventListener(
         'submit',
         (event) => {
@@ -174,6 +192,10 @@ function initThConfirm() {
 
             if (form.dataset.thConfirmApproved === '1') {
                 delete form.dataset.thConfirmApproved;
+                return;
+            }
+
+            if (shouldSkipConfirmElement(form)) {
                 return;
             }
 
@@ -200,7 +222,7 @@ function initThConfirm() {
         'click',
         (event) => {
             const el = event.target.closest('[data-confirm-trigger]');
-            if (!el) {
+            if (!el || shouldSkipConfirmElement(el)) {
                 return;
             }
 

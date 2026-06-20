@@ -12,6 +12,8 @@ class PayslipPresenter
     public function __construct(
         public Payroll $payroll,
         public array $company,
+        public ?string $logoDataUri,
+        public ?string $logoPdfDataUri,
         public string $periodLabel,
         public string $periodShort,
         public string $payslipNumber,
@@ -36,6 +38,7 @@ class PayslipPresenter
             'employee.branch',
             'employee.payrollDetails',
             'employee.identity',
+            'generatedBy',
         ])->findOrFail($id);
 
         return self::fromPayroll($payroll);
@@ -107,9 +110,27 @@ class PayslipPresenter
             ? Str::headline(str_replace('_', ' ', $payrollDetails->payment_method))
             : 'Bank Transfer';
 
+        $branch = $employee->branch;
+        $issuer = $payroll->generatedBy;
+        $payslipConfig = config('payslip');
+
+        $company = [
+            'company_name' => $payslipConfig['company_name'],
+            'company_tagline' => $payslipConfig['company_tagline'],
+            'branch_name' => $branch?->name,
+            'branch_code' => $branch?->code,
+            'branch_address' => $branch?->location ?: config('contact.address'),
+            'issuer_name' => $issuer?->name,
+            'issuer_email' => $issuer?->email ?? $payslipConfig['email'],
+            'issuer_phone' => $issuer?->phone ?? $payslipConfig['phone'],
+            'system_name' => $payslipConfig['system_name'],
+        ];
+
         return new self(
             payroll: $payroll,
-            company: config('payslip'),
+            company: $company,
+            logoDataUri: PayslipLogo::dataUri(),
+            logoPdfDataUri: PayslipLogo::dataUriForPdf(),
             periodLabel: $periodLabel,
             periodShort: $periodShort,
             payslipNumber: sprintf('PSL-%05d-%s', $payroll->id, str_replace('-', '', $payroll->month_year)),
@@ -121,7 +142,9 @@ class PayslipPresenter
                 'id' => $employee->employee_id,
                 'department' => $employee->department_display,
                 'designation' => $employee->designation_display,
-                'branch' => $employee->branch?->name ?? '—',
+                'branch' => $branch
+                    ? trim($branch->name . ($branch->code ? " ({$branch->code})" : ''))
+                    : '—',
                 'joining_date' => $employee->joining_date?->format('d M Y') ?? '—',
                 'uan' => $payrollDetails?->uan_number,
                 'pan' => $identity?->pan_number,

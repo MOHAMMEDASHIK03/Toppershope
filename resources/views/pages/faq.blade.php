@@ -104,7 +104,7 @@
                                 </div>
                                 <div>
                                     <p class="font-bold text-sm text-white">Office Location</p>
-                                    <p class="text-primary-200 text-sm">Tamil Nadu, India</p>
+                                    <p class="text-primary-200 text-sm">{{ config('contact.address_short') }}</p>
                                 </div>
                             </li>
                             <li class="flex items-start gap-4">
@@ -112,10 +112,17 @@
                                     <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                                 </div>
                                 <div>
-                                    <p class="font-bold text-sm text-white">Phone Numbers</p>
-                                    <a href="tel:+917012276177" class="text-primary-200 hover:text-white text-sm block transition-colors">+91 70122 76177</a>
-                                    <a href="tel:+918075098177" class="text-primary-200 hover:text-white text-sm block transition-colors">+91 80750 98177</a>
-                                    <a href="tel:+917639276646" class="text-primary-200 hover:text-white text-sm block transition-colors">+91 76392 76646</a>
+                                    <p class="font-bold text-sm text-white">Call</p>
+                                    <a href="tel:{{ config('contact.phone_tel') }}" class="text-primary-200 hover:text-white text-sm block transition-colors">{{ config('contact.phone') }}</a>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center shrink-0">
+                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-sm text-white">WhatsApp</p>
+                                    <a href="{{ config('contact.whatsapp_url') }}" target="_blank" rel="noopener" class="text-primary-200 hover:text-white text-sm block transition-colors">{{ config('contact.whatsapp') }}</a>
                                 </div>
                             </li>
                             <li class="flex items-start gap-4">
@@ -124,7 +131,7 @@
                                 </div>
                                 <div>
                                     <p class="font-bold text-sm text-white">Email</p>
-                                    <a href="mailto:support@toppershope.com" class="text-primary-200 hover:text-white text-sm block transition-colors">support@toppershope.com</a>
+                                    <a href="mailto:{{ config('contact.email') }}" class="text-primary-200 hover:text-white text-sm block transition-colors">{{ config('contact.email') }}</a>
                                 </div>
                             </li>
                         </ul>
@@ -243,11 +250,10 @@
                             <p class="text-primary-200 text-xs mb-5 leading-relaxed">No question should be left without an answer. Contact us now.</p>
                             <div class="w-full h-px bg-white/20 mb-5"></div>
                             <ul class="space-y-3 mb-5 text-sm">
-                                <li class="flex items-center gap-3"><svg class="w-4 h-4 text-primary-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg><span class="text-primary-100">Tamil Nadu, India</span></li>
-                                <li class="flex items-center gap-3"><svg class="w-4 h-4 text-primary-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg><a href="tel:+917012276177" class="text-primary-100 hover:text-white transition-colors">+91 70122 76177</a></li>
-                                <li class="flex items-center gap-3"><svg class="w-4 h-4 text-primary-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg><a href="tel:+918075098177" class="text-primary-100 hover:text-white transition-colors">+91 80750 98177</a></li>
-                                <li class="flex items-center gap-3"><svg class="w-4 h-4 text-primary-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg><a href="tel:+917639276646" class="text-primary-100 hover:text-white transition-colors">+91 76392 76646</a></li>
-                                <li class="flex items-center gap-3"><svg class="w-4 h-4 text-primary-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg><a href="mailto:support@toppershope.com" class="text-primary-100 hover:text-white transition-colors">support@toppershope.com</a></li>
+                                <li class="flex items-center gap-3"><svg class="w-4 h-4 text-primary-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg><span class="text-primary-100">{{ config('contact.address_short') }}</span></li>
+                                <li class="flex items-center gap-3"><svg class="w-4 h-4 text-primary-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg><a href="tel:{{ config('contact.phone_tel') }}" class="text-primary-100 hover:text-white transition-colors">{{ config('contact.phone') }}</a></li>
+                                <li class="flex items-center gap-3"><svg class="w-4 h-4 text-primary-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg><a href="{{ config('contact.whatsapp_url') }}" target="_blank" rel="noopener" class="text-primary-100 hover:text-white transition-colors">{{ config('contact.whatsapp') }}</a></li>
+                                <li class="flex items-center gap-3"><svg class="w-4 h-4 text-primary-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg><a href="mailto:{{ config('contact.email') }}" class="text-primary-100 hover:text-white transition-colors">{{ config('contact.email') }}</a></li>
                             </ul>
                             <div class="w-full h-px bg-white/20 mb-5"></div>
                             <p class="font-bold text-xs text-white mb-3 uppercase tracking-wider">Follow Us</p>
@@ -268,7 +274,7 @@
                     </div>
                         <h4 class="font-black text-gray-900 mb-2">Still have questions?</h4>
                         <p class="text-gray-500 text-sm mb-4">Our team replies within 2 hours.</p>
-                        <a href="mailto:support@toppershope.com" class="block w-full py-2.5 bg-primary hover:bg-primary-700 text-white text-sm font-bold rounded-xl transition-all shadow-sm">Email Us Now</a>
+                        <a href="mailto:{{ config('contact.email') }}" class="block w-full py-2.5 bg-primary hover:bg-primary-700 text-white text-sm font-bold rounded-xl transition-all shadow-sm">Email Us Now</a>
                     </div>
                 </div>
             </div>
@@ -283,11 +289,10 @@
             <h3 class="text-2xl font-black mb-1">Contact Information</h3>
             <p class="text-primary-200 text-sm mb-6">No question should be left without an answer.</p>
             <ul class="space-y-3 text-sm mb-6">
-                <li class="flex items-center gap-3 text-primary-100"><svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>Tamil Nadu, India</li>
-                <li><a href="tel:+917012276177" class="flex items-center gap-3 text-primary-100 hover:text-white"><svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>+91 70122 76177</a></li>
-                <li><a href="tel:+918075098177" class="flex items-center gap-3 text-primary-100 hover:text-white"><svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>+91 80750 98177</a></li>
-                <li><a href="tel:+917639276646" class="flex items-center gap-3 text-primary-100 hover:text-white"><svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>+91 76392 76646</a></li>
-                <li><a href="mailto:support@toppershope.com" class="flex items-center gap-3 text-primary-100 hover:text-white"><svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>support@toppershope.com</a></li>
+                <li class="flex items-center gap-3 text-primary-100"><svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>{{ config('contact.address_short') }}</li>
+                <li><a href="tel:{{ config('contact.phone_tel') }}" class="flex items-center gap-3 text-primary-100 hover:text-white"><svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>{{ config('contact.phone') }}</a></li>
+                <li><a href="{{ config('contact.whatsapp_url') }}" target="_blank" rel="noopener" class="flex items-center gap-3 text-primary-100 hover:text-white"><svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>{{ config('contact.whatsapp') }}</a></li>
+                <li><a href="mailto:{{ config('contact.email') }}" class="flex items-center gap-3 text-primary-100 hover:text-white"><svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>{{ config('contact.email') }}</a></li>
             </ul>
         </div>
     </div>

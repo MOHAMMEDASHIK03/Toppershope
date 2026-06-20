@@ -6,6 +6,9 @@
     @include('hr.payroll.partials.payslip-styles')
 </head>
 <body class="payslip-pdf-body">
-    @include('hr.payroll.partials.payslip-document', ['payslip' => $payslip])
+    @include('hr.payroll.partials.payslip-document', [
+        'payslip' => $payslip,
+        'logoSrc' => $payslip->logoPdfDataUri,
+    ])
 </body>
 </html>

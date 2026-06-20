@@ -83,7 +83,7 @@
                         <div class="font-bold text-gray-200">Rahul Sharma</div>
                         <span class="text-xs text-yellow-500">Left Checkout</span>
                     </div>
-                    <div class="text-sm text-primary mb-3 font-mono">+91 98765 43210</div>
+                    <div class="text-sm text-primary mb-3 font-mono">{{ config('contact.phone') }}</div>
                     <div class="flex gap-2">
                         <button class="flex-1 py-1.5 rounded-lg bg-green-500/20 text-green-400 text-xs font-bold border border-green-500/30 hover:bg-green-500/30">Called</button>
                         <button class="flex-1 py-1.5 rounded-lg bg-yellow-500/20 text-yellow-500 text-xs font-bold border border-yellow-500/30 hover:bg-yellow-500/30">Snooze</button>

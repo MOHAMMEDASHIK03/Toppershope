@@ -113,12 +113,14 @@ class ContentManagerController extends Controller
         ]);
 
         if ($request->hasFile('file')) {
-            $path = $request->file('file')->store('course_notes', 'public');
-            
+            $file = $request->file('file');
+            $path = $file->store('course_notes', 'public');
+
             $unit->notes()->create([
                 'title' => $request->title,
                 'description' => $request->description,
                 'file_path' => $path,
+                'original_filename' => $file->getClientOriginalName(),
             ]);
         }
 

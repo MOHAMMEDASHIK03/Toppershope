@@ -15,6 +15,7 @@
 >
     <x-form.field label="Full name" name="name" :value="$hrUser->name ?? null" :required="true" placeholder="Representative name" />
     <x-form.field label="Email" name="email" type="email" :value="$hrUser->email ?? null" :required="true" placeholder="name@company.com" />
+    <x-form.field label="Phone" name="phone" type="tel" :value="$hrUser->phone ?? null" placeholder="{{ config('contact.phone') }}" hint="Shown on payslips issued by this HR user." />
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5 pt-2 border-t border-slate-100">
         <x-form.field

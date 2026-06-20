@@ -26,6 +26,7 @@ class HrUserController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:hr_users,email',
+            'phone' => 'nullable|string|max:20',
             'password' => 'required|string|min:8|confirmed',
             'is_active' => 'boolean'
         ]);
@@ -33,6 +34,7 @@ class HrUserController extends Controller
         \App\Models\HR\HrUser::create([
             'name' => $request->name,
             'email' => $request->email,
+            'phone' => $request->phone,
             'password' => \Illuminate\Support\Facades\Hash::make($request->password),
             'role' => 'hr_manager',
             'is_active' => $request->has('is_active') ? $request->is_active : true,
@@ -51,6 +53,7 @@ class HrUserController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:hr_users,email,' . $hrUser->id,
+            'phone' => 'nullable|string|max:20',
             'password' => 'nullable|string|min:8|confirmed',
             'is_active' => 'boolean'
         ]);
@@ -58,6 +61,7 @@ class HrUserController extends Controller
         $data = [
             'name' => $request->name,
             'email' => $request->email,
+            'phone' => $request->phone,
             'is_active' => $request->has('is_active') ? $request->is_active : false,
         ];
 

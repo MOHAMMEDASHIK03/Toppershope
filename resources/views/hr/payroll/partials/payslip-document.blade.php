@@ -4,12 +4,29 @@
 
         <div class="payslip-doc__header">
             <div class="payslip-doc__header-left">
-                <img src="{{ asset('images/brand/logo-icon.png') }}" alt="Topper's Hope" class="payslip-doc__logo" style="width:56px;height:56px;object-fit:contain;border-radius:8px;">
+                @php $logoSrc = $logoSrc ?? $payslip->logoDataUri; @endphp
+                @if($logoSrc)
+                    <img src="{{ $logoSrc }}" alt="" class="payslip-doc__logo" width="56" height="56">
+                @endif
                 <h1 class="payslip-doc__company-name">{{ strtoupper($payslip->company['company_name']) }}</h1>
                 <p class="payslip-doc__company-tag">{{ $payslip->company['company_tagline'] }}</p>
                 <div class="payslip-doc__company-meta">
-                    {{ $payslip->company['address_line_1'] }} · {{ $payslip->company['address_line_2'] }}<br>
-                    {{ $payslip->company['phone'] }} · {{ $payslip->company['email'] }}
+                    @if($payslip->company['branch_code'] || $payslip->company['branch_address'])
+                        @if($payslip->company['branch_name'] || $payslip->company['branch_code'])
+                            <strong>{{ $payslip->company['branch_name'] ?? 'Branch' }}</strong>
+                            @if($payslip->company['branch_code'])
+                                · Code: {{ $payslip->company['branch_code'] }}
+                            @endif
+                            <br>
+                        @endif
+                        @if($payslip->company['branch_address'])
+                            {{ $payslip->company['branch_address'] }}<br>
+                        @endif
+                    @endif
+                    @if($payslip->company['issuer_name'])
+                        Issued by: {{ $payslip->company['issuer_name'] }}<br>
+                    @endif
+                    {{ $payslip->company['issuer_phone'] }} · {{ $payslip->company['issuer_email'] }}
                 </div>
             </div>
             <div class="payslip-doc__header-right">

@@ -68,7 +68,7 @@
                             <div>
                                 <label for="phone" class="block text-sm font-bold text-slate-700 mb-1.5">Phone Number</label>
                                 <input id="phone" name="phone" type="tel" required value="{{ old('phone') }}"
-                                    class="block w-full px-4 py-3 border border-slate-200 rounded-xl bg-slate-50 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white transition-all sm:text-sm font-medium" placeholder="+91 9876543210">
+                                    class="block w-full px-4 py-3 border border-slate-200 rounded-xl bg-slate-50 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white transition-all sm:text-sm font-medium" placeholder="{{ config('contact.phone') }}">
                             </div>
 
                             <div>

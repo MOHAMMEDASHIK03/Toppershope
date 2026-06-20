@@ -121,8 +121,9 @@
                 <p>If you have questions about these Terms, please contact us:</p>
                 <ul>
                     <li><strong>Email:</strong> legal@toppershope.in</li>
-                    <li><strong>Phone:</strong> +91 98765 43210</li>
-                    <li><strong>Address:</strong> Toppers Hope, SOWDAMBIKA COMPLEX, D.NO.43,1st Floor, Chairman Karuppanna Devar Street, Sulur, Coimbatore 641406</li>
+                    <li><strong>Phone:</strong> <a href="tel:'.config('contact.phone_tel').'">'.e(config('contact.phone')).'</a></li>
+                    <li><strong>WhatsApp:</strong> <a href="'.config('contact.whatsapp_url').'" target="_blank" rel="noopener">'.e(config('contact.whatsapp')).'</a></li>
+                    <li><strong>Address:</strong> '.e(config('contact.company')).', '.e(config('contact.address')).'</li>
                 </ul>
             '],
         ];

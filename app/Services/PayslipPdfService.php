@@ -20,9 +20,10 @@ class PayslipPdfService
         }
 
         $options = new Options();
-        $options->set('isRemoteEnabled', false);
+        $options->set('isRemoteEnabled', true);
         $options->set('isHtml5ParserEnabled', true);
         $options->set('defaultFont', 'DejaVu Sans');
+        $options->set('chroot', public_path());
 
         $dompdf = new Dompdf($options);
         $html = View::make('hr.payroll.print', ['payslip' => $payslip])->render();

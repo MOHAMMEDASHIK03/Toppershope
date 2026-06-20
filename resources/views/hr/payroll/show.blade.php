@@ -68,7 +68,7 @@
             </div>
         </div>
         <div class="payslip-toolbar__actions">
-            <button type="button" class="payslip-toolbar__btn" onclick="window.print()">
+            <button type="button" id="payslip-print-btn" class="payslip-toolbar__btn" data-no-confirm>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 256 256"><path d="M200,48V32a8,8,0,0,0-8-8H64a8,8,0,0,0-8,8V48a16,16,0,0,0-16,16V160a16,16,0,0,0,16,16H72v40a8,8,0,0,0,8,8H176a8,8,0,0,0,8-8V176h32a16,16,0,0,0,16-16V64A16,16,0,0,0,200,48Z"/></svg>
                 Print
             </button>
@@ -97,3 +97,26 @@
 </div>
 @endif
 @endsection
+
+@push('scripts')
+<script>
+(function () {
+    const printBtn = document.getElementById('payslip-print-btn');
+    if (!printBtn) return;
+
+    printBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+
+        const modal = document.getElementById('th-confirm-modal');
+        if (modal && !modal.classList.contains('hidden')) {
+            modal.classList.add('hidden');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        window.print();
+    }, true);
+})();
+</script>
+@endpush
